@@ -1,0 +1,21 @@
+{
+  "data": {
+    "snapshot": {
+      "files": [
+        {
+          "id": "cc832ec41a2f7654b91e04b0daa3e1a6e40fc7d0",
+          "filename": "ses-iemu",
+          "size": 0,
+          "directory": true
+        },
+        {
+          "id": "19885833aedacff6f6ca9f9844126560549be804",
+          "filename": "ses-mri",
+          "size": 0,
+          "directory": true
+        }
+      ]
+    }
+  },
+  "extensions": { "openneuro": { "version": "5.10.1" } }
+}

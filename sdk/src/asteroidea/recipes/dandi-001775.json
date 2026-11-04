@@ -1,0 +1,27 @@
+{
+ "schema": "asteroidea.event-recipe/1",
+ "version": "recipe-1",
+ "dataset": "dandi-001775",
+ "description": "Mouse delayed non-match-to-place (DNMP) task, read from sub-UT06 ses-Day5 @ 0.260418.0538. trial_start: trials rows with epoch_type dnmp (20 of 22; the other two are the pre_run_OF and post_run_OF open-field epochs, which are not trials). reward_grasp: consummatory_intervals rows, whose start_time equals the trials grasp_time (20). Attributes on both: trial_phase (sample 10, test 10) and choice (L 10, R 10), each 2 levels of 10 events. correct_arm is left out because it equals choice on every row (error_time is empty: no error trial in this session), atropine_saline_condition because it has one level (none), dnmp_trial_index because it has 20 levels. The other time columns (chewing_onset_time, forepaw_contact_time) are not interval start times, so no source kind reads them; postprandial_intervals starts at forepaw_contact_time and preprandial_intervals at the trial start, so both repeat trial_start and the consummatory end. The LFP series is timestamps-based on the trials clock (its timestamps run 3349699.35 to 3357978.64 s, the trials 3349699.49 to 3357978.51 s), so lfp_clock_offset_s is 0.",
+ "lfp_clock_offset_s": 0,
+ "event_types": [
+  {
+   "name": "trial_start",
+   "averaging": "average",
+   "source": {"kind": "interval", "table": "trials", "where": {"epoch_type": "dnmp"}},
+   "attributes": [
+    {"name": "trial_phase", "column": "trial_phase"},
+    {"name": "choice", "column": "choice"}
+   ]
+  },
+  {
+   "name": "reward_grasp",
+   "averaging": "average",
+   "source": {"kind": "interval", "table": "consummatory_intervals"},
+   "attributes": [
+    {"name": "trial_phase", "column": "trial_phase"},
+    {"name": "choice", "column": "choice"}
+   ]
+  }
+ ]
+}

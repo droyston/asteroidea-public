@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": { "Service": "budgets.amazonaws.com" },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": { "aws:SourceAccount": "<management-account-id>" },
+        "ArnLike": { "aws:SourceArn": "arn:aws:budgets::<management-account-id>:budget/*" }
+      }
+    }
+  ]
+}

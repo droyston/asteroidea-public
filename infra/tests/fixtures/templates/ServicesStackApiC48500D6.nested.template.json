@@ -1,0 +1,3361 @@
+{
+ "Resources": {
+  "SessionFunctionServiceRoleCDDA063B": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-session-api-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/SessionFunction/ServiceRole/Resource"
+   }
+  },
+  "SessionFunctionServiceRoleDefaultPolicyE7C43865": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012"
+       }
+      },
+      {
+       "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttDatasetOwnersTable9D0BA8A1Arn4A11628C"
+       }
+      },
+      {
+       "Action": "dynamodb:Query",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012"
+          },
+          "/index/by_owner"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:PutObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/landing/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Condition": {
+        "StringLike": {
+         "s3:prefix": [
+          "raw/*"
+         ]
+        }
+       },
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+       }
+      },
+      {
+       "Action": "sqs:SendMessage",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestCommitQueue6CAF0EC7Arn"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SessionFunctionServiceRoleDefaultPolicyE7C43865",
+    "Roles": [
+     {
+      "Ref": "SessionFunctionServiceRoleCDDA063B"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/SessionFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "SessionFunctionC75AD4C3": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "SESSIONS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+      },
+      "OWNERS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefDatasetOwnersTable9D0BA8A140B34BFC"
+      },
+      "RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      },
+      "COMMIT_QUEUE_URL": {
+       "Ref": "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestCommitQueue6CAF0EC7Ref"
+      }
+     }
+    },
+    "Handler": "asteroidea_ingest.session_api.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "SessionFunctionServiceRoleCDDA063B",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.14",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 10
+   },
+   "DependsOn": [
+    "SessionFunctionServiceRoleDefaultPolicyE7C43865",
+    "SessionFunctionServiceRoleCDDA063B"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/SessionFunction/Resource",
+    "aws:asset:path": "asset.f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "PlatformFunctionServiceRole230283E2": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-platform-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/PlatformFunction/ServiceRole/Resource"
+   }
+  },
+  "PlatformFunctionServiceRoleDefaultPolicyE3E3C962": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWebSiteBucket1E6F6F45ArnD070D382"
+          },
+          "/handout/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttArtifactsBucket2AAC5544ArnD57FAE19"
+          },
+          "/artifacts/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttArtifactsBucket2AAC5544ArnD57FAE19"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "PlatformFunctionServiceRoleDefaultPolicyE3E3C962",
+    "Roles": [
+     {
+      "Ref": "PlatformFunctionServiceRole230283E2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/PlatformFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "PlatformFunction1E5E84AD": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "SITE_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefWebSiteBucket1E6F6F456AFA2EC7"
+      },
+      "ARTIFACTS_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefArtifactsBucket2AAC55442DB5E6C9"
+      },
+      "WEB_URL": {
+       "Fn::ImportValue": "asteroidea-WebUrl"
+      },
+      "PLATFORM_REGION": "us-east-1",
+      "PLATFORM_USER_POOL_ID": {
+       "Fn::ImportValue": "asteroidea-UserPoolId"
+      },
+      "PLATFORM_SDK_CLIENT_ID": {
+       "Fn::ImportValue": "asteroidea-SdkClientId"
+      },
+      "PLATFORM_LOGIN_BASE_URL": {
+       "Fn::ImportValue": "asteroidea-ManagedLoginBaseUrl"
+      },
+      "PLATFORM_SDK_CALLBACK": "http://localhost:8765/callback",
+      "PLATFORM_IDENTITY_POOL_ID": {
+       "Fn::ImportValue": "asteroidea-IdentityPoolId"
+      },
+      "PLATFORM_RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      }
+     }
+    },
+    "Handler": "asteroidea_ingest.platform_api.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "PlatformFunctionServiceRole230283E2",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.14",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 10
+   },
+   "DependsOn": [
+    "PlatformFunctionServiceRoleDefaultPolicyE3E3C962",
+    "PlatformFunctionServiceRole230283E2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/PlatformFunction/Resource",
+    "aws:asset:path": "asset.f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "CatalogFunctionServiceRoleAFF180B8": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-catalog-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/CatalogFunction/ServiceRole/Resource"
+   }
+  },
+  "CatalogFunctionServiceRoleDefaultPolicy36005DCA": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+          },
+          "/iceberg/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+       }
+      },
+      {
+       "Action": [
+        "glue:GetDatabase",
+        "glue:GetTable"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:catalog"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:database/asteroidea"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/assets"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/datasets"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/asset_headers"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/subjects"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/sessions"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/series"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/electrodes"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/units"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/intervals"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/events"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "athena:StartQueryExecution",
+        "athena:GetQueryExecution",
+        "athena:GetQueryResults",
+        "athena:StopQueryExecution"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":athena:us-east-1:000000000000:workgroup/asteroidea"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttAthenaResultsBucket879938FAArn609FA1B4"
+          },
+          "/athena/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttAthenaResultsBucket879938FAArn609FA1B4"
+       }
+      },
+      {
+       "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CatalogFunctionServiceRoleDefaultPolicy36005DCA",
+    "Roles": [
+     {
+      "Ref": "CatalogFunctionServiceRoleAFF180B8"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/CatalogFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "CatalogFunctionCE342920": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "ATHENA_WORKGROUP": "asteroidea",
+      "GLUE_DATABASE": "asteroidea",
+      "RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      }
+     }
+    },
+    "Handler": "asteroidea_ingest.catalog_api.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "CatalogFunctionServiceRoleAFF180B8",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.14",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 20
+   },
+   "DependsOn": [
+    "CatalogFunctionServiceRoleDefaultPolicy36005DCA",
+    "CatalogFunctionServiceRoleAFF180B8"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/CatalogFunction/Resource",
+    "aws:asset:path": "asset.f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "ComputeFunctionServiceRole1C3458C9": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-compute-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/ComputeFunction/ServiceRole/Resource"
+   }
+  },
+  "ComputeFunctionServiceRoleDefaultPolicy6E6A7894": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+          },
+          "/iceberg/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+       }
+      },
+      {
+       "Action": [
+        "glue:GetDatabase",
+        "glue:GetTable"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:catalog"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:database/asteroidea"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/assets"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/series"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/units"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/unit_spikes"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/intervals"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/events"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "athena:StartQueryExecution",
+        "athena:GetQueryExecution",
+        "athena:GetQueryResults",
+        "athena:StopQueryExecution"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":athena:us-east-1:000000000000:workgroup/asteroidea"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttAthenaResultsBucket879938FAArn609FA1B4"
+          },
+          "/athena/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttAthenaResultsBucket879938FAArn609FA1B4"
+       }
+      },
+      {
+       "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttDerivedBucket81C7992CArnF73A8B22"
+          },
+          "/lfp/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Condition": {
+        "StringLike": {
+         "s3:prefix": [
+          "lfp/*"
+         ]
+        }
+       },
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttDerivedBucket81C7992CArnF73A8B22"
+       }
+      },
+      {
+       "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:Query"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttLabelsTableDD3C024FArnC6356963"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "ComputeFunctionServiceRoleDefaultPolicy6E6A7894",
+    "Roles": [
+     {
+      "Ref": "ComputeFunctionServiceRole1C3458C9"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/ComputeFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "ComputeFunctionB565E683": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "ImageUri": {
+      "Fn::Sub": "000000000000.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-000000000000-us-east-1:f93a7911dbcbfe208beecd8023e4e354fbd0e286210c110746591579aa189efe"
+     }
+    },
+    "Environment": {
+     "Variables": {
+      "ATHENA_WORKGROUP": "asteroidea",
+      "GLUE_DATABASE": "asteroidea",
+      "RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      },
+      "DERIVED_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefDerivedBucket81C7992C310D8D2B"
+      },
+      "LABELS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefLabelsTableDD3C024F0B8B5135"
+      }
+     }
+    },
+    "MemorySize": 2048,
+    "PackageType": "Image",
+    "Role": {
+     "Fn::GetAtt": [
+      "ComputeFunctionServiceRole1C3458C9",
+      "Arn"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 28
+   },
+   "DependsOn": [
+    "ComputeFunctionServiceRoleDefaultPolicy6E6A7894",
+    "ComputeFunctionServiceRole1C3458C9"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/ComputeFunction/Resource",
+    "aws:asset:path": "asset.f93a7911dbcbfe208beecd8023e4e354fbd0e286210c110746591579aa189efe",
+    "aws:asset:dockerfile-path": "ingest/Dockerfile.compute",
+    "aws:asset:property": "Code.ImageUri"
+   }
+  },
+  "LabelsFunctionServiceRole6EA3421C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-labels-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/LabelsFunction/ServiceRole/Resource"
+   }
+  },
+  "LabelsFunctionServiceRoleDefaultPolicy4F82FC66": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+          },
+          "/iceberg/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+       }
+      },
+      {
+       "Action": [
+        "glue:GetDatabase",
+        "glue:GetTable"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:catalog"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:database/asteroidea"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/assets"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/intervals"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/events"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/asset_headers"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/intervals$snapshots"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/events$snapshots"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/asset_headers$snapshots"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "athena:StartQueryExecution",
+        "athena:GetQueryExecution",
+        "athena:GetQueryResults",
+        "athena:StopQueryExecution"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":athena:us-east-1:000000000000:workgroup/asteroidea"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttAthenaResultsBucket879938FAArn609FA1B4"
+          },
+          "/athena/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttAthenaResultsBucket879938FAArn609FA1B4"
+       }
+      },
+      {
+       "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:Query"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttLabelsTableDD3C024FArnC6356963"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LabelsFunctionServiceRoleDefaultPolicy4F82FC66",
+    "Roles": [
+     {
+      "Ref": "LabelsFunctionServiceRole6EA3421C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/LabelsFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LabelsFunctionB3C1EEC3": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "LABELS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefLabelsTableDD3C024F0B8B5135"
+      },
+      "ATHENA_WORKGROUP": "asteroidea",
+      "GLUE_DATABASE": "asteroidea"
+     }
+    },
+    "Handler": "asteroidea_ingest.labels_api.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LabelsFunctionServiceRole6EA3421C",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.14",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 20
+   },
+   "DependsOn": [
+    "LabelsFunctionServiceRoleDefaultPolicy4F82FC66",
+    "LabelsFunctionServiceRole6EA3421C"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/LabelsFunction/Resource",
+    "aws:asset:path": "asset.f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "ImportsFunctionServiceRole6581E7CB": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-imports-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/ImportsFunction/ServiceRole/Resource"
+   }
+  },
+  "ImportsFunctionServiceRoleDefaultPolicyC8C38677": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": {
+        "Ref": "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestImportPlanFunctionD13ABA49Arn"
+       }
+      },
+      {
+       "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttImportRunsTable530F2D0DArn6331C955"
+       }
+      },
+      {
+       "Action": "dynamodb:Query",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttImportRunsTable530F2D0DArn6331C955"
+          },
+          "/index/by_caller"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "dynamodb:BatchGetItem",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "ImportsFunctionServiceRoleDefaultPolicyC8C38677",
+    "Roles": [
+     {
+      "Ref": "ImportsFunctionServiceRole6581E7CB"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/ImportsFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "ImportsFunction28D57CBD": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "RUNS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefImportRunsTable530F2D0DDC992A1E"
+      },
+      "SESSIONS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+      },
+      "IMPORT_PLAN_FUNCTION_NAME": {
+       "Ref": "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestImportPlanFunctionD13ABA49Ref"
+      }
+     }
+    },
+    "Handler": "asteroidea_ingest.imports_api.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "ImportsFunctionServiceRole6581E7CB",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.14",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 10
+   },
+   "DependsOn": [
+    "ImportsFunctionServiceRoleDefaultPolicyC8C38677",
+    "ImportsFunctionServiceRole6581E7CB"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/ImportsFunction/Resource",
+    "aws:asset:path": "asset.f69d952cc195c09bfd2a6f86f964a861702df06ebdff876c9a9be2b389ccb01e",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "HttpApiF5A9A8A7": {
+   "Type": "AWS::ApiGatewayV2::Api",
+   "Properties": {
+    "CorsConfiguration": {
+     "AllowHeaders": [
+      "authorization",
+      "content-type"
+     ],
+     "AllowMethods": [
+      "GET",
+      "POST",
+      "PATCH",
+      "DELETE"
+     ],
+     "AllowOrigins": [
+      "http://localhost:5173",
+      {
+       "Fn::ImportValue": "asteroidea-WebUrl"
+      }
+     ],
+     "MaxAge": 86400
+    },
+    "Name": "HttpApi",
+    "ProtocolType": "HTTP",
+    "Tags": {
+     "managed-by": "cdk",
+     "project": "asteroidea"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/Resource"
+   }
+  },
+  "HttpApiDefaultStage3EEB07D6": {
+   "Type": "AWS::ApiGatewayV2::Stage",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AutoDeploy": true,
+    "StageName": "$default",
+    "Tags": {
+     "managed-by": "cdk",
+     "project": "asteroidea"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/DefaultStage/Resource"
+   }
+  },
+  "HttpApiPOSTsessionsIntegration86680BB8": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "SessionFunctionC75AD4C3",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--sessions/Integration/Resource"
+   }
+  },
+  "HttpApiPOSTsessionsIntegrationPermission18B4D731": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "SessionFunctionC75AD4C3",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/sessions"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--sessions/Integration-Permission"
+   }
+  },
+  "HttpApiPOSTsessionsBDF29EB0": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "POST /sessions",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiPOSTsessionsIntegration86680BB8"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--sessions/Resource"
+   }
+  },
+  "HttpApiAuthorizerD4468D9A": {
+   "Type": "AWS::ApiGatewayV2::Authorizer",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizerType": "JWT",
+    "IdentitySource": [
+     "$request.header.Authorization"
+    ],
+    "JwtConfiguration": {
+     "Audience": [
+      {
+       "Fn::ImportValue": "asteroidea-SdkClientId"
+      },
+      {
+       "Fn::ImportValue": "asteroidea-WebClientId"
+      },
+      {
+       "Fn::ImportValue": "asteroidea-SandboxTestClientId"
+      }
+     ],
+     "Issuer": {
+      "Fn::Join": [
+       "",
+       [
+        "https://cognito-idp.us-east-1.amazonaws.com/",
+        {
+         "Fn::ImportValue": "asteroidea-UserPoolId"
+        }
+       ]
+      ]
+     }
+    },
+    "Name": "Authorizer"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/Authorizer/Resource"
+   }
+  },
+  "HttpApiPOSTsessionsidfinalizeIntegrationPermission69A83CDC": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "SessionFunctionC75AD4C3",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/sessions/{id}/finalize"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--sessions--{id}--finalize/Integration-Permission"
+   }
+  },
+  "HttpApiPOSTsessionsidfinalizeE1E581C7": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "POST /sessions/{id}/finalize",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiPOSTsessionsIntegration86680BB8"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--sessions--{id}--finalize/Resource"
+   }
+  },
+  "HttpApiGETsessionsidIntegrationPermission7830B27A": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "SessionFunctionC75AD4C3",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/sessions/{id}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--sessions--{id}/Integration-Permission"
+   }
+  },
+  "HttpApiGETsessionsidBB7829C4": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /sessions/{id}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiPOSTsessionsIntegration86680BB8"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--sessions--{id}/Resource"
+   }
+  },
+  "HttpApiGETuploadsIntegrationPermission88C2D2B6": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "SessionFunctionC75AD4C3",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/uploads"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--uploads/Integration-Permission"
+   }
+  },
+  "HttpApiGETuploads8B1F7014": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /uploads",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiPOSTsessionsIntegration86680BB8"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--uploads/Resource"
+   }
+  },
+  "HttpApiGETgetstartedPlatformIntegration45320918": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "PlatformFunction1E5E84AD",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--get-started/PlatformIntegration/Resource"
+   }
+  },
+  "HttpApiGETgetstartedPlatformIntegrationPermissionA96E0C8E": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "PlatformFunction1E5E84AD",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/get-started"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--get-started/PlatformIntegration-Permission"
+   }
+  },
+  "HttpApiGETgetstarted6C1E2E80": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /get-started",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETgetstartedPlatformIntegration45320918"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--get-started/Resource"
+   }
+  },
+  "HttpApiPOSTartifactsPlatformIntegrationPermission3F587744": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "PlatformFunction1E5E84AD",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/artifacts"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--artifacts/PlatformIntegration-Permission"
+   }
+  },
+  "HttpApiPOSTartifacts3C0F4473": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "POST /artifacts",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETgetstartedPlatformIntegration45320918"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--artifacts/Resource"
+   }
+  },
+  "HttpApiPOSTartifactsidfinalizePlatformIntegrationPermissionF6F00C88": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "PlatformFunction1E5E84AD",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/artifacts/{id}/finalize"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--artifacts--{id}--finalize/PlatformIntegration-Permission"
+   }
+  },
+  "HttpApiPOSTartifactsidfinalizeE9089CC4": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "POST /artifacts/{id}/finalize",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETgetstartedPlatformIntegration45320918"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--artifacts--{id}--finalize/Resource"
+   }
+  },
+  "HttpApiGETartifactsPlatformIntegrationPermission700B3F36": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "PlatformFunction1E5E84AD",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/artifacts"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--artifacts/PlatformIntegration-Permission"
+   }
+  },
+  "HttpApiGETartifactsB210938E": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /artifacts",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETgetstartedPlatformIntegration45320918"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--artifacts/Resource"
+   }
+  },
+  "HttpApiGETartifactsidPlatformIntegrationPermission9E42A8D5": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "PlatformFunction1E5E84AD",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/artifacts/{id}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--artifacts--{id}/PlatformIntegration-Permission"
+   }
+  },
+  "HttpApiGETartifactsid3989F4F1": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /artifacts/{id}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETgetstartedPlatformIntegration45320918"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--artifacts--{id}/Resource"
+   }
+  },
+  "HttpApiGETcatalogdatasetsCatalogIntegrationC3EB5D93": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "CatalogFunctionCE342920",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--datasets/CatalogIntegration/Resource"
+   }
+  },
+  "HttpApiGETcatalogdatasetsCatalogIntegrationPermission3EA8FD8C": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CatalogFunctionCE342920",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/catalog/datasets"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--datasets/CatalogIntegration-Permission"
+   }
+  },
+  "HttpApiGETcatalogdatasetsFE8D6DB1": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /catalog/datasets",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcatalogdatasetsCatalogIntegrationC3EB5D93"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--datasets/Resource"
+   }
+  },
+  "HttpApiGETcatalogdatasetsdatasetCatalogIntegrationPermission30EB7864": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CatalogFunctionCE342920",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/catalog/datasets/{dataset}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--datasets--{dataset}/CatalogIntegration-Permission"
+   }
+  },
+  "HttpApiGETcatalogdatasetsdataset2E2927CC": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /catalog/datasets/{dataset}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcatalogdatasetsCatalogIntegrationC3EB5D93"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--datasets--{dataset}/Resource"
+   }
+  },
+  "HttpApiGETcatalogdatasetsdatasetassetsCatalogIntegrationPermission8DBC3D4D": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CatalogFunctionCE342920",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/catalog/datasets/{dataset}/assets"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--datasets--{dataset}--assets/CatalogIntegration-Permission"
+   }
+  },
+  "HttpApiGETcatalogdatasetsdatasetassets53635AD7": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /catalog/datasets/{dataset}/assets",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcatalogdatasetsCatalogIntegrationC3EB5D93"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--datasets--{dataset}--assets/Resource"
+   }
+  },
+  "HttpApiGETcatalogassetsassetidCatalogIntegrationPermission1B23AAF3": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CatalogFunctionCE342920",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/catalog/assets/{asset_id}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--assets--{asset_id}/CatalogIntegration-Permission"
+   }
+  },
+  "HttpApiGETcatalogassetsassetid6309EC79": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /catalog/assets/{asset_id}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcatalogdatasetsCatalogIntegrationC3EB5D93"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--assets--{asset_id}/Resource"
+   }
+  },
+  "HttpApiGETcatalogassetsassetidtablestableCatalogIntegrationPermission4A12E392": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CatalogFunctionCE342920",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/catalog/assets/{asset_id}/tables/{table}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--assets--{asset_id}--tables--{table}/CatalogIntegration-Permission"
+   }
+  },
+  "HttpApiGETcatalogassetsassetidtablestableACA4FB39": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /catalog/assets/{asset_id}/tables/{table}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcatalogdatasetsCatalogIntegrationC3EB5D93"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--assets--{asset_id}--tables--{table}/Resource"
+   }
+  },
+  "HttpApiGETcatalogassetsassetideventsCatalogIntegrationPermission31265A52": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CatalogFunctionCE342920",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/catalog/assets/{asset_id}/events"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--assets--{asset_id}--events/CatalogIntegration-Permission"
+   }
+  },
+  "HttpApiGETcatalogassetsassetidevents9CAE15CC": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /catalog/assets/{asset_id}/events",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcatalogdatasetsCatalogIntegrationC3EB5D93"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--assets--{asset_id}--events/Resource"
+   }
+  },
+  "HttpApiGETcatalogassetsassetiddownloadCatalogIntegrationPermissionEA7741CE": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "CatalogFunctionCE342920",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/catalog/assets/{asset_id}/download"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--assets--{asset_id}--download/CatalogIntegration-Permission"
+   }
+  },
+  "HttpApiGETcatalogassetsassetiddownload9306C68F": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /catalog/assets/{asset_id}/download",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcatalogdatasetsCatalogIntegrationC3EB5D93"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--catalog--assets--{asset_id}--download/Resource"
+   }
+  },
+  "HttpApiGETcomputeratesComputeIntegrationEECC880C": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "ComputeFunctionB565E683",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--compute--rates/ComputeIntegration/Resource"
+   }
+  },
+  "HttpApiGETcomputeratesComputeIntegrationPermissionEC0E1EB2": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "ComputeFunctionB565E683",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/compute/rates"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--compute--rates/ComputeIntegration-Permission"
+   }
+  },
+  "HttpApiGETcomputerates43BB8EA7": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /compute/rates",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcomputeratesComputeIntegrationEECC880C"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--compute--rates/Resource"
+   }
+  },
+  "HttpApiGETcomputeoverviewComputeIntegrationPermission2A27AB26": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "ComputeFunctionB565E683",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/compute/overview"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--compute--overview/ComputeIntegration-Permission"
+   }
+  },
+  "HttpApiGETcomputeoverview4B20F88B": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /compute/overview",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcomputeratesComputeIntegrationEECC880C"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--compute--overview/Resource"
+   }
+  },
+  "HttpApiGETcomputespectrogramComputeIntegrationPermissionEC7DDA14": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "ComputeFunctionB565E683",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/compute/spectrogram"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--compute--spectrogram/ComputeIntegration-Permission"
+   }
+  },
+  "HttpApiGETcomputespectrogramCC122647": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /compute/spectrogram",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETcomputeratesComputeIntegrationEECC880C"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--compute--spectrogram/Resource"
+   }
+  },
+  "HttpApiGETfilesassetidlabelsLabelsIntegrationB871E4E0": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LabelsFunctionB3C1EEC3",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--files--{asset_id}--labels/LabelsIntegration/Resource"
+   }
+  },
+  "HttpApiGETfilesassetidlabelsLabelsIntegrationPermission38EC400A": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LabelsFunctionB3C1EEC3",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/files/{asset_id}/labels"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--files--{asset_id}--labels/LabelsIntegration-Permission"
+   }
+  },
+  "HttpApiGETfilesassetidlabelsDDFFEE6D": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /files/{asset_id}/labels",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETfilesassetidlabelsLabelsIntegrationB871E4E0"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--files--{asset_id}--labels/Resource"
+   }
+  },
+  "HttpApiPOSTfilesassetidlabelsLabelsIntegrationPermission3C2F0CCE": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LabelsFunctionB3C1EEC3",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/files/{asset_id}/labels"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--files--{asset_id}--labels/LabelsIntegration-Permission"
+   }
+  },
+  "HttpApiPOSTfilesassetidlabels39152959": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "POST /files/{asset_id}/labels",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETfilesassetidlabelsLabelsIntegrationB871E4E0"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--files--{asset_id}--labels/Resource"
+   }
+  },
+  "HttpApiPATCHfilesassetidlabelslabelidLabelsIntegrationPermission314991E9": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LabelsFunctionB3C1EEC3",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/files/{asset_id}/labels/{label_id}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/PATCH--files--{asset_id}--labels--{label_id}/LabelsIntegration-Permission"
+   }
+  },
+  "HttpApiPATCHfilesassetidlabelslabelid931593DB": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "PATCH /files/{asset_id}/labels/{label_id}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETfilesassetidlabelsLabelsIntegrationB871E4E0"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/PATCH--files--{asset_id}--labels--{label_id}/Resource"
+   }
+  },
+  "HttpApiDELETEfilesassetidlabelslabelidLabelsIntegrationPermissionED0671A1": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LabelsFunctionB3C1EEC3",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/files/{asset_id}/labels/{label_id}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/DELETE--files--{asset_id}--labels--{label_id}/LabelsIntegration-Permission"
+   }
+  },
+  "HttpApiDELETEfilesassetidlabelslabelid716724AE": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "DELETE /files/{asset_id}/labels/{label_id}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETfilesassetidlabelsLabelsIntegrationB871E4E0"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/DELETE--files--{asset_id}--labels--{label_id}/Resource"
+   }
+  },
+  "HttpApiGETimportsImportsIntegrationD75FF520": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "ImportsFunction28D57CBD",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--imports/ImportsIntegration/Resource"
+   }
+  },
+  "HttpApiGETimportsImportsIntegrationPermissionFDCA4ABF": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "ImportsFunction28D57CBD",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/imports"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--imports/ImportsIntegration-Permission"
+   }
+  },
+  "HttpApiGETimportsECE4F696": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /imports",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETimportsImportsIntegrationD75FF520"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--imports/Resource"
+   }
+  },
+  "HttpApiPOSTimportsImportsIntegrationPermission0E2325B5": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "ImportsFunction28D57CBD",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/imports"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--imports/ImportsIntegration-Permission"
+   }
+  },
+  "HttpApiPOSTimports0D7BBE47": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "POST /imports",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETimportsImportsIntegrationD75FF520"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/POST--imports/Resource"
+   }
+  },
+  "HttpApiGETimportsrunidImportsIntegrationPermissionCB0AAA7E": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "ImportsFunction28D57CBD",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "HttpApiF5A9A8A7"
+       },
+       "/*/*/imports/{run_id}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--imports--{run_id}/ImportsIntegration-Permission"
+   }
+  },
+  "HttpApiGETimportsrunidF39C56A4": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "HttpApiF5A9A8A7"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "HttpApiAuthorizerD4468D9A"
+    },
+    "RouteKey": "GET /imports/{run_id}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "HttpApiGETimportsImportsIntegrationD75FF520"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/HttpApi/GET--imports--{run_id}/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11Q0U7DMAz8lr1npmyT4LWAEHtBUyfxOnmp6UzbpIpdplL131FSbUw83Z3v5HOygtXDBrIFnmVpy3rZ8BHGdxKlcq9oa4NnOYwNtscSYXztnVX2zjx/uit/8bamsG2xolt/R6FlEfZuMowtjIVvKBoJd75hO6RcYpOR9QFFSAXyCEbW8NTbmvQJhQzZcLFv+uYk2QAFdV5YfRhSHDuuUOmMw/cKxjfVLu84tkWIcq9YpWtmEkeF73VmW6dUBby85J/8y+W9nnzgHwpp9VVNk0mXxd3sqsnsBj15d7eG+w08Lr6EeRl6p9wSFDOaDDLIFl36jA9suEx9kJ9l75s+cvkFytx16KwBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestCommitQueue6CAF0EC7Arn": {
+   "Type": "String"
+  },
+  "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestCommitQueue6CAF0EC7Ref": {
+   "Type": "String"
+  },
+  "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestImportPlanFunctionD13ABA49Arn": {
+   "Type": "String"
+  },
+  "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestImportPlanFunctionD13ABA49Ref": {
+   "Type": "String"
+  }
+ },
+ "Outputs": {
+  "ServicesStackApiHttpApiB7A855B2ApiEndpoint": {
+   "Value": {
+    "Fn::GetAtt": [
+     "HttpApiF5A9A8A7",
+     "ApiEndpoint"
+    ]
+   }
+  }
+ }
+}

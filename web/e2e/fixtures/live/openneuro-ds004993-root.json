@@ -1,0 +1,81 @@
+{
+  "data": {
+    "snapshot": {
+      "files": [
+        {
+          "id": "09067a7e382c9d93325d558455a4f96caf1db1d1",
+          "filename": "CHANGES",
+          "size": 338,
+          "directory": false
+        },
+        {
+          "id": "75f32031726ecddb0fbecb7d36172989d63ff34a",
+          "filename": "README",
+          "size": 4005,
+          "directory": false
+        },
+        {
+          "id": "f552ebfa7b074263b2965c9079b7d699c216f87b",
+          "filename": "dataset_description.json",
+          "size": 1093,
+          "directory": false
+        },
+        {
+          "id": "5b2537728b6e5337e8e9af6d8b433daf484cb508",
+          "filename": ".bidsignore",
+          "size": 11,
+          "directory": false
+        },
+        {
+          "id": "a8599a8e5fdb959624a4c8684c1aa55fb69f5522",
+          "filename": ".gitattributes",
+          "size": 427,
+          "directory": false
+        },
+        {
+          "id": "3dbfd7898f878a06be06e9a444cc0979fb97db53",
+          "filename": "participants.json",
+          "size": 552,
+          "directory": false
+        },
+        {
+          "id": "b70f76dd3f609d25dc1de867098f0c6534f03d2a",
+          "filename": "participants.tsv",
+          "size": 70,
+          "directory": false
+        },
+        {
+          "id": "7daa5ec709c6f5cfbe742e2e0675954e7b96ea05",
+          "filename": ".datalad",
+          "size": 0,
+          "directory": true
+        },
+        {
+          "id": "0e4510861d5c289ca01fe1f4e94ed4fcec4b29c0",
+          "filename": "freesurfer",
+          "size": 0,
+          "directory": true
+        },
+        {
+          "id": "183cc0bb6af6ef26827c42bd522689cdeb9fdc17",
+          "filename": "sub-W1",
+          "size": 0,
+          "directory": true
+        },
+        {
+          "id": "af45a7f798c0f628ea343d6e34e43402a03c3e65",
+          "filename": "sub-W2",
+          "size": 0,
+          "directory": true
+        },
+        {
+          "id": "a6206b35ce16ce11d1ce80e7b7b46f5f1a21649f",
+          "filename": "sub-W3",
+          "size": 0,
+          "directory": true
+        }
+      ]
+    }
+  },
+  "extensions": { "openneuro": { "version": "5.10.1" } }
+}

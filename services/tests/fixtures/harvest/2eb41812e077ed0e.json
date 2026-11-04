@@ -1,0 +1,3086 @@
+{
+ "method": "POST",
+ "url": "https://openneuro.org/crn/graphql",
+ "request": {
+  "json": {
+   "query": "query($after:String){datasets(first:50, after:$after){pageInfo{count hasNextPage endCursor} edges{cursor node{id metadata{species modalities affirmedDefaced} latestSnapshot{tag hexsha created description{Name License DatasetDOI} summary{modalities secondaryModalities subjects size totalFiles}}}}}}",
+   "variables": {
+    "after": null
+   }
+  }
+ },
+ "responses": [
+  {
+   "status": 200,
+   "json": {
+    "data": {
+     "datasets": {
+      "pageInfo": {
+       "count": 127,
+       "hasNextPage": true,
+       "endCursor": "eyJvZmZzZXQiOjUwfQ=="
+      },
+      "edges": [
+       {
+        "cursor": "eyJvZmZzZXQiOjB9",
+        "node": {
+         "id": "ds000001",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "f8e27ac909e50b5b5e311f6be271f0b1757ebb7b",
+          "created": "2020-05-14T14:56:55.000Z",
+          "description": {
+           "Name": "Balloon Analog Risk-taking Task",
+           "License": "CC0",
+           "DatasetDOI": "10.18112/openneuro.ds000001.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16"
+           ],
+           "size": 2416199965,
+           "totalFiles": 133
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjF9",
+        "node": {
+         "id": "ds000002",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00002",
+          "hexsha": "eeb195ca5065e926b08d87aa16ff0eb22be46ed3",
+          "created": "2018-07-14T01:23:36.000Z",
+          "description": {
+           "Name": "Classification learning",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17"
+           ],
+           "size": 2896661859,
+           "totalFiles": 245
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjJ9",
+        "node": {
+         "id": "ds000003",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "c09053726f9f9cac58b2a1db43a4b6f57d67ccc3",
+          "created": "2020-05-14T15:01:29.000Z",
+          "description": {
+           "Name": "Rhyme judgment",
+           "License": "CC0",
+           "DatasetDOI": "10.18112/openneuro.ds000003.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural",
+            "mri_functional"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13"
+           ],
+           "size": 410092142,
+           "totalFiles": 57
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjN9",
+        "node": {
+         "id": "ds000005",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "b094fc2f41487f92d382a1a432165ae58caae386",
+          "created": "2018-07-14T01:26:48.000Z",
+          "description": {
+           "Name": "Mixed-gambles task",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16"
+           ],
+           "size": 1898145323,
+           "totalFiles": 133
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjR9",
+        "node": {
+         "id": "ds000006",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "dcedff1d22b7abe4e90fab8f9dff888ded0983be",
+          "created": "2018-07-14T01:32:20.000Z",
+          "description": {
+           "Name": "ds000006",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+           ],
+           "size": 4772279451,
+           "totalFiles": 388
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjV9",
+        "node": {
+         "id": "ds000007",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "68d197dfb9f15646efec9925bca12a7f11f01227",
+          "created": "2018-07-14T01:38:36.000Z",
+          "description": {
+           "Name": "Stop-signal task with spoken & manual responses",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"
+           ],
+           "size": 3499985912,
+           "totalFiles": 442
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjZ9",
+        "node": {
+         "id": "ds000008",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "a65448a0f00ebf4038e134f5a956f429ec4ca1ed",
+          "created": "2018-07-14T01:41:18.000Z",
+          "description": {
+           "Name": "Stop-signal task with unconditional and conditional stopping",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+           ],
+           "size": 2160574004,
+           "totalFiles": 192
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjd9",
+        "node": {
+         "id": "ds000011",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "ba66c761540bb7fdedd6d2707d31e50e35b77f61",
+          "created": "2022-12-14T22:38:36.000Z",
+          "description": {
+           "Name": "Classification learning and tone-counting",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds000011.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+           ],
+           "size": 2441763843,
+           "totalFiles": 204
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjh9",
+        "node": {
+         "id": "ds000051",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "3af9bf0a1d4628a190fc3c82dbbc36dab51cb030",
+          "created": "2018-07-14T01:44:44.000Z",
+          "description": {
+           "Name": "Cross-language repetition priming",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13"
+           ],
+           "size": 2266024199,
+           "totalFiles": 249
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjl9",
+        "node": {
+         "id": "ds000052",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "b4de00c9dea1f2fb8ac36a8050e2e70926bbb5ed",
+          "created": "2018-07-14T01:49:18.000Z",
+          "description": {
+           "Name": "Classification learning and reversal",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "12",
+            "13",
+            "14"
+           ],
+           "size": 1288088364,
+           "totalFiles": 147
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjEwfQ==",
+        "node": {
+         "id": "ds000101",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00004",
+          "hexsha": "39862ee70d41c8fb003c1209f18ae42a195b931b",
+          "created": "2018-07-14T01:51:17.000Z",
+          "description": {
+           "Name": "Simon task",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21"
+           ],
+           "size": 1489069238,
+           "totalFiles": 111
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExfQ==",
+        "node": {
+         "id": "ds000102",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "fdc1ce49d524fc1e77e5b763f10acb02f403c581",
+          "created": "2018-07-14T01:53:38.000Z",
+          "description": {
+           "Name": "Flanker task (event-related)",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26"
+           ],
+           "size": 1775588837,
+           "totalFiles": 136
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjEyfQ==",
+        "node": {
+         "id": "ds000105",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "3.0.0",
+          "hexsha": "b2677616e86113ec230e6189ad2341ffcc065c83",
+          "created": "2023-03-24T18:52:32.000Z",
+          "description": {
+           "Name": "Visual object recognition",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds000105.v3.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+           ],
+           "size": 1878504923,
+           "totalFiles": 152
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjEzfQ==",
+        "node": {
+         "id": "ds000107",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "1809a8a1f02349c558b3e9c96e4d6bdf38bdc7f6",
+          "created": "2018-07-14T01:59:50.000Z",
+          "description": {
+           "Name": "Word and object processing",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49"
+           ],
+           "size": 3372249297,
+           "totalFiles": 249
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE0fQ==",
+        "node": {
+         "id": "ds000109",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "2.0.2",
+          "hexsha": "983f47f00d2611e860d975231913ee2e6c604f1b",
+          "created": "2022-05-16T15:27:06.000Z",
+          "description": {
+           "Name": "Social cognitive tasks (animate movement task, moral judgment task, false belief task)",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds000109.v2.0.2"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "05",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "14",
+            "15",
+            "17",
+            "18",
+            "19",
+            "21",
+            "22",
+            "23",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "34",
+            "36",
+            "38",
+            "39",
+            "40",
+            "42",
+            "43",
+            "46",
+            "47",
+            "48",
+            "49"
+           ],
+           "size": 2897730879,
+           "totalFiles": 178
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE1fQ==",
+        "node": {
+         "id": "ds000110",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "727ffbfd973db8acaa72bf8a8b2e2c188f6885a6",
+          "created": "2018-07-14T02:11:07.000Z",
+          "description": {
+           "Name": "Incidental encoding task (Posner Cueing Paradigm)",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18"
+           ],
+           "size": 5697546179,
+           "totalFiles": 401
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE2fQ==",
+        "node": {
+         "id": "ds000115",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "4566040fa4ae04d2777034961cef2ee7ba0cc572",
+          "created": "2018-07-14T02:22:24.000Z",
+          "description": {
+           "Name": "Working memory in healthy and schizophrenic individuals",
+           "License": null,
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "100",
+            "101",
+            "102",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "24",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+           ],
+           "size": 9110414267,
+           "totalFiles": 700
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE3fQ==",
+        "node": {
+         "id": "ds000017",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "8ee57b88de61dc929470a47a74571619fa8063c0",
+          "created": "2018-07-14T02:23:23.000Z",
+          "description": {
+           "Name": "ds000017",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+           ],
+           "size": 2531161760,
+           "totalFiles": 202
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE4fQ==",
+        "node": {
+         "id": "ds000122",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "24743366f3e10684748588f7aea2a9e2c87062fe",
+          "created": "2018-07-14T02:27:43.000Z",
+          "description": {
+           "Name": "Task-related concurrent but opposite modulations of overlapping functional networks as revealed by spatial ICA",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17"
+           ],
+           "size": 1729493096,
+           "totalFiles": 124
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5fQ==",
+        "node": {
+         "id": "ds000148",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "adf4aa05459bb4135cbe86c822ce82f3202cfca0",
+          "created": "2019-05-15T22:32:40.000Z",
+          "description": {
+           "Name": "Who can afford self-control? The neural efficiency mechanism explains effective self-regulation of behavior ",
+           "License": "PPDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49"
+           ],
+           "size": 14447415448,
+           "totalFiles": 446
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjIwfQ==",
+        "node": {
+         "id": "ds000009",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00002",
+          "hexsha": "ee50137de7af1efcca44e914fe5eafa6a8e8e322",
+          "created": "2018-07-14T02:50:51.000Z",
+          "description": {
+           "Name": "The generality of self-control",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_diffusion",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "16",
+            "17",
+            "18",
+            "20",
+            "21",
+            "23",
+            "24",
+            "25",
+            "26",
+            "28",
+            "29"
+           ],
+           "size": 6372717095,
+           "totalFiles": 659
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjIxfQ==",
+        "node": {
+         "id": "ds001021",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "781225f3c6c59ce493bfdc4dcc72ac3ffa81bdd9",
+          "created": "2018-08-15T15:23:07.000Z",
+          "description": {
+           "Name": "NKI-sample",
+           "License": null,
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_diffusion",
+            "mri_structural"
+           ],
+           "subjects": [
+            "A00008326"
+           ],
+           "size": 1028633313,
+           "totalFiles": 34
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjIyfQ==",
+        "node": {
+         "id": "ds001037",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "f996ba587ae398f93ba24c34ece68d686ec66d0b",
+          "created": "2018-07-14T03:16:56.000Z",
+          "description": {
+           "Name": "The brain of Chris",
+           "License": null,
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "CG"
+           ],
+           "size": 8600815,
+           "totalFiles": 2
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjIzfQ==",
+        "node": {
+         "id": "ds001105",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "bf2b4a58fc1eb0147d8ee35000193650fd29dba7",
+          "created": "2018-07-14T03:54:12.000Z",
+          "description": {
+           "Name": "Social predictive coding",
+           "License": "Creative Commons Attribution 4.0 International Public License",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "001",
+            "002",
+            "003",
+            "004",
+            "005",
+            "006",
+            "007",
+            "008",
+            "009",
+            "010",
+            "011",
+            "013",
+            "014",
+            "015",
+            "016",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029"
+           ],
+           "size": 44494831271,
+           "totalFiles": 312
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjI0fQ==",
+        "node": {
+         "id": "ds001107",
+         "metadata": {
+          "species": null,
+          "modalities": [],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "95665824811d5a7f73b81f2210d55c8045caad85",
+          "created": "2018-07-14T04:02:07.000Z",
+          "description": {
+           "Name": "ds001107",
+           "License": null,
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [],
+           "secondaryModalities": [],
+           "subjects": [],
+           "size": 11385139272,
+           "totalFiles": 1625
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjI1fQ==",
+        "node": {
+         "id": "ds001110",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00003",
+          "hexsha": "19321a67e2342d0e618f0718bb7c602ae4cc8a16",
+          "created": "2018-07-14T04:26:31.000Z",
+          "description": {
+           "Name": "Sherlock_Merlin",
+           "License": null,
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37"
+           ],
+           "size": 9712179638,
+           "totalFiles": 206
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjI2fQ==",
+        "node": {
+         "id": "ds001131",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "f57f29d2dc6533c2420c161527935f14181eac57",
+          "created": "2019-11-09T19:58:45.000Z",
+          "description": {
+           "Name": "Milky-Vodka",
+           "License": "CC0",
+           "DatasetDOI": "10.18112/openneuro.ds001131.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54"
+           ],
+           "size": 3894839528,
+           "totalFiles": 210
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjI3fQ==",
+        "node": {
+         "id": "ds001132",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "fc91edbbe1b8117f96b40bb4d1f5df43aa1afdce",
+          "created": "2019-04-04T19:51:14.000Z",
+          "description": {
+           "Name": "Sherlock",
+           "License": "",
+           "DatasetDOI": "10.18112/openneuro.ds001132.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16"
+           ],
+           "size": 6605709808,
+           "totalFiles": 117
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjI4fQ==",
+        "node": {
+         "id": "ds001145",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "188355b692066c0ff9c13387cfa42373555615de",
+          "created": "2019-04-04T14:25:36.000Z",
+          "description": {
+           "Name": "Twilight Zone Movie Watching Dataset",
+           "License": "",
+           "DatasetDOI": "10.18112/openneuro.ds001145.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+           ],
+           "size": 8788115957,
+           "totalFiles": 78
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjI5fQ==",
+        "node": {
+         "id": "ds001168",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "131e3e8268632242058b9175f6cbf6dd8df6abe9",
+          "created": "2019-01-07T21:50:54.000Z",
+          "description": {
+           "Name": "A high resolution 7-Tesla resting-state fMRI test-retest dataset with cognitive and physiological measures",
+           "License": "CC0",
+           "DatasetDOI": "10.18112/openneuro.ds001168.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22"
+           ],
+           "size": 46477596979,
+           "totalFiles": 732
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjMwfQ==",
+        "node": {
+         "id": "ds001178",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00002",
+          "hexsha": "cdd22be24d031408b5218674722743a29740dbd5",
+          "created": "2018-07-14T12:06:06.000Z",
+          "description": {
+           "Name": "Example MR artifacts",
+           "License": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications.",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "arielle01",
+            "arielle02",
+            "beast329",
+            "ben01",
+            "ben02",
+            "ben03",
+            "ben04",
+            "ben05",
+            "ben06",
+            "ben07",
+            "ben08",
+            "ben09",
+            "ds001s07",
+            "ds045s409874",
+            "kate000",
+            "kate001",
+            "kate002",
+            "kate004",
+            "kate006",
+            "kate007",
+            "kate008",
+            "kate013",
+            "steph02"
+           ],
+           "size": 2026918566,
+           "totalFiles": 43
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjMxfQ==",
+        "node": {
+         "id": "ds001218",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "a628dbebf0946715f144e586395e4c7c7538ab6e",
+          "created": "2018-07-15T11:23:18.000Z",
+          "description": {
+           "Name": "State representation pictures",
+           "License": "Creative Commons Attribution 4.0 International Public License",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "002",
+            "003",
+            "005",
+            "006",
+            "007",
+            "008",
+            "009",
+            "010",
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "016",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032",
+            "033"
+           ],
+           "size": 76745696247,
+           "totalFiles": 815
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjMyfQ==",
+        "node": {
+         "id": "ds001226",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "5.0.1",
+          "hexsha": "359d372c5e972a161966312128adb365870df949",
+          "created": "2026-03-31T18:36:13.000Z",
+          "description": {
+           "Name": "BTC_preop",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds001226.v5.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_diffusion",
+            "mri_structural",
+            "mri_functional"
+           ],
+           "subjects": [
+            "CON09",
+            "PAT29",
+            "PAT06",
+            "PAT08",
+            "PAT22",
+            "CON10",
+            "PAT11",
+            "PAT20",
+            "PAT25",
+            "CON04",
+            "PAT27",
+            "PAT23",
+            "PAT13",
+            "CON11",
+            "PAT02",
+            "CON05",
+            "PAT28",
+            "PAT31",
+            "PAT16",
+            "PAT14",
+            "PAT10",
+            "PAT15",
+            "PAT07",
+            "PAT19",
+            "CON08",
+            "CON02",
+            "PAT26",
+            "CON03",
+            "CON06",
+            "PAT24",
+            "CON01",
+            "PAT01",
+            "PAT17",
+            "PAT05",
+            "PAT03",
+            "CON07"
+           ],
+           "size": 3354957625,
+           "totalFiles": 436
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjMzfQ==",
+        "node": {
+         "id": "ds001228",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00002",
+          "hexsha": "2d4263eaace9be43b16be36e9a03faba84f73d67",
+          "created": "2018-07-15T13:09:13.000Z",
+          "description": {
+           "Name": "Decoding intentions of self and others",
+           "License": "CC0",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+           ],
+           "size": 10234837827,
+           "totalFiles": 315
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjM0fQ==",
+        "node": {
+         "id": "ds001229",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "e4aa00a2be42d9a490673581b51e7cf3a0a73ca1",
+          "created": "2019-03-14T20:56:07.000Z",
+          "description": {
+           "Name": "Neural Evidence of the Strategic Choice Between Working Memory and Episodic Memory in Prospective Remembering.",
+           "License": "",
+           "DatasetDOI": "10.18112/openneuro.ds001229.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27"
+           ],
+           "size": 9026413067,
+           "totalFiles": 540
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjM1fQ==",
+        "node": {
+         "id": "ds001232",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "c7993a2304518ecd9e5f3a21a2cdc34ebecfd707",
+          "created": "2019-02-22T14:43:07.000Z",
+          "description": {
+           "Name": "Competition between items in working memory leads to forgetting",
+           "License": "",
+           "DatasetDOI": "10.18112/openneuro.ds001232.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21"
+           ],
+           "size": 7637478569,
+           "totalFiles": 699
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjM2fQ==",
+        "node": {
+         "id": "ds001233",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00003",
+          "hexsha": "24c86e4dc9a0fe014618d23bfa98821300486521",
+          "created": "2018-07-15T13:40:12.000Z",
+          "description": {
+           "Name": "singleFingerRSA",
+           "License": "Creative Commons CC0 1.0",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18"
+           ],
+           "size": 40901123676,
+           "totalFiles": 622
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjM3fQ==",
+        "node": {
+         "id": "ds001235",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "14b8b5b4f9d0e460e343f3b227279d0149faaa8f",
+          "created": "2018-07-15T13:43:54.000Z",
+          "description": {
+           "Name": "Human-Object Interaction",
+           "License": null,
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"
+           ],
+           "size": 4956812822,
+           "totalFiles": 351
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjM4fQ==",
+        "node": {
+         "id": "ds001241",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "9065636760f46cb66de31961669104bba2508688",
+          "created": "2020-09-24T23:24:16.000Z",
+          "description": {
+           "Name": "OLVSL_ Object-location visual statistical learning",
+           "License": "CC0",
+           "DatasetDOI": "10.18112/openneuro.ds001241.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+           ],
+           "size": 7012128224,
+           "totalFiles": 1016
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjM5fQ==",
+        "node": {
+         "id": "ds001242",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "997b780df9601db0e263c4dfd2623b02005662e8",
+          "created": "2019-06-06T11:48:26.000Z",
+          "description": {
+           "Name": "Examining effects of arousal on responses to salient and non-salient stimuli in younger and older adults",
+           "License": "This dataset is made available under the Public Domain Dedication and License v1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike Community Norms (http://www.opendatacommons.org/norms/odc-by-sa/); in particular, while not legally required, we hope that all users of the data will cite at least one of the associated publications associated with these data and acknowledge the OpenfMRI project and National Institute on Aging(RO1AG025340; PI: M.Mather), JSPS KAKENHI (16H03750, 15K21062: PI: T.Ueno), JSPS KAKENHI (16H05959, 16KT0002, 16H02053; PI:M.Sakaki) and European Commission (CIG618600; PI:M.Sakaki) in any publication.",
+           "DatasetDOI": "10.18112/openneuro.ds001242.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_diffusion",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52"
+           ],
+           "size": 17345959791,
+           "totalFiles": 2577
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQwfQ==",
+        "node": {
+         "id": "ds001246",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.2.1",
+          "hexsha": "261343c5e738466b7b2e2d7ef9b07785845a7463",
+          "created": "2019-12-06T20:42:17.000Z",
+          "description": {
+           "Name": "Generic Object Decoding (fMRI on ImageNet)",
+           "License": "CC0",
+           "DatasetDOI": "10.18112/openneuro.ds001246.v1.2.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05"
+           ],
+           "size": 19693682188,
+           "totalFiles": 859
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQxfQ==",
+        "node": {
+         "id": "ds001247",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "79c1a9122165861dfe69696aae63fe8fb04b1e3b",
+          "created": "2018-07-15T15:13:50.000Z",
+          "description": {
+           "Name": "sports_betting_study",
+           "License": null,
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "2",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "3",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "4",
+            "40",
+            "41",
+            "42",
+            "43",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+           ],
+           "size": 7375282283,
+           "totalFiles": 345
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQyfQ==",
+        "node": {
+         "id": "ds001293",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00002",
+          "hexsha": "8434b539eecbfadbbcfa660534b9559b6935793d",
+          "created": "2018-07-15T19:04:17.000Z",
+          "description": {
+           "Name": "Multi-resolution 7T fMRI data on the representation of visual orientation",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional"
+           ],
+           "subjects": [
+            "04",
+            "06",
+            "16",
+            "17",
+            "18",
+            "20",
+            "21"
+           ],
+           "size": 54974624447,
+           "totalFiles": 1216
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQzfQ==",
+        "node": {
+         "id": "ds001297",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "b293e2f64f27361169f2a101ce7626b0b0f3c224",
+          "created": "2018-07-15T19:11:46.000Z",
+          "description": {
+           "Name": "Personally familiar faces",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33"
+           ],
+           "size": 10588098701,
+           "totalFiles": 791
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQ0fQ==",
+        "node": {
+         "id": "ds001299",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "71637bcd43dac53378494574d480a8060ca2422f",
+          "created": "2019-06-05T17:39:56.000Z",
+          "description": {
+           "Name": "NumberlineMarking",
+           "License": null,
+           "DatasetDOI": "10.18112/openneuro.ds001299.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "02003",
+            "02004",
+            "02005",
+            "02006",
+            "02007",
+            "02010",
+            "02011",
+            "02012",
+            "02014",
+            "02015",
+            "02016",
+            "02017",
+            "02018",
+            "02019",
+            "02021",
+            "02022",
+            "02023",
+            "02024",
+            "02027"
+           ],
+           "size": 60939027938,
+           "totalFiles": 251
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQ1fQ==",
+        "node": {
+         "id": "ds001302",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "052a3e48313d1a1aea9a52b21c3fca202110beb7",
+          "created": "2018-08-29T14:37:19.000Z",
+          "description": {
+           "Name": "Inverse Base Rate",
+           "License": "PDDL",
+           "DatasetDOI": "10.18112/openneuro.ds001302.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+           ],
+           "size": 5830397105,
+           "totalFiles": 394
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQ2fQ==",
+        "node": {
+         "id": "ds000208",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "f718509da3ac054fc9ab191c1bbdb984710a932e",
+          "created": "2022-05-24T11:21:04.000Z",
+          "description": {
+           "Name": "Brain connectivity predicts placebo response across chronic pain clinical trials",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds000208.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural",
+            "mri_functional"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76"
+           ],
+           "size": 4932450486,
+           "totalFiles": 158
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQ3fQ==",
+        "node": {
+         "id": "ds000133",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00001",
+          "hexsha": "e63f35a083684e11ef26031755d697a9c0c0cc81",
+          "created": "2018-07-16T16:20:42.000Z",
+          "description": {
+           "Name": "Modafinil alters intrinsic functional connectivity of the right posterior insula: a pharmacological resting state fMRI study",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26"
+           ],
+           "size": 2683742677,
+           "totalFiles": 420
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQ4fQ==",
+        "node": {
+         "id": "ds000210",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "00002",
+          "hexsha": "a6218349546d3ed007e9bf86c4a4c9c43cb9d938",
+          "created": "2018-07-16T16:43:03.000Z",
+          "description": {
+           "Name": "Multi-echo fMRI replication sample of autobiographical memory, prospection and theory of mind reasoning tasks",
+           "License": "PDDL",
+           "DatasetDOI": null
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"
+           ],
+           "size": 20568785431,
+           "totalFiles": 848
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjQ5fQ==",
+        "node": {
+         "id": "ds000217",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": null
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "50899e92375c0e990048125f6d84124bb676fd6b",
+          "created": "2020-09-24T23:20:25.000Z",
+          "description": {
+           "Name": "Route Learning",
+           "License": "CC0",
+           "DatasetDOI": "10.18112/openneuro.ds000217.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "Exp1s01",
+            "Exp1s02",
+            "Exp1s03",
+            "Exp1s04",
+            "Exp1s05",
+            "Exp1s06",
+            "Exp1s07",
+            "Exp1s08",
+            "Exp1s09",
+            "Exp1s10",
+            "Exp1s11",
+            "Exp1s12",
+            "Exp1s13",
+            "Exp1s14",
+            "Exp1s15",
+            "Exp1s16",
+            "Exp1s17",
+            "Exp1s18",
+            "Exp1s19",
+            "Exp1s20",
+            "Exp2s01",
+            "Exp2s02",
+            "Exp2s03",
+            "Exp2s04",
+            "Exp2s05",
+            "Exp2s06",
+            "Exp2s07",
+            "Exp2s08",
+            "Exp2s09",
+            "Exp2s10",
+            "Exp2s11",
+            "Exp2s12",
+            "Exp2s13",
+            "Exp2s14",
+            "Exp2s15",
+            "Exp2s16",
+            "Exp2s17",
+            "Exp2s18",
+            "Exp2s19",
+            "Exp2s20",
+            "Exp2s21"
+           ],
+           "size": 109726488609,
+           "totalFiles": 3095
+          }
+         }
+        }
+       }
+      ]
+     }
+    },
+    "extensions": {
+     "openneuro": {
+      "version": "5.10.1"
+     }
+    }
+   }
+  }
+ ]
+}

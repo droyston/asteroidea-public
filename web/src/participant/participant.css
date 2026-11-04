@@ -1,0 +1,307 @@
+/* The participant page. Colours are tokens only. */
+.participant {
+  max-width: 1280px;
+}
+.pp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: var(--space-5);
+  align-items: start;
+}
+.pp-main {
+  min-width: 0;
+}
+.pp-head h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: calc(var(--text-lg) * 1.8);
+  margin: var(--space-2) 0 var(--space-1);
+}
+.pp-demo {
+  margin: 0 0 var(--space-4);
+  color: var(--color-muted);
+}
+.pp-bridge-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.pp-bridge-part {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.pp-record {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: var(--space-3) var(--space-4);
+}
+.pp-record p {
+  margin: 0 0 var(--space-1);
+  overflow-wrap: anywhere;
+}
+.pp-record-id {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+.pp-record-mods {
+  font-weight: 600;
+}
+.pp-record-meta {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+.pp-bridge {
+  position: relative;
+  flex: 0 0 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pp-bridge-line {
+  display: block;
+  width: 100%;
+  border-top: 2px solid var(--color-ink);
+}
+.pp-bridge[data-ab-line="dashed"] .pp-bridge-line {
+  border-top-style: dashed;
+}
+.pp-bridge-status {
+  margin-top: var(--space-1);
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+.pp-bridge[data-ab-line="dashed"] .pp-bridge-status {
+  border-style: dashed;
+}
+.pp-bridge-text {
+  margin: var(--space-3) 0 var(--space-4);
+  max-width: 80ch;
+  line-height: 1.5;
+}
+.pp-bridge-text p {
+  margin: 0 0 var(--space-1);
+}
+.pp-timeline h3,
+.pp-regions h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+.pp-timeline {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: var(--space-3) var(--space-4);
+  margin: 0 0 var(--space-4);
+}
+.pp-lane {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-2);
+}
+.pp-lane-name {
+  font-size: var(--text-sm);
+}
+.pp-lane-track {
+  min-width: 0;
+}
+.pp-lane-svg {
+  display: block;
+  max-width: 100%;
+}
+.pp-lane-rule {
+  stroke: var(--color-hairline);
+  stroke-width: 1;
+}
+.pp-tick {
+  fill: var(--color-ink);
+}
+.pp-tick-label {
+  fill: var(--color-muted);
+  font-size: 11px;
+}
+.pp-axis {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--space-1) 0 0 calc(140px + var(--space-2));
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+.pp-none {
+  color: var(--color-muted);
+  margin: var(--space-1) 0;
+}
+.pp-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+.pp-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: var(--space-3) var(--space-4);
+  min-width: 0;
+}
+.pp-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+.pp-card h4 {
+  margin: 0;
+  font-size: var(--text-md);
+}
+.pp-card-where {
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  overflow-wrap: anywhere;
+}
+.pp-card-facts {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: var(--text-sm);
+}
+.pp-card-links {
+  margin: var(--space-2) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.pp-glyph {
+  display: flex;
+  gap: 2px;
+}
+.pp-glyph-cells {
+  flex: 1 1 auto;
+  width: 100%;
+  display: block;
+}
+.pp-glyph-edge {
+  flex: 0 0 4px;
+  display: block;
+}
+.pp-glyph-wait {
+  color: var(--color-muted);
+  margin: var(--space-2) 0;
+}
+.pp-caption {
+  margin: var(--space-1) 0 0;
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+.pp-planes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+.pp-plane {
+  margin: 0;
+}
+.pp-plane img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: var(--color-ink);
+}
+.pp-plane figcaption {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+.pp-plane-empty {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-1);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--color-surface-raised) 0 6px,
+    var(--color-border-subtle) 6px 8px
+  );
+}
+.pp-more {
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+}
+.pp-regions {
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-4);
+}
+.pp-regions ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pp-regions li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--space-2);
+  align-items: center;
+  padding: var(--space-1) 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+.pp-region-n {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+.pp-note {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+.participant .region-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+@media (max-width: 900px) {
+  .pp-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pp-regions {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .pp-bridge-row,
+  .pp-bridge-part {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .pp-bridge {
+    flex-basis: 48px;
+    flex-direction: row;
+    gap: var(--space-2);
+  }
+  .pp-bridge-line {
+    width: 0;
+    height: 32px;
+    border-top: 0;
+    border-left: 2px solid var(--color-ink);
+  }
+  .pp-bridge[data-ab-line="dashed"] .pp-bridge-line {
+    border-left-style: dashed;
+  }
+  .pp-lane {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pp-axis {
+    margin-left: 0;
+  }
+}

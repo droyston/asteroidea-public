@@ -1,0 +1,8 @@
+[[repos]]
+repo = "local"
+hooks = [
+  { id = "ruff-format", name = "ruff format", language = "system", entry = "uv run --frozen ruff format --check", types = ["python"] },
+  { id = "ruff-check", name = "ruff check", language = "system", entry = "uv run --frozen ruff check", types = ["python"] },
+  { id = "ty-check", name = "ty check", language = "system", entry = "uv run --frozen ty check", pass_filenames = false, types = ["python"] },
+  { id = "biome-ci", name = "biome ci (web)", language = "system", entry = "npm --prefix web run --silent lint", pass_filenames = false, files = "^web/", types_or = ["ts", "tsx", "json"] },
+]

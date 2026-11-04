@@ -1,0 +1,2272 @@
+{
+ "Resources": {
+  "CommitQueueDlqFF0C0311": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "ContentBasedDeduplication": false,
+    "FifoQueue": true,
+    "MessageRetentionPeriod": 1209600,
+    "QueueName": "asteroidea-commit-dlq.fifo",
+    "SqsManagedSseEnabled": true,
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CommitQueueDlq/Resource"
+   }
+  },
+  "CommitQueueDlqPolicy24445A90": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "CommitQueueDlqFF0C0311",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "CommitQueueDlqFF0C0311"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CommitQueueDlq/Policy/Resource"
+   }
+  },
+  "CommitQueue28D37136": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "ContentBasedDeduplication": false,
+    "FifoQueue": true,
+    "MessageRetentionPeriod": 345600,
+    "QueueName": "asteroidea-commit.fifo",
+    "RedrivePolicy": {
+     "deadLetterTargetArn": {
+      "Fn::GetAtt": [
+       "CommitQueueDlqFF0C0311",
+       "Arn"
+      ]
+     },
+     "maxReceiveCount": 2
+    },
+    "SqsManagedSseEnabled": true,
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "VisibilityTimeout": 720
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CommitQueue/Resource"
+   }
+  },
+  "CommitQueuePolicyE69870CA": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "CommitQueue28D37136",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "CommitQueue28D37136"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CommitQueue/Policy/Resource"
+   }
+  },
+  "ExtractQueueDlqF5CC32A2": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "ContentBasedDeduplication": false,
+    "FifoQueue": true,
+    "MessageRetentionPeriod": 1209600,
+    "QueueName": "asteroidea-extract-dlq.fifo",
+    "SqsManagedSseEnabled": true,
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ExtractQueueDlq/Resource"
+   }
+  },
+  "ExtractQueueDlqPolicy1B67892A": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "ExtractQueueDlqF5CC32A2",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "ExtractQueueDlqF5CC32A2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ExtractQueueDlq/Policy/Resource"
+   }
+  },
+  "ExtractQueue83C1B7E4": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "ContentBasedDeduplication": false,
+    "FifoQueue": true,
+    "MessageRetentionPeriod": 345600,
+    "QueueName": "asteroidea-extract.fifo",
+    "RedrivePolicy": {
+     "deadLetterTargetArn": {
+      "Fn::GetAtt": [
+       "ExtractQueueDlqF5CC32A2",
+       "Arn"
+      ]
+     },
+     "maxReceiveCount": 2
+    },
+    "SqsManagedSseEnabled": true,
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "VisibilityTimeout": 720
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ExtractQueue/Resource"
+   }
+  },
+  "ExtractQueuePolicyD4E95F66": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "ExtractQueue83C1B7E4",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "ExtractQueue83C1B7E4"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ExtractQueue/Policy/Resource"
+   }
+  },
+  "CommitFunctionServiceRole6B0B89CA": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-commit-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CommitFunction/ServiceRole/Resource"
+   }
+  },
+  "CommitFunctionServiceRoleDefaultPolicy59769417": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:ChangeMessageVisibility",
+        "sqs:GetQueueUrl",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "CommitQueue28D37136",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "sqs:SendMessage",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "ExtractQueue83C1B7E4",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012"
+       }
+      },
+      {
+       "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/landing/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Condition": {
+        "StringLike": {
+         "s3:prefix": [
+          "landing/*",
+          "raw/*"
+         ]
+        }
+       },
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:DeleteObjectVersion"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObjectRetention",
+        "s3:GetObjectRetention"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "glue:GetDatabase",
+        "glue:GetTable",
+        "glue:UpdateTable"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:catalog"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:database/asteroidea"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/assets"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/datasets"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:GetObject"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+          },
+          "/iceberg/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CommitFunctionServiceRoleDefaultPolicy59769417",
+    "Roles": [
+     {
+      "Ref": "CommitFunctionServiceRole6B0B89CA"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CommitFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "CommitFunctionB8C55CFC": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "ImageUri": {
+      "Fn::Sub": "000000000000.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-000000000000-us-east-1:73095d3def1879960c1e4038654ef68fb4e730897cdd31d41673adc65f8ff81c"
+     }
+    },
+    "Environment": {
+     "Variables": {
+      "SESSIONS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+      },
+      "RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      },
+      "EXTRACT_QUEUE_URL": {
+       "Ref": "ExtractQueue83C1B7E4"
+      },
+      "RAW_RETENTION_DAYS": "1"
+     }
+    },
+    "MemorySize": 2048,
+    "PackageType": "Image",
+    "Role": {
+     "Fn::GetAtt": [
+      "CommitFunctionServiceRole6B0B89CA",
+      "Arn"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 120
+   },
+   "DependsOn": [
+    "CommitFunctionServiceRoleDefaultPolicy59769417",
+    "CommitFunctionServiceRole6B0B89CA"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CommitFunction/Resource",
+    "aws:asset:path": "asset.73095d3def1879960c1e4038654ef68fb4e730897cdd31d41673adc65f8ff81c",
+    "aws:asset:dockerfile-path": "ingest/Dockerfile",
+    "aws:asset:property": "Code.ImageUri"
+   }
+  },
+  "CommitFunctionSqsEventSourceServicesStackIngestCommitQueue5DCD1A7D0F6BE0AA": {
+   "Type": "AWS::Lambda::EventSourceMapping",
+   "Properties": {
+    "BatchSize": 1,
+    "EventSourceArn": {
+     "Fn::GetAtt": [
+      "CommitQueue28D37136",
+      "Arn"
+     ]
+    },
+    "FunctionName": {
+     "Ref": "CommitFunctionB8C55CFC"
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CommitFunction/SqsEventSource:ServicesStackIngestCommitQueue5DCD1A7D/Resource"
+   }
+  },
+  "ImportFunctionServiceRole9FB8E005": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-import-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ImportFunction/ServiceRole/Resource"
+   }
+  },
+  "ImportFunctionServiceRoleDefaultPolicyECDA6B3D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": "arn:aws:s3:::openneuro.org/*"
+      },
+      {
+       "Action": "s3:PutObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/landing/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Condition": {
+        "StringLike": {
+         "s3:prefix": [
+          "landing/*",
+          "raw/*"
+         ]
+        }
+       },
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+       }
+      },
+      {
+       "Action": [
+        "dynamodb:PutItem",
+        "dynamodb:GetItem",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012"
+       }
+      },
+      {
+       "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttDatasetOwnersTable9D0BA8A1Arn4A11628C"
+       }
+      },
+      {
+       "Action": "sqs:SendMessage",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "CommitQueue28D37136",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "ImportFunctionServiceRoleDefaultPolicyECDA6B3D",
+    "Roles": [
+     {
+      "Ref": "ImportFunctionServiceRole9FB8E005"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ImportFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "ImportFunction12143F30": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "ImageUri": {
+      "Fn::Sub": "000000000000.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-000000000000-us-east-1:73095d3def1879960c1e4038654ef68fb4e730897cdd31d41673adc65f8ff81c"
+     }
+    },
+    "Environment": {
+     "Variables": {
+      "SESSIONS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+      },
+      "OWNERS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefDatasetOwnersTable9D0BA8A140B34BFC"
+      },
+      "RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      },
+      "COMMIT_QUEUE_URL": {
+       "Ref": "CommitQueue28D37136"
+      }
+     }
+    },
+    "ImageConfig": {
+     "Command": [
+      "asteroidea_ingest.importer.handler"
+     ]
+    },
+    "MemorySize": 1024,
+    "PackageType": "Image",
+    "Role": {
+     "Fn::GetAtt": [
+      "ImportFunctionServiceRole9FB8E005",
+      "Arn"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "ImportFunctionServiceRoleDefaultPolicyECDA6B3D",
+    "ImportFunctionServiceRole9FB8E005"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ImportFunction/Resource",
+    "aws:asset:path": "asset.73095d3def1879960c1e4038654ef68fb4e730897cdd31d41673adc65f8ff81c",
+    "aws:asset:dockerfile-path": "ingest/Dockerfile",
+    "aws:asset:property": "Code.ImageUri"
+   }
+  },
+  "ImportPlanFunctionServiceRole275C3F23": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-import-plan-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ImportPlanFunction/ServiceRole/Resource"
+   }
+  },
+  "ImportPlanFunctionServiceRoleDefaultPolicy01A22B22": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "ImportFunction12143F30",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "dynamodb:UpdateItem",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttImportRunsTable530F2D0DArn6331C955"
+       }
+      },
+      {
+       "Action": "glue:GetTable",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:catalog"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:database/asteroidea"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/assets"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+          },
+          "/iceberg/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "ImportPlanFunctionServiceRoleDefaultPolicy01A22B22",
+    "Roles": [
+     {
+      "Ref": "ImportPlanFunctionServiceRole275C3F23"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ImportPlanFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "ImportPlanFunction85F1E3FE": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "ImageUri": {
+      "Fn::Sub": "000000000000.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-000000000000-us-east-1:73095d3def1879960c1e4038654ef68fb4e730897cdd31d41673adc65f8ff81c"
+     }
+    },
+    "Environment": {
+     "Variables": {
+      "RUNS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefImportRunsTable530F2D0DDC992A1E"
+      },
+      "IMPORT_FUNCTION_NAME": {
+       "Ref": "ImportFunction12143F30"
+      }
+     }
+    },
+    "ImageConfig": {
+     "Command": [
+      "asteroidea_ingest.import_plan.handler"
+     ]
+    },
+    "MemorySize": 1024,
+    "PackageType": "Image",
+    "Role": {
+     "Fn::GetAtt": [
+      "ImportPlanFunctionServiceRole275C3F23",
+      "Arn"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 300
+   },
+   "DependsOn": [
+    "ImportPlanFunctionServiceRoleDefaultPolicy01A22B22",
+    "ImportPlanFunctionServiceRole275C3F23"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ImportPlanFunction/Resource",
+    "aws:asset:path": "asset.73095d3def1879960c1e4038654ef68fb4e730897cdd31d41673adc65f8ff81c",
+    "aws:asset:dockerfile-path": "ingest/Dockerfile",
+    "aws:asset:property": "Code.ImageUri"
+   }
+  },
+  "LfpBuildQueueDlq0DFF8F62": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "MessageRetentionPeriod": 1209600,
+    "QueueName": "asteroidea-lfp-build-dlq",
+    "SqsManagedSseEnabled": true,
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/LfpBuildQueueDlq/Resource"
+   }
+  },
+  "LfpBuildQueueDlqPolicy95043F93": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "LfpBuildQueueDlq0DFF8F62",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "LfpBuildQueueDlq0DFF8F62"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/LfpBuildQueueDlq/Policy/Resource"
+   }
+  },
+  "LfpBuildQueue2093569C": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "MessageRetentionPeriod": 345600,
+    "QueueName": "asteroidea-lfp-build",
+    "RedrivePolicy": {
+     "deadLetterTargetArn": {
+      "Fn::GetAtt": [
+       "LfpBuildQueueDlq0DFF8F62",
+       "Arn"
+      ]
+     },
+     "maxReceiveCount": 2
+    },
+    "SqsManagedSseEnabled": true,
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "VisibilityTimeout": 5400
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/LfpBuildQueue/Resource"
+   }
+  },
+  "LfpBuildQueuePolicy3F851CD0": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "LfpBuildQueue2093569C",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "LfpBuildQueue2093569C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/LfpBuildQueue/Policy/Resource"
+   }
+  },
+  "ExtractFunctionServiceRole4660E294": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-extract-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ExtractFunction/ServiceRole/Resource"
+   }
+  },
+  "ExtractFunctionServiceRoleDefaultPolicy39BDF15D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:ChangeMessageVisibility",
+        "sqs:GetQueueUrl",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "ExtractQueue83C1B7E4",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Condition": {
+        "StringLike": {
+         "s3:prefix": [
+          "raw/*"
+         ]
+        }
+       },
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+       }
+      },
+      {
+       "Action": [
+        "glue:GetDatabase",
+        "glue:GetTable",
+        "glue:UpdateTable"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:catalog"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:database/asteroidea"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/subjects"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/sessions"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/asset_headers"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/series"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/electrodes"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/units"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/intervals"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/unit_spikes"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/events"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:GetObject"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+          },
+          "/iceberg/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+       }
+      },
+      {
+       "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012"
+       }
+      },
+      {
+       "Action": "sqs:SendMessage",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "LfpBuildQueue2093569C",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttDerivedBucket81C7992CArnF73A8B22"
+          },
+          "/rows/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Condition": {
+        "StringLike": {
+         "s3:prefix": [
+          "rows/*"
+         ]
+        }
+       },
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttDerivedBucket81C7992CArnF73A8B22"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "ExtractFunctionServiceRoleDefaultPolicy39BDF15D",
+    "Roles": [
+     {
+      "Ref": "ExtractFunctionServiceRole4660E294"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ExtractFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "ExtractFunctionABD5F5B5": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "ImageUri": {
+      "Fn::Sub": "000000000000.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-000000000000-us-east-1:04a45187102e817890eee04b0269d3003880b412e9eec8126c663a0e339bcc0d"
+     }
+    },
+    "Environment": {
+     "Variables": {
+      "SESSIONS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+      },
+      "RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      },
+      "LFP_BUILD_QUEUE_URL": {
+       "Ref": "LfpBuildQueue2093569C"
+      },
+      "DERIVED_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefDerivedBucket81C7992C310D8D2B"
+      }
+     }
+    },
+    "MemorySize": 2048,
+    "PackageType": "Image",
+    "Role": {
+     "Fn::GetAtt": [
+      "ExtractFunctionServiceRole4660E294",
+      "Arn"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 120
+   },
+   "DependsOn": [
+    "ExtractFunctionServiceRoleDefaultPolicy39BDF15D",
+    "ExtractFunctionServiceRole4660E294"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ExtractFunction/Resource",
+    "aws:asset:path": "asset.04a45187102e817890eee04b0269d3003880b412e9eec8126c663a0e339bcc0d",
+    "aws:asset:dockerfile-path": "ingest/Dockerfile.extract",
+    "aws:asset:property": "Code.ImageUri"
+   }
+  },
+  "ExtractFunctionSqsEventSourceServicesStackIngestExtractQueue804218B298C05138": {
+   "Type": "AWS::Lambda::EventSourceMapping",
+   "Properties": {
+    "BatchSize": 1,
+    "EventSourceArn": {
+     "Fn::GetAtt": [
+      "ExtractQueue83C1B7E4",
+      "Arn"
+     ]
+    },
+    "FunctionName": {
+     "Ref": "ExtractFunctionABD5F5B5"
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ExtractFunction/SqsEventSource:ServicesStackIngestExtractQueue804218B2/Resource"
+   }
+  },
+  "LfpBuildFunctionServiceRoleF39737CF": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-lfp-build-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/LfpBuildFunction/ServiceRole/Resource"
+   }
+  },
+  "LfpBuildFunctionServiceRoleDefaultPolicyB8E19197": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:ChangeMessageVisibility",
+        "sqs:GetQueueUrl",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "LfpBuildQueue2093569C",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:PutObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttDerivedBucket81C7992CArnF73A8B22"
+          },
+          "/lfp/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LfpBuildFunctionServiceRoleDefaultPolicyB8E19197",
+    "Roles": [
+     {
+      "Ref": "LfpBuildFunctionServiceRoleF39737CF"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/LfpBuildFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LfpBuildFunctionD0A00B2B": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "ImageUri": {
+      "Fn::Sub": "000000000000.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-000000000000-us-east-1:f93a7911dbcbfe208beecd8023e4e354fbd0e286210c110746591579aa189efe"
+     }
+    },
+    "Environment": {
+     "Variables": {
+      "RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      },
+      "DERIVED_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefDerivedBucket81C7992C310D8D2B"
+      }
+     }
+    },
+    "ImageConfig": {
+     "Command": [
+      "asteroidea_ingest.lfp_build.handler"
+     ]
+    },
+    "MemorySize": 1024,
+    "PackageType": "Image",
+    "Role": {
+     "Fn::GetAtt": [
+      "LfpBuildFunctionServiceRoleF39737CF",
+      "Arn"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "LfpBuildFunctionServiceRoleDefaultPolicyB8E19197",
+    "LfpBuildFunctionServiceRoleF39737CF"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/LfpBuildFunction/Resource",
+    "aws:asset:path": "asset.f93a7911dbcbfe208beecd8023e4e354fbd0e286210c110746591579aa189efe",
+    "aws:asset:dockerfile-path": "ingest/Dockerfile.compute",
+    "aws:asset:property": "Code.ImageUri"
+   }
+  },
+  "LfpBuildFunctionSqsEventSourceServicesStackIngestLfpBuildQueueC32FAADA0A4ECC86": {
+   "Type": "AWS::Lambda::EventSourceMapping",
+   "Properties": {
+    "BatchSize": 1,
+    "EventSourceArn": {
+     "Fn::GetAtt": [
+      "LfpBuildQueue2093569C",
+      "Arn"
+     ]
+    },
+    "FunctionName": {
+     "Ref": "LfpBuildFunctionD0A00B2B"
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/LfpBuildFunction/SqsEventSource:ServicesStackIngestLfpBuildQueueC32FAADA/Resource"
+   }
+  },
+  "DeriveFunctionServiceRole89CF87BA": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "RoleName": "asteroidea-derive-role",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/DeriveFunction/ServiceRole/Resource"
+   }
+  },
+  "DeriveFunctionServiceRoleDefaultPolicy2FA4FB9A": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Condition": {
+        "StringLike": {
+         "s3:prefix": [
+          "raw/*"
+         ]
+        }
+       },
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+       }
+      },
+      {
+       "Action": "s3:PutObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttDerivedBucket81C7992CArnF73A8B22"
+          },
+          "/rows/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "dynamodb:UpdateItem",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "DataStack:ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "DeriveFunctionServiceRoleDefaultPolicy2FA4FB9A",
+    "Roles": [
+     {
+      "Ref": "DeriveFunctionServiceRole89CF87BA"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/DeriveFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "DeriveFunctionE8D37858": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "ImageUri": {
+      "Fn::Sub": "000000000000.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-000000000000-us-east-1:04a45187102e817890eee04b0269d3003880b412e9eec8126c663a0e339bcc0d"
+     }
+    },
+    "Environment": {
+     "Variables": {
+      "SESSIONS_TABLE": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+      },
+      "RAW_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+      },
+      "DERIVED_BUCKET": {
+       "Fn::ImportValue": "DataStack:ExportsOutputRefDerivedBucket81C7992C310D8D2B"
+      }
+     }
+    },
+    "ImageConfig": {
+     "Command": [
+      "asteroidea_ingest.extract.derive.lambda_handler"
+     ]
+    },
+    "MemorySize": 2048,
+    "PackageType": "Image",
+    "Role": {
+     "Fn::GetAtt": [
+      "DeriveFunctionServiceRole89CF87BA",
+      "Arn"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "Timeout": 300
+   },
+   "DependsOn": [
+    "DeriveFunctionServiceRoleDefaultPolicy2FA4FB9A",
+    "DeriveFunctionServiceRole89CF87BA"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/DeriveFunction/Resource",
+    "aws:asset:path": "asset.04a45187102e817890eee04b0269d3003880b412e9eec8126c663a0e339bcc0d",
+    "aws:asset:dockerfile-path": "ingest/Dockerfile.extract",
+    "aws:asset:property": "Code.ImageUri"
+   }
+  },
+  "ReextractLogs5FC394B2": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "RetentionInDays": 30,
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ReextractLogs/Resource"
+   }
+  },
+  "ReextractStateMachineRoleC32E92A7": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Condition": {
+        "ArnLike": {
+         "aws:SourceArn": {
+          "Fn::Join": [
+           "",
+           [
+            "arn:",
+            {
+             "Ref": "AWS::Partition"
+            },
+            ":states:us-east-1:000000000000:stateMachine:*"
+           ]
+          ]
+         }
+        },
+        "StringEquals": {
+         "aws:SourceAccount": "000000000000"
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "states.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ReextractStateMachine/Role/Resource"
+   }
+  },
+  "ReextractStateMachineRoleDefaultPolicy57F7D9BA": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "DeriveFunctionE8D37858",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DeriveFunctionE8D37858",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "sqs:SendMessage",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "ExtractQueue83C1B7E4",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "dynamodb:UpdateItem",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":dynamodb:us-east-1:000000000000:table/",
+          {
+           "Fn::ImportValue": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "logs:CreateLogDelivery",
+        "logs:GetLogDelivery",
+        "logs:UpdateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:PutResourcePolicy",
+        "logs:DescribeResourcePolicies",
+        "logs:DescribeLogGroups"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      },
+      {
+       "Action": [
+        "xray:PutTraceSegments",
+        "xray:PutTelemetryRecords",
+        "xray:GetSamplingRules",
+        "xray:GetSamplingTargets"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "ReextractStateMachineRoleDefaultPolicy57F7D9BA",
+    "Roles": [
+     {
+      "Ref": "ReextractStateMachineRoleC32E92A7"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ReextractStateMachine/Role/DefaultPolicy/Resource"
+   }
+  },
+  "ReextractStateMachineF18254EE": {
+   "Type": "AWS::StepFunctions::StateMachine",
+   "Properties": {
+    "DefinitionString": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"StartAt\":\"PerAsset\",\"States\":{\"PerAsset\":{\"Type\":\"Map\",\"ResultPath\":null,\"End\":true,\"ItemsPath\":\"$.assets\",\"ItemProcessor\":{\"ProcessorConfig\":{\"Mode\":\"INLINE\"},\"StartAt\":\"Derive\",\"States\":{\"Derive\":{\"Next\":\"Derived?\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ClientExecutionTimeoutException\",\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2},{\"ErrorEquals\":[\"Lambda.TooManyRequestsException\"],\"IntervalSeconds\":5,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"ResultPath\":\"$.error\",\"Next\":\"RecordFailed\"}],\"Type\":\"Task\",\"ResultPath\":\"$.derive\",\"Resource\":\"",
+       {
+        "Fn::GetAtt": [
+         "DeriveFunctionE8D37858",
+         "Arn"
+        ]
+       },
+       "\"},\"Derived?\":{\"Type\":\"Choice\",\"Choices\":[{\"Variable\":\"$.derive.outcome\",\"StringEquals\":\"DERIVED\",\"Next\":\"SendPointer\"}],\"Default\":\"DeriveRecordedFailure\"},\"DeriveRecordedFailure\":{\"Type\":\"Pass\",\"End\":true},\"SendPointer\":{\"End\":true,\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"ResultPath\":\"$.error\",\"Next\":\"RecordFailed\"}],\"Type\":\"Task\",\"ResultPath\":null,\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::sqs:sendMessage\",\"Parameters\":{\"QueueUrl\":\"",
+       {
+        "Ref": "ExtractQueue83C1B7E4"
+       },
+       "\",\"MessageBody\":{\"asset_id.$\":\"$.derive.asset_id\",\"run_id.$\":\"$.derive.run_id\",\"manifest_key.$\":\"$.derive.manifest_key\"},\"MessageDeduplicationId.$\":\"States.Format('{}:p', $.session_id)\",\"MessageGroupId\":\"catalog\"}},\"RecordFailed\":{\"End\":true,\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"ResultPath\":\"$.lost\",\"Next\":\"RecordFailedLost\"}],\"Type\":\"Task\",\"ResultPath\":null,\"Resource\":\"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":states:::dynamodb:updateItem\",\"Parameters\":{\"Key\":{\"session_id\":{\"S.$\":\"$.session_id\"}},\"TableName\":\"",
+       {
+        "Fn::ImportValue": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+       },
+       "\",\"ConditionExpression\":\"attribute_exists(#sid) AND #state = :queued\",\"ExpressionAttributeNames\":{\"#sid\":\"session_id\",\"#state\":\"reextract_state\",\"#error\":\"reextract_error\",\"#tables\":\"tables_replaced\"},\"ExpressionAttributeValues\":{\":failed\":{\"S\":\"FAILED\"},\":queued\":{\"S\":\"QUEUED\"},\":error\":{\"M\":{\"class\":{\"S.$\":\"$.error.Error\"},\"message\":{\"S.$\":\"$.error.Cause\"},\"tables_replaced\":{\"L\":[]}}},\":none\":{\"L\":[]}},\"UpdateExpression\":\"SET #state = :failed, #error = :error, #tables = :none\"}},\"RecordFailedLost\":{\"Type\":\"Pass\",\"End\":true}}},\"MaxConcurrency\":4}},\"TimeoutSeconds\":21600}"
+      ]
+     ]
+    },
+    "LoggingConfiguration": {
+     "Destinations": [
+      {
+       "CloudWatchLogsLogGroup": {
+        "LogGroupArn": {
+         "Fn::GetAtt": [
+          "ReextractLogs5FC394B2",
+          "Arn"
+         ]
+        }
+       }
+      }
+     ],
+     "IncludeExecutionData": true,
+     "Level": "ALL"
+    },
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "ReextractStateMachineRoleC32E92A7",
+      "Arn"
+     ]
+    },
+    "StateMachineName": "asteroidea-reextract",
+    "StateMachineType": "STANDARD",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "TracingConfiguration": {
+     "Enabled": true
+    }
+   },
+   "DependsOn": [
+    "ReextractStateMachineRoleDefaultPolicy57F7D9BA",
+    "ReextractStateMachineRoleC32E92A7"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/ReextractStateMachine/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/22Q0U/CMBDG/xbeyzmRRF8R1JAwgyz6Ss7uGHVbr+w6CGn2v5sVQUx86X33fe31145gdD+GZIAHGeq8HFbmE8Iriac886hLhQdZB9kJhLeWWlLTjT2JuC65Mvp4MU9tpyqsP3OEMGNdUjOvsaDn1mpv2PZ7L/ppT9Zn3DaaUnTO2KKP/3HPJx5RqFMGawgrriJNrL8cZwTSzRpFyAtcUUx6p89gRY7FeG6O/Uwlntzm5xJZe5RSIMyOFmt+dzl6mnuq1SK+a273XJLKdpKRzVMSwYK6vyMgLFFETbdsNKkUnco8ekpRb42N3Nd9pyouBMKCi5eGW9fnZ911KlJnHgtji04tj37L9uYObsfwMPgSY4ZNa72pCVanqhJIIBm4+BUfWJkceyiYHCTjqo2A334rvM75AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ServicesStackIngestCommitQueue6CAF0EC7Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "CommitQueue28D37136",
+     "Arn"
+    ]
+   }
+  },
+  "ServicesStackIngestCommitQueue6CAF0EC7Ref": {
+   "Value": {
+    "Ref": "CommitQueue28D37136"
+   }
+  },
+  "ServicesStackIngestImportPlanFunctionD13ABA49Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ImportPlanFunction85F1E3FE",
+     "Arn"
+    ]
+   }
+  },
+  "ServicesStackIngestImportPlanFunctionD13ABA49Ref": {
+   "Value": {
+    "Ref": "ImportPlanFunction85F1E3FE"
+   }
+  },
+  "ServicesStackIngestCommitFunctionE15D4D76Ref": {
+   "Value": {
+    "Ref": "CommitFunctionB8C55CFC"
+   }
+  },
+  "ServicesStackIngestImportFunctionC36CFE3BRef": {
+   "Value": {
+    "Ref": "ImportFunction12143F30"
+   }
+  },
+  "ServicesStackIngestExtractQueueC6E9D074Ref": {
+   "Value": {
+    "Ref": "ExtractQueue83C1B7E4"
+   }
+  },
+  "ServicesStackIngestReextractStateMachine4E82DD0ARef": {
+   "Value": {
+    "Ref": "ReextractStateMachineF18254EE"
+   }
+  },
+  "ServicesStackIngestCommitQueueDlqE29F95BCRef": {
+   "Value": {
+    "Ref": "CommitQueueDlqFF0C0311"
+   }
+  },
+  "ServicesStackIngestExtractQueueDlqE6C5FEC6Ref": {
+   "Value": {
+    "Ref": "ExtractQueueDlqF5CC32A2"
+   }
+  },
+  "ServicesStackIngestLfpBuildQueue4496E3C9Ref": {
+   "Value": {
+    "Ref": "LfpBuildQueue2093569C"
+   }
+  },
+  "ServicesStackIngestLfpBuildQueueDlqE46D1CE7Ref": {
+   "Value": {
+    "Ref": "LfpBuildQueueDlq0DFF8F62"
+   }
+  },
+  "ServicesStackIngestLfpBuildFunctionA5201EC9Ref": {
+   "Value": {
+    "Ref": "LfpBuildFunctionD0A00B2B"
+   }
+  }
+ }
+}

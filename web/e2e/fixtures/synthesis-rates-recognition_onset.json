@@ -1,0 +1,506 @@
+{
+  "edges": [-0.5, -0.25, 0.0, 0.25, 0.5, 0.75, 1.0],
+  "units": [
+    {
+      "unit_index": 0,
+      "rate_hz": [4.0, 5.5, 1.5, 3.0, 4.5, 6.0]
+    },
+    {
+      "unit_index": 1,
+      "rate_hz": [2.0, 3.5, 5.0, 1.0, 2.5, 4.0]
+    },
+    {
+      "unit_index": 2,
+      "rate_hz": [5.5, 1.5, 3.0, 4.5, 6.0, 2.0]
+    },
+    {
+      "unit_index": 3,
+      "rate_hz": [3.5, 5.0, 1.0, 2.5, 4.0, 5.5]
+    },
+    {
+      "unit_index": 4,
+      "rate_hz": [1.5, 3.0, 4.5, 6.0, 2.0, 3.5]
+    },
+    {
+      "unit_index": 5,
+      "rate_hz": [5.0, 1.0, 2.5, 4.0, 5.5, 1.5]
+    },
+    {
+      "unit_index": 6,
+      "rate_hz": [3.0, 4.5, 6.0, 2.0, 3.5, 5.0]
+    },
+    {
+      "unit_index": 7,
+      "rate_hz": [1.0, 2.5, 4.0, 5.5, 1.5, 3.0]
+    },
+    {
+      "unit_index": 8,
+      "rate_hz": [4.5, 6.0, 2.0, 3.5, 5.0, 1.0]
+    },
+    {
+      "unit_index": 9,
+      "rate_hz": [2.5, 4.0, 5.5, 1.5, 3.0, 4.5]
+    },
+    {
+      "unit_index": 10,
+      "rate_hz": [6.0, 2.0, 3.5, 5.0, 1.0, 2.5]
+    },
+    {
+      "unit_index": 11,
+      "rate_hz": [4.0, 5.5, 1.5, 3.0, 4.5, 6.0]
+    },
+    {
+      "unit_index": 12,
+      "rate_hz": [2.0, 3.5, 5.0, 1.0, 2.5, 4.0]
+    },
+    {
+      "unit_index": 13,
+      "rate_hz": [5.5, 1.5, 3.0, 4.5, 6.0, 2.0]
+    },
+    {
+      "unit_index": 14,
+      "rate_hz": [3.5, 5.0, 1.0, 2.5, 4.0, 5.5]
+    },
+    {
+      "unit_index": 15,
+      "rate_hz": [1.5, 3.0, 4.5, 6.0, 2.0, 3.5]
+    },
+    {
+      "unit_index": 16,
+      "rate_hz": [5.0, 1.0, 2.5, 4.0, 5.5, 1.5]
+    },
+    {
+      "unit_index": 17,
+      "rate_hz": [3.0, 4.5, 6.0, 2.0, 3.5, 5.0]
+    },
+    {
+      "unit_index": 18,
+      "rate_hz": [1.0, 2.5, 4.0, 5.5, 1.5, 3.0]
+    },
+    {
+      "unit_index": 19,
+      "rate_hz": [4.5, 6.0, 2.0, 3.5, 5.0, 1.0]
+    },
+    {
+      "unit_index": 20,
+      "rate_hz": [2.5, 4.0, 5.5, 1.5, 3.0, 4.5]
+    },
+    {
+      "unit_index": 21,
+      "rate_hz": [6.0, 2.0, 3.5, 5.0, 1.0, 2.5]
+    },
+    {
+      "unit_index": 22,
+      "rate_hz": [4.0, 5.5, 1.5, 3.0, 4.5, 6.0]
+    },
+    {
+      "unit_index": 23,
+      "rate_hz": [2.0, 3.5, 5.0, 1.0, 2.5, 4.0]
+    },
+    {
+      "unit_index": 24,
+      "rate_hz": [5.5, 1.5, 3.0, 4.5, 6.0, 2.0]
+    },
+    {
+      "unit_index": 25,
+      "rate_hz": [3.5, 5.0, 1.0, 2.5, 4.0, 5.5]
+    },
+    {
+      "unit_index": 26,
+      "rate_hz": [1.5, 3.0, 4.5, 6.0, 2.0, 3.5]
+    },
+    {
+      "unit_index": 27,
+      "rate_hz": [5.0, 1.0, 2.5, 4.0, 5.5, 1.5]
+    },
+    {
+      "unit_index": 28,
+      "rate_hz": [3.0, 4.5, 6.0, 2.0, 3.5, 5.0]
+    },
+    {
+      "unit_index": 29,
+      "rate_hz": [1.0, 2.5, 4.0, 5.5, 1.5, 3.0]
+    },
+    {
+      "unit_index": 30,
+      "rate_hz": [4.5, 6.0, 2.0, 3.5, 5.0, 1.0]
+    },
+    {
+      "unit_index": 31,
+      "rate_hz": [2.5, 4.0, 5.5, 1.5, 3.0, 4.5]
+    },
+    {
+      "unit_index": 32,
+      "rate_hz": [6.0, 2.0, 3.5, 5.0, 1.0, 2.5]
+    },
+    {
+      "unit_index": 33,
+      "rate_hz": [4.0, 5.5, 1.5, 3.0, 4.5, 6.0]
+    },
+    {
+      "unit_index": 34,
+      "rate_hz": [2.0, 3.5, 5.0, 1.0, 2.5, 4.0]
+    },
+    {
+      "unit_index": 35,
+      "rate_hz": [5.5, 1.5, 3.0, 4.5, 6.0, 2.0]
+    },
+    {
+      "unit_index": 36,
+      "rate_hz": [3.5, 5.0, 1.0, 2.5, 4.0, 5.5]
+    },
+    {
+      "unit_index": 37,
+      "rate_hz": [1.5, 3.0, 4.5, 6.0, 2.0, 3.5]
+    },
+    {
+      "unit_index": 38,
+      "rate_hz": [5.0, 1.0, 2.5, 4.0, 5.5, 1.5]
+    },
+    {
+      "unit_index": 39,
+      "rate_hz": [3.0, 4.5, 6.0, 2.0, 3.5, 5.0]
+    },
+    {
+      "unit_index": 40,
+      "rate_hz": [1.0, 2.5, 4.0, 5.5, 1.5, 3.0]
+    },
+    {
+      "unit_index": 41,
+      "rate_hz": [4.5, 6.0, 2.0, 3.5, 5.0, 1.0]
+    },
+    {
+      "unit_index": 42,
+      "rate_hz": [2.5, 4.0, 5.5, 1.5, 3.0, 4.5]
+    },
+    {
+      "unit_index": 43,
+      "rate_hz": [6.0, 2.0, 3.5, 5.0, 1.0, 2.5]
+    }
+  ],
+  "n_trials": 40,
+  "align": "event:recognition_onset",
+  "source": "catalog",
+  "query_ms": 800,
+  "compute_ms": 120,
+  "defaults": {
+    "version": "defaults-1",
+    "block": "dandi-000623",
+    "source": "Keles et al. 2024, Sci Data 11:214; release code at commit 8c35290b",
+    "baseline": "none",
+    "bin_s": 0.25,
+    "pre_s": 0.5,
+    "post_s": 1.0,
+    "response_window_s": [0.0, 1.0]
+  },
+  "responsive": [
+    {
+      "unit_index": 0,
+      "location": "amygdala left",
+      "p": 0.188,
+      "q": 0.2632,
+      "screened": false
+    },
+    {
+      "unit_index": 1,
+      "location": "amygdala right",
+      "p": 0.225,
+      "q": 0.315,
+      "screened": false
+    },
+    {
+      "unit_index": 2,
+      "location": "hippocampus left",
+      "p": 0.262,
+      "q": 0.3668,
+      "screened": false
+    },
+    {
+      "unit_index": 3,
+      "location": "hippocampus right",
+      "p": 0.299,
+      "q": 0.4186,
+      "screened": false
+    },
+    {
+      "unit_index": 4,
+      "location": "presupplementary motor area",
+      "p": 0.336,
+      "q": 0.4704,
+      "screened": false
+    },
+    {
+      "unit_index": 5,
+      "location": "ventromedial prefrontal cortex",
+      "p": 0.373,
+      "q": 0.5222,
+      "screened": false
+    },
+    {
+      "unit_index": 6,
+      "location": "amygdala left",
+      "p": 0.41,
+      "q": 0.574,
+      "screened": false
+    },
+    {
+      "unit_index": 7,
+      "location": "amygdala right",
+      "p": 0.447,
+      "q": 0.6258,
+      "screened": false
+    },
+    {
+      "unit_index": 8,
+      "location": "hippocampus left",
+      "p": 0.484,
+      "q": 0.6776,
+      "screened": false
+    },
+    {
+      "unit_index": 9,
+      "location": "hippocampus right",
+      "p": 0.521,
+      "q": 0.7294,
+      "screened": false
+    },
+    {
+      "unit_index": 10,
+      "location": "presupplementary motor area",
+      "p": 0.558,
+      "q": 0.7812,
+      "screened": false
+    },
+    {
+      "unit_index": 11,
+      "location": "ventromedial prefrontal cortex",
+      "p": 0.595,
+      "q": 0.833,
+      "screened": false
+    },
+    {
+      "unit_index": 12,
+      "location": "amygdala left",
+      "p": 0.632,
+      "q": 0.8848,
+      "screened": false
+    },
+    {
+      "unit_index": 13,
+      "location": "amygdala right",
+      "p": 0.669,
+      "q": 0.9366,
+      "screened": false
+    },
+    {
+      "unit_index": 14,
+      "location": "hippocampus left",
+      "p": 0.706,
+      "q": 0.9884,
+      "screened": false
+    },
+    {
+      "unit_index": 15,
+      "location": "hippocampus right",
+      "p": 0.743,
+      "q": 1.0,
+      "screened": false
+    },
+    {
+      "unit_index": 16,
+      "location": "presupplementary motor area",
+      "p": 0.78,
+      "q": 1.0,
+      "screened": false
+    },
+    {
+      "unit_index": 17,
+      "location": "ventromedial prefrontal cortex",
+      "p": 0.817,
+      "q": 1.0,
+      "screened": false
+    },
+    {
+      "unit_index": 18,
+      "location": "amygdala left",
+      "p": 0.854,
+      "q": 1.0,
+      "screened": false
+    },
+    {
+      "unit_index": 19,
+      "location": "amygdala right",
+      "p": 0.891,
+      "q": 1.0,
+      "screened": false
+    },
+    {
+      "unit_index": 20,
+      "location": "hippocampus left",
+      "p": 0.928,
+      "q": 1.0,
+      "screened": false
+    },
+    {
+      "unit_index": 21,
+      "location": "hippocampus right",
+      "p": 0.965,
+      "q": 1.0,
+      "screened": false
+    },
+    {
+      "unit_index": 22,
+      "location": "presupplementary motor area",
+      "p": 0.005,
+      "q": 0.007,
+      "screened": true
+    },
+    {
+      "unit_index": 23,
+      "location": "ventromedial prefrontal cortex",
+      "p": 0.042,
+      "q": 0.0588,
+      "screened": true
+    },
+    {
+      "unit_index": 24,
+      "location": "amygdala left",
+      "p": 0.079,
+      "q": 0.1106,
+      "screened": false
+    },
+    {
+      "unit_index": 25,
+      "location": "amygdala right",
+      "p": 0.116,
+      "q": 0.1624,
+      "screened": false
+    },
+    {
+      "unit_index": 26,
+      "location": "hippocampus left",
+      "p": 0.153,
+      "q": 0.2142,
+      "screened": false
+    },
+    {
+      "unit_index": 27,
+      "location": "hippocampus right",
+      "p": 0.19,
+      "q": 0.266,
+      "screened": false
+    },
+    {
+      "unit_index": 28,
+      "location": "presupplementary motor area",
+      "p": 0.227,
+      "q": 0.3178,
+      "screened": false
+    },
+    {
+      "unit_index": 29,
+      "location": "ventromedial prefrontal cortex",
+      "p": 0.264,
+      "q": 0.3696,
+      "screened": false
+    },
+    {
+      "unit_index": 30,
+      "location": "amygdala left",
+      "p": 0.301,
+      "q": 0.4214,
+      "screened": false
+    },
+    {
+      "unit_index": 31,
+      "location": "amygdala right",
+      "p": 0.338,
+      "q": 0.4732,
+      "screened": false
+    },
+    {
+      "unit_index": 32,
+      "location": "hippocampus left",
+      "p": 0.375,
+      "q": 0.525,
+      "screened": false
+    },
+    {
+      "unit_index": 33,
+      "location": "hippocampus right",
+      "p": 0.412,
+      "q": 0.5768,
+      "screened": false
+    },
+    {
+      "unit_index": 34,
+      "location": "presupplementary motor area",
+      "p": 0.449,
+      "q": 0.6286,
+      "screened": false
+    },
+    {
+      "unit_index": 35,
+      "location": "ventromedial prefrontal cortex",
+      "p": 0.486,
+      "q": 0.6804,
+      "screened": false
+    },
+    {
+      "unit_index": 36,
+      "location": "amygdala left",
+      "p": 0.523,
+      "q": 0.7322,
+      "screened": false
+    },
+    {
+      "unit_index": 37,
+      "location": "amygdala right",
+      "p": 0.56,
+      "q": 0.784,
+      "screened": false
+    },
+    {
+      "unit_index": 38,
+      "location": "hippocampus left",
+      "p": 0.597,
+      "q": 0.8358,
+      "screened": false
+    },
+    {
+      "unit_index": 39,
+      "location": "hippocampus right",
+      "p": 0.634,
+      "q": 0.8876,
+      "screened": false
+    },
+    {
+      "unit_index": 40,
+      "location": "presupplementary motor area",
+      "p": 0.671,
+      "q": 0.9394,
+      "screened": false
+    },
+    {
+      "unit_index": 41,
+      "location": "ventromedial prefrontal cortex",
+      "p": 0.708,
+      "q": 0.9912,
+      "screened": false
+    },
+    {
+      "unit_index": 42,
+      "location": "amygdala left",
+      "p": 0.745,
+      "q": 1.0,
+      "screened": false
+    },
+    {
+      "unit_index": 43,
+      "location": "amygdala right",
+      "p": 0.782,
+      "q": 1.0,
+      "screened": false
+    }
+  ]
+}

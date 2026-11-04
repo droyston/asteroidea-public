@@ -1,0 +1,733 @@
+# API reference
+
+This page describes the HTTP API of the platform: every route, who may call it, what it takes, what it
+returns and how it refuses. The route table is generated from the route list in the code. The text
+under each route is written by hand, and a test checks that every route has a section.
+
+## Calling the API
+
+The API is one HTTP API behind a Cognito JWT authorizer. Send a Cognito token for a researcher in the
+`Authorization` header (`Authorization: Bearer <token>`). Bodies are JSON with
+`Content-Type: application/json`. A request without a valid token gets `401` from the authorizer before
+any platform code runs. A request to a path that is not routed gets `404` from the API gateway.
+
+Each route needs a Cognito group. Every route needs `researchers` except the import routes, which need
+`curators`. A curator is also a researcher. A caller outside the group gets `403`.
+
+Times are seconds unless a name says otherwise. Sizes are bytes. A path parameter named `{id}` is the
+identifier that the creating call returned.
+
+## Error body
+
+Every refusal that the platform code produces has the same JSON body:
+
+```json
+{"error": "<code>", "detail": "<sentence>"}
+```
+
+`error` is a short stable code. A client branches on it. `detail` is a sentence for a person. Its text
+can change; the code does not. The HTTP status of the response is the status in the tables below.
+
+The API gateway answers a few cases itself, with the body `{"message": "<text>"}` instead: `401` from the
+authorizer, `404` for a path that is not routed, `500` when a function fails to start and `503` when a
+route runs past the 30 second integration limit. Branch on the status for these.
+
+### Default codes
+
+A refusal that has no code of its own takes the code of its status:
+
+| Status | `error` |
+|---|---|
+| 400 | `invalid_request` |
+| 403 | `forbidden` |
+| 404 | `not_found` |
+| 409 | `conflict` |
+| 410 | `gone` |
+| 413 | `too_large` |
+| 422 | `unprocessable` |
+| 500 | `internal_error` |
+| 502 | `upstream_failed` |
+| 503 | `unavailable` |
+
+### Codes of their own
+
+| Route | Status | `error` | When |
+|---|---|---|---|
+| `POST /sessions` | 403 | `dataset_not_yours` | Another researcher owns the dataset name. |
+| `POST /sessions` | 409 | `raw_key_exists` | A file already exists at the target path. |
+| `GET /sessions/{id}`, `POST /sessions/{id}/finalize` | 410 | `session_expired` | The session passed its expiry time. |
+| `POST /sessions/{id}/finalize` | 409 | `session_<state>` | The session is not in a state that can be finalized. `<state>` is the state in lower case, for example `session_incomplete`. |
+| `POST /artifacts/{id}/finalize` | 409 | `upload_pending` | No object has been uploaded yet. Upload it and finalize again. |
+| `POST /artifacts/{id}/finalize` | 409 | `upload_incomplete` | The record is marked incomplete, or the uploaded file did not match its declared size or checksum and was deleted. |
+| `GET /artifacts` | 400 | `invalid_scope` | `scope` is not `mine` or `all`. |
+| `GET /artifacts` | 400 | `invalid_input` | `input` is empty or longer than 256 characters. |
+| `GET /artifacts` | 400 | `invalid_run` | `run` is empty or longer than 256 characters, or it was sent with `input`. |
+| `PATCH /artifacts/{id}`, `POST /artifacts/{id}/withdraw`, `DELETE /artifacts/{id}` | 403 | `not_author` | The artifact is another researcher's. Only its author changes, withdraws or deletes it. |
+| `POST /artifacts/{id}/withdraw` | 409 | `upload_pending`, `upload_incomplete` | The artifact is not finalized, or it was marked incomplete. |
+| `DELETE /artifacts/{id}` | 409 | `has_dependents` | Other artifacts used this one; `detail` names them. Withdraw it instead. |
+| `GET /catalog/assets` | 400 | `invalid_ids` | No ids, more than 100, or an id that is not an asset id. |
+| `GET /catalog/links` | 400 | `too_many` | More than 5000 links match. Filter by study, subject key, or dataset with subject. |
+| `GET /catalog/session-summary` | 400 | `invalid_session` | `session` is not `_` and not a session name. |
+| `GET /catalog/session-summary` | 502 | `summary_unreadable` | A stored summary exists but cannot be read whole: a part it lists is gone, or storage refused the read. `detail` names the object and the storage error. |
+| `GET /compute/overview` | 404 | `overview_not_built` | The LFP overview for this file version is not built. |
+| `GET /compute/spectrogram` | 404 | `index_not_built` | The chunk index for this file version is not built. |
+| catalog, compute and label routes | 503 | `slow` | The work ran out of its time budget. Retry with a smaller request. |
+| any route | 500 | `internal_error` | An unhandled failure. |
+
+An unhandled failure answers `500` with `detail` set to `The platform failed on this request. Report
+request id <id>.` Quote the request id when you report the failure. The platform also writes one log
+line with the same request id and the traceback.
+
+
+## Route table
+
+<!-- routes:begin (generated by make api-docs; do not edit) -->
+
+| Method | Path | Group | Function | Summary |
+|---|---|---|---|---|
+| POST | `/sessions` | researchers | SessionFunction | Open an upload session |
+| POST | `/sessions/{id}/finalize` | researchers | SessionFunction | Finalize an upload session and queue its commit |
+| GET | `/sessions/{id}` | researchers | SessionFunction | Read one session |
+| GET | `/uploads` | researchers | SessionFunction | List the caller's uploads |
+| GET | `/get-started` | researchers | PlatformFunction | Return the setup command and handout links |
+| POST | `/artifacts` | researchers | PlatformFunction | Start an artifact |
+| POST | `/artifacts/{id}/finalize` | researchers | PlatformFunction | Finalize an artifact upload |
+| GET | `/artifacts` | researchers | PlatformFunction | List the caller's artifacts, every author's, or those that used one input |
+| GET | `/artifacts/{id}` | researchers | PlatformFunction | Read one artifact |
+| PATCH | `/artifacts/{id}` | researchers | PlatformFunction | Edit the caller's artifact note and name |
+| POST | `/artifacts/{id}/withdraw` | researchers | PlatformFunction | Withdraw the caller's artifact |
+| DELETE | `/artifacts/{id}` | researchers | PlatformFunction | Delete the caller's artifact that no other artifact used |
+| POST | `/notes` | researchers | PlatformFunction | Leave an app-dev feedback note with the page address and view |
+| GET | `/catalog/datasets` | researchers | CatalogFunction | List the datasets |
+| GET | `/catalog/datasets/{dataset}` | researchers | CatalogFunction | Read one dataset |
+| GET | `/catalog/datasets/{dataset}/assets` | researchers | CatalogFunction | List a dataset's files |
+| GET | `/catalog/assets/{asset_id}` | researchers | CatalogFunction | Read one file's catalog row |
+| GET | `/catalog/assets/{asset_id}/tables/{table}` | researchers | CatalogFunction | Read one file's rows of a catalog table |
+| GET | `/catalog/assets/{asset_id}/events` | researchers | CatalogFunction | Read one file's events and intervals |
+| GET | `/catalog/assets/{asset_id}/download` | researchers | CatalogFunction | Presign a download of one file |
+| GET | `/catalog/studies` | researchers | CatalogFunction | List the studies and every dataset's subjects, sessions and regions |
+| GET | `/catalog/links` | researchers | CatalogFunction | List subject links by study, subject key, or dataset and subject |
+| GET | `/catalog/assets` | researchers | CatalogFunction | Name up to 100 files by id, each with its version and whether it is current |
+| GET | `/compute/rates` | researchers | ComputeFunction | Compute unit firing rates |
+| GET | `/compute/overview` | researchers | ComputeFunction | Read an LFP overview |
+| GET | `/compute/spectrogram` | researchers | ComputeFunction | Compute an LFP window and its spectrogram |
+| GET | `/compute/events` | researchers | ComputeFunction | List a file's alignment events from its dataset's recipe |
+| GET | `/compute/tuning` | researchers | ComputeFunction | Screen unit tuning to one event attribute (exploratory) |
+| GET | `/catalog/session-summary` | researchers | ComputeFunction | Read a session's stored summary, or say none is built yet |
+| GET | `/files/{asset_id}/labels` | researchers | LabelsFunction | List a file's shared labels |
+| POST | `/files/{asset_id}/labels` | researchers | LabelsFunction | Create a shared label |
+| PATCH | `/files/{asset_id}/labels/{label_id}` | researchers | LabelsFunction | Edit the caller's label |
+| DELETE | `/files/{asset_id}/labels/{label_id}` | researchers | LabelsFunction | Delete the caller's label |
+| GET | `/imports` | curators | ImportsFunction | List the caller's import runs |
+| POST | `/imports` | curators | ImportsFunction | Start an import run |
+| GET | `/imports/{run_id}` | curators | ImportsFunction | Read one import run |
+
+<!-- routes:end -->
+
+## Upload sessions
+
+An upload session moves one file into the platform in three calls: open a session, upload the bytes
+to the returned URL, then finalize. The bytes never pass through the API. The file reaches the catalog
+when the commit succeeds.
+
+Session states are `OPEN`, `FINALIZING`, `ACCEPTED`, `COMMITTED` and `INCOMPLETE`.
+
+### `POST /sessions`
+
+Group: `researchers`. Opens an upload session and returns a presigned URL for one `PUT`.
+
+Body (JSON object):
+
+| Field | Type | Meaning |
+|---|---|---|
+| `dataset` | string | The dataset name. It matches `^[a-z0-9][a-z0-9_-]{0,62}$`. |
+| `path` | string | The file path inside the dataset: relative, POSIX, no `..`, `.` or empty segments. |
+| `size` | integer | The file size, from 1 byte to 5 GiB. |
+| `crc64nvme` | string | The CRC64NVME checksum of the file, as the SDK computes it. |
+| `upload_id` | string, optional | A client-chosen identifier for the upload. |
+| `dataset_meta` | object, optional | Only the string keys `title`, `license`, `description` and `tier`, at most 4 KiB as JSON. `tier` takes one value, `sandbox`, which marks a test dataset; any other value is a 400. |
+
+Success: `201` with `{"session_id": "<id>", "expires_at": <epoch seconds>, "url": "<presigned PUT URL>"}`.
+The session stays open for 48 hours. Upload the file to `url` with the checksum header, then call finalize.
+
+Errors: `400 invalid_request` (the body is not a JSON object, or a field is invalid; `detail` names the
+field), `403 dataset_not_yours`, `409 raw_key_exists`.
+
+### `POST /sessions/{id}/finalize`
+
+Group: `researchers`. Path parameter `id`: the session id. No body. Claims the session and queues its
+commit. The call is safe to repeat.
+
+Success: `202` with `{"state": "FINALIZING"}` (or `"ACCEPTED"` if the commit is already accepted), or `200`
+with `{"state": "COMMITTED", "asset_id": "<id>", "snapshot_id": "<id>"}` when the commit is done.
+
+Errors: `404 not_found` (no such session, or it belongs to another researcher), `410 session_expired`,
+`409 session_<state>` (the session cannot be finalized; `detail` is `The upload session is <STATE>: <reason>.`
+with the stored reason, or `The upload session is <STATE> and cannot be finalized.`).
+
+### `GET /sessions/{id}`
+
+Group: `researchers`. Path parameter `id`: the session id. Reads one session of the caller.
+
+Success: `200` with `{"state": "<state>"}` and, when they exist, `asset_id`, `snapshot_id`, `error`,
+`commit_error` and `extract_error`.
+
+Errors: `404 not_found`, `410 session_expired`.
+
+### `GET /uploads`
+
+Group: `researchers`. No parameters. Lists the caller's upload sessions, newest first, at most 50.
+
+Success: `200` with `{"uploads": [{"session_id", "dataset", "relpath", "state", "created_at", "asset_id"}]}`.
+`asset_id` is `null` until the commit finishes.
+
+Errors: none of its own.
+
+## Get started
+
+### `GET /get-started`
+
+Group: `researchers`. No parameters. Returns what the setup command needs: the platform values, links to
+the SDK wheel and the exemplar notebook, and the install command.
+
+Success: `200` with `{"platform": {...}, "wheel": {"url", "filename", "sha256", "expires_at"},
+"notebook": {"url", "filename", "expires_at"}, "pins": [...], "install": "<command text>"}`. The
+presigned URLs live for one hour. `install` holds no signed URL: it names the public wheel copy at
+`<hosted app>/sdk/<wheel filename>`. `platform` holds the keys of `platform.json`, including `api_url`,
+which is the host of this request.
+
+Errors: `503 unavailable` when the SDK download is not published, or its manifest has no pins; `detail`
+says to ask the administrator to run `make web-publish`.
+
+
+## Artifacts
+
+An artifact is a result file with a provenance record. Create it, upload the bytes to the returned URL,
+finalize, then read it. Every researcher can read any finalized artifact, its record and its bytes. Only
+its author edits, withdraws or deletes it.
+
+### `POST /artifacts`
+
+Group: `researchers`. Starts an artifact and returns a presigned URL for one `PUT`.
+
+Body (JSON object):
+
+| Field | Type | Meaning |
+|---|---|---|
+| `name` | string | The file name, one path segment. |
+| `size` | integer | The file size, from 1 byte to 5 GiB. |
+| `crc64nvme` | string | The CRC64NVME checksum of the file. |
+| `snapshot_id` | integer | The catalog snapshot the result was computed from. |
+| `sources` | array | 1 to 1000 objects, each with non-empty strings `asset_id` and `s3_version_id`. |
+| `content_type` | string, optional | Defaults to `application/octet-stream`. |
+| `note` | string or null, optional | At most 1 KiB. |
+| `sdk_version` | string, optional | At most 64 characters. |
+
+Success: `201` with `{"artifact_id": "<id>", "url": "<presigned PUT URL>", "expires_at": <epoch seconds>}`.
+The record is `PENDING` until finalized.
+
+Errors: `400 invalid_request` (`detail` names the field).
+
+### `POST /artifacts/{id}/finalize`
+
+Group: `researchers`. Path parameter `id`: the artifact id. No body. Checks the uploaded object against
+the record's size and checksum and marks the record `COMMITTED`. The call is safe to repeat.
+
+Success: `200` with `{"state": "COMMITTED", "artifact_id": "<id>"}`.
+
+Errors: `404 not_found` (no such artifact, or it is another researcher's), `409 upload_pending` (no object
+yet; upload and call again), `409 upload_incomplete` (the record was marked incomplete, or the file did not
+match its declared size or checksum; the file is deleted, so create a new artifact).
+
+### `GET /artifacts`
+
+Group: `researchers`. Query parameters, all optional; `input` and `run` are not sent together:
+
+| Parameter | Meaning |
+|---|---|
+| `scope` | `mine` (the default when absent): the caller's artifacts in every state. `all`: the newest 100 finalized artifacts of every author. |
+| `input` | An asset id or an artifact id: only the artifacts that used it. With `scope=mine` (or no `scope`) the caller's; with `scope=all` every author's `COMMITTED` or `WITHDRAWN` ones. |
+| `run` | A run id: only the finalized artifacts saved by that run. With `scope=mine` (or no `scope`) the caller's; with `scope=all` every author's `COMMITTED` or `WITHDRAWN` ones. |
+
+Lists newest first, at most 100.
+
+Success: `200` with `{"artifacts": [{"artifact_id", "name", "size", "content_type", "snapshot_id",
+"state", "created_at", "finalized_at", "source_asset_ids", "source_asset_count", "run_id",
+"run_function"}]}`. With `scope=all`, `input` or `run`, each row also has `author_email`. `run_id` is
+the record's run id and `run_function` the name of the analysis that saved it (the record's
+`run.function`); both are `null` for a version 1 record, which has no run. `source_asset_ids` lists the catalog assets the artifact used
+(its `sources`, then its `asset` inputs, each once), at most the first 100; `source_asset_count` counts
+them all. Name them with `GET /catalog/assets?ids=`. With `run`, each row also has `url`: a presigned
+GET of the file, valid for 15 minutes, that serves the record's content type inline (as
+`GET /artifacts/{id}` does), so one request lists a run and links each of its files.
+
+Errors: `400 invalid_scope`, `400 invalid_input`, `400 invalid_run`.
+
+### `GET /artifacts/{id}`
+
+Group: `researchers`. Path parameter `id`: the artifact id. Reads one `COMMITTED` or `WITHDRAWN`
+artifact of any author. Query parameter `download`, optional: `1` asks for a link that saves the file.
+
+Success: `200` with `{"record": {...}, "url": "<presigned GET URL>"}`. The URL lives for 15 minutes. It
+serves the file with the record's `content_type` (a malformed one is served as
+`application/octet-stream`) and an `inline` disposition, so a browser shows an image or a page in place;
+with `download=1` the disposition is `attachment`. Both name the file by the record's `name`.
+
+Errors: `404 not_found` (no such artifact, or not yet committed).
+
+### `PATCH /artifacts/{id}`
+
+Group: `researchers`. Path parameter `id`: the artifact id. Body (JSON object) with `note` (string of at
+most 1 KiB, or null), `name` (the display name, one path segment), or both, and no other field. The
+stored file and its download key do not change.
+
+Success: `200` with `{"artifact": {<the list row with author_email>}}`.
+
+Errors: `400 invalid_request` (`detail` names the field), `403 not_author`, `404 not_found`.
+
+### `POST /artifacts/{id}/withdraw`
+
+Group: `researchers`. Path parameter `id`: the artifact id. No body. Marks the caller's finalized
+artifact `WITHDRAWN`. Its record and bytes stay readable. The call is safe to repeat.
+
+Success: `200` with `{"state": "WITHDRAWN", "artifact_id": "<id>"}`.
+
+Errors: `403 not_author`, `404 not_found`, `409 upload_pending` (not finalized yet), `409
+upload_incomplete` (marked incomplete).
+
+### `DELETE /artifacts/{id}`
+
+Group: `researchers`. Path parameter `id`: the artifact id. No body. Deletes the caller's artifact, its
+bytes and its index entries, when no other artifact used it.
+
+Success: `200` with `{"state": "DELETED", "artifact_id": "<id>"}`.
+
+Errors: `403 not_author`, `404 not_found`, `409 has_dependents` (other artifacts that are pending,
+committed or withdrawn used this one; `detail` names them; withdraw it instead).
+
+## Notes
+
+A note is app-dev feedback a researcher leaves from the web app's top bar. There is no read route:
+the administrator reads notes with `make notes` and marks one handled with `make notes-done ID=<id>`.
+
+### `POST /notes`
+
+Group: `researchers`. Body: `{"text": "<1 to 4000 characters>", "url": "<the page address, 1 to 2048
+characters>", "view": {<the page's route and query state>}}`. `view` is an object of at most 4096 bytes
+as compact JSON. Any other key is refused. The server stamps the note id, the time, the author's `sub`
+and the status `open`. It stores the author's email from the token's `email` claim; a token without
+one (an access token) stores the `sub` and a flag that the email is missing.
+
+Success: `201` with `{"note_id": "<id>"}`.
+
+Errors: `400 invalid_request` (`detail` is one sentence naming the field and the limit).
+
+## Catalog
+
+The catalog routes read the catalog tables through Athena. They share a time budget of 18 seconds. A `200`
+body from these routes also holds `query_ms`, the time the queries took. Paged routes take `page` (an
+integer from 0 to 1000, default 0), return 200 rows per page and set `more` when another page exists.
+
+Errors that every catalog route can return: `502 upstream_failed` (the catalog query failed; `detail` holds
+the reason) and `503 slow` (the catalog is slow to answer; try again).
+
+### `GET /catalog/datasets`
+
+Group: `researchers`. No parameters. Lists every dataset with its counts.
+
+Success: `200` with `{"datasets": [{"dataset", "title", "tier", "license", "doi", "source_archive",
+"source_dataset", "source_version", "ingest_method", "created_at", "asset_count", "subject_count",
+"total_bytes", "mine"}], "query_ms": <int>}`.
+
+`tier` is `curated`, `upload` or `sandbox`. A dataset with no stored tier reads as `curated` when it was
+imported and as `upload` otherwise. `mine` is `true` when the caller created the dataset. The body never
+holds the creator's identity.
+
+### `GET /catalog/datasets/{dataset}`
+
+Group: `researchers`. Path parameter `dataset`: the dataset name, matching `^[a-z0-9][a-z0-9_-]{0,62}$`.
+Reads one dataset.
+
+Success: `200` with `{"dataset", "facts", "subjects", "sessions", "formats", "query_ms"}`. `facts` is the
+dataset row with its counts. `subjects`, `sessions` and `formats` are row lists.
+
+Errors: `400 invalid_request` (bad dataset name), `404 not_found` (no such dataset).
+
+### `GET /catalog/datasets/{dataset}/assets`
+
+Group: `researchers`. Path parameter `dataset`. Query: `subject` (optional filter, at most 64 characters),
+`format` (optional filter, at most 64 characters), `session` (optional filter), `page`. Lists a dataset's
+files, ordered by path. `session` is a `ses-` label matching `^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$`, or `_` for the
+files that have no session label.
+
+Success: `200` with `{"assets": [{"asset_id", "subject", "bids_session", "datatype", "format",
+"size_bytes", "committed_at", "path"}], "page", "more", "query_ms"}`.
+
+Errors: `400 invalid_request` (bad dataset name, filter too long or bad `page`), `400 invalid_session` (a
+`session` that is neither `_` nor a valid label; a value of 65 or more characters is `invalid_request`).
+
+### `GET /catalog/assets/{asset_id}`
+
+Group: `researchers`. Path parameter `asset_id`. Reads one file's catalog row and its header facts.
+
+Success: `200` with `{"asset": {...}, "headers": [...], "query_ms"}`.
+
+Errors: `404 not_found` (no such asset).
+
+### `GET /catalog/assets/{asset_id}/tables/{table}`
+
+Group: `researchers`. Path parameters `asset_id` and `table`; `table` is one of `series`, `electrodes`,
+`units` and `intervals`. Query: `page`. Reads one file's rows of that table.
+
+Success: `200` with `{"rows": [...], "page", "more", "query_ms"}`.
+
+Errors: `400 invalid_request` (`table` is not one of the four, or bad `page`).
+
+### `GET /catalog/assets/{asset_id}/events`
+
+Group: `researchers`. Path parameter `asset_id`. Reads the file's interval rows and the event rows that
+belong to the same recording, at most 20000 of each.
+
+Success: `200` with `{"intervals": [...], "events": [...], "intervals_more": <bool>,
+"events_more": <bool>, "query_ms"}`.
+
+Errors: `404 not_found` (no such asset).
+
+### `GET /catalog/assets/{asset_id}/download`
+
+Group: `researchers`. Path parameter `asset_id`. Presigns a download of the catalogued version of one
+file. The link lives for five minutes.
+
+Success: `200` with `{"url": "<presigned GET URL>", "expires_in": 300, "size_bytes", "s3_version_id",
+"format", "query_ms"}`.
+
+Errors: `404 not_found` (no such asset).
+
+### `GET /catalog/studies`
+
+Group: `researchers`. No parameters. Lists the curated studies and every dataset with its subjects,
+sessions and recording regions, for the data home and the study page. It reads the studies, study
+releases and datasets tables, then takes each dataset's `subjects` and `regions` from its stored summary
+(`summary/<dataset>/_dataset.json`, field `catalog`, which the summary builder writes with `make
+summaries`), reading the summaries in parallel. A dataset whose summary is missing, has no `catalog`
+field or cannot be read takes them from the catalog tables instead, with the same values, so no dataset
+is left out. Up to two such datasets run seven queries each, scoped to the dataset; more run the seven
+over every dataset once. A stored summary reflects the catalog when it was built, so files committed
+after it appear once the summary is rebuilt.
+
+Success: `200` with:
+
+```text
+{"studies": [{"study", "title", "authors", "lab", "citation", "doi",
+              "datasets": [{"dataset", "role"}]}],
+ "datasets": [{"dataset", "title", "tier", "license", "doi", "source_archive", "source_dataset",
+               "source_version", "ingest_method", "created_at", "asset_count", "subject_count",
+               "total_bytes", "mine",
+               "subjects": [{"subject", "species", "sex", "age", "modalities": [...],
+                             "sessions": [{"session", "asset_ids": [...], "nwb": [{"asset_id", "n_units"}]}],
+                             "units", "trials",
+                             "lfp": [{"asset_id", "path", "channels", "rate_hz"}]}],
+               "regions": [{"region", "units", "channels"}]}],
+ "query_ms": <int>}
+```
+
+- `datasets` holds every dataset, also one in no study. `tier` and `mine` are as in `GET /catalog/datasets`.
+- A dataset is in at most one study. A study's `datasets` lists its releases with their `role`.
+- `modalities` is an open set. `units`: an NWB file whose header counts units. `lfp`: an `ElectricalSeries`
+  whose path names LFP. `ieeg`, `anat`, `func`: a BIDS file of that datatype. `task`: an `events` file, or an
+  NWB file whose header counts trials. Any other kind of file is `other:<name>`, where the name is its
+  datatype, else its suffix, else its format; it is never dropped. An NWB file that gives none of units,
+  trials or LFP is `other:` and its suffix. The named modalities come first in the order above, then the
+  `other:` ones sorted.
+- `session` is the BIDS session label, or `_` for files that have none. `asset_ids` holds the session's
+  first 20 file ids by path. `nwb` lists every NWB file of the session with its header's `n_units` (`null`
+  when the header is not extracted).
+- `units` and `trials` sum the subject's NWB header counts. `channels` is the second axis of the series
+  shape.
+- `regions` are the authors' `location` labels from the units and electrodes tables, verbatim, with the
+  number of units and of electrodes at each. A unit or electrode with no label is not counted.
+
+Errors: `413 too_large` (the body is over 5 MiB).
+
+
+### `GET /catalog/links`
+
+Group: `researchers`. Query: one filter form, or none for every link: `study`; `subject_key`; or `dataset`
+with `subject`. Each value is at most 64 characters, and `dataset` matches `^[a-z0-9][a-z0-9_-]{0,62}$`.
+Lists the subject links that tie a subject in one dataset to the same person in another. `study` gives
+the links of the datasets in that study.
+
+Success: `200` with `{"links": [{"dataset", "subject", "subject_key", "status", "linked_by", "linked_at",
+"basis", "note"}], "query_ms": <int>}`, ordered by dataset, subject and key. A link with no stored
+`status` reads as `pending`.
+
+Errors: `400 invalid_request` (another combination of filters, a value too long or a bad dataset name),
+`400 too_many` (more than 5000 links match; filter further), `413 too_large` (the body is over 5 MiB).
+
+### `GET /catalog/assets`
+
+Group: `researchers`. Query: `ids`, 1 to 100 asset ids separated by commas (a repeated id counts once).
+Each id matches `^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$`. Names each asset in research terms, so a page can
+show the files an artifact used in one call.
+
+Success: `200` with `{"assets": [{"asset_id", "dataset", "subject", "session", "datatype", "suffix",
+"format", "path", "version", "committed_at", "current"}], "missing": [<id>], "query_ms": <int>}`. The
+assets come in the order asked; `missing` lists the ids the catalog has no row for. `path` is the file
+path inside the dataset and `version` the stored object version the asset id names. An asset id names
+one version of a file: `current` is `true` when no newer version of the same file (dataset and path) has
+been committed since.
+
+Errors: `400 invalid_ids` (no ids, more than 100, or an id that does not match).
+
+### `GET /catalog/session-summary`
+
+Group: `researchers`. Served by the compute function, which already reads the derived bucket. Query, all
+three required: `dataset` (matches `^[a-z0-9][a-z0-9_-]{0,62}$`), `subject` and `session` (each matches
+`^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$`; `session` is `_` for a subject's files outside any session). Reads
+the session's stored summary, which the summary builder writes (`make summaries`). It holds, for the
+session's NWB file with the most units, the `GET /compute/events` body (`events`), the first page of
+`GET /catalog/assets/{asset_id}/tables/units` without `query_ms` (`units`), and per `average` event type,
+the `GET /compute/rates` body at the display settings (`pre_s` 1, `post_s` 2, `bin_s` 0.05, `zscore=1`,
+`raster=0`) and the `GET /compute/tuning` body for the type's first attribute that screens. A session
+over 152 units stores the rates of the first 152; `manifest.units` says so. A units table over one page
+(200 rows) stores the first page; `manifest.units_table` is `{"rows", "more"}`, and `more` true means
+the page must read the rest live.
+
+Success: `200` with one of three bodies.
+
+- `{"status": "missing"}`: no summary is built for the session yet. Compute the view live.
+- `{"status": "built", "delivery": "inline", "manifest", "parts"}`: `parts` maps each part name
+  (`events`, `units`, `rates-<event_type>`, `tuning-<event_type>-<attribute>`) to its stored body,
+  which is the body the live route returns for the same inputs, so one parser reads both.
+- `{"status": "built", "delivery": "presigned", "manifest", "part_urls", "expires_in"}`: the parts would
+  pass the 5 MiB body. `part_urls` maps the same names to presigned GETs of the stored bodies, valid for
+  `expires_in` seconds (900).
+
+`manifest` is `{"schema": "asteroidea.session-summary/1.1", "dataset", "subject", "session",
+"digest", "asset_id", "display", "inputs": {"recipe", "defaults", "code", "assets"}, "units": {"total",
+"stored"}, "units_table", "parts", "skipped", "built_at", "build_ms", "athena_queries", "bytes"}`.
+`skipped` lists each part the builder could not compute, with the route's status, code and detail. The
+route reads every minor version of schema 1: a summary stored as `/1` has no `events` or `units` part
+and no `units_table`, and the page then asks for those live.
+
+Errors: `400 invalid_request` (a missing or malformed `dataset` or `subject`), `400 invalid_session`,
+`502 summary_unreadable` (a summary exists but cannot be read whole; never answered for a summary that
+was not built), `503 slow`.
+
+
+## Compute
+
+The compute routes run analysis on the server with the SDK's analysis module and return the result as
+JSON. The body is at most 5 MiB. The work has a deadline: the function's remaining time less two seconds.
+
+Errors that every compute route can return: `404 not_found` (no such asset, series or unit),
+`413 too_large` (the response would pass the body limit; `detail` names the size), `422 unprocessable`,
+`502 upstream_failed`, `503 slow` (the work ran out of time; use fewer units or a shorter window) and
+`500 internal_error`. A missing or malformed query value is `400 invalid_request` and `detail` names it.
+
+### `GET /compute/rates`
+
+Group: `researchers`. Computes firing rates of units around aligned onsets.
+
+Query:
+
+| Name | Meaning |
+|---|---|
+| `asset_id` | The NWB file. Required. |
+| `units` | `all`, a range `<a>-<b>` (`0 <= a <= b`) or distinct non-negative unit indexes, comma-separated. At most 152 units after resolution. A range or `all` is resolved against the file's `units` rows. Required. |
+| `align` | What to align on. One of `intervals:<table>[:<column>=<value>]`, `events:<asset_id>[:trial_type=<value>]`, `frames:<csv asset_id>:<frame column>:<series path>`, `label:<label_id>`, `label_name:<name>`, `event:<type>[:<attribute>=<value>]`. Required. |
+| `pre_s`, `post_s` | Window before and after each onset, 0 to 10 seconds. Required, except for an `event:` align (see below). |
+| `bin_s` | Bin width, at least 0.001 seconds. The window holds 1 to 2000 bins. Required, except for an `event:` align. |
+| `zscore` | `1`, `0`, `true` or `false`. Default `false`. |
+| `raster` | `1`, `0`, `true` or `false`. Default `true`. |
+
+Success: `200` with `{"edges": [...], "units": [{"unit_index", "raster": {"trial", "t"}, "rate_hz": [...],
+"z": [...]}], "n_trials", "align", "source", "query_ms", "compute_ms"}`. `raster` is absent when
+`raster=0`. `z` is present when `zscore=1`. `source` is `catalog` or `file`. `missing_frames` appears for
+a `frames:` alignment. Numbers carry 6 significant digits.
+
+**The `event:` align.** `event:<type>` aligns on the onsets of one event type of the file, resolved from the
+dataset's event recipe (`GET /compute/events` lists the types); `event:<type>:<attribute>=<value>` keeps the
+events whose attribute equals the value. For this align only, `pre_s`, `post_s` and `bin_s` may be left out:
+the route fills each omitted one from the dataset's analysis defaults, and an explicit value wins. A filled
+window the bounds refuse is `400 defaults_window`, and `detail` names the filled values. The body then also
+carries three more top-level keys (every other align returns exactly the keys above):
+
+- `label`: `"exploratory screen"`.
+- `defaults`: the values used, `{"version", "block", "source", "baseline", "bin_s", "pre_s", "post_s",
+  "response_window_s"}`. `block` is the dataset's name when it has its own block of defaults, else `default`.
+  `response_window_s` is the window the screen used, which is the recipe's window for the type when it sets one.
+- `responsive`: `[{"unit_index", "location", "p", "q", "screened"}]` from `analysis.responsive` over the same
+  events and units. `q` is Benjamini-Hochberg across those units and `screened` is `q` at most the defaults'
+  alpha. A unit the defaults drop (silent during a named phase) has no row. A `single` type, such as the movie
+  onset, or an align that keeps no event gives `[]`.
+
+Errors: `404 not_found` (also: no such unit, no intervals table, no matching label, no event rows),
+`404 no_such_event_type` and `404 no_such_attribute` (an `event:` align), `400 too_many_units` (the selection
+resolves to more than 152 units), `400 malformed_range`, `400 defaults_window`, `422 unprocessable` (the
+events file is not the same recording as the target, or the file is not readable), `422 not_nwb`,
+`422 recipe_unresolved`, `422 screen_unresolved` (an `event:` align whose screen the defaults cannot run),
+`413 body_estimate_too_large` (the raster would pass the body limit, estimated from the units' spike counts
+before any spike is read), `413 too_large` (the CSV of a `frames:` alignment is over 5 MiB, or the response is
+too big; use fewer units, a shorter window or `raster=0`).
+
+### `GET /compute/overview`
+
+Group: `researchers`. Query: `asset_id` and `series` (the series path). Reads the coarse whole-recording
+spectrogram of one LFP series.
+
+Success: `200` with `{"times_s", "band_edges_hz", "channels", "power_db", "rate_hz", "starting_time_s",
+"built_at", "builder_version"}`. When the data would pass the body limit, the body is instead
+`{"url": "<presigned GET URL>", "expires_in": 900, "format", "bytes", "shape", "rate_hz",
+"starting_time_s", "built_at", "builder_version"}`.
+
+Errors: `404 overview_not_built`, `404 not_found` (no such asset or series), `422 unprocessable` (the
+series has no uniform rate).
+
+### `GET /compute/spectrogram`
+
+Group: `researchers`. Computes one channel's spectrogram for a window of an LFP series.
+
+Query: `asset_id`, `series`, `channel` (non-negative integer), `start_s` (at least 0) and `duration_s`
+(from 1 to 1200 seconds). All are required.
+
+Success: `200` with `{"freqs_hz", "times_s", "power_db", "trace": {"times_s", "values"}, "rate_hz",
+"starting_time_s", "bytes_read", "requests", "lookup_ms", "fetch_ms", "compute_ms"}`. Frequencies run from
+0 to 250 Hz.
+
+Errors: `400 invalid_request` (also: the window falls outside the recording), `404 index_not_built`,
+`404 not_found`, `422 unprocessable` (no uniform sampling rate, or the rate is too low to analyse).
+
+### `GET /compute/events`
+
+Group: `researchers`. Query: `asset_id` (the NWB file). Lists the file's alignment events, resolved from
+its dataset's event recipe (the default recipe when the dataset ships none).
+
+Success: `200` with `{"asset_id", "dataset", "recipe": {"version", "default", "lfp_clock_offset_s"},
+"event_types": [{"name", "averaging", "n_events", "events": [{"onset_s", "stop_s", "attributes",
+"source": {"kind", "ref", "row"}}], "missing_frames"}]}`. Events are in onset order. `averaging` is
+`average` or `single`. `missing_frames` appears for a stimulus-file type and lists the frames outside the
+frame series.
+
+Errors: `404 not_found` (no such asset), `404 no_stimulus_file` (the recipe's stimulus file is not in the
+catalog), `422 not_nwb` (the file is not NWB), `422 recipe_unresolved` (the rows do not satisfy the
+recipe; `detail` names why).
+
+### `GET /compute/tuning`
+
+Group: `researchers`. An exploratory screen: per unit, whether the response-window rate differs between
+the levels of one attribute of one event type. Settings come from the dataset's analysis defaults.
+
+Query:
+
+| Name | Meaning |
+|---|---|
+| `asset_id` | The NWB file. Required. |
+| `event` | An `average` event type of the file (see `GET /compute/events`). Required. |
+| `attribute` | An attribute of that type's events. Required. |
+| `units` | `all`, a range `<a>-<b>` or a comma list. At most 152 units after resolution. Required. |
+
+Success: `200` with `{"label": "exploratory screen", "asset_id", "event_type", "attribute", "units":
+[{"unit_index", "location", "level_means_hz", "n_per_level", "selectivity_index", "statistic", "p", "q",
+"screened"}], "areas": [{"location", "n_units", "n_below_alpha", "fraction", "p"}], "settings":
+{"defaults_version", "recipe_version", "response_window_s", "levels", "level_counts", "n_events",
+"n_permutations", "seed", "alpha", "fdr", "min_events_per_level", "count_events_where",
+"drop_units_silent_during", "dropped_units"}, "source", "query_ms", "compute_ms"}`. Only levels with at
+least `min_events_per_level` counted events are tested; `level_counts` shows every level. `q` is
+Benjamini-Hochberg across the units; `screened` is `q` at most `alpha`.
+
+Errors: `400 no_such_attribute` (no event of the type has the attribute), `400 not_average` (the type is
+`single`), `400 too_few_events_per_level` (fewer than 2 levels hold `min_events_per_level` events;
+`detail` names the counts), `400 too_many_units`, `400 malformed_range`, `404 no_such_event_type`,
+`422 not_nwb`, `422 screen_unresolved`, `413 too_large`, `503 slow`.
+
+## Labels
+
+A label marks a time span on one file. Every researcher sees all labels on a file. Only the author can
+change or delete a label. A file holds at most 2000 labels and a researcher at most 500 on one file.
+
+The label object: `{"asset_id", "label_id", "name", "note", "start_s", "stop_s", "series" (when set),
+"dataset", "s3_version_id", "snapshots", "created_at", "updated_at", "version", "mine"}`. `mine` is
+`true` when the caller is the author. The author's identity is never returned. `snapshots` records the
+catalog snapshot of each table the label was made against.
+
+The span fields are `name` (1 to 64 characters), `note` (at most 1 KiB, default empty), `start_s` and
+`stop_s` (numbers from 0 to 10,000,000; `stop_s` is not before `start_s`).
+
+### `GET /files/{asset_id}/labels`
+
+Group: `researchers`. Path parameter `asset_id`. Lists the labels of the file, ordered by `start_s`.
+
+Success: `200` with `{"labels": [label, ...]}`.
+
+Errors: `400 invalid_request` (the path parameter is empty or too long).
+
+### `POST /files/{asset_id}/labels`
+
+Group: `researchers`. Path parameter `asset_id`. Body: the span fields, and optionally `series`
+(a string of 1 to 256 characters). Creates a label and records which catalog snapshot it was made
+against.
+
+Success: `201` with the label object.
+
+Errors: `400 invalid_request`, `404 not_found` (no such asset), `409 conflict` (the file or the author
+reached the label limit), `502 upstream_failed`, `503 slow`.
+
+### `PATCH /files/{asset_id}/labels/{label_id}`
+
+Group: `researchers`. Path parameters `asset_id` and `label_id`. Body: the span fields and `version`
+(a positive integer, the `version` you read). Edits the caller's label.
+
+Success: `200` with the changed label object. `version` increases by one.
+
+Errors: `400 invalid_request`, `403 forbidden` (the caller is not the author), `404 not_found` (no such
+label), `409 conflict` (the label changed since you read it; reload it and try again).
+
+### `DELETE /files/{asset_id}/labels/{label_id}`
+
+Group: `researchers`. Path parameters `asset_id` and `label_id`. Deletes the caller's label.
+
+Success: `204` with an empty body.
+
+Errors: `403 forbidden` (the caller is not the author), `404 not_found` (no such label).
+
+## Imports
+
+The import routes start and follow a run that copies one dataset version from DANDI or OpenNeuro into
+the platform. Only curators call them. A run covers at most 50 files. A curator sees only their own
+runs.
+
+### `POST /imports`
+
+Group: `curators`. Starts an import run. The run is planned in the background.
+
+Body (JSON object): `source` (string, `dandi:<id>@<version>` or `openneuro:<id>@<version>`) and
+`include` (optional array of at most 20 glob strings, each 1 to 256 characters; empty means every file),
+and `sandbox` (optional boolean, default false; true writes the dataset with tier `sandbox`).
+
+Success: `202` with `{"run_id": "<id>"}`. Read the run to follow it.
+
+Errors: `400 invalid_request` (`detail` names the field).
+
+### `GET /imports`
+
+Group: `curators`. No parameters. Lists the caller's last 20 runs, newest first.
+
+Success: `200` with `{"runs": [{"run_id", "source", "include", "state", "created_at", "dataset"
+(when planned), "refusal" (when refused or failed)}]}`. `state` is `PLANNING`, `RUNNING`, `DONE` or
+`FAILED`. A run that sits in `PLANNING` or `RUNNING` past its lease reads `FAILED` with the refusal
+`the planner did not finish`.
+
+Errors: none of its own.
+
+### `GET /imports/{run_id}`
+
+Group: `curators`. Path parameter `run_id`. Reads one run with the outcome of each file.
+
+Success: `200` with `{"run_id", "source", "state", "dataset", "refusal", "files": [{"relpath",
+"outcome"}]}`. `outcome` is `PASS`, `FAIL <reason>` or `null` while the file is in progress. A file
+imported earlier shows `PASS` with `already_imported` set. A `RUNNING` run whose files all have an
+outcome reads `DONE`.
+
+Errors: `404 not_found` (no such run, or another curator's run), `503 unavailable` (the sessions table
+left keys unprocessed; retry).

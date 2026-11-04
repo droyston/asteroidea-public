@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AttachDetachOnlyTheStopScpOnTheSandbox",
+      "Effect": "Allow",
+      "Action": ["organizations:AttachPolicy", "organizations:DetachPolicy"],
+      "Resource": [
+        "arn:aws:organizations::<management-account-id>:policy/<org-id>/service_control_policy/<scp-id>",
+        "arn:aws:organizations::<management-account-id>:account/<org-id>/<sandbox-account-id>"
+      ]
+    },
+    {
+      "Sid": "ReadOrg",
+      "Effect": "Allow",
+      "Action": ["organizations:Describe*", "organizations:List*"],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+/* The signals view view. Plot frames reuse the LFP classes in app.css.
+ */
+.research .signals-head {
+  margin: var(--space-3) 0 var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.research .signals-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.research .signals-top-side {
+  flex-wrap: nowrap;
+}
+.research .signals-regions ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 0 0 var(--space-2);
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-xs);
+}
+.research .signals-regions-side ul {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0;
+  height: 100%;
+  margin: 0;
+}
+.research .signals-regions li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  overflow: hidden;
+}
+.research .signals-region-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.research .signals-swatch {
+  flex: none;
+  width: 4px;
+  height: 0.9em;
+}
+.research .signals-sep {
+  stroke: var(--color-surface);
+  stroke-width: 1;
+}
+.research .signals-pick {
+  fill: var(--color-text);
+}
+.research .signals-window-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+.research .signals-window-head .signals-head {
+  margin: var(--space-3) 0 0;
+  flex-basis: 100%;
+}
+.research .signals-window {
+  max-width: 100%;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+.research .signals-window:active {
+  cursor: grabbing;
+}
+
+/* The right column, the lanes, the labels list, the anatomy panel and the popover. */
+.research .signals-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+.research .signals-side .signals-layout {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+.research .signals-main {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.research .signals-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+.research .signals-side .signals-aside {
+  flex: 0 0 340px;
+  box-sizing: border-box;
+  width: 340px;
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--color-border);
+}
+.research .signals-aside-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-2);
+}
+.research .signals-aside-head .signals-head {
+  margin: 0;
+}
+.research .signals-pending {
+  border: 1px dashed var(--color-muted);
+  padding: 0 var(--space-1);
+}
+.research .signals-lanes {
+  position: relative;
+  max-width: 100%;
+  margin-top: var(--space-2);
+  cursor: default;
+}
+.research .signals-lanes-plot {
+  position: relative;
+}
+.research .signals-lanes-svg {
+  display: block;
+  max-width: 100%;
+  touch-action: none;
+}
+.research .lane-name {
+  fill: var(--color-muted);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+}
+.research .lane-rule {
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+.research .lane-tick {
+  stroke: var(--color-text);
+  stroke-width: 1;
+}
+.research .lane-span {
+  fill: var(--color-cat-1);
+}
+.research .lane-bin {
+  fill: var(--color-text);
+}
+.research .lane-labels-bg {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  cursor: crosshair;
+}
+.research .label-bar-name {
+  fill: var(--color-text);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  pointer-events: none;
+}
+.research .signals-label-tick {
+  fill: var(--color-text);
+  opacity: 0.8;
+}
+.research .popover {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius);
+  cursor: auto;
+  user-select: text;
+}
+.research .popover-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+.research .label-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.research .label-form input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+.research .label-form-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.research .signals-label-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.research .signals-label-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.research .signals-label-row[aria-pressed="true"] strong {
+  text-decoration: underline;
+}
+.research .signals-planes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+.research .signals-plane {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-border);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--color-surface) 0 6px,
+    var(--color-border) 6px 7px
+  );
+}
+.research .signals-plane figcaption {
+  position: absolute;
+  left: var(--space-1);
+  bottom: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+.research .signals-plane-readout {
+  background: var(--color-surface);
+}
+.research .mri-compact .mri-stage {
+  height: auto;
+  aspect-ratio: 1;
+  min-height: 0;
+}
+.research .mri-compact .mri-readout {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: var(--space-2);
+  font-size: var(--text-xs);
+  pointer-events: none;
+}
+.research .mri-compact .mri-controls {
+  margin: var(--space-2) 0;
+}

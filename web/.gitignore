@@ -1,0 +1,3 @@
+# Local sign-in settings for `make web` (see .env.example); never commit.
+.env.local
+.env.*.local

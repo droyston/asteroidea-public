@@ -1,0 +1,38 @@
+{
+  "labels": [
+    {
+      "asset_id": "asset-0101",
+      "label_id": "3f1c0a9e5b7d4c2e8a6f1d0b9c8e7a65",
+      "name": "burst",
+      "note": "first burst after the cue",
+      "start_s": 2.0,
+      "stop_s": 4.5,
+      "dataset": "dandi-000623",
+      "s3_version_id": "3HL4kqtJlcpXroDTDmJ.rmSpXd3dIbrHY",
+      "snapshots": {
+        "intervals": "4417735094256890411",
+        "events": "7129530122855902307",
+        "asset_headers": "2208345166792043415"
+      },
+      "created_at": 1793000000,
+      "updated_at": 1793000000,
+      "version": 1,
+      "mine": true
+    },
+    {
+      "asset_id": "asset-0101",
+      "label_id": "a91d4e7c20b64f1d9e3a58c7b6d20f14",
+      "name": "artifact",
+      "note": "",
+      "start_s": 8.0,
+      "stop_s": 9.25,
+      "dataset": "dandi-000623",
+      "s3_version_id": "3HL4kqtJlcpXroDTDmJ.rmSpXd3dIbrHY",
+      "snapshots": null,
+      "created_at": 1793000100,
+      "updated_at": 1793000100,
+      "version": 3,
+      "mine": false
+    }
+  ]
+}

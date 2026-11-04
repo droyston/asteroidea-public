@@ -1,0 +1,32 @@
+{
+  "asset": {
+    "asset_id": "asset-0101",
+    "dataset": "dandi-000623",
+    "subject": "sub-CS41",
+    "bids_session": "ses-1",
+    "s3_key": "raw/dandi-000623/sub-CS41/sub-CS41_ses-1_ecephys.nwb",
+    "datatype": "ecephys",
+    "format": "nwb",
+    "size_bytes": 2000000000,
+    "s3_version_id": "3HL4kqtJlcpXroDTDmJ.rmSpXd3dIbrHY",
+    "committed_at": "2026-10-01T12:00:00Z"
+  },
+  "headers": [
+    {
+      "asset_id": "asset-0101",
+      "dataset": "dandi-000623",
+      "format": "nwb",
+      "extractor_version": "1",
+      "extracted_at": "2026-10-01T12:05:00Z",
+      "nwb_version": "2.7.0",
+      "nwb_identifier": "CS41-ses-1",
+      "session_description": "Spike sorted units during movie watching",
+      "session_start_time": "2019-04-02T10:30:00Z",
+      "institution": "Cedars-Sinai",
+      "lab": null,
+      "n_units": 3,
+      "n_electrodes": 2,
+      "n_trials": 41
+    }
+  ]
+}

@@ -1,0 +1,643 @@
+{
+ "root": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "c00b8754ccdf22d9783a8a965da8aa60cb909747",
+      "filename": "CHANGES",
+      "size": 217,
+      "directory": false
+     },
+     {
+      "id": "c7818429e4d8ea0499a90dc77afba36b5e5caa87",
+      "filename": "README",
+      "size": 1753,
+      "directory": false
+     },
+     {
+      "id": "d1339efcb6d57b35e9125ad1712079795bf07058",
+      "filename": "dataset_description.json",
+      "size": 1793,
+      "directory": false
+     },
+     {
+      "id": "cff3db997cd1d316fd0ff36a33cef4798c7e4c49",
+      "filename": ".bidsignore",
+      "size": 43,
+      "directory": false
+     },
+     {
+      "id": "89b38f1fc35f86ddd51e24c73748037e139324c9",
+      "filename": ".gitattributes",
+      "size": 385,
+      "directory": false
+     },
+     {
+      "id": "7b23b6269c4d2a21123cdc63c13f3e648bb097f7",
+      "filename": "participants.json",
+      "size": 578,
+      "directory": false
+     },
+     {
+      "id": "5adbf2a8f355c302fb1b5c2fe1a0cec4481509c7",
+      "filename": "participants.tsv",
+      "size": 374,
+      "directory": false
+     },
+     {
+      "id": "1a635497f41372795d8d6976e6c7c7aa822f361e",
+      "filename": ".datalad",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "3389a7e57c0e1f764cc88c86bdc596299cb93e90",
+      "filename": "sub-p41cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "f37d6864e197dbd8ed5eebe1169ea74880b79fee",
+      "filename": "sub-p42cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "b96a93499ab20db4fc439c26e96c0c9ac27b01c7",
+      "filename": "sub-p43cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "558fc55ab6add0cea72598b79aab86eb94ee1986",
+      "filename": "sub-p44cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "21ef5e58225f5ea9372ed6c8c7725704be36c7b7",
+      "filename": "sub-p45cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "fb92b510796d2177e67e660872a5dc0c89dea6d3",
+      "filename": "sub-p46cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "02508b9335529e754365395f16217cb84990af1e",
+      "filename": "sub-p47cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "93e80769721bb892efe786c6efcfeee7fa2d88ad",
+      "filename": "sub-p48cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "f6e0b571511ad784e1466b4f0725aa1a149d2fcd",
+      "filename": "sub-p50cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "36e2b8c3675fa9c2d1f6a4ab1a808dffc42987c8",
+      "filename": "sub-p51cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "a125f430d24908c6578c22128f8b9e7ce51e9eb1",
+      "filename": "sub-p53cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "b2c3337ae60e8997567fc371e81f34073e64d239",
+      "filename": "sub-p54cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "894db760c1f53c311edd68b460808cda2b0642a6",
+      "filename": "sub-p59cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "aa68a287a7b656c6ad8e2ef05a2baeade2e74e94",
+      "filename": "sub-p60cs",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "63cd772d8e0445d02a77d95302eb7c69258daa80",
+      "filename": "sub-p62cs",
+      "size": 0,
+      "directory": true
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "63cd772d8e0445d02a77d95302eb7c69258daa80": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "875ca14548ad34465fb3337da90bec9c4dcbb573",
+      "filename": "ses-001",
+      "size": 0,
+      "directory": true
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "875ca14548ad34465fb3337da90bec9c4dcbb573": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "58afd6e635832d05fd305d36bf548163856d7e36",
+      "filename": "anat",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "89e83dcf0576abb6e375750326bf0d618a14c8bb",
+      "filename": "fmap",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "dbf603539a2c3609799951e6d712667c44c1cc7f",
+      "filename": "func",
+      "size": 0,
+      "directory": true
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "58afd6e635832d05fd305d36bf548163856d7e36": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "3bfb0b1e51ee169e72f0cac3387da2e7410e44c1",
+      "filename": "sub-p62cs_ses-001_T2w.json",
+      "size": 2164,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s12051477--2160f3c3475816b9ff565e3083d6fe72b44ab7752094296f69e28adec856dc37.nii.gz",
+      "filename": "sub-p62cs_ses-001_T2w.nii.gz",
+      "size": 12051477,
+      "directory": false
+     },
+     {
+      "id": "0fcb0f92b11109bf106615179caa65a3ec5e727f",
+      "filename": "sub-p62cs_ses-001_run-1_T1w.json",
+      "size": 2274,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s10177037--1d5963d6c39a24c9edf8f8a0205e56d757ba92cb8f285fbfdb746a447ef6cf2d.nii.gz",
+      "filename": "sub-p62cs_ses-001_run-1_T1w.nii.gz",
+      "size": 10177037,
+      "directory": false
+     },
+     {
+      "id": "66b97bf8ddd6ccf80bc907cef8c006f4ec054400",
+      "filename": "sub-p62cs_ses-001_run-2_T1w.json",
+      "size": 2291,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s9856867--7f1a726a84aff0e80fbbd58125dd8826ba04e07f8da79edb070fbfd2e22a9c77.nii.gz",
+      "filename": "sub-p62cs_ses-001_run-2_T1w.nii.gz",
+      "size": 9856867,
+      "directory": false
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "89e83dcf0576abb6e375750326bf0d618a14c8bb": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "c01699170625411c19cf5f485c6581a5d0313344",
+      "filename": "sub-p62cs_ses-001_acq-movie_dir-neg_run-1_epi.json",
+      "size": 3507,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s622140--6b32ff1573852bd0fb1cdc8c6e69def5112c5dcb9124572d0edec5ee315bacbb.nii.gz",
+      "filename": "sub-p62cs_ses-001_acq-movie_dir-neg_run-1_epi.nii.gz",
+      "size": 622140,
+      "directory": false
+     },
+     {
+      "id": "1486fd5ea1b5029fe05c226afc2ab52c6021ec60",
+      "filename": "sub-p62cs_ses-001_acq-movie_dir-neg_run-2_epi.json",
+      "size": 3508,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s624933--012a4f9d7c6c292eaf5d74e7f690b8397e5d6f50d25320a6885ef3e0a1fcf7c2.nii.gz",
+      "filename": "sub-p62cs_ses-001_acq-movie_dir-neg_run-2_epi.nii.gz",
+      "size": 624933,
+      "directory": false
+     },
+     {
+      "id": "ca1f7b6d31c83f406c1ccf70573e5c585ddea142",
+      "filename": "sub-p62cs_ses-001_acq-movie_dir-pos_run-1_epi.json",
+      "size": 3510,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s636424--7b0806f78d67d75c330ef699842978584f66e818cecc479124958b77629ca34a.nii.gz",
+      "filename": "sub-p62cs_ses-001_acq-movie_dir-pos_run-1_epi.nii.gz",
+      "size": 636424,
+      "directory": false
+     },
+     {
+      "id": "9a98a357a6cb99c2bafaa2672dd1098a74c9842e",
+      "filename": "sub-p62cs_ses-001_acq-movie_dir-pos_run-2_epi.json",
+      "size": 3512,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s637249--c6dab835de7b7ca5f8775de6f53994fb9f5032fae50e85d717190a9409473d86.nii.gz",
+      "filename": "sub-p62cs_ses-001_acq-movie_dir-pos_run-2_epi.nii.gz",
+      "size": 637249,
+      "directory": false
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "dbf603539a2c3609799951e6d712667c44c1cc7f": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "6bd73f139be169df26154bd096029246b152e762",
+      "filename": "sub-p62cs_ses-001_task-movie_run-1_bold.json",
+      "size": 3489,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s406002058--57405869cedf0476494ce9ec1316fe405519c793c63fcdba37ae252c34008620.nii.gz",
+      "filename": "sub-p62cs_ses-001_task-movie_run-1_bold.nii.gz",
+      "size": 406002058,
+      "directory": false
+     },
+     {
+      "id": "5ba89d20fc6ab3e4b04845665abd59262a217513",
+      "filename": "sub-p62cs_ses-001_task-movie_run-1_events.json",
+      "size": 148,
+      "directory": false
+     },
+     {
+      "id": "a48f6d3c8134c356d7d2cb7d63e3f088fdd309a2",
+      "filename": "sub-p62cs_ses-001_task-movie_run-1_events.tsv",
+      "size": 329384,
+      "directory": false
+     },
+     {
+      "id": "651a5ca0ec5d71418094ce5b905208130e4b969d",
+      "filename": "sub-p62cs_ses-001_task-movie_run-1_sbref.json",
+      "size": 3462,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s618203--e0fc1bc03f5aa74d8df8df1071cb340e67c3e82f68a27d6a0f8aa19a0f9347b8.nii.gz",
+      "filename": "sub-p62cs_ses-001_task-movie_run-1_sbref.nii.gz",
+      "size": 618203,
+      "directory": false
+     },
+     {
+      "id": "e203075f66461a444f23b584cecb58da0d8aa6b2",
+      "filename": "sub-p62cs_ses-001_task-movie_run-2_bold.json",
+      "size": 3507,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s407358479--174b33a5e6f54f79b947a360fc1598db765b706aa9cb31021938d85373290b4b.nii.gz",
+      "filename": "sub-p62cs_ses-001_task-movie_run-2_bold.nii.gz",
+      "size": 407358479,
+      "directory": false
+     },
+     {
+      "id": "5ba89d20fc6ab3e4b04845665abd59262a217513",
+      "filename": "sub-p62cs_ses-001_task-movie_run-2_events.json",
+      "size": 148,
+      "directory": false
+     },
+     {
+      "id": "12aabbff4bf3011b3b82895238f3c51e772ce893",
+      "filename": "sub-p62cs_ses-001_task-movie_run-2_events.tsv",
+      "size": 329416,
+      "directory": false
+     },
+     {
+      "id": "59de96456a413d410118df973df78c39ebf34965",
+      "filename": "sub-p62cs_ses-001_task-movie_run-2_sbref.json",
+      "size": 3479,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s618265--49755a126fc40570e33b8eee0d20b2990a710c3218913acdc4ee555e64fbfca2.nii.gz",
+      "filename": "sub-p62cs_ses-001_task-movie_run-2_sbref.nii.gz",
+      "size": 618265,
+      "directory": false
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "3389a7e57c0e1f764cc88c86bdc596299cb93e90": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "7456ca574dba0369bbd7f37084452da43bb66f80",
+      "filename": "ses-001",
+      "size": 0,
+      "directory": true
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "7456ca574dba0369bbd7f37084452da43bb66f80": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "88d0f36a0b5344071595b90d9d0b4770c62ff71f",
+      "filename": "anat",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "7664287255d448fb95633e9c61477244e9543956",
+      "filename": "fmap",
+      "size": 0,
+      "directory": true
+     },
+     {
+      "id": "d1cee17b1fe573bc3338ca950a578a850e73f687",
+      "filename": "func",
+      "size": 0,
+      "directory": true
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "88d0f36a0b5344071595b90d9d0b4770c62ff71f": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "2ede522b529674625aa7b0f1ee6482bec589196f",
+      "filename": "sub-p41cs_ses-001_T2w.json",
+      "size": 2116,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s6922765--80de9ac99886d8767cf6f90e037919f574247a342d9fbc06f3e582cbacfdb740.nii.gz",
+      "filename": "sub-p41cs_ses-001_T2w.nii.gz",
+      "size": 6922765,
+      "directory": false
+     },
+     {
+      "id": "23bfc7d33dc7a0111f07dcbda03b23ea71cf269e",
+      "filename": "sub-p41cs_ses-001_run-1_T1w.json",
+      "size": 2149,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s10973802--6657f8b2733af5bd199998c4caf81d5eba7775289a4dabf34a7252547e4be2a6.nii.gz",
+      "filename": "sub-p41cs_ses-001_run-1_T1w.nii.gz",
+      "size": 10973802,
+      "directory": false
+     },
+     {
+      "id": "61a8db91419ad69a65eeafcf9220526e6950217c",
+      "filename": "sub-p41cs_ses-001_run-2_T1w.json",
+      "size": 2150,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s10963961--e5c60b998abb4b65beb4528df02ae18e20caf2434471f4df114b7ec0f42113ff.nii.gz",
+      "filename": "sub-p41cs_ses-001_run-2_T1w.nii.gz",
+      "size": 10963961,
+      "directory": false
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "7664287255d448fb95633e9c61477244e9543956": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "35edc4bf88e291da33a3cde8caaca073fd365922",
+      "filename": "sub-p41cs_ses-001_acq-movie_dir-neg_run-1_epi.json",
+      "size": 3232,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s429937--aeba3dd76cbf2f471a49456e9f3c9b1379f598af2ee9990e3b96dad7f9691e98.nii.gz",
+      "filename": "sub-p41cs_ses-001_acq-movie_dir-neg_run-1_epi.nii.gz",
+      "size": 429937,
+      "directory": false
+     },
+     {
+      "id": "bf9aa717b3c102c501fbba043eddba4d9a62f0a6",
+      "filename": "sub-p41cs_ses-001_acq-movie_dir-neg_run-2_epi.json",
+      "size": 3231,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s430809--a2e347cc1fb09e7080c8323a711eabcbf23502aa55501c93bad7d313fe20ef13.nii.gz",
+      "filename": "sub-p41cs_ses-001_acq-movie_dir-neg_run-2_epi.nii.gz",
+      "size": 430809,
+      "directory": false
+     },
+     {
+      "id": "aba280f4d0a74197234729abfc053406be8662c4",
+      "filename": "sub-p41cs_ses-001_acq-movie_dir-pos_run-1_epi.json",
+      "size": 3233,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s436427--3c0a24d1600014f4e46711e084740ef58ba75e83c620987bf2150da39e93edc3.nii.gz",
+      "filename": "sub-p41cs_ses-001_acq-movie_dir-pos_run-1_epi.nii.gz",
+      "size": 436427,
+      "directory": false
+     },
+     {
+      "id": "5a83ba5414504bc43c4479a13c2bb249ca1066b3",
+      "filename": "sub-p41cs_ses-001_acq-movie_dir-pos_run-2_epi.json",
+      "size": 3233,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s438107--7bfbe4fc35cfc3367450097289b257afcda1ee8bcad81361839b937d50a4187d.nii.gz",
+      "filename": "sub-p41cs_ses-001_acq-movie_dir-pos_run-2_epi.nii.gz",
+      "size": 438107,
+      "directory": false
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ },
+ "d1cee17b1fe573bc3338ca950a578a850e73f687": {
+  "data": {
+   "snapshot": {
+    "files": [
+     {
+      "id": "9bba46188bb8184e0b412395c6a05e0dac4cb0ba",
+      "filename": "sub-p41cs_ses-001_task-movie_run-1_bold.json",
+      "size": 3210,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s190906515--ac988cbb18faa73a0d0c68d9645abd829c7d27982f23691a28949d4da8d67075.nii.gz",
+      "filename": "sub-p41cs_ses-001_task-movie_run-1_bold.nii.gz",
+      "size": 190906515,
+      "directory": false
+     },
+     {
+      "id": "5ba89d20fc6ab3e4b04845665abd59262a217513",
+      "filename": "sub-p41cs_ses-001_task-movie_run-1_events.json",
+      "size": 148,
+      "directory": false
+     },
+     {
+      "id": "56954b9097301451c77823ba070db6d4d723cf48",
+      "filename": "sub-p41cs_ses-001_task-movie_run-1_events.tsv",
+      "size": 329322,
+      "directory": false
+     },
+     {
+      "id": "00f3223b713f83e09936c281eeb8962c983e6295",
+      "filename": "sub-p41cs_ses-001_task-movie_run-1_sbref.json",
+      "size": 3195,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s421870--2ce21b0a22049731a95c7f17a7c542a40306c5bb053bf93699c4bbbbf4a17903.nii.gz",
+      "filename": "sub-p41cs_ses-001_task-movie_run-1_sbref.nii.gz",
+      "size": 421870,
+      "directory": false
+     },
+     {
+      "id": "04d35589cd0a33624bad414c18226c19bc02244d",
+      "filename": "sub-p41cs_ses-001_task-movie_run-2_bold.json",
+      "size": 3214,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s191449736--5b0c6b0b34bbfc9d3d507480752b7062d37c3c722ff65bc8b484797710b02837.nii.gz",
+      "filename": "sub-p41cs_ses-001_task-movie_run-2_bold.nii.gz",
+      "size": 191449736,
+      "directory": false
+     },
+     {
+      "id": "5ba89d20fc6ab3e4b04845665abd59262a217513",
+      "filename": "sub-p41cs_ses-001_task-movie_run-2_events.json",
+      "size": 148,
+      "directory": false
+     },
+     {
+      "id": "a99ba1c9c9f1260f2735efdc7e533b37ea57487a",
+      "filename": "sub-p41cs_ses-001_task-movie_run-2_events.tsv",
+      "size": 329424,
+      "directory": false
+     },
+     {
+      "id": "4f9129ab8c9d818d5bddf01ceb2ed8da92caeb83",
+      "filename": "sub-p41cs_ses-001_task-movie_run-2_sbref.json",
+      "size": 3192,
+      "directory": false
+     },
+     {
+      "id": "SHA256E-s422665--fa05981c7da06e9127c50951a6750fd9b148d086bacc169e2103a9b321ad7532.nii.gz",
+      "filename": "sub-p41cs_ses-001_task-movie_run-2_sbref.nii.gz",
+      "size": 422665,
+      "directory": false
+     }
+    ]
+   }
+  },
+  "extensions": {
+   "openneuro": {
+    "version": "5.10.1"
+   }
+  }
+ }
+}

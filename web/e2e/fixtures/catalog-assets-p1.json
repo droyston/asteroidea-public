@@ -1,0 +1,17 @@
+{
+  "assets": [
+    {
+      "asset_id": "asset-0003",
+      "path": "sub-b/sub-b_ses-2_ecephys.nwb",
+      "subject": "sub-b",
+      "bids_session": "ses-2",
+      "datatype": "ecephys",
+      "format": "nwb",
+      "size_bytes": 500000000,
+      "committed_at": "2026-10-01T12:10:00Z"
+    }
+  ],
+  "page": 1,
+  "more": false,
+  "query_ms": 590
+}

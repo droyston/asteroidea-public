@@ -1,0 +1,266 @@
+{
+ "Resources": {
+  "IngestNestedStackIngestNestedStackResourceD6AFAC89": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.us-east-1.",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/cdk-hnb659fds-assets-000000000000-us-east-1/136365aef1a553ba2844ef31845ac179814b9d70120c4bbe5261d0fdf25e711c.json"
+      ]
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Ingest.NestedStack/Ingest.NestedStackResource",
+    "aws:asset:path": "ServicesStackIngest4A804412.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "ApiNestedStackApiNestedStackResourceD6AA1271": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestCommitQueue6CAF0EC7Arn": {
+      "Fn::GetAtt": [
+       "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+       "Outputs.ServicesStackIngestCommitQueue6CAF0EC7Arn"
+      ]
+     },
+     "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestCommitQueue6CAF0EC7Ref": {
+      "Fn::GetAtt": [
+       "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+       "Outputs.ServicesStackIngestCommitQueue6CAF0EC7Ref"
+      ]
+     },
+     "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestImportPlanFunctionD13ABA49Arn": {
+      "Fn::GetAtt": [
+       "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+       "Outputs.ServicesStackIngestImportPlanFunctionD13ABA49Arn"
+      ]
+     },
+     "referencetoServicesStackIngestNestedStackIngestNestedStackResource37D4D433OutputsServicesStackIngestImportPlanFunctionD13ABA49Ref": {
+      "Fn::GetAtt": [
+       "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+       "Outputs.ServicesStackIngestImportPlanFunctionD13ABA49Ref"
+      ]
+     }
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.us-east-1.",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/cdk-hnb659fds-assets-000000000000-us-east-1/3288269477dadda646125776cb5e80b55b37174d26ab355dc72d0793aeb2c380.json"
+      ]
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/Api.NestedStack/Api.NestedStackResource",
+    "aws:asset:path": "ServicesStackApiC48500D6.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzI30TNQTCwv1k1OydbNyUzSqw4uSUzO1nFOy4Mz/EtLCkpLanUCKksy8vP0jfUMTfQsFLOKMzN1i0rzSjJzU/WCILSOgZ6BnoFiQX5OZnJlWGJOZkpiSWZ+np5jeXFwfk4piF0MAEcHRBB1AAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ServicesStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "UserPoolId": {
+   "Value": {
+    "Fn::ImportValue": "asteroidea-UserPoolId"
+   }
+  },
+  "IdentityPoolId": {
+   "Value": {
+    "Fn::ImportValue": "asteroidea-IdentityPoolId"
+   }
+  },
+  "ManagedLoginBaseUrl": {
+   "Value": {
+    "Fn::ImportValue": "asteroidea-ManagedLoginBaseUrl"
+   }
+  },
+  "ResearcherRoleArn": {
+   "Value": {
+    "Fn::ImportValue": "asteroidea-ResearcherRoleArn"
+   }
+  },
+  "SdkClientId": {
+   "Value": {
+    "Fn::ImportValue": "asteroidea-SdkClientId"
+   }
+  },
+  "WebClientId": {
+   "Value": {
+    "Fn::ImportValue": "asteroidea-WebClientId"
+   }
+  },
+  "SandboxTestClientId": {
+   "Value": {
+    "Fn::ImportValue": "asteroidea-SandboxTestClientId"
+   }
+  },
+  "ApiUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ApiNestedStackApiNestedStackResourceD6AA1271",
+     "Outputs.ServicesStackApiHttpApiB7A855B2ApiEndpoint"
+    ]
+   }
+  },
+  "CommitFunctionName": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestCommitFunctionE15D4D76Ref"
+    ]
+   }
+  },
+  "ImportFunctionName": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestImportFunctionC36CFE3BRef"
+    ]
+   }
+  },
+  "CommitQueueUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestCommitQueue6CAF0EC7Ref"
+    ]
+   }
+  },
+  "ExtractQueueUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestExtractQueueC6E9D074Ref"
+    ]
+   }
+  },
+  "ReextractStateMachineArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestReextractStateMachine4E82DD0ARef"
+    ]
+   }
+  },
+  "CommitDlqUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestCommitQueueDlqE29F95BCRef"
+    ]
+   }
+  },
+  "ExtractDlqUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestExtractQueueDlqE6C5FEC6Ref"
+    ]
+   }
+  },
+  "LfpBuildQueueUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestLfpBuildQueue4496E3C9Ref"
+    ]
+   }
+  },
+  "LfpBuildDlqUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestLfpBuildQueueDlqE46D1CE7Ref"
+    ]
+   }
+  },
+  "LfpBuildFunctionName": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IngestNestedStackIngestNestedStackResourceD6AFAC89",
+     "Outputs.ServicesStackIngestLfpBuildFunctionA5201EC9Ref"
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

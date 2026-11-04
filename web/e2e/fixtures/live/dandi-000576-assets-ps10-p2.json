@@ -1,0 +1,97 @@
+{
+  "count": null,
+  "next": "https://api.dandiarchive.org/api/dandisets/000576/versions/0.231010.1811/assets/?page=3&page_size=10",
+  "previous": "https://api.dandiarchive.org/api/dandisets/000576/versions/0.231010.1811/assets/?page_size=10",
+  "results": [
+    {
+      "asset_id": "5c6287ca-827f-4e11-98ef-5c6051059a46",
+      "blob": "cd246fe1-f01e-4a7c-8f05-d74f7c6aab84",
+      "zarr": null,
+      "path": "sub-03/sub-03_ses-20150304T164400_ecephys+image.nwb",
+      "size": 14105218,
+      "created": "2023-10-10T18:09:09.221373Z",
+      "modified": "2023-10-10T18:11:48.043670Z"
+    },
+    {
+      "asset_id": "2b344e7d-3b30-45d4-b4ee-601e6421494a",
+      "blob": "fd33d92c-37f7-4170-af40-fc8ae83b3ff9",
+      "zarr": null,
+      "path": "sub-02/sub-02_ses-20160302T164800_ecephys+image.nwb",
+      "size": 21113951,
+      "created": "2023-10-10T18:09:17.931604Z",
+      "modified": "2023-10-10T18:11:48.053309Z"
+    },
+    {
+      "asset_id": "c7d10205-9cc1-4dd3-9901-8069e03beef7",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-04/sub-04_ses-20120829T175200_ecephys+image/fe217a3c-380b-4480-9e79-9383df92ee3c_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:19.620638Z",
+      "modified": "2023-10-10T18:11:48.072535Z"
+    },
+    {
+      "asset_id": "6ba1206b-2942-4364-b1e6-274b8aa956b8",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-05/sub-05_ses-20121207T173500_ecephys+image/75fe4cca-e26c-4fa2-ac68-bd4b422e37c7_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:21.248378Z",
+      "modified": "2023-10-10T18:11:48.112219Z"
+    },
+    {
+      "asset_id": "bb94f38e-9e9e-4f79-9867-6626b4048e35",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-03/sub-03_ses-20150304T164400_ecephys+image/5f6936b7-752f-416f-b5bb-5f8649c7c4bc_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:21.587317Z",
+      "modified": "2023-10-10T18:11:48.122698Z"
+    },
+    {
+      "asset_id": "25ccdb07-3c6f-45b8-a5bd-d36016827aa2",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-02/sub-02_ses-20160302T164800_ecephys+image/b2670e2b-931b-4252-bdec-5518f284f7c4_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:22.838819Z",
+      "modified": "2023-10-10T18:11:48.131705Z"
+    },
+    {
+      "asset_id": "3758f8e9-7790-4503-a0a0-a18b45669771",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-01/sub-01_ses-20140828T132700_ecephys+image/b154b52f-1818-4b7a-9e77-28fbbeef4b70_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:22.921829Z",
+      "modified": "2023-10-10T18:11:48.141655Z"
+    },
+    {
+      "asset_id": "651e9d6e-ba97-42d6-81ac-292fd6a8d4f0",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-06/sub-06_ses-20131209T113600_ecephys+image/2a349116-0412-4eac-bb6c-cdea8fe69b00_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:23.945495Z",
+      "modified": "2023-10-10T18:11:48.150163Z"
+    },
+    {
+      "asset_id": "7b568d90-45dd-4fb5-b59d-7de2242d3c58",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-07/sub-07_ses-20160212T171400_ecephys+image/c1913d6e-8080-4684-b485-6e584920a2c0_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:25.608368Z",
+      "modified": "2023-10-10T18:11:48.158504Z"
+    },
+    {
+      "asset_id": "52db3ee1-981a-4042-a280-fb768277d2e3",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-08/sub-08_ses-20161217T120200_ecephys+image/089d7e42-af9a-4c22-9279-2d310e8b8097_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:27.220235Z",
+      "modified": "2023-10-10T18:11:48.084390Z"
+    }
+  ]
+}

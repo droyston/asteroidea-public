@@ -1,0 +1,25 @@
+{
+  "platform": {
+    "region": "us-east-1",
+    "user_pool_id": "us-east-1_E2E",
+    "client_id": "sdk-client-e2e",
+    "login_base_url": "https://auth.asteroidea.test",
+    "redirect_uri": "http://localhost:8765/callback",
+    "identity_pool_id": "us-east-1:00000000-0000-0000-0000-000000000000",
+    "api_url": "https://api.asteroidea.test",
+    "raw_bucket": "asteroidea-raw-e2e"
+  },
+  "wheel": {
+    "url": "https://handout.asteroidea.test/handout/asteroidea-0.1.0-py3-none-any.whl?sig=1&exp=2",
+    "filename": "asteroidea-0.1.0-py3-none-any.whl",
+    "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "expires_at": 1792003600
+  },
+  "notebook": {
+    "url": "https://handout.asteroidea.test/handout/exemplar.ipynb?sig=2",
+    "filename": "exemplar.ipynb",
+    "expires_at": 1792003600
+  },
+  "pins": ["numpy==2.5.4"],
+  "install": "Install uv first if it is missing: https://docs.astral.sh/uv/getting-started/installation/\nThen run:\nuvx --from 'https://app.asteroidea.test/sdk/asteroidea-0.1.0-py3-none-any.whl' asteroidea-setup https://app.asteroidea.test"
+}

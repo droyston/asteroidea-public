@@ -1,0 +1,13 @@
+{
+ "comment": "Ancillary file for dandi:000623; pinned commit; size and sha256 taken from an anonymous GET",
+ "files": [
+  {
+   "path": "stimuli/scenecut_info.csv",
+   "url": "https://raw.githubusercontent.com/rutishauserlab/bmovie-release-NWB-BIDS/8c35290b74a9522bf27cbcae44dcb88ff2a1d58f/assets/annotations/scenecut_info.csv",
+   "version": "8c35290b74a9522bf27cbcae44dcb88ff2a1d58f",
+   "size": 4399,
+   "sha256": "cc775ba8eb4c42bae083b4bc2c3dd7d9e380879e5ed342aa7ad9cd157deefb99",
+   "license": "BSD-3-Clause"
+  }
+ ]
+}

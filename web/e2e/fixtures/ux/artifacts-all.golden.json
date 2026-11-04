@@ -1,0 +1,52 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "0b6f3e52-5a1d-4c3e-9f10-1a2b3c4d5e03",
+      "name": "tuning-curves.csv",
+      "size": 4096,
+      "content_type": "application/octet-stream",
+      "snapshot_id": null,
+      "state": "COMMITTED",
+      "created_at": 1791973400,
+      "finalized_at": 1791973400,
+      "source_asset_ids": [],
+      "source_asset_count": 0,
+      "run_id": "r-1",
+      "run_function": "tuning",
+      "author_email": "grace@example.test"
+    },
+    {
+      "artifact_id": "0b6f3e52-5a1d-4c3e-9f10-1a2b3c4d5e02",
+      "name": "spike-rates.csv",
+      "size": 3145728,
+      "content_type": "application/octet-stream",
+      "snapshot_id": null,
+      "state": "COMMITTED",
+      "created_at": 1791972800,
+      "finalized_at": 1791972800,
+      "source_asset_ids": [
+        "6b1f0c2e-6f43-5b0e-9d2a-8a3c1f5e7d10",
+        "0d9c3e1a-2b4f-5c6d-8e7f-1a2b3c4d5e6f"
+      ],
+      "source_asset_count": 2,
+      "run_id": "r-1",
+      "run_function": "analysis.rates",
+      "author_email": "ada@example.test"
+    },
+    {
+      "artifact_id": "0b6f3e52-5a1d-4c3e-9f10-1a2b3c4d5e01",
+      "name": "baseline-rates.csv",
+      "size": 2048,
+      "content_type": "application/octet-stream",
+      "snapshot_id": null,
+      "state": "COMMITTED",
+      "created_at": 1791800000,
+      "finalized_at": 1791800000,
+      "source_asset_ids": ["6b1f0c2e-6f43-5b0e-9d2a-8a3c1f5e7d10"],
+      "source_asset_count": 1,
+      "run_id": "r-1",
+      "run_function": "rates",
+      "author_email": "ada@example.test"
+    }
+  ]
+}

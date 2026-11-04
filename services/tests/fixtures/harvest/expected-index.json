@@ -1,0 +1,5512 @@
+{
+  "schema": "asteroidea.dataset-index/2",
+  "harvested_at": "2026-10-23T12:00:00Z",
+  "harvester": {
+    "package": "asteroidea-services",
+    "version": "0.0.0"
+  },
+  "sources": {
+    "dandi": {
+      "listed": 5,
+      "ok": 4,
+      "seconds": 0.0,
+      "failed": [
+        {
+          "id": "000004",
+          "version": "0.220126.1852",
+          "url": "https://api.dandiarchive.org/api/dandisets/000004/versions/0.220126.1852/info/",
+          "error_type": "HTTPError",
+          "message": "HTTP 500 Internal Server Error",
+          "attempts": 3,
+          "stale": false
+        }
+      ]
+    },
+    "openneuro": {
+      "listed": 127,
+      "ok": 126,
+      "seconds": 0.0,
+      "failed": [],
+      "null_nodes": 1
+    }
+  },
+  "datasets": [
+    {
+      "source": "dandi",
+      "id": "000003",
+      "version": "0.260218.2052",
+      "version_ref": "10.48324/dandi.000003/0.260218.2052",
+      "version_modified": "2026-02-18T20:52:29.214285Z",
+      "title": "Physiological Properties and Behavioral Correlates of Hippocampal Granule Cells and Mossy Cells",
+      "species": [
+        {
+          "taxon": "NCBITaxon:10090",
+          "label": "House mouse"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "ecephys",
+        "behavior"
+      ],
+      "variables": [
+        "DecompositionSeries",
+        "LFP",
+        "Units",
+        "Position",
+        "ElectricalSeries"
+      ],
+      "has_units": true,
+      "has_lfp": true,
+      "has_ephys_series": true,
+      "approach": [
+        "electrophysiological approach",
+        "behavioral approach"
+      ],
+      "techniques": [
+        "signal filtering technique",
+        "fourier analysis technique",
+        "spike sorting technique",
+        "behavioral technique",
+        "multi electrode extracellular electrophysiology recording technique"
+      ],
+      "subjects": 16,
+      "bytes": 2559248010229,
+      "files": 101,
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "raw": "spdx:CC-BY-4.0"
+      },
+      "standards": [
+        "NWB"
+      ],
+      "urls": {
+        "landing": "https://dandiarchive.org/dandiset/000003/0.260218.2052",
+        "api": "https://api.dandiarchive.org/api/dandisets/000003/versions/0.260218.2052/"
+      },
+      "published_at": "2026-02-18T20:52:23Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "dandi",
+      "id": "000016",
+      "version": "0.260915.2309",
+      "version_ref": "10.48324/dandi.000016/0.260915.2309",
+      "version_modified": "2026-09-15T23:09:53.007903Z",
+      "title": "Excitatory and inhibitory subnetworks are equally selective during decision-making and emerge simultaneously during learning",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "ophys",
+        "behavior"
+      ],
+      "variables": [
+        "BehavioralTimeSeries",
+        "PlaneSegmentation"
+      ],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [
+        "microscopy approach; cell population imaging",
+        "behavioral approach"
+      ],
+      "techniques": [
+        "behavioral technique"
+      ],
+      "subjects": 4,
+      "bytes": 62572042499,
+      "files": 135,
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "raw": "spdx:CC-BY-4.0"
+      },
+      "standards": [
+        "NWB"
+      ],
+      "urls": {
+        "landing": "https://dandiarchive.org/dandiset/000016/0.260915.2309",
+        "api": "https://api.dandiarchive.org/api/dandisets/000016/versions/0.260915.2309/"
+      },
+      "published_at": "2026-09-15T23:09:47Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "dandi",
+      "id": "000029",
+      "version": "0.231017.2004",
+      "version_ref": "10.48324/dandi.000029/0.231017.2004",
+      "version_modified": "2023-10-17T20:04:32.976864Z",
+      "title": "Test dataset for development purposes",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9544",
+          "label": "Macaca mulatta - Rhesus monkey"
+        },
+        {
+          "taxon": "NCBITaxon:10090",
+          "label": "Mus musculus - House mouse"
+        },
+        {
+          "taxon": "NCBITaxon:10116",
+          "label": "Rattus norvegicus - Norway rat"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "ecephys",
+        "behavior"
+      ],
+      "variables": [
+        "ProcessingModule",
+        "ElectrodeGroup",
+        "BehavioralEvents",
+        "Units"
+      ],
+      "has_units": true,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [
+        "electrophysiological approach",
+        "behavioral approach"
+      ],
+      "techniques": [
+        "analytical technique",
+        "surgical technique",
+        "spike sorting technique",
+        "behavioral technique"
+      ],
+      "subjects": 5,
+      "bytes": 39011902,
+      "files": 9,
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "raw": "spdx:CC-BY-4.0"
+      },
+      "standards": [
+        "NWB"
+      ],
+      "urls": {
+        "landing": "https://dandiarchive.org/dandiset/000029/0.231017.2004",
+        "api": "https://api.dandiarchive.org/api/dandisets/000029/versions/0.231017.2004/"
+      },
+      "published_at": "2023-10-17T20:04:31Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "dandi",
+      "id": "000576",
+      "version": "0.231010.1811",
+      "version_ref": "10.48324/dandi.000576/0.231010.1811",
+      "version_modified": "2023-10-11T16:24:40.585189Z",
+      "title": "Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Homo sapiens - Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "ecephys"
+      ],
+      "variables": [
+        "ProcessingModule",
+        "LFP",
+        "Units",
+        "ElectricalSeries",
+        "ElectrodeGroup"
+      ],
+      "has_units": true,
+      "has_lfp": true,
+      "has_ephys_series": true,
+      "approach": [
+        "electrophysiological approach"
+      ],
+      "techniques": [
+        "surgical technique",
+        "analytical technique",
+        "signal filtering technique",
+        "multi electrode extracellular electrophysiology recording technique",
+        "spike sorting technique"
+      ],
+      "subjects": 9,
+      "bytes": 2191651090,
+      "files": 27,
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "raw": "spdx:CC-BY-4.0"
+      },
+      "standards": [
+        "NWB"
+      ],
+      "urls": {
+        "landing": "https://dandiarchive.org/dandiset/000576/0.231010.1811",
+        "api": "https://api.dandiarchive.org/api/dandisets/000576/versions/0.231010.1811/"
+      },
+      "published_at": "2023-10-10T18:11:47Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000001",
+      "version": "1.0.0",
+      "version_ref": "f8e27ac909e50b5b5e311f6be271f0b1757ebb7b",
+      "version_modified": null,
+      "title": "Balloon Analog Risk-taking Task",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 16,
+      "bytes": 2416199965,
+      "files": 133,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000001/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2020-05-14T14:56:55Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000002",
+      "version": "00002",
+      "version_ref": "eeb195ca5065e926b08d87aa16ff0eb22be46ed3",
+      "version_modified": null,
+      "title": "Classification learning",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 17,
+      "bytes": 2896661859,
+      "files": 245,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000002/versions/00002",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:23:36Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000003",
+      "version": "1.0.0",
+      "version_ref": "c09053726f9f9cac58b2a1db43a4b6f57d67ccc3",
+      "version_modified": null,
+      "title": "Rhyme judgment",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_structural",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 13,
+      "bytes": 410092142,
+      "files": 57,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000003/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2020-05-14T15:01:29Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000005",
+      "version": "00001",
+      "version_ref": "b094fc2f41487f92d382a1a432165ae58caae386",
+      "version_modified": null,
+      "title": "Mixed-gambles task",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 16,
+      "bytes": 1898145323,
+      "files": 133,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000005/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:26:48Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000006",
+      "version": "00001",
+      "version_ref": "dcedff1d22b7abe4e90fab8f9dff888ded0983be",
+      "version_modified": null,
+      "title": "ds000006",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 14,
+      "bytes": 4772279451,
+      "files": 388,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000006/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:32:20Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000007",
+      "version": "00001",
+      "version_ref": "68d197dfb9f15646efec9925bca12a7f11f01227",
+      "version_modified": null,
+      "title": "Stop-signal task with spoken & manual responses",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 20,
+      "bytes": 3499985912,
+      "files": 442,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000007/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:38:36Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000008",
+      "version": "00001",
+      "version_ref": "a65448a0f00ebf4038e134f5a956f429ec4ca1ed",
+      "version_modified": null,
+      "title": "Stop-signal task with unconditional and conditional stopping",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 14,
+      "bytes": 2160574004,
+      "files": 192,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000008/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:41:18Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000011",
+      "version": "1.0.0",
+      "version_ref": "ba66c761540bb7fdedd6d2707d31e50e35b77f61",
+      "version_modified": null,
+      "title": "Classification learning and tone-counting",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 14,
+      "bytes": 2441763843,
+      "files": 204,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000011/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2022-12-14T22:38:36Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000051",
+      "version": "00001",
+      "version_ref": "3af9bf0a1d4628a190fc3c82dbbc36dab51cb030",
+      "version_modified": null,
+      "title": "Cross-language repetition priming",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 13,
+      "bytes": 2266024199,
+      "files": 249,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000051/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:44:44Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000052",
+      "version": "00001",
+      "version_ref": "b4de00c9dea1f2fb8ac36a8050e2e70926bbb5ed",
+      "version_modified": null,
+      "title": "Classification learning and reversal",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 13,
+      "bytes": 1288088364,
+      "files": 147,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000052/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:49:18Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000101",
+      "version": "00004",
+      "version_ref": "39862ee70d41c8fb003c1209f18ae42a195b931b",
+      "version_modified": null,
+      "title": "Simon task",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 21,
+      "bytes": 1489069238,
+      "files": 111,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000101/versions/00004",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:51:17Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000102",
+      "version": "00001",
+      "version_ref": "fdc1ce49d524fc1e77e5b763f10acb02f403c581",
+      "version_modified": null,
+      "title": "Flanker task (event-related)",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 26,
+      "bytes": 1775588837,
+      "files": 136,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000102/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:53:38Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000105",
+      "version": "3.0.0",
+      "version_ref": "b2677616e86113ec230e6189ad2341ffcc065c83",
+      "version_modified": null,
+      "title": "Visual object recognition",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 6,
+      "bytes": 1878504923,
+      "files": 152,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000105/versions/3.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2023-03-24T18:52:32Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000107",
+      "version": "00001",
+      "version_ref": "1809a8a1f02349c558b3e9c96e4d6bdf38bdc7f6",
+      "version_modified": null,
+      "title": "Word and object processing",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 49,
+      "bytes": 3372249297,
+      "files": 249,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000107/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T01:59:50Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000109",
+      "version": "2.0.2",
+      "version_ref": "983f47f00d2611e860d975231913ee2e6c604f1b",
+      "version_modified": null,
+      "title": "Social cognitive tasks (animate movement task, moral judgment task, false belief task)",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 36,
+      "bytes": 2897730879,
+      "files": 178,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000109/versions/2.0.2",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2022-05-16T15:27:06Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000110",
+      "version": "00001",
+      "version_ref": "727ffbfd973db8acaa72bf8a8b2e2c188f6885a6",
+      "version_modified": null,
+      "title": "Incidental encoding task (Posner Cueing Paradigm)",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 18,
+      "bytes": 5697546179,
+      "files": 401,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000110/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T02:11:07Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000115",
+      "version": "00001",
+      "version_ref": "4566040fa4ae04d2777034961cef2ee7ba0cc572",
+      "version_modified": null,
+      "title": "Working memory in healthy and schizophrenic individuals",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 99,
+      "bytes": 9110414267,
+      "files": 700,
+      "license": {
+        "spdx": null,
+        "raw": null
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000115/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T02:22:24Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000017",
+      "version": "00001",
+      "version_ref": "8ee57b88de61dc929470a47a74571619fa8063c0",
+      "version_modified": null,
+      "title": "ds000017",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 8,
+      "bytes": 2531161760,
+      "files": 202,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000017/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T02:23:23Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000122",
+      "version": "00001",
+      "version_ref": "24743366f3e10684748588f7aea2a9e2c87062fe",
+      "version_modified": null,
+      "title": "Task-related concurrent but opposite modulations of overlapping functional networks as revealed by spatial ICA",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 17,
+      "bytes": 1729493096,
+      "files": 124,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000122/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T02:27:43Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000148",
+      "version": "1.0.0",
+      "version_ref": "adf4aa05459bb4135cbe86c822ce82f3202cfca0",
+      "version_modified": null,
+      "title": "Who can afford self-control? The neural efficiency mechanism explains effective self-regulation of behavior ",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 49,
+      "bytes": 14447415448,
+      "files": 446,
+      "license": {
+        "spdx": null,
+        "raw": "PPDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000148/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-05-15T22:32:40Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000009",
+      "version": "00002",
+      "version_ref": "ee50137de7af1efcca44e914fe5eafa6a8e8e322",
+      "version_modified": null,
+      "title": "The generality of self-control",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_diffusion",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 24,
+      "bytes": 6372717095,
+      "files": 659,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000009/versions/00002",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T02:50:51Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001021",
+      "version": "1.0.0",
+      "version_ref": "781225f3c6c59ce493bfdc4dcc72ac3ffa81bdd9",
+      "version_modified": null,
+      "title": "NKI-sample",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_diffusion",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 1,
+      "bytes": 1028633313,
+      "files": 34,
+      "license": {
+        "spdx": null,
+        "raw": null
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001021/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-08-15T15:23:07Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001037",
+      "version": "00001",
+      "version_ref": "f996ba587ae398f93ba24c34ece68d686ec66d0b",
+      "version_modified": null,
+      "title": "The brain of Chris",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 1,
+      "bytes": 8600815,
+      "files": 2,
+      "license": {
+        "spdx": null,
+        "raw": null
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001037/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T03:16:56Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001105",
+      "version": "00001",
+      "version_ref": "bf2b4a58fc1eb0147d8ee35000193650fd29dba7",
+      "version_modified": null,
+      "title": "Social predictive coding",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 28,
+      "bytes": 44494831271,
+      "files": 312,
+      "license": {
+        "spdx": null,
+        "raw": "Creative Commons Attribution 4.0 International Public License"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001105/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T03:54:12Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001107",
+      "version": "00001",
+      "version_ref": "95665824811d5a7f73b81f2210d55c8045caad85",
+      "version_modified": null,
+      "title": "ds001107",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 0,
+      "bytes": 11385139272,
+      "files": 1625,
+      "license": {
+        "spdx": null,
+        "raw": null
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001107/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T04:02:07Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001110",
+      "version": "00003",
+      "version_ref": "19321a67e2342d0e618f0718bb7c602ae4cc8a16",
+      "version_modified": null,
+      "title": "Sherlock_Merlin",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 37,
+      "bytes": 9712179638,
+      "files": 206,
+      "license": {
+        "spdx": null,
+        "raw": null
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001110/versions/00003",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T04:26:31Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001131",
+      "version": "1.0.0",
+      "version_ref": "f57f29d2dc6533c2420c161527935f14181eac57",
+      "version_modified": null,
+      "title": "Milky-Vodka",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 54,
+      "bytes": 3894839528,
+      "files": 210,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001131/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-11-09T19:58:45Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001132",
+      "version": "1.0.0",
+      "version_ref": "fc91edbbe1b8117f96b40bb4d1f5df43aa1afdce",
+      "version_modified": null,
+      "title": "Sherlock",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 16,
+      "bytes": 6605709808,
+      "files": 117,
+      "license": {
+        "spdx": null,
+        "raw": ""
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001132/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-04-04T19:51:14Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001145",
+      "version": "1.0.0",
+      "version_ref": "188355b692066c0ff9c13387cfa42373555615de",
+      "version_modified": null,
+      "title": "Twilight Zone Movie Watching Dataset",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 24,
+      "bytes": 8788115957,
+      "files": 78,
+      "license": {
+        "spdx": null,
+        "raw": ""
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001145/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-04-04T14:25:36Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001168",
+      "version": "1.0.1",
+      "version_ref": "131e3e8268632242058b9175f6cbf6dd8df6abe9",
+      "version_modified": null,
+      "title": "A high resolution 7-Tesla resting-state fMRI test-retest dataset with cognitive and physiological measures",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 22,
+      "bytes": 46477596979,
+      "files": 732,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001168/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-01-07T21:50:54Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001178",
+      "version": "00002",
+      "version_ref": "cdd22be24d031408b5218674722743a29740dbd5",
+      "version_modified": null,
+      "title": "Example MR artifacts",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 23,
+      "bytes": 2026918566,
+      "files": 43,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License \nv1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike \nCommunity Norms (http://www.opendatacommons.org/norms/odc-by-sa/); \nin particular, while not legally required, we hope that all users \nof the data will acknowledge the OpenfMRI project and NSF Grant \nOCI-1131441 (R. Poldrack, PI) in any publications."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001178/versions/00002",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-14T12:06:06Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001218",
+      "version": "00001",
+      "version_ref": "a628dbebf0946715f144e586395e4c7c7538ab6e",
+      "version_modified": null,
+      "title": "State representation pictures",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 30,
+      "bytes": 76745696247,
+      "files": 815,
+      "license": {
+        "spdx": null,
+        "raw": "Creative Commons Attribution 4.0 International Public License"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001218/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-15T11:23:18Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001226",
+      "version": "5.0.1",
+      "version_ref": "359d372c5e972a161966312128adb365870df949",
+      "version_modified": null,
+      "title": "BTC_preop",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_diffusion",
+        "mri_structural",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 36,
+      "bytes": 3354957625,
+      "files": 436,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001226/versions/5.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-03-31T18:36:13Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001228",
+      "version": "00002",
+      "version_ref": "2d4263eaace9be43b16be36e9a03faba84f73d67",
+      "version_modified": null,
+      "title": "Decoding intentions of self and others",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 24,
+      "bytes": 10234837827,
+      "files": 315,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001228/versions/00002",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-15T13:09:13Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001229",
+      "version": "1.0.1",
+      "version_ref": "e4aa00a2be42d9a490673581b51e7cf3a0a73ca1",
+      "version_modified": null,
+      "title": "Neural Evidence of the Strategic Choice Between Working Memory and Episodic Memory in Prospective Remembering.",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 27,
+      "bytes": 9026413067,
+      "files": 540,
+      "license": {
+        "spdx": null,
+        "raw": ""
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001229/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-03-14T20:56:07Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001232",
+      "version": "1.0.0",
+      "version_ref": "c7993a2304518ecd9e5f3a21a2cdc34ebecfd707",
+      "version_modified": null,
+      "title": "Competition between items in working memory leads to forgetting",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 21,
+      "bytes": 7637478569,
+      "files": 699,
+      "license": {
+        "spdx": null,
+        "raw": ""
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001232/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-02-22T14:43:07Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001233",
+      "version": "00003",
+      "version_ref": "24c86e4dc9a0fe014618d23bfa98821300486521",
+      "version_modified": null,
+      "title": "singleFingerRSA",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 18,
+      "bytes": 40901123676,
+      "files": 622,
+      "license": {
+        "spdx": null,
+        "raw": "Creative Commons CC0 1.0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001233/versions/00003",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-15T13:40:12Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001235",
+      "version": "00001",
+      "version_ref": "14b8b5b4f9d0e460e343f3b227279d0149faaa8f",
+      "version_modified": null,
+      "title": "Human-Object Interaction",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 12,
+      "bytes": 4956812822,
+      "files": 351,
+      "license": {
+        "spdx": null,
+        "raw": null
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001235/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-15T13:43:54Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001241",
+      "version": "1.0.1",
+      "version_ref": "9065636760f46cb66de31961669104bba2508688",
+      "version_modified": null,
+      "title": "OLVSL_ Object-location visual statistical learning",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 24,
+      "bytes": 7012128224,
+      "files": 1016,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001241/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2020-09-24T23:24:16Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001242",
+      "version": "1.0.0",
+      "version_ref": "997b780df9601db0e263c4dfd2623b02005662e8",
+      "version_modified": null,
+      "title": "Examining effects of arousal on responses to salient and non-salient stimuli in younger and older adults",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_diffusion",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 52,
+      "bytes": 17345959791,
+      "files": 2577,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "This dataset is made available under the Public Domain Dedication and License v1.0, whose full text can be found at \nhttp://www.opendatacommons.org/licenses/pddl/1.0/. \nWe hope that all users will follow the ODC Attribution/Share-Alike Community Norms (http://www.opendatacommons.org/norms/odc-by-sa/); in particular, while not legally required, we hope that all users of the data will cite at least one of the associated publications associated with these data and acknowledge the OpenfMRI project and National Institute on Aging(RO1AG025340; PI: M.Mather), JSPS KAKENHI (16H03750, 15K21062: PI: T.Ueno), JSPS KAKENHI (16H05959, 16KT0002, 16H02053; PI:M.Sakaki) and European Commission (CIG618600; PI:M.Sakaki) in any publication."
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001242/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-06-06T11:48:26Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001246",
+      "version": "1.2.1",
+      "version_ref": "261343c5e738466b7b2e2d7ef9b07785845a7463",
+      "version_modified": null,
+      "title": "Generic Object Decoding (fMRI on ImageNet)",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 5,
+      "bytes": 19693682188,
+      "files": 859,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001246/versions/1.2.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-12-06T20:42:17Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001247",
+      "version": "00001",
+      "version_ref": "79c1a9122165861dfe69696aae63fe8fb04b1e3b",
+      "version_modified": null,
+      "title": "sports_betting_study",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 43,
+      "bytes": 7375282283,
+      "files": 345,
+      "license": {
+        "spdx": null,
+        "raw": null
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001247/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-15T15:13:50Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001293",
+      "version": "00002",
+      "version_ref": "8434b539eecbfadbbcfa660534b9559b6935793d",
+      "version_modified": null,
+      "title": "Multi-resolution 7T fMRI data on the representation of visual orientation",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 7,
+      "bytes": 54974624447,
+      "files": 1216,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001293/versions/00002",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-15T19:04:17Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001297",
+      "version": "00001",
+      "version_ref": "b293e2f64f27361169f2a101ce7626b0b0f3c224",
+      "version_modified": null,
+      "title": "Personally familiar faces",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 33,
+      "bytes": 10588098701,
+      "files": 791,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001297/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-15T19:11:46Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001299",
+      "version": "1.0.0",
+      "version_ref": "71637bcd43dac53378494574d480a8060ca2422f",
+      "version_modified": null,
+      "title": "NumberlineMarking",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 19,
+      "bytes": 60939027938,
+      "files": 251,
+      "license": {
+        "spdx": null,
+        "raw": null
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001299/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2019-06-05T17:39:56Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds001302",
+      "version": "1.0.1",
+      "version_ref": "052a3e48313d1a1aea9a52b21c3fca202110beb7",
+      "version_modified": null,
+      "title": "Inverse Base Rate",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 23,
+      "bytes": 5830397105,
+      "files": 394,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds001302/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-08-29T14:37:19Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000208",
+      "version": "1.0.1",
+      "version_ref": "f718509da3ac054fc9ab191c1bbdb984710a932e",
+      "version_modified": null,
+      "title": "Brain connectivity predicts placebo response across chronic pain clinical trials",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_structural",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 76,
+      "bytes": 4932450486,
+      "files": 158,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000208/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2022-05-24T11:21:04Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000133",
+      "version": "00001",
+      "version_ref": "e63f35a083684e11ef26031755d697a9c0c0cc81",
+      "version_modified": null,
+      "title": "Modafinil alters intrinsic functional connectivity of the right posterior insula: a pharmacological resting state fMRI study",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 26,
+      "bytes": 2683742677,
+      "files": 420,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000133/versions/00001",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-16T16:20:42Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000210",
+      "version": "00002",
+      "version_ref": "a6218349546d3ed007e9bf86c4a4c9c43cb9d938",
+      "version_modified": null,
+      "title": "Multi-echo fMRI replication sample of autobiographical memory, prospection and theory of mind reasoning tasks",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 31,
+      "bytes": 20568785431,
+      "files": 848,
+      "license": {
+        "spdx": "PDDL-1.0",
+        "raw": "PDDL"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000210/versions/00002",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2018-07-16T16:43:03Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds000217",
+      "version": "1.0.0",
+      "version_ref": "50899e92375c0e990048125f6d84124bb676fd6b",
+      "version_modified": null,
+      "title": "Route Learning",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 41,
+      "bytes": 109726488609,
+      "files": 3095,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds000217/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2020-09-24T23:20:25Z",
+      "deid": {
+        "affirmed_defaced": null
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005329",
+      "version": "2.0.0",
+      "version_ref": "22ffd06d1a30ffc4d4c8584fc324c5f52dc7d97e",
+      "version_modified": null,
+      "title": "Are the ventral anterior temporal lobes involved in accessing conceptual knowledge during spoken word production? fMRI evidence from auditory naming",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 25,
+      "bytes": 21799430561,
+      "files": 407,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005329/versions/2.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-08-13T07:37:23Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005339",
+      "version": "1.0.0",
+      "version_ref": "52c9db3e1ad95c5b388c7c27b57e6922979e914a",
+      "version_modified": null,
+      "title": "Yale_reading_dataset",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_diffusion",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 223,
+      "bytes": 55867253875,
+      "files": 8818,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005339/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-04-02T18:19:12Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005340",
+      "version": "1.0.4",
+      "version_ref": "11e4f5d59bdfe6d14d6a4d54a7aadb3bdb47d3ae",
+      "version_modified": null,
+      "title": "Fundamental frequency predominantly drives talker differences in auditory brainstem responses to continuous speech",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 15,
+      "bytes": 10172114688,
+      "files": 112,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005340/versions/1.0.4",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-11-22T21:58:06Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005341",
+      "version": "2.3.0",
+      "version_ref": "b4d168fc038d72eac63d73a68c0ef70346456d35",
+      "version_modified": null,
+      "title": "PREDYS",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_diffusion",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 49,
+      "bytes": 130131630897,
+      "files": 4419,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005341/versions/2.3.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-08T06:39:11Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005342",
+      "version": "1.0.3",
+      "version_ref": "30bb3b67d76ce007b822fed801e496fafe5598a0",
+      "version_modified": null,
+      "title": "EEG data offline and online during motor imagery for standing and sitting",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 32,
+      "bytes": 2181595802,
+      "files": 134,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005342/versions/1.0.3",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-15T19:07:42Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005343",
+      "version": "1.0.0",
+      "version_ref": "c046ad14de05cbfc0f545fa2d3b33ac7216dd597",
+      "version_modified": null,
+      "title": "Gaffrey Lab Infant Microstates and Attention",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 43,
+      "bytes": 24373540791,
+      "files": 264,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005343/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-16T12:00:23Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005345",
+      "version": "1.0.1",
+      "version_ref": "bdc52f3654000bb881cfde7a86bc4a6dda17946d",
+      "version_modified": null,
+      "title": "Le Petit Prince (LPP) Multi-talker: Naturalistic 7T fMRI and EEG Dataset",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "eeg",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 26,
+      "bytes": 174527101942,
+      "files": 421,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005345/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-04-17T07:54:50Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005346",
+      "version": "1.0.5",
+      "version_ref": "e195b08a630316a6a8f7ad837e07fb4ae83250a1",
+      "version_modified": null,
+      "title": "Naturalistic fMRI and MEG recordings during viewing of a reality TV show",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "meg",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 60,
+      "bytes": 41821126308,
+      "files": 543,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005346/versions/1.0.5",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-12-18T13:13:46Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005354",
+      "version": "1.0.0",
+      "version_ref": "6ca3891e1b751c38618a3c18d3e54c0c2afb7c77",
+      "version_modified": null,
+      "title": "geo-nav-fmri",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 20,
+      "bytes": 267439131963,
+      "files": 11325,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005354/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-22T09:30:42Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005355",
+      "version": "1.0.1",
+      "version_ref": "868ddff9978f6268647a6212c77053d1effecb57",
+      "version_modified": null,
+      "title": "BSC_BIDS_071724",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 12,
+      "bytes": 7822720530,
+      "files": 381,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005355/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-17T17:30:56Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005356",
+      "version": "1.5.0",
+      "version_ref": "253cf1753b79fa734d8ccd2d48dc00f100744f9c",
+      "version_modified": null,
+      "title": "MEG: Major Depression & Probabilistic Learning Task",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "meg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 85,
+      "bytes": 173488425070,
+      "files": 630,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005356/versions/1.5.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-03-06T16:10:24Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005357",
+      "version": "1.0.1",
+      "version_ref": "7e5fe9665771c4d4d81df1cd36fee4f84a68deb7",
+      "version_modified": null,
+      "title": "Neurogame Project",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_structural",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 45,
+      "bytes": 12442557601,
+      "files": 183,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005357/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-03-16T11:09:27Z",
+      "deid": {
+        "affirmed_defaced": false
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005360",
+      "version": "1.0.1",
+      "version_ref": "01cfe5bd853c01a9c71ee1ff19f84b5282fabb33",
+      "version_modified": null,
+      "title": "Hormone Health Study (HHS)",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_diffusion",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 22,
+      "bytes": 8776136897,
+      "files": 2272,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005360/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-04-09T23:14:19Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005363",
+      "version": "1.0.0",
+      "version_ref": "1274501f556f3e317dec9c103c8dff5978ae9293",
+      "version_modified": null,
+      "title": "Object recognition in healthy aging (ORHA) - EEG",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 43,
+      "bytes": 19011100939,
+      "files": 306,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005363/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-27T11:07:23Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005364",
+      "version": "1.0.0",
+      "version_ref": "c163149830bd4da20884b337ae4f7bed46267b79",
+      "version_modified": null,
+      "title": "neuroCOVID MRI dWI and fMRI with reversal learning ",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_structural",
+        "mri_diffusion",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 100,
+      "bytes": 17731054982,
+      "files": 1426,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005364/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-23T23:08:56Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005365",
+      "version": "1.0.1",
+      "version_ref": "91ae565883159f7699f7874d463d15223ec4fe84",
+      "version_modified": null,
+      "title": "Neurobiological substrates of Altered State of Consciousness Induced by High Ventilation Breathwork",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 1,
+      "bytes": 2250565038,
+      "files": 40,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005365/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-24T15:39:21Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005366",
+      "version": "2.0.0",
+      "version_ref": "cd45899f9db41f927b6a868db6baa114c46b6f6e",
+      "version_modified": null,
+      "title": "Large-scale fMRI dataset for the design of motor-based Brain-Computer Interfaces",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 155,
+      "bytes": 57410230087,
+      "files": 1971,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005366/versions/2.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-02-24T09:04:17Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005371",
+      "version": "2.3.3",
+      "version_ref": "7187f832f0a5700b45a1191d8eb737838e5c49a7",
+      "version_modified": null,
+      "title": "Test-retest reliability of multi-metabolite edited MRS at 3T using PRESS and sLASER",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 14,
+      "bytes": 454074797,
+      "files": 62,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005371/versions/2.3.3",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-10T19:23:09Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005374",
+      "version": "1.0.1",
+      "version_ref": "55f97d6359943f7f6ea3f4c8ce92384645633c3b",
+      "version_modified": null,
+      "title": "Object recognition in healthy aging (ORHA) - fMRI",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 43,
+      "bytes": 77196853067,
+      "files": 3460,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005374/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-27T11:20:25Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005375",
+      "version": "1.0.0",
+      "version_ref": "348cacdce3df89cd5cc2a6632b8e42bbf768e8a7",
+      "version_modified": null,
+      "title": "POLEX",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 58,
+      "bytes": 12772517052,
+      "files": 467,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005375/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-26T08:39:38Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005381",
+      "version": "1.1.0",
+      "version_ref": "043a0d75134de792e6d5748b087f1eafbe34ab29",
+      "version_modified": null,
+      "title": "Discrimination-Estimation Task",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 50,
+      "bytes": 143017199478,
+      "files": 3955,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005381/versions/1.1.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-08-08T06:17:21Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005383",
+      "version": "1.0.0",
+      "version_ref": "ad78f3db430e636595b1b1c08417492f3067a25e",
+      "version_modified": null,
+      "title": "TMNRED, A Chinese Language EEG Dataset for Fuzzy Semantic Target Identification in Natural Reading Environments",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 30,
+      "bytes": 375577954,
+      "files": 1925,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005383/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-28T17:18:44Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005385",
+      "version": "1.0.3",
+      "version_ref": "6a558cd5852503e66df9ac7fdac2f3a7f4ed5f12",
+      "version_modified": null,
+      "title": "Resting-state EEG data before and after cognitive activity across the adult lifespan and a 5-year follow-up",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 608,
+      "bytes": 79529430433,
+      "files": 17541,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005385/versions/1.0.3",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-05-05T12:05:14Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005386",
+      "version": "1.0.0",
+      "version_ref": "43751d8d67af6250079b17a91adc78ef67bb340b",
+      "version_modified": null,
+      "title": "AttExp_fMRI",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 52,
+      "bytes": 82440634766,
+      "files": 1772,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005386/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-07-30T10:49:36Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005397",
+      "version": "1.0.4",
+      "version_ref": "797930c82569bd8ea6d49c0735fd99f608b1a6bd",
+      "version_modified": null,
+      "title": "Affordances of stairs",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 26,
+      "bytes": 12872404161,
+      "files": 188,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005397/versions/1.0.4",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-11-10T12:51:56Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005398",
+      "version": "1.1.3",
+      "version_ref": "96696da7d648dd98c1f6cd8927faf95451e7bb94",
+      "version_modified": null,
+      "title": "Open iEEG Dataset (Pediatric iEEG, Wayne State University and UCLA)",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "ieeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 185,
+      "bytes": 109729585717,
+      "files": 1301,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005398/versions/1.1.3",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-06-25T22:39:15Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005402",
+      "version": "1.0.0",
+      "version_ref": "7ce02a16d3372fbda2776ccb2628924d188636ec",
+      "version_modified": null,
+      "title": "MPTP mouse",
+      "species": [
+        {
+          "taxon": "NCBITaxon:10090",
+          "label": "Mouse"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_diffusion",
+        "mri_structural",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 34,
+      "bytes": 2134543042,
+      "files": 380,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005402/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-06T11:11:20Z",
+      "deid": {
+        "affirmed_defaced": false
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005403",
+      "version": "1.0.1",
+      "version_ref": "49e02cbc203499e65e8963d3a42e75328b19b6d0",
+      "version_modified": null,
+      "title": "Delayed Auditory Feedback EEG/EGG",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 32,
+      "bytes": 127189601509,
+      "files": 291,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005403/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-06T18:19:30Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005405",
+      "version": "1.0.3",
+      "version_ref": "bc35222999d5c43ed030815d3663b7479e67aa5d",
+      "version_modified": null,
+      "title": "Protecting the Aging Brain - fMRI study of the brain in ketosis",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 101,
+      "bytes": 491307737610,
+      "files": 2820,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005405/versions/1.0.3",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-05-08T18:47:18Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005406",
+      "version": "1.0.0",
+      "version_ref": "d09c57e0f10dc1daca054d40b26116d0765cacaa",
+      "version_modified": null,
+      "title": "EEG frequency tagging reveals the integration of dissimilar observed actions",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 29,
+      "bytes": 14241904586,
+      "files": 295,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005406/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-12T09:54:38Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005408",
+      "version": "1.0.1",
+      "version_ref": "fcebb22db7860508c5c470889b7d43fd0471e2c2",
+      "version_modified": null,
+      "title": "The effect of speech masking on the human subcortical response to continuous speech",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 25,
+      "bytes": 40639242081,
+      "files": 207,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005408/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-04-07T15:26:48Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005410",
+      "version": "1.0.1",
+      "version_ref": "54584c6ec501614fc9f54404e30c746f63016ba2",
+      "version_modified": null,
+      "title": "Semantic_conditioning",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 81,
+      "bytes": 21213480734,
+      "files": 492,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005410/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-26T13:51:29Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005411",
+      "version": "1.0.1",
+      "version_ref": "25d6f8c3ca6fca57f411366cdcb573bad2a4478d",
+      "version_modified": null,
+      "title": "Free Recall of Word Lists with Repeated Items",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "ieeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 48,
+      "bytes": 168961242901,
+      "files": 1370,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005411/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-14T14:45:19Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005412",
+      "version": "1.0.0",
+      "version_ref": "712a5af4a3ca94c28d410a5bc287626557a38fb3",
+      "version_modified": null,
+      "title": "Grant DataSet",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 1,
+      "bytes": 10594233,
+      "files": 7,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005412/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-15T05:23:16Z",
+      "deid": {
+        "affirmed_defaced": false
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005413",
+      "version": "1.0.0",
+      "version_ref": "47d0ecc31820feb0d33e05fa2908957dc0d2158d",
+      "version_modified": null,
+      "title": "Expectation effects on pain and visual perception",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "beh",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 45,
+      "bytes": 160113517690,
+      "files": 2258,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005413/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-04-17T05:59:38Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005415",
+      "version": "1.0.0",
+      "version_ref": "f3785fcd2f4b4d7a4df9b29a0b0266755f2a0626",
+      "version_modified": null,
+      "title": "Numbers",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "ieeg",
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 13,
+      "bytes": 8015284412,
+      "files": 133,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005415/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-10-25T12:49:06Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005416",
+      "version": "1.0.1",
+      "version_ref": "6adf8f071bde5755665cd805ee22cc62fe7c4cb5",
+      "version_modified": null,
+      "title": "Fatigue Characterization of EEG under Mixed Reality Stereo Vision",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 23,
+      "bytes": 22869324774,
+      "files": 143,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005416/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-12-17T01:14:50Z",
+      "deid": {
+        "affirmed_defaced": false
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005418",
+      "version": "3.2.0",
+      "version_ref": "cdc08c4776183f55593cd7dbeee256198c1d03a1",
+      "version_modified": null,
+      "title": "Cerebrovascular Reactivity: CO2 inhalation and resting state comparisons",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 35,
+      "bytes": 6084346562,
+      "files": 286,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005418/versions/3.2.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-21T11:02:40Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005420",
+      "version": "1.0.0",
+      "version_ref": "ff387dfd7d3290f67de4512c07461bdf2dd9c258",
+      "version_modified": null,
+      "title": "Resting state EEG with closed eyes and open eyes in females from 60 to 80 years old",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 37,
+      "bytes": 390188994,
+      "files": 258,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005420/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-21T17:22:57Z",
+      "deid": {
+        "affirmed_defaced": false
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005422",
+      "version": "1.0.1",
+      "version_ref": "924a8f3412463457a70e0fb141a88a8b57fc7ba6",
+      "version_modified": null,
+      "title": "NextBrain Data Extension",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 1,
+      "bytes": 195419876,
+      "files": 4,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005422/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-23T06:42:39Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005424",
+      "version": "1.0.1",
+      "version_ref": "673ba10f2352b5abda98d2e15f463829eea2d30b",
+      "version_modified": null,
+      "title": "BaBa21",
+      "species": [
+        {
+          "taxon": null,
+          "label": "baboon"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 21,
+      "bytes": 397447073,
+      "files": 201,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005424/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-09-30T09:37:36Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005427",
+      "version": "1.1.1",
+      "version_ref": "cdbbdc26a401a3870ae37d14df878d36cab616d0",
+      "version_modified": null,
+      "title": "The neural dynamics associated with computational complexity",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 20,
+      "bytes": 82303126327,
+      "files": 746,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005427/versions/1.1.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-25T11:36:32Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005429",
+      "version": "1.0.0",
+      "version_ref": "d045d7f6cca608318b662c332ec141b9e5dd9944",
+      "version_modified": null,
+      "title": "Auditory oddball comparison (Optimum-1, Learning-oddball, and the local–global paradigm)",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 15,
+      "bytes": 17684554701,
+      "files": 430,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005429/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-08-30T05:31:09Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005431",
+      "version": "1.3.0",
+      "version_ref": "707d25cddeaa7537a6f8dfda95ac713765447059",
+      "version_modified": null,
+      "title": "Animal Brain Collection Project",
+      "species": [
+        {
+          "taxon": null,
+          "label": "Other"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_diffusion",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 52,
+      "bytes": 11713375380,
+      "files": 249,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005431/versions/1.3.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-03-18T06:29:22Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005448",
+      "version": "1.0.0",
+      "version_ref": "b9220dff7140d562c709783369c3967d345c0c5d",
+      "version_modified": null,
+      "title": "STReEF",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "ieeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 13,
+      "bytes": 48025611704,
+      "files": 191,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005448/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-10-08T19:09:02Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005449",
+      "version": "1.0.0",
+      "version_ref": "42bffc26bd0908946f9393cfbd1470111401d5d6",
+      "version_modified": null,
+      "title": "Valenced tactile information is evoked by neutral visual cues following emotional learning",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 122,
+      "bytes": 122553600491,
+      "files": 4841,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005449/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-09-05T18:32:10Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005450",
+      "version": "1.0.0",
+      "version_ref": "9e5bc0129c77b27bf6cc74fae841d556338edea8",
+      "version_modified": null,
+      "title": "BOBS Repo",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 51,
+      "bytes": 145358,
+      "files": 431,
+      "license": {
+        "spdx": null,
+        "raw": "CC-By Attribution 4.0 International"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005450/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-03-18T01:24:14Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005454",
+      "version": "1.0.0",
+      "version_ref": "cdd3369413f11e817fe5c72bfe73b0b9e035d839",
+      "version_modified": null,
+      "title": "fMRIPrep boot camp -- 7T training dataset",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_structural",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 5,
+      "bytes": 7115056279,
+      "files": 96,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005454/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2024-09-05T13:03:47Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds005455",
+      "version": "1.1.6",
+      "version_ref": "6398868be48d5307344755661a5e1b6251f06bc9",
+      "version_modified": null,
+      "title": "An fMRI dataset for investigating language control and cognitive control in bilinguals",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 77,
+      "bytes": 8926687896,
+      "files": 1163,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds005455/versions/1.1.6",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2025-06-01T08:39:33Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008830",
+      "version": "1.0.0",
+      "version_ref": "3b29b886664c164b9002cb23fcc9f146095a53e6",
+      "version_modified": null,
+      "title": "Distributed range adaptation in human parietal encoding of numbers",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 39,
+      "bytes": 20893171486,
+      "files": 3445,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008830/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-17T08:07:23Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008834",
+      "version": "1.0.3",
+      "version_ref": "2304c00aa843c08ea748524f19090ab96d8f9935",
+      "version_modified": null,
+      "title": "PKUEEG",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 25,
+      "bytes": 125460634930,
+      "files": 584,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008834/versions/1.0.3",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-23T19:01:58Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008836",
+      "version": "1.0.2",
+      "version_ref": "1c22ca799a2ce7e98b600a7f74b9ec22d6a7e477",
+      "version_modified": null,
+      "title": "Heartbeat-evoked responses and self-reported meditative depth in Vipassana practitioners",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 39,
+      "bytes": 72666119222,
+      "files": 442,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008836/versions/1.0.2",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-20T23:27:01Z",
+      "deid": {
+        "affirmed_defaced": false
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008837",
+      "version": "v1.1.2",
+      "version_ref": "ad8d1139c1efefe29f43416637db8e8c852245cd",
+      "version_modified": null,
+      "title": "Neural and physiological dynamics before and after unpredictable collision events in virtual reality",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 18,
+      "bytes": 1308595525,
+      "files": 158,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008837/versions/v1.1.2",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-23T21:41:14Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008847",
+      "version": "1.1.0",
+      "version_ref": "b6713cf5769e7e0822d241d9e1eb2b24aba7ce82",
+      "version_modified": null,
+      "title": "OUD resting-state network segregation",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 278,
+      "bytes": 3307565072,
+      "files": 283,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008847/versions/1.1.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-19T14:42:40Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008849",
+      "version": "1.0.0",
+      "version_ref": "698d5dbb57940efbfad936a7444f19f5fa79e7ac",
+      "version_modified": null,
+      "title": "The human hippocampus supports auditory coding and multisensory integration",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 32,
+      "bytes": 171558063276,
+      "files": 1126,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008849/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-20T07:34:50Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008851",
+      "version": "1.0.0",
+      "version_ref": "a4a3f457c51e5eccf2eda40a806c5a59d42232c8",
+      "version_modified": null,
+      "title": "EEG Data for Emotion Recognition: Alcohol Cue-Reactivity Dataset (Alcohol Dependence vs Healthy Controls)",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 60,
+      "bytes": 244831650,
+      "files": 548,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008851/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-21T08:54:21Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008858",
+      "version": "1.0.2",
+      "version_ref": "2e8a093d507eaae969dfe203ddeed8bbc78311cb",
+      "version_modified": null,
+      "title": "EEG Based MI-BCI Mouse Cursor Control Dataset",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 18,
+      "bytes": 152296764,
+      "files": 116,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008858/versions/1.0.2",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-25T14:12:27Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008859",
+      "version": "1.0.2",
+      "version_ref": "18ad6dcff886e3a081ba2f4b57086d916a7d64c1",
+      "version_modified": null,
+      "title": "EEG MI-BCI Multidirectional Mouse Cursor Dataset - OpenBCI recordings",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 7,
+      "bytes": 24273908,
+      "files": 50,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008859/versions/1.0.2",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-25T14:17:16Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008861",
+      "version": "1.0.1",
+      "version_ref": "4e67353ad1965c5adb52587a747b14f441b68315",
+      "version_modified": null,
+      "title": "MEG+EEG and Structural MRI Dataset: Attended and Ignored Speech-Like Sounds",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "meg",
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 30,
+      "bytes": 78134107521,
+      "files": 466,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008861/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-25T07:40:22Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008867",
+      "version": "1.0.0",
+      "version_ref": "af597129aec791a6f290013db2caeffbd0d08c44",
+      "version_modified": null,
+      "title": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 30,
+      "bytes": 51884392,
+      "files": 127,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008867/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-24T01:59:28Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008870",
+      "version": "1.0.1",
+      "version_ref": "71af78913c6195a9e6d7108456dc199b290d8bfa",
+      "version_modified": null,
+      "title": "Is Geometry the Language of Mathematics or is Space the Language of Both? (fMRI study)",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 3,
+      "bytes": 13054329816,
+      "files": 253,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008870/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-25T07:48:18Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008875",
+      "version": "1.0.0",
+      "version_ref": "020f1c04b765f9f61f1218f4f5ea97d24f81b209",
+      "version_modified": null,
+      "title": "Resting-state EEG in Parkinson's disease and controls",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 252,
+      "bytes": 10033996826,
+      "files": 1265,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008875/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-26T01:04:23Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008878",
+      "version": "1.0.0",
+      "version_ref": "e56d1351eb553cfec558c24b842c2c58e209cc86",
+      "version_modified": null,
+      "title": "Chinese compound word priming EEG local review snapshot",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 98,
+      "bytes": 14386564413,
+      "files": 700,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008878/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-29T06:58:27Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008892",
+      "version": "1.0.0",
+      "version_ref": "42a4f71f4be971f271185603df598578bf21c509",
+      "version_modified": null,
+      "title": "CuBiAAD: A cue-masked bimodal auditory attention dataset based on EEG and fNIRS",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg",
+        "nirs"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 40,
+      "bytes": 1894374664,
+      "files": 2237,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008892/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-21T02:09:39Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008893",
+      "version": "1.0.1",
+      "version_ref": "6126be09093f4ea218bf8735bf16032302775315",
+      "version_modified": null,
+      "title": "ptbp",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 1,
+      "bytes": 25194402828,
+      "files": 99,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008893/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-09-30T14:56:21Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008894",
+      "version": "1.0.0",
+      "version_ref": "e7bcfeb68418814872131b7d315c3a30829ff0cd",
+      "version_modified": null,
+      "title": "Attentional bias to death-related stimuli: Modeling cortical dynamics underlying suicide risk",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "meg",
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 43,
+      "bytes": 53920651484,
+      "files": 267,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008894/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-02T19:44:11Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008896",
+      "version": "1.0.1",
+      "version_ref": "7911b58c2fe29530cc43d148009521ec7a3c78f4",
+      "version_modified": null,
+      "title": "Preprocessed EEG data in CLN3 disease and NIH healthy volunteers",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 95,
+      "bytes": 387721664,
+      "files": 386,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008896/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-02T20:19:20Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008898",
+      "version": "1.0.1",
+      "version_ref": "349102f0c371fbc05759cbd67d8fcaba5543e26f",
+      "version_modified": null,
+      "title": "sample dataset for odor- and speech-evoked fMRI experiment at 7 Tesla",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 1,
+      "bytes": 1516995536,
+      "files": 13,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008898/versions/1.0.1",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-05T01:42:34Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008919",
+      "version": "1.0.0",
+      "version_ref": "bbee703b85f7bf8935e88ac0747746fb66381a63",
+      "version_modified": null,
+      "title": "TPIL_CLBP_no_treatment_longitudinal",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_diffusion",
+        "mri_structural",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 52,
+      "bytes": 29162606762,
+      "files": 1793,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008919/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-13T14:50:57Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008940",
+      "version": "1.0.0",
+      "version_ref": "92c77796322d32a61a5048a9a2511959f13c17a5",
+      "version_modified": null,
+      "title": "Dietary identity and the neural categorization of food images: an open EEG dataset with Food-pics stimuli",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "eeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 77,
+      "bytes": 241313355,
+      "files": 470,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008940/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-12T23:03:11Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008941",
+      "version": "1.0.0",
+      "version_ref": "c664e6e8f93655ba333b5942d7f0d21cdeab2da4",
+      "version_modified": null,
+      "title": "In-group neural alignment serves as a biomarker of social identity",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 42,
+      "bytes": 28858158626,
+      "files": 344,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008941/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-15T07:56:36Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008942",
+      "version": "1.0.0",
+      "version_ref": "cdad808854c752b9fcd352cd05836cf5d6bc67c6",
+      "version_modified": null,
+      "title": "Distinct spatial organization of human hippocampal perfusion and microvascular pulsatility across age",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 35,
+      "bytes": 33110807993,
+      "files": 206,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008942/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-21T20:53:02Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008948",
+      "version": "1.0.0",
+      "version_ref": "8f2ea9ff207e867441b8331e698504a2ccd0d123",
+      "version_modified": null,
+      "title": "Grid-like coding of affective space",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_functional",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 19,
+      "bytes": 36277238052,
+      "files": 598,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008948/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-16T01:10:12Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008959",
+      "version": "1.0.0",
+      "version_ref": "032e829a872db36b4e9b47d0dd68f764ebdb6e1d",
+      "version_modified": null,
+      "title": "MetaMosquito",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "ieeg"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 8,
+      "bytes": 305492,
+      "files": 45,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008959/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-19T09:04:12Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008970",
+      "version": "1.0.0",
+      "version_ref": "c68b55f1a2a731abc51c939d19a0ba2963ab7241",
+      "version_modified": null,
+      "title": "UMR-5T human MRI",
+      "species": [
+        {
+          "taxon": "NCBITaxon:9606",
+          "label": "Human"
+        }
+      ],
+      "species_status": "stated",
+      "modalities": [
+        "mri",
+        "mri_structural",
+        "mri_diffusion",
+        "mri_functional"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 8,
+      "bytes": 13556236610,
+      "files": 127,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008970/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-23T06:36:25Z",
+      "deid": {
+        "affirmed_defaced": true
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    },
+    {
+      "source": "openneuro",
+      "id": "ds008973",
+      "version": "1.0.0",
+      "version_ref": "dbd430ab7ac1c1c872ed8c0055dd39cc588607d6",
+      "version_modified": null,
+      "title": "MR-EyeTrack: gaze-resolved 3D T1w MRI of the eye with simultaneous eye tracking",
+      "species": [],
+      "species_status": "not_stated",
+      "modalities": [
+        "mri",
+        "mri_structural"
+      ],
+      "variables": [],
+      "has_units": false,
+      "has_lfp": false,
+      "has_ephys_series": false,
+      "approach": [],
+      "techniques": [],
+      "subjects": 15,
+      "bytes": 1624989996,
+      "files": 91,
+      "license": {
+        "spdx": "CC0-1.0",
+        "raw": "CC0"
+      },
+      "standards": [
+        "BIDS"
+      ],
+      "urls": {
+        "landing": "https://openneuro.org/datasets/ds008973/versions/1.0.0",
+        "api": "https://openneuro.org/crn/graphql"
+      },
+      "published_at": "2026-10-23T09:16:04Z",
+      "deid": {
+        "affirmed_defaced": false
+      },
+      "harvested_at": "2026-10-23T12:00:00Z"
+    }
+  ]
+}

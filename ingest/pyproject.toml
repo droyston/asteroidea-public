@@ -1,0 +1,32 @@
+[project]
+name = "asteroidea-ingest"
+version = "0.0.0"
+description = "Ingest services (commit Lambda, session API) for the asteroidea platform."
+requires-python = ">=3.14"
+license = "Apache-2.0"
+dependencies = [
+    "pyiceberg[pyarrow,glue]==0.12.0",
+    "boto3==1.43.118",
+]
+
+[project.optional-dependencies]
+# ExtractFunction only; the commit image's export passes no --extra.
+# pynwb is the dev-group pin (root pyproject); hdmf, pandas and numpy come from the lock.
+extract = [
+    "pynwb==4.2.0",
+    "h5py==3.16.0",
+    "remfile==0.1.15",
+    "nibabel==5.4.2",
+]
+# ComputeFunction only: no nibabel; pandas comes from pynwb.
+compute = [
+    "pynwb==4.2.0",
+    "h5py==3.16.0",
+    "remfile==0.1.15",
+    "polars==2.0.0",
+    "numpy==2.5.4",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14"]
+build-backend = "uv_build"

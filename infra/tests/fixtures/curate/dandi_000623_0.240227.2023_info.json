@@ -1,0 +1,30 @@
+{
+ "version": "0.240227.2023",
+ "name": "Data for: Multimodal single-neuron, intracranial EEG, and fMRI brain responses during movie watching in human patients",
+ "asset_count": 29,
+ "metadata": {
+  "license": [
+   "spdx:CC-BY-4.0"
+  ],
+  "url": "https://dandiarchive.org/dandiset/000623/0.240227.2023",
+  "citation": "Keles, Umit; Dubois, Julien; Le, Kevin J. M.; Tyszka, J. Michael; Kahn, David A.; Reed, Chrystal M.; Chung, Jeffrey M. ; Mamelak, Adam N.; Adolphs, Ralph; Rutishauser, Ueli (2024) Data for: Multimodal single-neuron, intracranial EEG, and fMRI brain responses during movie watching in human patients (Version 0.240227.2023) [Data set]. DANDI archive. https://dandiarchive.org/dandiset/000623/0.240227.2023",
+  "relatedResource": [
+   {
+    "url": "https://openneuro.org/datasets/ds004798/",
+    "name": "corresponding fMRI data",
+    "relation": "dcite:IsSupplementedBy",
+    "schemaKey": "Resource",
+    "identifier": "fMRI data",
+    "repository": "OpenNeuro"
+   },
+   {
+    "url": "https://github.com/rutishauserlab/bmovie-release-NWB-BIDS",
+    "name": "Supplementary code",
+    "relation": "dcite:IsSupplementedBy",
+    "schemaKey": "Resource",
+    "repository": "Github"
+   }
+  ],
+  "id": "DANDI:000623/0.240227.2023"
+ }
+}

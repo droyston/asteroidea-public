@@ -1,0 +1,53 @@
+{
+ "schema": "asteroidea.event-recipe/1",
+ "version": "recipe-1",
+ "dataset": "dandi-000623",
+ "description": "Keles et al. 2024 (bmovie). scene_cut: rows of the pinned scenecut_info.csv, onset timestamps[shot_start_fr - 1] of the string series stimulus/presentation/movieframe_time (its data is the 0-based frame position), cut_kind change when scene_id differs from the previous row and row 0 forced to change (release code and paper: 13 changes, 80 continuity cuts). recognition_onset: trials rows with stim_phase recognition; familiarity buckets actual_response 1-3 novel and 4-6 familiar; window drawn [-1, 2] s and tested over the response window [0.2, 1.7] s (release code). movie_onset: the one encoding row, single. LFP time is trials time + 10 s (series description and release code), so lfp_clock_offset_s is 10.",
+ "lfp_clock_offset_s": 10,
+ "event_types": [
+  {
+   "name": "scene_cut",
+   "averaging": "average",
+   "source": {
+    "kind": "stimulus_file",
+    "csv": "stimuli/scenecut_info.csv",
+    "frame_column": "shot_start_fr",
+    "series": "stimulus/presentation/movieframe_time",
+    "frame_base": 1
+   },
+   "attributes": [
+    {"name": "scene_id", "column": "scene_id"},
+    {
+     "name": "cut_kind",
+     "derive": "changed_from_previous",
+     "column": "scene_id",
+     "changed": "change",
+     "unchanged": "continuity",
+     "first": "change"
+    }
+   ]
+  },
+  {
+   "name": "recognition_onset",
+   "averaging": "average",
+   "source": {"kind": "interval", "table": "trials", "where": {"stim_phase": "recognition"}},
+   "attributes": [
+    {"name": "actual_response", "column": "actual_response"},
+    {"name": "response_correct", "column": "response_correct"},
+    {
+     "name": "familiarity",
+     "derive": "bucket",
+     "column": "actual_response",
+     "ranges": {"novel": [1, 3], "familiar": [4, 6]}
+    }
+   ],
+   "window_s": {"pre_s": 1.0, "post_s": 2.0, "response_window_s": [0.2, 1.7]}
+  },
+  {
+   "name": "movie_onset",
+   "averaging": "single",
+   "source": {"kind": "interval", "table": "trials", "where": {"stim_phase": "encoding"}},
+   "attributes": []
+  }
+ ]
+}

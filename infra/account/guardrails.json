@@ -1,0 +1,78 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RegionLockUsEast1",
+      "Effect": "Deny",
+      "NotAction": [
+        "acm:*", "aws-marketplace:*", "aws-portal:*", "budgets:*", "ce:*", "cloudfront:*",
+        "cur:*", "globalaccelerator:*", "health:*", "iam:*", "organizations:*", "pricing:*",
+        "route53:*", "route53domains:*", "s3:GetAccountPublic*", "s3:ListAllMyBuckets",
+        "s3:PutAccountPublic*", "shield:*", "sts:*", "support:*", "trustedadvisor:*",
+        "waf:*", "wafv2:*", "account:*", "sso:*", "ec2:DescribeRegions"
+      ],
+      "Resource": "*",
+      "Condition": { "StringNotEquals": { "aws:RequestedRegion": "us-east-1" } }
+    },
+    {
+      "Sid": "DenyAccountOrgIdentity",
+      "Effect": "Deny",
+      "Action": [
+        "organizations:*", "account:*", "sso:*", "sso-directory:*", "identitystore:*",
+        "identity-sync:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DenyBillingBudgets",
+      "Effect": "Deny",
+      "Action": [
+        "budgets:*", "billing:*", "payments:*", "tax:*", "invoicing:*", "cur:*",
+        "aws-portal:Modify*", "ce:Create*", "ce:Update*", "ce:Delete*", "freetier:Put*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DenyLongLivedCredsAndAccountIam",
+      "Effect": "Deny",
+      "Action": [
+        "iam:CreateUser", "iam:CreateAccessKey", "iam:CreateLoginProfile", "iam:UpdateLoginProfile",
+        "iam:CreateSAMLProvider", "iam:UpdateSAMLProvider", "iam:DeleteSAMLProvider",
+        "iam:CreateOpenIDConnectProvider", "iam:UpdateOpenIDConnectProviderThumbprint",
+        "iam:AddClientIDToOpenIDConnectProvider", "iam:DeleteOpenIDConnectProvider",
+        "iam:CreateAccountAlias", "iam:DeleteAccountAlias",
+        "iam:UpdateAccountPasswordPolicy", "iam:DeleteAccountPasswordPolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ProtectPrivilegedRoles",
+      "Effect": "Deny",
+      "Action": [
+        "iam:AttachRolePolicy", "iam:DetachRolePolicy", "iam:PutRolePolicy", "iam:DeleteRolePolicy",
+        "iam:PutRolePermissionsBoundary", "iam:DeleteRolePermissionsBoundary",
+        "iam:UpdateAssumeRolePolicy", "iam:UpdateRole", "iam:UpdateRoleDescription",
+        "iam:DeleteRole", "iam:TagRole", "iam:UntagRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::*:role/OrganizationAccountAccessRole",
+        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/*"
+      ],
+      "Condition": {
+        "ArnNotLike": { "aws:PrincipalArn": "arn:aws:iam::*:role/OrganizationAccountAccessRole" }
+      }
+    },
+    {
+      "Sid": "CostDamageGuard",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:Purchase*", "savingsplans:*", "rds:PurchaseReserved*",
+        "aws-marketplace:Subscribe", "aws-marketplace:AcceptAgreementRequest",
+        "route53domains:*", "shield:CreateSubscription",
+        "ec2:RunInstances", "ec2:CreateNatGateway", "sagemaker:*", "redshift:*", "es:*",
+        "rds:Create*", "elasticache:Create*", "eks:Create*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,4725 @@
+{
+ "method": "POST",
+ "url": "https://openneuro.org/crn/graphql",
+ "request": {
+  "json": {
+   "query": "query($after:String){datasets(first:50, after:$after){pageInfo{count hasNextPage endCursor} edges{cursor node{id metadata{species modalities affirmedDefaced} latestSnapshot{tag hexsha created description{Name License DatasetDOI} summary{modalities secondaryModalities subjects size totalFiles}}}}}}",
+   "variables": {
+    "after": "eyJvZmZzZXQiOjUwfQ=="
+   }
+  }
+ },
+ "responses": [
+  {
+   "status": 200,
+   "json": {
+    "errors": [
+     {
+      "message": "Not Found",
+      "locations": [
+       {
+        "line": 1,
+        "column": 159
+       }
+      ],
+      "path": [
+       "datasets",
+       "edges",
+       26,
+       "node",
+       "latestSnapshot"
+      ],
+      "extensions": {
+       "code": "INTERNAL_SERVER_ERROR",
+       "stacktrace": [
+        "Error: Not Found",
+        "    at Request.callback (/srv/.yarn/cache/superagent-npm-3.8.3-8bdf672d54-7226a514eb.zip/node_modules/superagent/lib/node/index.js:706:15)",
+        "    at /srv/.yarn/cache/superagent-npm-3.8.3-8bdf672d54-7226a514eb.zip/node_modules/superagent/lib/node/index.js:916:18",
+        "    at IncomingMessage.<anonymous> (/srv/.yarn/cache/superagent-npm-3.8.3-8bdf672d54-7226a514eb.zip/node_modules/superagent/lib/node/parsers/json.js:19:7)",
+        "    at /srv/.yarn/cache/@sentry-core-npm-11.8.0-e68df308f8-7627751362.zip/node_modules/@sentry/core/build/cjs/tracing/bindScopeToEmitter.js:44:58",
+        "    at /srv/.yarn/cache/@sentry-server-utils-npm-11.8.0-01f6ab5fed-a0c5dd2560.zip/node_modules/@sentry/server-utils/build/cjs/async-context.js:29:14",
+        "    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:66:14)",
+        "    at Object.withSetScope (/srv/.yarn/cache/@sentry-server-utils-npm-11.8.0-01f6ab5fed-a0c5dd2560.zip/node_modules/@sentry/server-utils/build/cjs/async-context.js:28:25)",
+        "    at Module.withScope (/srv/.yarn/cache/@sentry-core-npm-11.8.0-e68df308f8-7627751362.zip/node_modules/@sentry/core/build/cjs/currentScopes.js:38:16)",
+        "    at IncomingMessage.<anonymous> (/srv/.yarn/cache/@sentry-core-npm-11.8.0-e68df308f8-7627751362.zip/node_modules/@sentry/core/build/cjs/tracing/bindScopeToEmitter.js:44:26)",
+        "    at IncomingMessage.emit (node:events:526:24)",
+        "    at endReadableNT (node:internal/streams/readable:2147:12)",
+        "    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+       ]
+      }
+     },
+     {
+      "message": "Not Found",
+      "locations": [
+       {
+        "line": 1,
+        "column": 114
+       }
+      ],
+      "path": [
+       "datasets",
+       "edges",
+       26,
+       "node",
+       "metadata"
+      ],
+      "extensions": {
+       "code": "INTERNAL_SERVER_ERROR",
+       "stacktrace": [
+        "Error: Not Found",
+        "    at Request.callback (/srv/.yarn/cache/superagent-npm-3.8.3-8bdf672d54-7226a514eb.zip/node_modules/superagent/lib/node/index.js:706:15)",
+        "    at /srv/.yarn/cache/superagent-npm-3.8.3-8bdf672d54-7226a514eb.zip/node_modules/superagent/lib/node/index.js:916:18",
+        "    at IncomingMessage.<anonymous> (/srv/.yarn/cache/superagent-npm-3.8.3-8bdf672d54-7226a514eb.zip/node_modules/superagent/lib/node/parsers/json.js:19:7)",
+        "    at /srv/.yarn/cache/@sentry-core-npm-11.8.0-e68df308f8-7627751362.zip/node_modules/@sentry/core/build/cjs/tracing/bindScopeToEmitter.js:44:58",
+        "    at /srv/.yarn/cache/@sentry-server-utils-npm-11.8.0-01f6ab5fed-a0c5dd2560.zip/node_modules/@sentry/server-utils/build/cjs/async-context.js:29:14",
+        "    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:66:14)",
+        "    at Object.withSetScope (/srv/.yarn/cache/@sentry-server-utils-npm-11.8.0-01f6ab5fed-a0c5dd2560.zip/node_modules/@sentry/server-utils/build/cjs/async-context.js:28:25)",
+        "    at Module.withScope (/srv/.yarn/cache/@sentry-core-npm-11.8.0-e68df308f8-7627751362.zip/node_modules/@sentry/core/build/cjs/currentScopes.js:38:16)",
+        "    at IncomingMessage.<anonymous> (/srv/.yarn/cache/@sentry-core-npm-11.8.0-e68df308f8-7627751362.zip/node_modules/@sentry/core/build/cjs/tracing/bindScopeToEmitter.js:44:26)",
+        "    at IncomingMessage.emit (node:events:526:24)",
+        "    at endReadableNT (node:internal/streams/readable:2147:12)",
+        "    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+       ]
+      }
+     }
+    ],
+    "data": {
+     "datasets": {
+      "pageInfo": {
+       "count": 127,
+       "hasNextPage": true,
+       "endCursor": "eyJvZmZzZXQiOjEwMH0="
+      },
+      "edges": [
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTB9",
+        "node": {
+         "id": "ds005329",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "2.0.0",
+          "hexsha": "22ffd06d1a30ffc4d4c8584fc324c5f52dc7d97e",
+          "created": "2025-08-13T07:37:23.000Z",
+          "description": {
+           "Name": "Are the ventral anterior temporal lobes involved in accessing conceptual knowledge during spoken word production? fMRI evidence from auditory naming",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005329.v2.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "024",
+            "003",
+            "018",
+            "001",
+            "005",
+            "017",
+            "008",
+            "011",
+            "028",
+            "002",
+            "020",
+            "007",
+            "013",
+            "016",
+            "021",
+            "026",
+            "027",
+            "012",
+            "022",
+            "010",
+            "015",
+            "006",
+            "014",
+            "009",
+            "025"
+           ],
+           "size": 21799430561,
+           "totalFiles": 407
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTF9",
+        "node": {
+         "id": "ds005339",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "52c9db3e1ad95c5b388c7c27b57e6922979e914a",
+          "created": "2026-04-02T18:19:12.000Z",
+          "description": {
+           "Name": "Yale_reading_dataset",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005339.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_diffusion",
+            "mri_structural"
+           ],
+           "subjects": [
+            "RK603",
+            "401132",
+            "401012",
+            "1083",
+            "401084",
+            "1150",
+            "401014",
+            "1054",
+            "1068",
+            "401097",
+            "LG712",
+            "1017",
+            "1049",
+            "1102",
+            "LR303",
+            "1115",
+            "401130",
+            "401105",
+            "NB712",
+            "1057",
+            "NF697",
+            "1113",
+            "1087",
+            "401166",
+            "BK842",
+            "1043",
+            "401015",
+            "1072",
+            "1101",
+            "1036",
+            "YT403",
+            "1116",
+            "ES554",
+            "1084",
+            "DS899",
+            "1098",
+            "401101",
+            "1080",
+            "401044",
+            "1109",
+            "SS322",
+            "401003",
+            "401115",
+            "1154",
+            "1073",
+            "1023",
+            "401108",
+            "1053",
+            "1089",
+            "1118",
+            "401013",
+            "1051",
+            "NA651",
+            "1114",
+            "1092",
+            "NI319",
+            "1078",
+            "1147",
+            "RF998",
+            "401151",
+            "1031",
+            "1117",
+            "1063",
+            "1093",
+            "MK132",
+            "1004",
+            "1003",
+            "BW331",
+            "LV943",
+            "401031",
+            "1091",
+            "1005",
+            "AE239",
+            "1149",
+            "MS286",
+            "1013",
+            "AH279",
+            "1006",
+            "MH148",
+            "401117",
+            "ST015",
+            "1161",
+            "MK041",
+            "JW894",
+            "1126",
+            "401038",
+            "1120",
+            "1121",
+            "SF602",
+            "401021",
+            "SD031",
+            "NG361",
+            "401186",
+            "401007",
+            "1050",
+            "1046",
+            "401037",
+            "401089",
+            "401010",
+            "401069",
+            "401121",
+            "1156",
+            "LA943",
+            "401102",
+            "AG228",
+            "1134",
+            "1099",
+            "GW218",
+            "401061",
+            "1067",
+            "1062",
+            "1082",
+            "401096",
+            "401085",
+            "401056",
+            "JV009",
+            "401103",
+            "401028",
+            "1088",
+            "401110",
+            "RK546",
+            "1028",
+            "401080",
+            "1095",
+            "LK799",
+            "1044",
+            "IB568",
+            "AL415",
+            "HP010",
+            "401094",
+            "401016",
+            "401153",
+            "1045",
+            "1075",
+            "1142",
+            "KG310",
+            "1129",
+            "1007",
+            "RE911",
+            "1000",
+            "ST010",
+            "1163",
+            "YG403",
+            "1015",
+            "401152",
+            "1042",
+            "1069",
+            "DB391",
+            "1104",
+            "401055",
+            "1021",
+            "TK132",
+            "1071",
+            "401036",
+            "401150",
+            "MS135",
+            "IE992",
+            "1146",
+            "1157",
+            "401039",
+            "1122",
+            "1070",
+            "401020",
+            "1167",
+            "DB721",
+            "401177",
+            "NA554",
+            "401167",
+            "401054",
+            "401184",
+            "401025",
+            "1153",
+            "AS862",
+            "401099",
+            "1038",
+            "1108",
+            "1055",
+            "1152",
+            "401141",
+            "1027",
+            "401063",
+            "1100",
+            "401075",
+            "401135",
+            "1034",
+            "1112",
+            "1106",
+            "RG357",
+            "401064",
+            "SN083",
+            "401116",
+            "1020",
+            "401172",
+            "1064",
+            "YG498",
+            "1076",
+            "401004",
+            "MM262",
+            "1058",
+            "1065",
+            "401118",
+            "YD874",
+            "1016",
+            "1040",
+            "1035",
+            "401027",
+            "401178",
+            "AS130",
+            "1094",
+            "401090",
+            "1081",
+            "1018",
+            "MA306",
+            "1074",
+            "RG905",
+            "1160",
+            "AC513",
+            "JR587",
+            "401022",
+            "1061",
+            "401201",
+            "DF592",
+            "1029"
+           ],
+           "size": 55867253875,
+           "totalFiles": 8818
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTJ9",
+        "node": {
+         "id": "ds005340",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.4",
+          "hexsha": "11e4f5d59bdfe6d14d6a4d54a7aadb3bdb47d3ae",
+          "created": "2024-11-22T21:58:06.000Z",
+          "description": {
+           "Name": "Fundamental frequency predominantly drives talker differences in auditory brainstem responses to continuous speech",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005340.v1.0.4"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "10",
+            "03",
+            "07",
+            "14",
+            "13",
+            "02",
+            "15",
+            "01",
+            "06",
+            "12",
+            "11",
+            "09",
+            "08",
+            "04",
+            "05"
+           ],
+           "size": 10172114688,
+           "totalFiles": 112
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTN9",
+        "node": {
+         "id": "ds005341",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "2.3.0",
+          "hexsha": "b4d168fc038d72eac63d73a68c0ef70346456d35",
+          "created": "2026-10-08T06:39:11.000Z",
+          "description": {
+           "Name": "PREDYS",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005341.v2.3.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_diffusion",
+            "mri_structural"
+           ],
+           "subjects": [
+            "06",
+            "35",
+            "33",
+            "32",
+            "23",
+            "20",
+            "14",
+            "15",
+            "13",
+            "12",
+            "11",
+            "10",
+            "08",
+            "07",
+            "05",
+            "04",
+            "03",
+            "02",
+            "29",
+            "09",
+            "38",
+            "45",
+            "46",
+            "39",
+            "30",
+            "28",
+            "27",
+            "25",
+            "24",
+            "47",
+            "48",
+            "40",
+            "31",
+            "26",
+            "22",
+            "19",
+            "21",
+            "18",
+            "17",
+            "16",
+            "01",
+            "44",
+            "41",
+            "42",
+            "34",
+            "43",
+            "36",
+            "37",
+            "50"
+           ],
+           "size": 130131630897,
+           "totalFiles": 4419
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTR9",
+        "node": {
+         "id": "ds005342",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.3",
+          "hexsha": "30bb3b67d76ce007b822fed801e496fafe5598a0",
+          "created": "2024-07-15T19:07:42.000Z",
+          "description": {
+           "Name": "EEG data offline and online during motor imagery for standing and sitting",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005342.v1.0.3"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "001",
+            "002",
+            "003",
+            "004",
+            "005",
+            "006",
+            "007",
+            "008",
+            "009",
+            "010",
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "016",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032"
+           ],
+           "size": 2181595802,
+           "totalFiles": 134
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTV9",
+        "node": {
+         "id": "ds005343",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "c046ad14de05cbfc0f545fa2d3b33ac7216dd597",
+          "created": "2024-07-16T12:00:23.000Z",
+          "description": {
+           "Name": "Gaffrey Lab Infant Microstates and Attention",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005343.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "S1",
+            "S10",
+            "S11",
+            "S12",
+            "S13",
+            "S14",
+            "S15",
+            "S16",
+            "S17",
+            "S18",
+            "S19",
+            "S2",
+            "S20",
+            "S21",
+            "S22",
+            "S23",
+            "S24",
+            "S25",
+            "S26",
+            "S27",
+            "S28",
+            "S29",
+            "S3",
+            "S30",
+            "S31",
+            "S32",
+            "S33",
+            "S34",
+            "S35",
+            "S36",
+            "S37",
+            "S38",
+            "S39",
+            "S4",
+            "S40",
+            "S41",
+            "S42",
+            "S43",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+           ],
+           "size": 24373540791,
+           "totalFiles": 264
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTZ9",
+        "node": {
+         "id": "ds005345",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri",
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "bdc52f3654000bb881cfde7a86bc4a6dda17946d",
+          "created": "2025-04-17T07:54:50.000Z",
+          "description": {
+           "Name": "Le Petit Prince (LPP) Multi-talker: Naturalistic 7T fMRI and EEG Dataset",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005345.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri",
+            "eeg"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "11",
+            "05",
+            "02",
+            "17",
+            "04",
+            "03",
+            "21",
+            "13",
+            "12",
+            "08",
+            "14",
+            "15",
+            "20",
+            "18",
+            "06",
+            "07",
+            "19",
+            "26",
+            "24",
+            "01",
+            "23",
+            "22",
+            "10",
+            "25",
+            "09",
+            "16"
+           ],
+           "size": 174527101942,
+           "totalFiles": 421
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTd9",
+        "node": {
+         "id": "ds005346",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "mri",
+           "meg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.5",
+          "hexsha": "e195b08a630316a6a8f7ad837e07fb4ae83250a1",
+          "created": "2025-12-18T13:13:46.000Z",
+          "description": {
+           "Name": "Naturalistic fMRI and MEG recordings during viewing of a reality TV show",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005346.v1.0.5"
+          },
+          "summary": {
+           "modalities": [
+            "mri",
+            "meg"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "27",
+            "19",
+            "57",
+            "12",
+            "39",
+            "04",
+            "42",
+            "47",
+            "34",
+            "38",
+            "46",
+            "10",
+            "56",
+            "28",
+            "55",
+            "26",
+            "06",
+            "07",
+            "30",
+            "17",
+            "24",
+            "14",
+            "44",
+            "32",
+            "43",
+            "21",
+            "15",
+            "53",
+            "50",
+            "41",
+            "31",
+            "49",
+            "45",
+            "35",
+            "16",
+            "11",
+            "18",
+            "37",
+            "29",
+            "05",
+            "48",
+            "13",
+            "54",
+            "33",
+            "08",
+            "58",
+            "36",
+            "09",
+            "40",
+            "59",
+            "51",
+            "60",
+            "22",
+            "01",
+            "02",
+            "25",
+            "03",
+            "52",
+            "23",
+            "20"
+           ],
+           "size": 41821126308,
+           "totalFiles": 543
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTh9",
+        "node": {
+         "id": "ds005354",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "6ca3891e1b751c38618a3c18d3e54c0c2afb7c77",
+          "created": "2024-07-22T09:30:42.000Z",
+          "description": {
+           "Name": "geo-nav-fmri",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005354.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"
+           ],
+           "size": 267439131963,
+           "totalFiles": 11325
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNTl9",
+        "node": {
+         "id": "ds005355",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "868ddff9978f6268647a6212c77053d1effecb57",
+          "created": "2024-07-17T17:30:56.000Z",
+          "description": {
+           "Name": "BSC_BIDS_071724",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005355.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+           ],
+           "size": 7822720530,
+           "totalFiles": 381
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjB9",
+        "node": {
+         "id": "ds005356",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "meg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.5.0",
+          "hexsha": "253cf1753b79fa734d8ccd2d48dc00f100744f9c",
+          "created": "2025-03-06T16:10:24.000Z",
+          "description": {
+           "Name": "MEG: Major Depression & Probabilistic Learning Task",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005356.v1.5.0"
+          },
+          "summary": {
+           "modalities": [
+            "meg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "M87139247",
+            "M87130775",
+            "M87129414",
+            "M87143893",
+            "M87134159",
+            "M87118946",
+            "M87169286",
+            "M87195556",
+            "M87100481",
+            "M87146411",
+            "M87137391",
+            "M87150527",
+            "M87114852",
+            "M87144409",
+            "M87100403",
+            "M87171668",
+            "M87192693",
+            "M87140254",
+            "M87100058",
+            "M87109185",
+            "M87169210",
+            "M87102708",
+            "M87110559",
+            "M87175429",
+            "M87155374",
+            "M87197101",
+            "M87139600",
+            "M87174633",
+            "M87170144",
+            "M87178102",
+            "M87184941",
+            "M87167594",
+            "M87185394",
+            "M87150253",
+            "M87164176",
+            "M87186388",
+            "M87153425",
+            "M87111894",
+            "M87108718",
+            "M87142287",
+            "M87165811",
+            "M87157961",
+            "M87162136",
+            "M87187776",
+            "M87145927",
+            "M87187516",
+            "M87108211",
+            "M87130996",
+            "M87168299",
+            "M87190095",
+            "M87148080",
+            "M87146887",
+            "M87164575",
+            "M87125130",
+            "M87110097",
+            "M87171097",
+            "M87138414",
+            "M87112953",
+            "M87187838",
+            "M87134034",
+            "M87154375",
+            "M87176537",
+            "M87160584",
+            "M87142864",
+            "M87121835",
+            "M87195334",
+            "M87146735",
+            "M87103820",
+            "M87103382",
+            "M87178611",
+            "M87175273",
+            "M87178210",
+            "M87156984",
+            "M87150564",
+            "M87173764",
+            "M87127530",
+            "M87190604",
+            "M87198523",
+            "M87104422",
+            "M87160397",
+            "M87143931",
+            "M87146538",
+            "M87103557",
+            "M87114359",
+            "M87110408"
+           ],
+           "size": 173488425070,
+           "totalFiles": 630
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjF9",
+        "node": {
+         "id": "ds005357",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": false
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "7e5fe9665771c4d4d81df1cd36fee4f84a68deb7",
+          "created": "2026-03-16T11:09:27.000Z",
+          "description": {
+           "Name": "Neurogame Project",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005357.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural",
+            "mri_functional"
+           ],
+           "subjects": [
+            "12",
+            "19",
+            "15",
+            "32",
+            "33",
+            "41",
+            "35",
+            "25",
+            "10",
+            "23",
+            "43",
+            "39",
+            "02",
+            "44",
+            "01",
+            "37",
+            "14",
+            "29",
+            "06",
+            "42",
+            "20",
+            "34",
+            "40",
+            "36",
+            "26",
+            "30",
+            "31",
+            "17",
+            "07",
+            "08",
+            "27",
+            "21",
+            "28",
+            "03",
+            "45",
+            "11",
+            "24",
+            "05",
+            "22",
+            "13",
+            "16",
+            "18",
+            "09",
+            "38",
+            "04"
+           ],
+           "size": 12442557601,
+           "totalFiles": 183
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjJ9",
+        "node": {
+         "id": "ds005360",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "01cfe5bd853c01a9c71ee1ff19f84b5282fabb33",
+          "created": "2025-04-09T23:14:19.000Z",
+          "description": {
+           "Name": "Hormone Health Study (HHS)",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005360.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_diffusion",
+            "mri_structural"
+           ],
+           "subjects": [
+            "16",
+            "10",
+            "28",
+            "25",
+            "06",
+            "01",
+            "27",
+            "30",
+            "23",
+            "19",
+            "02",
+            "11",
+            "20",
+            "13",
+            "12",
+            "34",
+            "35",
+            "24",
+            "07",
+            "09",
+            "08",
+            "32"
+           ],
+           "size": 8776136897,
+           "totalFiles": 2272
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjN9",
+        "node": {
+         "id": "ds005363",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "1274501f556f3e317dec9c103c8dff5978ae9293",
+          "created": "2024-07-27T11:07:23.000Z",
+          "description": {
+           "Name": "Object recognition in healthy aging (ORHA) - EEG",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005363.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "101",
+            "102",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "201",
+            "202",
+            "203",
+            "204",
+            "205",
+            "206",
+            "207",
+            "208",
+            "209",
+            "210",
+            "211",
+            "212",
+            "213",
+            "214",
+            "215",
+            "216",
+            "217",
+            "218",
+            "219",
+            "220",
+            "221",
+            "222"
+           ],
+           "size": 19011100939,
+           "totalFiles": 306
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjR9",
+        "node": {
+         "id": "ds005364",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "c163149830bd4da20884b337ae4f7bed46267b79",
+          "created": "2024-07-23T23:08:56.000Z",
+          "description": {
+           "Name": "neuroCOVID MRI dWI and fMRI with reversal learning ",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005364.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural",
+            "mri_diffusion",
+            "mri_functional"
+           ],
+           "subjects": [
+            "001",
+            "002",
+            "003",
+            "004",
+            "005",
+            "006",
+            "007",
+            "008",
+            "009",
+            "010",
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "016",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032",
+            "033",
+            "034",
+            "035",
+            "036",
+            "037",
+            "038",
+            "039",
+            "040",
+            "041",
+            "042",
+            "043",
+            "044",
+            "045",
+            "046",
+            "047",
+            "048",
+            "049",
+            "050",
+            "051",
+            "052",
+            "053",
+            "054",
+            "055",
+            "056",
+            "057",
+            "058",
+            "059",
+            "060",
+            "061",
+            "062",
+            "063",
+            "064",
+            "065",
+            "066",
+            "067",
+            "068",
+            "069",
+            "070",
+            "071",
+            "072",
+            "073",
+            "074",
+            "075",
+            "076",
+            "077",
+            "078",
+            "079",
+            "080",
+            "081",
+            "082",
+            "083",
+            "084",
+            "085",
+            "086",
+            "087",
+            "088",
+            "089",
+            "090",
+            "091",
+            "092",
+            "093",
+            "094",
+            "095",
+            "096",
+            "097",
+            "098",
+            "099",
+            "100"
+           ],
+           "size": 17731054982,
+           "totalFiles": 1426
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjV9",
+        "node": {
+         "id": "ds005365",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "91ae565883159f7699f7874d463d15223ec4fe84",
+          "created": "2024-07-24T15:39:21.000Z",
+          "description": {
+           "Name": "Neurobiological substrates of Altered State of Consciousness Induced by High Ventilation Breathwork",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005365.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "CISC13877"
+           ],
+           "size": 2250565038,
+           "totalFiles": 40
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjZ9",
+        "node": {
+         "id": "ds005366",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "2.0.0",
+          "hexsha": "cd45899f9db41f927b6a868db6baa114c46b6f6e",
+          "created": "2025-02-24T09:04:17.000Z",
+          "description": {
+           "Name": "Large-scale fMRI dataset for the design of motor-based Brain-Computer Interfaces",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005366.v2.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "100",
+            "046",
+            "086",
+            "028",
+            "144",
+            "068",
+            "089",
+            "151",
+            "141",
+            "148",
+            "074",
+            "032",
+            "123",
+            "058",
+            "047",
+            "082",
+            "038",
+            "132",
+            "111",
+            "051",
+            "043",
+            "115",
+            "021",
+            "079",
+            "025",
+            "001",
+            "102",
+            "130",
+            "005",
+            "050",
+            "035",
+            "040",
+            "027",
+            "083",
+            "004",
+            "017",
+            "152",
+            "093",
+            "072",
+            "002",
+            "097",
+            "022",
+            "012",
+            "090",
+            "019",
+            "098",
+            "110",
+            "137",
+            "116",
+            "070",
+            "139",
+            "099",
+            "016",
+            "108",
+            "127",
+            "054",
+            "075",
+            "095",
+            "007",
+            "011",
+            "117",
+            "061",
+            "036",
+            "060",
+            "121",
+            "125",
+            "149",
+            "131",
+            "063",
+            "124",
+            "010",
+            "120",
+            "044",
+            "145",
+            "077",
+            "062",
+            "057",
+            "066",
+            "056",
+            "026",
+            "071",
+            "085",
+            "092",
+            "031",
+            "114",
+            "094",
+            "128",
+            "136",
+            "064",
+            "013",
+            "140",
+            "080",
+            "142",
+            "105",
+            "106",
+            "107",
+            "112",
+            "076",
+            "049",
+            "096",
+            "034",
+            "029",
+            "078",
+            "150",
+            "048",
+            "133",
+            "153",
+            "014",
+            "109",
+            "055",
+            "104",
+            "039",
+            "033",
+            "138",
+            "023",
+            "084",
+            "134",
+            "009",
+            "126",
+            "024",
+            "129",
+            "052",
+            "119",
+            "103",
+            "053",
+            "018",
+            "091",
+            "059",
+            "015",
+            "006",
+            "003",
+            "146",
+            "008",
+            "154",
+            "088",
+            "087",
+            "113",
+            "101",
+            "122",
+            "069",
+            "143",
+            "045",
+            "155",
+            "041",
+            "030",
+            "067",
+            "118",
+            "147",
+            "037",
+            "081",
+            "135",
+            "065",
+            "042",
+            "020",
+            "073"
+           ],
+           "size": 57410230087,
+           "totalFiles": 1971
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjd9",
+        "node": {
+         "id": "ds005371",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "2.3.3",
+          "hexsha": "7187f832f0a5700b45a1191d8eb737838e5c49a7",
+          "created": "2026-09-10T19:23:09.000Z",
+          "description": {
+           "Name": "Test-retest reliability of multi-metabolite edited MRS at 3T using PRESS and sLASER",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005371.v2.3.3"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "14",
+            "16",
+            "01",
+            "10",
+            "07",
+            "03",
+            "08",
+            "04",
+            "15",
+            "11",
+            "13",
+            "09",
+            "02",
+            "12"
+           ],
+           "size": 454074797,
+           "totalFiles": 62
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjh9",
+        "node": {
+         "id": "ds005374",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "55f97d6359943f7f6ea3f4c8ce92384645633c3b",
+          "created": "2024-07-27T11:20:25.000Z",
+          "description": {
+           "Name": "Object recognition in healthy aging (ORHA) - fMRI",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005374.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "0n9ge8",
+            "0zax6m",
+            "1n6qlc",
+            "1r4he7",
+            "1u6mnk",
+            "34zz5w",
+            "45yajw",
+            "87akcw",
+            "8pakuj",
+            "9hcfk5",
+            "9raer0",
+            "a77lc6",
+            "ad4phe",
+            "d0zcpd",
+            "dfdryk",
+            "dwp973",
+            "dzxv3w",
+            "f2t7hh",
+            "fgph3h",
+            "fj0pnz",
+            "hgagr4",
+            "k5m5h6",
+            "k624yv",
+            "l7z4xx",
+            "llmkdl",
+            "m4nkz5",
+            "nxe874",
+            "pj82j2",
+            "q3w2rh",
+            "q7mf0v",
+            "qf0y3t",
+            "r3cv10",
+            "r9zppd",
+            "rkdvjv",
+            "rnyu5g",
+            "vdkqh0",
+            "w1kt8h",
+            "xl2dyu",
+            "y24cge",
+            "yqldm7",
+            "yuzpe8",
+            "zng36c",
+            "zvc7dv"
+           ],
+           "size": 77196853067,
+           "totalFiles": 3460
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNjl9",
+        "node": {
+         "id": "ds005375",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "348cacdce3df89cd5cc2a6632b8e42bbf768e8a7",
+          "created": "2024-07-26T08:39:38.000Z",
+          "description": {
+           "Name": "POLEX",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005375.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "POL1015",
+            "POL1023",
+            "POL1065",
+            "POL1078",
+            "POL1093",
+            "POL1099",
+            "POL1108",
+            "POL1113",
+            "POL1140",
+            "POL1165",
+            "POL1174",
+            "POL1181",
+            "POL1192",
+            "POL1210",
+            "POL1237",
+            "POL1276",
+            "POL1296",
+            "POL1305",
+            "POL1326",
+            "POL1343",
+            "POL1350",
+            "POL1362",
+            "POL1380",
+            "POL1427",
+            "POL1446",
+            "POL1458",
+            "POL1471",
+            "POL1502",
+            "POL1517",
+            "POL1528",
+            "POL1563",
+            "POL1579",
+            "POL1587",
+            "POL1614",
+            "POL1625",
+            "POL1658",
+            "POL1702",
+            "POL1713",
+            "POL1724",
+            "POL1746",
+            "POL1770",
+            "POL1786",
+            "POL1798",
+            "POL1824",
+            "POL1829",
+            "POL1843",
+            "POL1857",
+            "POL1892",
+            "POL1914",
+            "POL1930",
+            "POL1937",
+            "POL1938",
+            "POL1951",
+            "POL1959",
+            "POL1972",
+            "POL1987",
+            "POL1993",
+            "POL1998"
+           ],
+           "size": 12772517052,
+           "totalFiles": 467
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzB9",
+        "node": {
+         "id": "ds005381",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.1.0",
+          "hexsha": "043a0d75134de792e6d5748b087f1eafbe34ab29",
+          "created": "2025-08-08T06:17:21.000Z",
+          "description": {
+           "Name": "Discrimination-Estimation Task",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005381.v1.1.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "0018",
+            "0096",
+            "0102",
+            "0063",
+            "0043",
+            "0121",
+            "0104",
+            "0107",
+            "0105",
+            "0027",
+            "0054",
+            "0123",
+            "0103",
+            "0044",
+            "0014",
+            "0011",
+            "0033",
+            "0079",
+            "0069",
+            "0037",
+            "0101",
+            "0061",
+            "0095",
+            "0064",
+            "0017",
+            "0109",
+            "0028",
+            "0114",
+            "0113",
+            "0074",
+            "0108",
+            "0060",
+            "0086",
+            "0116",
+            "0126",
+            "0091",
+            "0004",
+            "0125",
+            "0006",
+            "0073",
+            "0076",
+            "0059",
+            "0112",
+            "0118",
+            "0127",
+            "0119",
+            "0015",
+            "0094",
+            "0058",
+            "0110"
+           ],
+           "size": 143017199478,
+           "totalFiles": 3955
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzF9",
+        "node": {
+         "id": "ds005383",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "ad78f3db430e636595b1b1c08417492f3067a25e",
+          "created": "2024-07-28T17:18:44.000Z",
+          "description": {
+           "Name": "TMNRED, A Chinese Language EEG Dataset for Fuzzy Semantic Target Identification in Natural Reading Environments",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005383.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"
+           ],
+           "size": 375577954,
+           "totalFiles": 1925
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzJ9",
+        "node": {
+         "id": "ds005385",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.3",
+          "hexsha": "6a558cd5852503e66df9ac7fdac2f3a7f4ed5f12",
+          "created": "2025-05-05T12:05:14.000Z",
+          "description": {
+           "Name": "Resting-state EEG data before and after cognitive activity across the adult lifespan and a 5-year follow-up",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005385.v1.0.3"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "227",
+            "298",
+            "417",
+            "100",
+            "163",
+            "531",
+            "220",
+            "467",
+            "046",
+            "086",
+            "242",
+            "586",
+            "028",
+            "589",
+            "192",
+            "503",
+            "285",
+            "431",
+            "332",
+            "598",
+            "452",
+            "267",
+            "408",
+            "202",
+            "597",
+            "585",
+            "322",
+            "341",
+            "144",
+            "068",
+            "089",
+            "536",
+            "404",
+            "340",
+            "151",
+            "537",
+            "141",
+            "148",
+            "593",
+            "561",
+            "546",
+            "308",
+            "162",
+            "074",
+            "277",
+            "539",
+            "235",
+            "032",
+            "566",
+            "123",
+            "350",
+            "595",
+            "360",
+            "058",
+            "047",
+            "480",
+            "204",
+            "082",
+            "038",
+            "464",
+            "470",
+            "196",
+            "603",
+            "132",
+            "111",
+            "391",
+            "382",
+            "051",
+            "197",
+            "579",
+            "175",
+            "237",
+            "248",
+            "471",
+            "183",
+            "442",
+            "043",
+            "413",
+            "562",
+            "422",
+            "320",
+            "228",
+            "263",
+            "437",
+            "292",
+            "378",
+            "493",
+            "115",
+            "021",
+            "079",
+            "447",
+            "403",
+            "025",
+            "416",
+            "607",
+            "184",
+            "229",
+            "540",
+            "426",
+            "375",
+            "406",
+            "212",
+            "001",
+            "355",
+            "430",
+            "312",
+            "361",
+            "601",
+            "102",
+            "455",
+            "130",
+            "453",
+            "317",
+            "428",
+            "005",
+            "231",
+            "194",
+            "050",
+            "035",
+            "454",
+            "040",
+            "027",
+            "083",
+            "388",
+            "553",
+            "157",
+            "573",
+            "518",
+            "409",
+            "357",
+            "371",
+            "529",
+            "244",
+            "208",
+            "533",
+            "193",
+            "004",
+            "370",
+            "017",
+            "544",
+            "296",
+            "560",
+            "554",
+            "432",
+            "288",
+            "389",
+            "189",
+            "152",
+            "605",
+            "300",
+            "390",
+            "093",
+            "582",
+            "072",
+            "002",
+            "177",
+            "499",
+            "097",
+            "314",
+            "304",
+            "374",
+            "185",
+            "022",
+            "306",
+            "315",
+            "523",
+            "012",
+            "090",
+            "019",
+            "425",
+            "098",
+            "421",
+            "173",
+            "427",
+            "110",
+            "385",
+            "226",
+            "501",
+            "488",
+            "286",
+            "457",
+            "239",
+            "440",
+            "137",
+            "588",
+            "211",
+            "486",
+            "462",
+            "446",
+            "541",
+            "552",
+            "116",
+            "587",
+            "256",
+            "549",
+            "513",
+            "236",
+            "395",
+            "070",
+            "504",
+            "139",
+            "489",
+            "508",
+            "099",
+            "506",
+            "572",
+            "275",
+            "016",
+            "108",
+            "415",
+            "327",
+            "545",
+            "299",
+            "180",
+            "127",
+            "054",
+            "176",
+            "468",
+            "075",
+            "379",
+            "339",
+            "187",
+            "527",
+            "095",
+            "307",
+            "260",
+            "250",
+            "534",
+            "007",
+            "011",
+            "254",
+            "520",
+            "352",
+            "174",
+            "456",
+            "117",
+            "514",
+            "061",
+            "461",
+            "233",
+            "234",
+            "463",
+            "178",
+            "460",
+            "036",
+            "060",
+            "121",
+            "125",
+            "214",
+            "474",
+            "366",
+            "149",
+            "367",
+            "592",
+            "496",
+            "131",
+            "063",
+            "407",
+            "124",
+            "207",
+            "487",
+            "594",
+            "010",
+            "280",
+            "120",
+            "191",
+            "578",
+            "519",
+            "321",
+            "557",
+            "333",
+            "044",
+            "368",
+            "365",
+            "283",
+            "384",
+            "145",
+            "347",
+            "077",
+            "551",
+            "599",
+            "483",
+            "524",
+            "338",
+            "530",
+            "574",
+            "302",
+            "475",
+            "062",
+            "405",
+            "604",
+            "171",
+            "309",
+            "261",
+            "057",
+            "583",
+            "346",
+            "066",
+            "543",
+            "259",
+            "266",
+            "056",
+            "026",
+            "295",
+            "246",
+            "161",
+            "303",
+            "249",
+            "581",
+            "351",
+            "071",
+            "386",
+            "201",
+            "198",
+            "563",
+            "580",
+            "085",
+            "282",
+            "092",
+            "439",
+            "497",
+            "031",
+            "337",
+            "305",
+            "359",
+            "265",
+            "383",
+            "114",
+            "342",
+            "258",
+            "591",
+            "369",
+            "311",
+            "279",
+            "094",
+            "602",
+            "491",
+            "331",
+            "128",
+            "538",
+            "354",
+            "492",
+            "160",
+            "449",
+            "136",
+            "485",
+            "255",
+            "399",
+            "547",
+            "190",
+            "064",
+            "210",
+            "287",
+            "203",
+            "013",
+            "502",
+            "542",
+            "373",
+            "264",
+            "140",
+            "257",
+            "410",
+            "270",
+            "166",
+            "433",
+            "481",
+            "080",
+            "436",
+            "451",
+            "509",
+            "142",
+            "444",
+            "510",
+            "293",
+            "105",
+            "221",
+            "281",
+            "535",
+            "290",
+            "106",
+            "158",
+            "209",
+            "271",
+            "596",
+            "484",
+            "600",
+            "107",
+            "168",
+            "112",
+            "401",
+            "423",
+            "532",
+            "326",
+            "576",
+            "448",
+            "076",
+            "049",
+            "096",
+            "348",
+            "034",
+            "516",
+            "414",
+            "590",
+            "253",
+            "223",
+            "473",
+            "344",
+            "216",
+            "392",
+            "165",
+            "029",
+            "078",
+            "169",
+            "412",
+            "465",
+            "445",
+            "150",
+            "048",
+            "511",
+            "393",
+            "435",
+            "284",
+            "469",
+            "565",
+            "515",
+            "429",
+            "330",
+            "372",
+            "219",
+            "133",
+            "376",
+            "172",
+            "153",
+            "224",
+            "441",
+            "014",
+            "109",
+            "478",
+            "055",
+            "230",
+            "568",
+            "218",
+            "400",
+            "104",
+            "222",
+            "164",
+            "477",
+            "225",
+            "443",
+            "336",
+            "039",
+            "033",
+            "479",
+            "556",
+            "138",
+            "495",
+            "215",
+            "023",
+            "294",
+            "381",
+            "084",
+            "319",
+            "507",
+            "398",
+            "476",
+            "528",
+            "134",
+            "268",
+            "558",
+            "009",
+            "466",
+            "126",
+            "424",
+            "243",
+            "313",
+            "024",
+            "129",
+            "052",
+            "119",
+            "245",
+            "505",
+            "396",
+            "608",
+            "472",
+            "363",
+            "103",
+            "232",
+            "358",
+            "364",
+            "291",
+            "272",
+            "450",
+            "053",
+            "018",
+            "091",
+            "182",
+            "059",
+            "482",
+            "015",
+            "525",
+            "512",
+            "310",
+            "006",
+            "334",
+            "003",
+            "146",
+            "008",
+            "394",
+            "377",
+            "188",
+            "154",
+            "571",
+            "402",
+            "088",
+            "247",
+            "179",
+            "498",
+            "278",
+            "241",
+            "274",
+            "252",
+            "087",
+            "113",
+            "606",
+            "206",
+            "156",
+            "101",
+            "353",
+            "418",
+            "548",
+            "325",
+            "335",
+            "318",
+            "420",
+            "500",
+            "323",
+            "380",
+            "345",
+            "170",
+            "205",
+            "122",
+            "199",
+            "438",
+            "569",
+            "069",
+            "143",
+            "362",
+            "186",
+            "577",
+            "564",
+            "045",
+            "434",
+            "550",
+            "155",
+            "349",
+            "584",
+            "240",
+            "041",
+            "411",
+            "167",
+            "195",
+            "276",
+            "273",
+            "521",
+            "200",
+            "213",
+            "030",
+            "301",
+            "067",
+            "159",
+            "118",
+            "343",
+            "494",
+            "329",
+            "269",
+            "459",
+            "238",
+            "147",
+            "037",
+            "217",
+            "081",
+            "555",
+            "387",
+            "262",
+            "135",
+            "567",
+            "316",
+            "065",
+            "324",
+            "328",
+            "251",
+            "522",
+            "458",
+            "570",
+            "397",
+            "297",
+            "289",
+            "575",
+            "042",
+            "181",
+            "526",
+            "020",
+            "419",
+            "559",
+            "073",
+            "517",
+            "490",
+            "356"
+           ],
+           "size": 79529430433,
+           "totalFiles": 17541
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzN9",
+        "node": {
+         "id": "ds005386",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "43751d8d67af6250079b17a91adc78ef67bb340b",
+          "created": "2024-07-30T10:49:36.000Z",
+          "description": {
+           "Name": "AttExp_fMRI",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005386.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "001",
+            "002",
+            "003",
+            "004",
+            "005",
+            "006",
+            "007",
+            "008",
+            "009",
+            "010",
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "016",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032",
+            "033",
+            "034",
+            "035",
+            "036",
+            "037",
+            "038",
+            "039",
+            "040",
+            "041",
+            "042",
+            "043",
+            "044",
+            "045",
+            "046",
+            "047",
+            "048",
+            "049",
+            "050",
+            "051",
+            "052"
+           ],
+           "size": 82440634766,
+           "totalFiles": 1772
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzR9",
+        "node": {
+         "id": "ds005397",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.4",
+          "hexsha": "797930c82569bd8ea6d49c0735fd99f608b1a6bd",
+          "created": "2025-11-10T12:51:56.000Z",
+          "description": {
+           "Name": "Affordances of stairs",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005397.v1.0.4"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "18",
+            "27",
+            "28",
+            "17",
+            "24",
+            "11",
+            "08",
+            "20",
+            "06",
+            "05",
+            "15",
+            "19",
+            "22",
+            "21",
+            "23",
+            "16",
+            "10",
+            "09",
+            "13",
+            "12",
+            "25",
+            "01",
+            "02",
+            "14",
+            "07",
+            "26"
+           ],
+           "size": 12872404161,
+           "totalFiles": 188
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzV9",
+        "node": {
+         "id": "ds005398",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "ieeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.1.3",
+          "hexsha": "96696da7d648dd98c1f6cd8927faf95451e7bb94",
+          "created": "2026-06-25T22:39:15.000Z",
+          "description": {
+           "Name": "Open iEEG Dataset (Pediatric iEEG, Wayne State University and UCLA)",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005398.v1.1.3"
+          },
+          "summary": {
+           "modalities": [
+            "ieeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "Detroit109",
+            "Detroit122",
+            "UCLA10",
+            "Detroit062",
+            "Detroit052",
+            "Detroit024",
+            "UCLA37",
+            "Detroit061",
+            "Detroit088",
+            "Detroit101",
+            "Detroit067",
+            "UCLA25",
+            "Detroit113",
+            "Detroit017",
+            "UCLA44",
+            "Detroit099",
+            "Detroit028",
+            "Detroit072",
+            "Detroit032",
+            "Detroit022",
+            "Detroit023",
+            "Detroit069",
+            "Detroit042",
+            "UCLA39",
+            "Detroit068",
+            "UCLA06",
+            "Detroit129",
+            "UCLA05",
+            "Detroit083",
+            "Detroit048",
+            "Detroit021",
+            "UCLA29",
+            "Detroit120",
+            "Detroit001",
+            "Detroit056",
+            "UCLA38",
+            "UCLA43",
+            "Detroit135",
+            "UCLA27",
+            "Detroit098",
+            "Detroit064",
+            "Detroit065",
+            "Detroit127",
+            "Detroit031",
+            "UCLA11",
+            "UCLA13",
+            "Detroit106",
+            "Detroit040",
+            "UCLA48",
+            "Detroit115",
+            "Detroit016",
+            "UCLA28",
+            "Detroit039",
+            "Detroit029",
+            "Detroit035",
+            "Detroit041",
+            "UCLA47",
+            "Detroit036",
+            "Detroit046",
+            "Detroit100",
+            "Detroit073",
+            "Detroit118",
+            "UCLA19",
+            "UCLA40",
+            "UCLA21",
+            "UCLA32",
+            "UCLA49",
+            "Detroit096",
+            "UCLA16",
+            "Detroit074",
+            "Detroit082",
+            "UCLA12",
+            "Detroit004",
+            "Detroit058",
+            "Detroit066",
+            "Detroit107",
+            "Detroit124",
+            "Detroit089",
+            "Detroit123",
+            "UCLA36",
+            "Detroit110",
+            "Detroit011",
+            "UCLA15",
+            "UCLA23",
+            "Detroit081",
+            "Detroit071",
+            "Detroit002",
+            "Detroit025",
+            "UCLA26",
+            "Detroit078",
+            "Detroit103",
+            "UCLA35",
+            "Detroit060",
+            "UCLA04",
+            "Detroit038",
+            "Detroit019",
+            "Detroit090",
+            "Detroit059",
+            "Detroit093",
+            "UCLA17",
+            "Detroit047",
+            "Detroit085",
+            "Detroit105",
+            "Detroit125",
+            "UCLA45",
+            "Detroit012",
+            "Detroit007",
+            "Detroit049",
+            "Detroit112",
+            "Detroit091",
+            "UCLA03",
+            "Detroit053",
+            "Detroit116",
+            "Detroit131",
+            "Detroit054",
+            "Detroit119",
+            "UCLA50",
+            "Detroit084",
+            "Detroit057",
+            "Detroit018",
+            "UCLA24",
+            "Detroit094",
+            "Detroit130",
+            "UCLA14",
+            "Detroit077",
+            "UCLA02",
+            "Detroit080",
+            "Detroit051",
+            "Detroit087",
+            "Detroit026",
+            "Detroit006",
+            "Detroit132",
+            "Detroit013",
+            "Detroit037",
+            "Detroit117",
+            "Detroit003",
+            "UCLA30",
+            "Detroit009",
+            "Detroit010",
+            "Detroit030",
+            "Detroit128",
+            "Detroit044",
+            "Detroit121",
+            "Detroit092",
+            "UCLA20",
+            "Detroit126",
+            "Detroit008",
+            "Detroit033",
+            "UCLA31",
+            "Detroit070",
+            "Detroit133",
+            "Detroit075",
+            "Detroit102",
+            "Detroit027",
+            "Detroit104",
+            "UCLA46",
+            "Detroit111",
+            "UCLA08",
+            "Detroit045",
+            "UCLA18",
+            "UCLA34",
+            "Detroit114",
+            "Detroit079",
+            "Detroit134",
+            "UCLA07",
+            "Detroit034",
+            "Detroit005",
+            "UCLA09",
+            "Detroit050",
+            "UCLA41",
+            "Detroit108",
+            "Detroit014",
+            "UCLA22",
+            "Detroit063",
+            "UCLA33",
+            "Detroit086",
+            "Detroit076",
+            "Detroit097",
+            "UCLA01",
+            "Detroit055",
+            "UCLA42",
+            "Detroit015",
+            "Detroit043",
+            "Detroit020",
+            "Detroit095"
+           ],
+           "size": 109729585717,
+           "totalFiles": 1301
+          }
+         }
+        }
+       },
+       null,
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzd9",
+        "node": {
+         "id": "ds005402",
+         "metadata": {
+          "species": "Mouse",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": false
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "7ce02a16d3372fbda2776ccb2628924d188636ec",
+          "created": "2024-08-06T11:11:20.000Z",
+          "description": {
+           "Name": "MPTP mouse",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005402.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_diffusion",
+            "mri_structural",
+            "mri_functional"
+           ],
+           "subjects": [
+            "419077",
+            "419078",
+            "419087",
+            "419088",
+            "419089",
+            "419090",
+            "420112",
+            "420113",
+            "420114",
+            "420115",
+            "420116",
+            "420117",
+            "420118",
+            "420119",
+            "420120",
+            "420121",
+            "420122",
+            "420123",
+            "420124",
+            "420125",
+            "420126",
+            "420127",
+            "421521",
+            "421522",
+            "421523",
+            "421524",
+            "421529",
+            "421530",
+            "421531",
+            "421532",
+            "421533",
+            "421534",
+            "422720",
+            "422721"
+           ],
+           "size": 2134543042,
+           "totalFiles": 380
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzh9",
+        "node": {
+         "id": "ds005403",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "49e02cbc203499e65e8963d3a42e75328b19b6d0",
+          "created": "2024-08-06T18:19:30.000Z",
+          "description": {
+           "Name": "Delayed Auditory Feedback EEG/EGG",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005403.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32"
+           ],
+           "size": 127189601509,
+           "totalFiles": 291
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExNzl9",
+        "node": {
+         "id": "ds005405",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.3",
+          "hexsha": "bc35222999d5c43ed030815d3663b7479e67aa5d",
+          "created": "2026-05-08T18:47:18.000Z",
+          "description": {
+           "Name": "Protecting the Aging Brain - fMRI study of the brain in ketosis",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005405.v1.0.3"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "066",
+            "056",
+            "084",
+            "100",
+            "131",
+            "072",
+            "060",
+            "006",
+            "085",
+            "139",
+            "090",
+            "011",
+            "124",
+            "141",
+            "106",
+            "076",
+            "118",
+            "094",
+            "067",
+            "107",
+            "119",
+            "062",
+            "070",
+            "020",
+            "044",
+            "152",
+            "029",
+            "132",
+            "101",
+            "016",
+            "128",
+            "133",
+            "112",
+            "114",
+            "049",
+            "057",
+            "025",
+            "098",
+            "136",
+            "075",
+            "048",
+            "111",
+            "042",
+            "122",
+            "013",
+            "095",
+            "116",
+            "108",
+            "028",
+            "068",
+            "103",
+            "058",
+            "109",
+            "054",
+            "079",
+            "034",
+            "127",
+            "115",
+            "126",
+            "151",
+            "140",
+            "102",
+            "052",
+            "021",
+            "092",
+            "046",
+            "063",
+            "059",
+            "045",
+            "145",
+            "082",
+            "150",
+            "064",
+            "083",
+            "041",
+            "071",
+            "051",
+            "137",
+            "120",
+            "047",
+            "091",
+            "019",
+            "010",
+            "123",
+            "037",
+            "053",
+            "012",
+            "149",
+            "104",
+            "144",
+            "093",
+            "099",
+            "061",
+            "027",
+            "035",
+            "105",
+            "023",
+            "015",
+            "080",
+            "130",
+            "135"
+           ],
+           "size": 491307737610,
+           "totalFiles": 2820
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODB9",
+        "node": {
+         "id": "ds005406",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "d09c57e0f10dc1daca054d40b26116d0765cacaa",
+          "created": "2024-08-12T09:54:38.000Z",
+          "description": {
+           "Name": "EEG frequency tagging reveals the integration of dissimilar observed actions",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005406.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "28",
+            "30",
+            "31",
+            "32",
+            "33"
+           ],
+           "size": 14241904586,
+           "totalFiles": 295
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODF9",
+        "node": {
+         "id": "ds005408",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "fcebb22db7860508c5c470889b7d43fd0471e2c2",
+          "created": "2026-04-07T15:26:48.000Z",
+          "description": {
+           "Name": "The effect of speech masking on the human subcortical response to continuous speech",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005408.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "12",
+            "19",
+            "15",
+            "25",
+            "10",
+            "23",
+            "02",
+            "01",
+            "14",
+            "06",
+            "20",
+            "17",
+            "07",
+            "08",
+            "21",
+            "03",
+            "11",
+            "24",
+            "05",
+            "22",
+            "13",
+            "16",
+            "18",
+            "09",
+            "04"
+           ],
+           "size": 40639242081,
+           "totalFiles": 207
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODJ9",
+        "node": {
+         "id": "ds005410",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "54584c6ec501614fc9f54404e30c746f63016ba2",
+          "created": "2024-08-26T13:51:29.000Z",
+          "description": {
+           "Name": "Semantic_conditioning",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005410.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "006",
+            "007",
+            "008",
+            "009",
+            "010",
+            "012",
+            "013",
+            "014",
+            "015",
+            "017",
+            "018",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032",
+            "033",
+            "034",
+            "035",
+            "036",
+            "037",
+            "038",
+            "039",
+            "040",
+            "041",
+            "042",
+            "043",
+            "044",
+            "046",
+            "047",
+            "048",
+            "049",
+            "050",
+            "051",
+            "053",
+            "055",
+            "058",
+            "059",
+            "061",
+            "062",
+            "063",
+            "064",
+            "065",
+            "066",
+            "067",
+            "068",
+            "069",
+            "070",
+            "071",
+            "072",
+            "073",
+            "074",
+            "077",
+            "078",
+            "079",
+            "080",
+            "082",
+            "083",
+            "084",
+            "085",
+            "086",
+            "087",
+            "088",
+            "090",
+            "091",
+            "092",
+            "093",
+            "094",
+            "095",
+            "096",
+            "097",
+            "098",
+            "099"
+           ],
+           "size": 21213480734,
+           "totalFiles": 492
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODN9",
+        "node": {
+         "id": "ds005411",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "ieeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "25d6f8c3ca6fca57f411366cdcb573bad2a4478d",
+          "created": "2024-08-14T14:45:19.000Z",
+          "description": {
+           "Name": "Free Recall of Word Lists with Repeated Items",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005411.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "ieeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "R1204T",
+            "R1501J",
+            "R1514E",
+            "R1516E",
+            "R1528E",
+            "R1531T",
+            "R1534D",
+            "R1547D",
+            "R1556J",
+            "R1564J",
+            "R1566D",
+            "R1568E",
+            "R1582E",
+            "R1584J",
+            "R1587J",
+            "R1589T",
+            "R1590T",
+            "R1593D",
+            "R1594E",
+            "R1596T",
+            "R1603T",
+            "R1604J",
+            "R1611T",
+            "R1612E",
+            "R1613T",
+            "R1615T",
+            "R1618J",
+            "R1619T",
+            "R1620J",
+            "R1621E",
+            "R1624E",
+            "R1625T",
+            "R1627T",
+            "R1628E",
+            "R1630E",
+            "R1632E",
+            "R1635T",
+            "R1638E",
+            "R1642J",
+            "R1644T",
+            "R1650E",
+            "R1651J",
+            "R1653J",
+            "R1654J",
+            "R1670J",
+            "R1679J",
+            "R1681J",
+            "R1692T"
+           ],
+           "size": 168961242901,
+           "totalFiles": 1370
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODR9",
+        "node": {
+         "id": "ds005412",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": false
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "712a5af4a3ca94c28d410a5bc287626557a38fb3",
+          "created": "2024-08-15T05:23:16.000Z",
+          "description": {
+           "Name": "Grant DataSet",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005412.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "01"
+           ],
+           "size": 10594233,
+           "totalFiles": 7
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODV9",
+        "node": {
+         "id": "ds005413",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri",
+           "beh"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "47d0ecc31820feb0d33e05fa2908957dc0d2158d",
+          "created": "2025-04-17T05:59:38.000Z",
+          "description": {
+           "Name": "Expectation effects on pain and visual perception",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005413.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri",
+            "beh"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "22",
+            "15",
+            "47",
+            "44",
+            "16",
+            "45",
+            "38",
+            "05",
+            "18",
+            "21",
+            "10",
+            "29",
+            "41",
+            "28",
+            "43",
+            "25",
+            "06",
+            "14",
+            "01",
+            "37",
+            "17",
+            "27",
+            "48",
+            "39",
+            "23",
+            "02",
+            "11",
+            "31",
+            "20",
+            "13",
+            "12",
+            "03",
+            "34",
+            "40",
+            "26",
+            "42",
+            "04",
+            "46",
+            "35",
+            "09",
+            "50",
+            "36",
+            "08",
+            "33",
+            "32"
+           ],
+           "size": 160113517690,
+           "totalFiles": 2258
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODZ9",
+        "node": {
+         "id": "ds005415",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "ieeg",
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "f3785fcd2f4b4d7a4df9b29a0b0266755f2a0626",
+          "created": "2024-10-25T12:49:06.000Z",
+          "description": {
+           "Name": "Numbers",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005415.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "ieeg",
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "72",
+            "73",
+            "78",
+            "79",
+            "80",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "90",
+            "91",
+            "92"
+           ],
+           "size": 8015284412,
+           "totalFiles": 133
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODd9",
+        "node": {
+         "id": "ds005416",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": false
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "6adf8f071bde5755665cd805ee22cc62fe7c4cb5",
+          "created": "2024-12-17T01:14:50.000Z",
+          "description": {
+           "Name": "Fatigue Characterization of EEG under Mixed Reality Stereo Vision",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005416.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "s17",
+            "s02",
+            "s07",
+            "s03",
+            "s01",
+            "s18",
+            "s23",
+            "s09",
+            "s19",
+            "s06",
+            "s12",
+            "s20",
+            "s04",
+            "s16",
+            "s14",
+            "s05",
+            "s11",
+            "s15",
+            "s08",
+            "s13",
+            "s22",
+            "s21",
+            "s10"
+           ],
+           "size": 22869324774,
+           "totalFiles": 143
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODh9",
+        "node": {
+         "id": "ds005418",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "3.2.0",
+          "hexsha": "cdc08c4776183f55593cd7dbeee256198c1d03a1",
+          "created": "2024-08-21T11:02:40.000Z",
+          "description": {
+           "Name": "Cerebrovascular Reactivity: CO2 inhalation and resting state comparisons",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005418.v3.2.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "001",
+            "004",
+            "012",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032",
+            "033",
+            "034",
+            "035",
+            "036",
+            "037",
+            "038",
+            "039",
+            "040",
+            "041",
+            "042",
+            "043",
+            "044",
+            "045",
+            "046",
+            "047",
+            "048",
+            "049",
+            "050"
+           ],
+           "size": 6084346562,
+           "totalFiles": 286
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExODl9",
+        "node": {
+         "id": "ds005420",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": false
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "ff387dfd7d3290f67de4512c07461bdf2dd9c258",
+          "created": "2024-08-21T17:22:57.000Z",
+          "description": {
+           "Name": "Resting state EEG with closed eyes and open eyes in females from 60 to 80 years old",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005420.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "1",
+            "10",
+            "12",
+            "13",
+            "15",
+            "16",
+            "17",
+            "18",
+            "2",
+            "21",
+            "22",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "31",
+            "32",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "5",
+            "50",
+            "7",
+            "9"
+           ],
+           "size": 390188994,
+           "totalFiles": 258
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTB9",
+        "node": {
+         "id": "ds005422",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "924a8f3412463457a70e0fb141a88a8b57fc7ba6",
+          "created": "2024-08-23T06:42:39.000Z",
+          "description": {
+           "Name": "NextBrain Data Extension",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005422.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "001"
+           ],
+           "size": 195419876,
+           "totalFiles": 4
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTF9",
+        "node": {
+         "id": "ds005424",
+         "metadata": {
+          "species": "baboon",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "673ba10f2352b5abda98d2e15f463829eea2d30b",
+          "created": "2025-09-30T09:37:36.000Z",
+          "description": {
+           "Name": "BaBa21",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005424.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "Palme",
+            "Oasis",
+            "Prouesse",
+            "Noe",
+            "Papou",
+            "Prune",
+            "Oz",
+            "Pesto",
+            "Omer",
+            "Olivier",
+            "Ota1",
+            "Pepita",
+            "Odin",
+            "Odor",
+            "Omelette",
+            "Phyllis",
+            "Picsou",
+            "Pau",
+            "Puma",
+            "Ozy",
+            "Omerta"
+           ],
+           "size": 397447073,
+           "totalFiles": 201
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTJ9",
+        "node": {
+         "id": "ds005427",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.1.1",
+          "hexsha": "cdbbdc26a401a3870ae37d14df878d36cab616d0",
+          "created": "2024-08-25T11:36:32.000Z",
+          "description": {
+           "Name": "The neural dynamics associated with computational complexity",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005427.v1.1.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"
+           ],
+           "size": 82303126327,
+           "totalFiles": 746
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTN9",
+        "node": {
+         "id": "ds005429",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "d045d7f6cca608318b662c332ec141b9e5dd9944",
+          "created": "2024-08-30T05:31:09.000Z",
+          "description": {
+           "Name": "Auditory oddball comparison (Optimum-1, Learning-oddball, and the local\u2013global paradigm)",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005429.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+           ],
+           "size": 17684554701,
+           "totalFiles": 430
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTR9",
+        "node": {
+         "id": "ds005431",
+         "metadata": {
+          "species": "Other",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.3.0",
+          "hexsha": "707d25cddeaa7537a6f8dfda95ac713765447059",
+          "created": "2026-03-18T06:29:22.000Z",
+          "description": {
+           "Name": "Animal Brain Collection Project",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005431.v1.3.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_diffusion",
+            "mri_structural"
+           ],
+           "subjects": [
+            "32Mallard",
+            "10JSquirrelAdult",
+            "13GSOpossum",
+            "33BStilt",
+            "16MarmosetP8",
+            "51JBoar",
+            "26NRHornbillAdult",
+            "12Ferret",
+            "43Hagfish",
+            "25LCrowAdult",
+            "53JMacaque",
+            "41CSTurtle",
+            "08JSquirrelP4",
+            "39JFSalamander",
+            "34BStilt",
+            "03LJFMouseAdult",
+            "19ChickenP7",
+            "52JSSnake",
+            "06RabbitAdult",
+            "22ChickenAdult",
+            "31MDuck",
+            "36BHeronAdult",
+            "21ChickenP21",
+            "28BLapwing",
+            "15MarmosetE100",
+            "47CGecko",
+            "18ChickE20",
+            "37GPenguin",
+            "40MGGeckoAdult",
+            "44BDragon",
+            "17ChickE18",
+            "46MPalmCivet",
+            "02MouseICR",
+            "04Rat4w",
+            "50JRFox",
+            "01MouseAdult",
+            "14GPig",
+            "49PChameleon",
+            "48PChameleon",
+            "42ALamprey",
+            "05CBRatAdult",
+            "38HPenguin1w",
+            "30MDuck",
+            "07ERousetteAdult",
+            "29BLapwing",
+            "09JSquirrelNewBorn",
+            "35TToucanAdult",
+            "20ChickenP14",
+            "24CPatridge",
+            "27NRHornbillAdult",
+            "45JRaccoonDog",
+            "11HShrew"
+           ],
+           "size": 11713375380,
+           "totalFiles": 249
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTV9",
+        "node": {
+         "id": "ds005448",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "ieeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "b9220dff7140d562c709783369c3967d345c0c5d",
+          "created": "2024-10-08T19:09:02.000Z",
+          "description": {
+           "Name": "STReEF",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005448.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "ieeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "STREEF01",
+            "STREEF02",
+            "STREEF03",
+            "STREEF04",
+            "STREEF05",
+            "STREEF06",
+            "STREEF07",
+            "STREEF08",
+            "STREEF09",
+            "STREEF10",
+            "STREEF11",
+            "STREEF12",
+            "STREEF13"
+           ],
+           "size": 48025611704,
+           "totalFiles": 191
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTZ9",
+        "node": {
+         "id": "ds005449",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "42bffc26bd0908946f9393cfbd1470111401d5d6",
+          "created": "2024-09-05T18:32:10.000Z",
+          "description": {
+           "Name": "Valenced tactile information is evoked by neutral visual cues following emotional learning",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005449.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "001",
+            "002",
+            "003",
+            "004",
+            "005",
+            "006",
+            "007",
+            "009",
+            "010",
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "016",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032",
+            "033",
+            "034",
+            "035",
+            "036",
+            "037",
+            "038",
+            "039",
+            "040",
+            "042",
+            "043",
+            "044",
+            "045",
+            "046",
+            "047",
+            "048",
+            "049",
+            "050",
+            "051",
+            "052",
+            "053",
+            "054",
+            "055",
+            "056",
+            "057",
+            "058",
+            "059",
+            "060",
+            "061",
+            "062",
+            "063",
+            "064",
+            "065",
+            "066",
+            "067",
+            "068",
+            "069",
+            "070",
+            "071",
+            "072",
+            "073",
+            "074",
+            "075",
+            "076",
+            "077",
+            "078",
+            "079",
+            "080",
+            "081",
+            "082",
+            "083",
+            "084",
+            "085",
+            "086",
+            "087",
+            "088",
+            "089",
+            "090",
+            "091",
+            "092",
+            "093",
+            "094",
+            "095",
+            "096",
+            "097",
+            "098",
+            "099",
+            "100",
+            "101",
+            "102",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "118",
+            "120",
+            "121",
+            "123",
+            "335",
+            "359",
+            "378",
+            "394"
+           ],
+           "size": 122553600491,
+           "totalFiles": 4841
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTd9",
+        "node": {
+         "id": "ds005450",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "9e5bc0129c77b27bf6cc74fae841d556338edea8",
+          "created": "2025-03-18T01:24:14.000Z",
+          "description": {
+           "Name": "BOBS Repo",
+           "License": "CC-By Attribution 4.0 International",
+           "DatasetDOI": "10.17605/OSF.IO/WDR78"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "939043",
+            "981664",
+            "518969",
+            "684448",
+            "402408",
+            "635515",
+            "470437",
+            "176427",
+            "544404",
+            "621289",
+            "198202",
+            "401592",
+            "627391",
+            "645257",
+            "726893",
+            "406768",
+            "890518",
+            "298032",
+            "810675",
+            "277762",
+            "284149",
+            "584381",
+            "551495",
+            "981854",
+            "309615",
+            "380056",
+            "116845",
+            "682023",
+            "469090",
+            "381606",
+            "552990",
+            "372377",
+            "938316",
+            "439083",
+            "850013",
+            "116056",
+            "455675",
+            "710922",
+            "993015",
+            "198549",
+            "801091",
+            "295081",
+            "243511",
+            "657158",
+            "786266",
+            "761141",
+            "943541",
+            "206192",
+            "940808",
+            "272097",
+            "387247"
+           ],
+           "size": 145358,
+           "totalFiles": 431
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTh9",
+        "node": {
+         "id": "ds005454",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "cdd3369413f11e817fe5c72bfe73b0b9e035d839",
+          "created": "2024-09-05T13:03:47.000Z",
+          "description": {
+           "Name": "fMRIPrep boot camp -- 7T training dataset",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005454.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural",
+            "mri_functional"
+           ],
+           "subjects": [
+            "11",
+            "14",
+            "15",
+            "16",
+            "17"
+           ],
+           "size": 7115056279,
+           "totalFiles": 96
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjExOTl9",
+        "node": {
+         "id": "ds005455",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.1.6",
+          "hexsha": "6398868be48d5307344755661a5e1b6251f06bc9",
+          "created": "2025-06-01T08:39:33.000Z",
+          "description": {
+           "Name": "An fMRI dataset for investigating language control and cognitive control in bilinguals",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds005455.v1.1.6"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "046",
+            "033",
+            "024",
+            "054",
+            "061",
+            "075",
+            "049",
+            "030",
+            "052",
+            "003",
+            "018",
+            "001",
+            "005",
+            "065",
+            "039",
+            "041",
+            "017",
+            "008",
+            "011",
+            "062",
+            "071",
+            "038",
+            "043",
+            "028",
+            "002",
+            "055",
+            "040",
+            "035",
+            "020",
+            "050",
+            "007",
+            "029",
+            "037",
+            "074",
+            "013",
+            "016",
+            "056",
+            "032",
+            "047",
+            "048",
+            "023",
+            "021",
+            "026",
+            "027",
+            "053",
+            "012",
+            "019",
+            "060",
+            "036",
+            "042",
+            "064",
+            "069",
+            "022",
+            "010",
+            "044",
+            "015",
+            "076",
+            "045",
+            "077",
+            "004",
+            "059",
+            "006",
+            "034",
+            "031",
+            "051",
+            "066",
+            "014",
+            "073",
+            "009",
+            "058",
+            "068",
+            "070",
+            "072",
+            "067",
+            "063",
+            "057",
+            "025"
+           ],
+           "size": 8926687896,
+           "totalFiles": 1163
+          }
+         }
+        }
+       }
+      ]
+     }
+    },
+    "extensions": {
+     "openneuro": {
+      "version": "5.10.1"
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "art-2",
+      "name": "spike-rates.csv",
+      "size": 3145728,
+      "content_type": "text/csv",
+      "snapshot_id": null,
+      "state": "COMMITTED",
+      "created_at": 1792000100,
+      "finalized_at": 1792000110
+    },
+    {
+      "artifact_id": "art-1",
+      "name": "figure.png",
+      "size": 1024,
+      "content_type": "image/png",
+      "snapshot_id": null,
+      "state": "PENDING",
+      "created_at": 1792000000,
+      "finalized_at": null
+    }
+  ]
+}

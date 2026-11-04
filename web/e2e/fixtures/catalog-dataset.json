@@ -1,0 +1,38 @@
+{
+  "dataset": "dandi-000623",
+  "facts": {
+    "dataset": "dandi-000623",
+    "title": "Brain movie recordings",
+    "license": "CC-BY-4.0",
+    "doi": null,
+    "source_archive": "dandi",
+    "source_dataset": "000623",
+    "source_version": "0.230625.0237",
+    "asset_count": 3,
+    "subject_count": 2,
+    "total_bytes": 3500000000
+  },
+  "subjects": [
+    { "subject": "sub-CS41", "species": "Homo sapiens", "sex": "F", "age": "P42Y" },
+    { "subject": "sub-CS62", "species": "Homo sapiens", "sex": "M", "age": "P38Y" }
+  ],
+  "sessions": [
+    {
+      "subject": "sub-CS41",
+      "bids_session": "ses-1",
+      "start_time": "2023-06-25T10:00:00Z",
+      "description": "Movie watching"
+    },
+    {
+      "subject": "sub-CS62",
+      "bids_session": "ses-1",
+      "start_time": "2023-06-26T09:30:00Z",
+      "description": null
+    }
+  ],
+  "formats": [
+    { "format": "nwb", "count": 3, "bytes": 3500000000 },
+    { "format": "json", "count": 1, "bytes": 2048 }
+  ],
+  "query_ms": 233
+}

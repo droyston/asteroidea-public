@@ -1,0 +1,18 @@
+{
+ "method": "GET",
+ "url": "https://api.dandiarchive.org/api/dandisets/000004/versions/0.220126.1852/info/",
+ "responses": [
+  {
+   "status": 500,
+   "text": "Internal Server Error"
+  },
+  {
+   "status": 500,
+   "text": "Internal Server Error"
+  },
+  {
+   "status": 500,
+   "text": "Internal Server Error"
+  }
+ ]
+}

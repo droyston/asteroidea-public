@@ -1,0 +1,341 @@
+{
+  "studies": [
+    {
+      "study": "bmovie",
+      "title": "Human single neurons and fMRI during movie watching",
+      "authors": "Keles, Rutishauser",
+      "lab": "Rutishauser lab",
+      "citation": "Keles et al. (2024)",
+      "doi": "10.1038/s41597-024-03029-1",
+      "datasets": [
+        {
+          "dataset": "dandi-000623",
+          "role": "ephys"
+        },
+        {
+          "dataset": "openneuro-ds004798",
+          "role": "mri"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "dataset": "dandi-000027",
+      "title": "Title of dandi-000027",
+      "tier": "sandbox",
+      "license": "CC-BY-4.0",
+      "doi": null,
+      "source_archive": "dandi",
+      "source_dataset": "000027",
+      "source_version": "0.210831.2033",
+      "ingest_method": "import",
+      "created_at": "2026-10-01 12:00:00.000",
+      "asset_count": 1,
+      "subject_count": 1,
+      "total_bytes": 10,
+      "mine": false,
+      "subjects": [
+        {
+          "subject": "anm1",
+          "species": null,
+          "sex": null,
+          "age": null,
+          "modalities": ["other:ecephys"],
+          "sessions": [
+            {
+              "session": "_",
+              "asset_ids": ["a27"],
+              "nwb": [
+                {
+                  "asset_id": "a27",
+                  "n_units": null
+                }
+              ]
+            }
+          ],
+          "units": 0,
+          "trials": 0,
+          "lfp": []
+        }
+      ],
+      "regions": []
+    },
+    {
+      "dataset": "dandi-000576",
+      "title": "Title of dandi-000576",
+      "tier": "curated",
+      "license": "CC-BY-4.0",
+      "doi": null,
+      "source_archive": "dandi",
+      "source_dataset": "000576",
+      "source_version": "0.231010.1811",
+      "ingest_method": "import",
+      "created_at": "2026-10-01 12:00:00.000",
+      "asset_count": 2,
+      "subject_count": 1,
+      "total_bytes": 2000,
+      "mine": false,
+      "subjects": [
+        {
+          "subject": "01",
+          "species": "Homo sapiens",
+          "sex": "F",
+          "age": "P30Y",
+          "modalities": ["units", "lfp"],
+          "sessions": [
+            {
+              "session": "1",
+              "asset_ids": ["a576"],
+              "nwb": [
+                {
+                  "asset_id": "a576",
+                  "n_units": 12
+                }
+              ]
+            },
+            {
+              "session": "2",
+              "asset_ids": ["a576b"],
+              "nwb": [
+                {
+                  "asset_id": "a576b",
+                  "n_units": 0
+                }
+              ]
+            }
+          ],
+          "units": 12,
+          "trials": 0,
+          "lfp": [
+            {
+              "asset_id": "a576b",
+              "path": "/processing/ecephys/LFP_micro/ElectricalSeries",
+              "channels": 8,
+              "rate_hz": 1000.0
+            }
+          ]
+        }
+      ],
+      "regions": [
+        {
+          "region": "hippocampus",
+          "units": 12,
+          "channels": 8
+        }
+      ]
+    },
+    {
+      "dataset": "dandi-000623",
+      "title": "Title of dandi-000623",
+      "tier": "curated",
+      "license": "CC-BY-4.0",
+      "doi": null,
+      "source_archive": "dandi",
+      "source_dataset": "000623",
+      "source_version": "0.240827.1809",
+      "ingest_method": "import",
+      "created_at": "2026-10-01 12:00:00.000",
+      "asset_count": 2,
+      "subject_count": 2,
+      "total_bytes": 9000,
+      "mine": false,
+      "subjects": [
+        {
+          "subject": "CS41",
+          "species": "Homo sapiens",
+          "sex": "M",
+          "age": "P41Y",
+          "modalities": ["units", "lfp", "task"],
+          "sessions": [
+            {
+              "session": "1",
+              "asset_ids": ["e41"],
+              "nwb": [
+                {
+                  "asset_id": "e41",
+                  "n_units": 44
+                }
+              ]
+            }
+          ],
+          "units": 44,
+          "trials": 120,
+          "lfp": [
+            {
+              "asset_id": "e41",
+              "path": "/processing/ecephys/LFP_micro/ElectricalSeries",
+              "channels": 64,
+              "rate_hz": 1000.0
+            }
+          ]
+        },
+        {
+          "subject": "CS62",
+          "species": "Homo sapiens",
+          "sex": "F",
+          "age": "P62Y",
+          "modalities": ["task"],
+          "sessions": [
+            {
+              "session": "1",
+              "asset_ids": ["e62"],
+              "nwb": [
+                {
+                  "asset_id": "e62",
+                  "n_units": 0
+                }
+              ]
+            }
+          ],
+          "units": 0,
+          "trials": 90,
+          "lfp": []
+        }
+      ],
+      "regions": [
+        {
+          "region": "Left ACC",
+          "units": 0,
+          "channels": 8
+        },
+        {
+          "region": "amygdala left",
+          "units": 20,
+          "channels": 32
+        },
+        {
+          "region": "hippocampus right",
+          "units": 24,
+          "channels": 32
+        }
+      ]
+    },
+    {
+      "dataset": "my-upload",
+      "title": "Title of my-upload",
+      "tier": "upload",
+      "license": null,
+      "doi": null,
+      "source_archive": null,
+      "source_dataset": null,
+      "source_version": null,
+      "ingest_method": "upload",
+      "created_at": "2026-10-01 12:00:00.000",
+      "asset_count": 1,
+      "subject_count": 1,
+      "total_bytes": 5,
+      "mine": true,
+      "subjects": [
+        {
+          "subject": "u1",
+          "species": null,
+          "sex": null,
+          "age": null,
+          "modalities": ["other:csv"],
+          "sessions": [
+            {
+              "session": "_",
+              "asset_ids": ["up1"],
+              "nwb": []
+            }
+          ],
+          "units": 0,
+          "trials": 0,
+          "lfp": []
+        }
+      ],
+      "regions": []
+    },
+    {
+      "dataset": "openneuro-ds004798",
+      "title": "Title of openneuro-ds004798",
+      "tier": "curated",
+      "license": "CC-BY-4.0",
+      "doi": null,
+      "source_archive": "openneuro",
+      "source_dataset": "ds004798",
+      "source_version": "1.0.1",
+      "ingest_method": "import",
+      "created_at": "2026-10-01 12:00:00.000",
+      "asset_count": 6,
+      "subject_count": 2,
+      "total_bytes": 80000,
+      "mine": false,
+      "subjects": [
+        {
+          "subject": "CS41",
+          "species": null,
+          "sex": null,
+          "age": null,
+          "modalities": ["anat", "func", "task", "other:scans"],
+          "sessions": [
+            {
+              "session": "_",
+              "asset_ids": ["m41-scans", "m41-t1", "m41-bold", "m41-events"],
+              "nwb": []
+            }
+          ],
+          "units": 0,
+          "trials": 0,
+          "lfp": []
+        },
+        {
+          "subject": "CS62",
+          "species": null,
+          "sex": null,
+          "age": null,
+          "modalities": ["anat"],
+          "sessions": [
+            {
+              "session": "_",
+              "asset_ids": ["m62-t1", "m62-t1json"],
+              "nwb": []
+            }
+          ],
+          "units": 0,
+          "trials": 0,
+          "lfp": []
+        }
+      ],
+      "regions": []
+    },
+    {
+      "dataset": "their-upload",
+      "title": "Title of their-upload",
+      "tier": "upload",
+      "license": null,
+      "doi": null,
+      "source_archive": null,
+      "source_dataset": null,
+      "source_version": null,
+      "ingest_method": "upload",
+      "created_at": "2026-10-01 12:00:00.000",
+      "asset_count": 1,
+      "subject_count": 1,
+      "total_bytes": 7,
+      "mine": false,
+      "subjects": [
+        {
+          "subject": "u2",
+          "species": null,
+          "sex": null,
+          "age": null,
+          "modalities": ["other:beh"],
+          "sessions": [
+            {
+              "session": "_",
+              "asset_ids": ["up2"],
+              "nwb": []
+            }
+          ],
+          "units": 0,
+          "trials": 0,
+          "lfp": []
+        }
+      ],
+      "regions": []
+    }
+  ],
+  "query_ms": 0
+}

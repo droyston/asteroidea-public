@@ -1,0 +1,244 @@
+{
+ "Contents": [
+  {
+   "Key": "ds004798/.bidsignore",
+   "Size": 43
+  },
+  {
+   "Key": "ds004798/.gitattributes",
+   "Size": 385
+  },
+  {
+   "Key": "ds004798/CHANGES",
+   "Size": 217
+  },
+  {
+   "Key": "ds004798/README",
+   "Size": 1753
+  },
+  {
+   "Key": "ds004798/dataset_description.json",
+   "Size": 1793
+  },
+  {
+   "Key": "ds004798/participants.json",
+   "Size": 578
+  },
+  {
+   "Key": "ds004798/participants.tsv",
+   "Size": 374
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/anat/sub-p41cs_ses-001_T2w.json",
+   "Size": 2116
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/anat/sub-p41cs_ses-001_T2w.nii.gz",
+   "Size": 6922765
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/anat/sub-p41cs_ses-001_run-1_T1w.json",
+   "Size": 2149
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/anat/sub-p41cs_ses-001_run-1_T1w.nii.gz",
+   "Size": 10973802
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/anat/sub-p41cs_ses-001_run-2_T1w.json",
+   "Size": 2150
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/anat/sub-p41cs_ses-001_run-2_T1w.nii.gz",
+   "Size": 10963961
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/fmap/sub-p41cs_ses-001_acq-movie_dir-neg_run-1_epi.json",
+   "Size": 3232
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/fmap/sub-p41cs_ses-001_acq-movie_dir-neg_run-1_epi.nii.gz",
+   "Size": 429937
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/fmap/sub-p41cs_ses-001_acq-movie_dir-neg_run-2_epi.json",
+   "Size": 3231
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/fmap/sub-p41cs_ses-001_acq-movie_dir-neg_run-2_epi.nii.gz",
+   "Size": 430809
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/fmap/sub-p41cs_ses-001_acq-movie_dir-pos_run-1_epi.json",
+   "Size": 3233
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/fmap/sub-p41cs_ses-001_acq-movie_dir-pos_run-1_epi.nii.gz",
+   "Size": 436427
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/fmap/sub-p41cs_ses-001_acq-movie_dir-pos_run-2_epi.json",
+   "Size": 3233
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/fmap/sub-p41cs_ses-001_acq-movie_dir-pos_run-2_epi.nii.gz",
+   "Size": 438107
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-1_bold.json",
+   "Size": 3210
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-1_bold.nii.gz",
+   "Size": 190906515
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-1_events.json",
+   "Size": 148
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-1_events.tsv",
+   "Size": 329322
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-1_sbref.json",
+   "Size": 3195
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-1_sbref.nii.gz",
+   "Size": 421870
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-2_bold.json",
+   "Size": 3214
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-2_bold.nii.gz",
+   "Size": 191449736
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-2_events.json",
+   "Size": 148
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-2_events.tsv",
+   "Size": 329424
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-2_sbref.json",
+   "Size": 3192
+  },
+  {
+   "Key": "ds004798/sub-p41cs/ses-001/func/sub-p41cs_ses-001_task-movie_run-2_sbref.nii.gz",
+   "Size": 422665
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/anat/sub-p62cs_ses-001_T2w.json",
+   "Size": 2164
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/anat/sub-p62cs_ses-001_T2w.nii.gz",
+   "Size": 12051477
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/anat/sub-p62cs_ses-001_run-1_T1w.json",
+   "Size": 2274
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/anat/sub-p62cs_ses-001_run-1_T1w.nii.gz",
+   "Size": 10177037
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/anat/sub-p62cs_ses-001_run-2_T1w.json",
+   "Size": 2291
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/anat/sub-p62cs_ses-001_run-2_T1w.nii.gz",
+   "Size": 9856867
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/fmap/sub-p62cs_ses-001_acq-movie_dir-neg_run-1_epi.json",
+   "Size": 3507
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/fmap/sub-p62cs_ses-001_acq-movie_dir-neg_run-1_epi.nii.gz",
+   "Size": 622140
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/fmap/sub-p62cs_ses-001_acq-movie_dir-neg_run-2_epi.json",
+   "Size": 3508
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/fmap/sub-p62cs_ses-001_acq-movie_dir-neg_run-2_epi.nii.gz",
+   "Size": 624933
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/fmap/sub-p62cs_ses-001_acq-movie_dir-pos_run-1_epi.json",
+   "Size": 3510
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/fmap/sub-p62cs_ses-001_acq-movie_dir-pos_run-1_epi.nii.gz",
+   "Size": 636424
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/fmap/sub-p62cs_ses-001_acq-movie_dir-pos_run-2_epi.json",
+   "Size": 3512
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/fmap/sub-p62cs_ses-001_acq-movie_dir-pos_run-2_epi.nii.gz",
+   "Size": 637249
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-1_bold.json",
+   "Size": 3489
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-1_bold.nii.gz",
+   "Size": 406002058
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-1_events.json",
+   "Size": 148
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-1_events.tsv",
+   "Size": 329384
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-1_sbref.json",
+   "Size": 3462
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-1_sbref.nii.gz",
+   "Size": 618203
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-2_bold.json",
+   "Size": 3507
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-2_bold.nii.gz",
+   "Size": 407358479
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-2_events.json",
+   "Size": 148
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-2_events.tsv",
+   "Size": 329416
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-2_sbref.json",
+   "Size": 3479
+  },
+  {
+   "Key": "ds004798/sub-p62cs/ses-001/func/sub-p62cs_ses-001_task-movie_run-2_sbref.nii.gz",
+   "Size": 618265
+  }
+ ],
+ "IsTruncated": false,
+ "KeyCount": 59,
+ "Prefix": "ds004798/",
+ "recorded": "anonymous ListObjectsV2 of s3://openneuro.org/ds004798/ (2026-10-24), 400 keys; kept: top-level files, sub-p41cs/, sub-p62cs/"
+}

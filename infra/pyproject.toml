@@ -1,0 +1,15 @@
+[project]
+name = "asteroidea-infra"
+version = "0.0.0"
+description = "Infrastructure (CDK app) for the asteroidea platform."
+requires-python = ">=3.14"
+license = "Apache-2.0"
+dependencies = [
+    "aws-cdk-lib==2.274.0",
+    "constructs==10.8.1",
+    "cdk-nag==3.0.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14"]
+build-backend = "uv_build"

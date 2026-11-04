@@ -1,0 +1,50 @@
+{
+ "schema": "asteroidea.analysis-defaults/1",
+ "version": "defaults-1",
+ "label": "exploratory screen",
+ "default": {
+  "rates": {"bin_s": 0.05, "pre_s": 1.0, "post_s": 2.0, "response_window_s": [0.0, 1.0], "baseline": "pre_window_mean"},
+  "bands": {
+   "delta": {"hz": [1, 4], "cycles": 3},
+   "theta": {"hz": [4, 8], "cycles": 3},
+   "alpha": {"hz": [8, 13], "cycles": 4},
+   "beta": {"hz": [13, 30], "cycles": 5},
+   "gamma": {"hz": [30, 80], "cycles": 7},
+   "high_gamma": {"hz": [80, 150], "cycles": 7}
+  },
+  "bandpower": {
+   "method": "morlet", "freq_step_hz": 1, "step_s": 0.25, "pre_s": 1.0, "post_s": 2.0, "pad_s": 2.0,
+   "baseline": "pre_window_mean", "units": "dB re baseline"
+  },
+  "tests": {"n_permutations": 2000, "seed": 13, "alpha": 0.05, "fdr": "benjamini-hochberg", "min_events_per_level": 5},
+  "reproduced": [],
+  "not_reproduced": []
+ },
+ "datasets": {
+  "dandi-000623": {
+   "source": "Keles et al. 2024, Sci Data 11:214; release code at commit 8c35290b",
+   "rates": {"bin_s": 0.25, "pre_s": 0.5, "post_s": 1.0, "response_window_s": [0.0, 1.0], "baseline": "none"},
+   "bands": {"hfb": {"hz": [70, 170], "cycles": 5, "freq_step_hz": 10}},
+   "bandpower": {"baseline": "zscore_over_time", "units": "z"},
+   "tests": {"min_events_per_level": 10, "count_events_where": {"response_correct": 1}, "drop_units_silent_during": "movie_onset", "exclude_sessions_auc_below": 0.6},
+   "reproduced": [
+    "units with no spike during movie_onset (encoding) are dropped",
+    "only correct trials (response_correct 1) are tested and counted per level",
+    "HFB power z-scored across the time series of the task phase, then averaged across bands"
+   ],
+   "not_reproduced": [
+    "60 Hz notch",
+    "0.1 Hz high-pass",
+    "common average reference",
+    "500 Hz resampling",
+    "bootstrap of 10,000 (permutation used)",
+    "behavioural AUC filter: the paper says sessions with AUC > 0.6 are excluded, the release code excludes AUC < 0.6; exclude_sessions_auc_below follows the code; the filter itself is not applied here",
+    "balanced resampling to min(n_novel, n_familiar) in the recognition test",
+    "ground-truth class (stimulus file new/old) combined with the response side",
+    "scene-cut selectivity one-sided (change > continuity)",
+    "iEEG channels restricted to AMY, HIP, ACC, SMA and OFC",
+    "HFB z-score over the whole task phase: zscore_over_time pools each frequency over the events' read windows only"
+   ]
+  }
+ }
+}

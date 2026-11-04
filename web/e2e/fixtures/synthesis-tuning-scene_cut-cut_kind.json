@@ -1,0 +1,65 @@
+{
+  "label": "exploratory screen",
+  "asset_id": "asset-0201",
+  "event_type": "scene_cut",
+  "attribute": "cut_kind",
+  "units": [
+    {
+      "unit_index": 0,
+      "location": "amygdala left",
+      "level_means_hz": { "change": 4.12, "continuity": 2.21 },
+      "n_per_level": { "change": 13, "continuity": 80 },
+      "selectivity_index": 0.3103,
+      "statistic": 5.512,
+      "p": 0.012,
+      "q": 0.0412,
+      "screened": true
+    },
+    {
+      "unit_index": 1,
+      "location": "amygdala right",
+      "level_means_hz": { "change": 1.5, "continuity": 1.42 },
+      "n_per_level": { "change": 13, "continuity": 80 },
+      "selectivity_index": 0.0274,
+      "statistic": 0.311,
+      "p": 0.64,
+      "q": 0.81,
+      "screened": false
+    },
+    {
+      "unit_index": 2,
+      "location": "hippocampus left",
+      "level_means_hz": { "change": 3.3, "continuity": 3.1 },
+      "n_per_level": { "change": 13, "continuity": 80 },
+      "selectivity_index": 0.0313,
+      "statistic": 0.42,
+      "p": 0.5,
+      "q": 0.77,
+      "screened": false
+    }
+  ],
+  "areas": [
+    { "location": "amygdala left", "n_units": 1, "n_below_alpha": 1, "fraction": 1.0, "p": 0.04 },
+    { "location": "amygdala right", "n_units": 1, "n_below_alpha": 0, "fraction": 0.0, "p": 1.0 },
+    { "location": "hippocampus left", "n_units": 1, "n_below_alpha": 0, "fraction": 0.0, "p": 1.0 }
+  ],
+  "settings": {
+    "defaults_version": "defaults-1",
+    "recipe_version": "recipe-000623-1",
+    "response_window_s": [0, 1],
+    "levels": ["change", "continuity"],
+    "level_counts": { "change": 13, "continuity": 80 },
+    "n_events": 93,
+    "n_permutations": 1000,
+    "seed": 0,
+    "alpha": 0.05,
+    "fdr": "benjamini-hochberg",
+    "min_events_per_level": 12,
+    "count_events_where": null,
+    "drop_units_silent_during": null,
+    "dropped_units": []
+  },
+  "source": "nwb",
+  "query_ms": 120,
+  "compute_ms": 800
+}

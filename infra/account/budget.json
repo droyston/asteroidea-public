@@ -1,0 +1,8 @@
+{
+  "BudgetName": "asteroidea-sandbox-monthly",
+  "BudgetLimit": { "Amount": "10", "Unit": "USD" },
+  "TimeUnit": "MONTHLY",
+  "BudgetType": "COST",
+  "FilterExpression": { "Dimensions": { "Key": "LINKED_ACCOUNT", "Values": ["<sandbox-account-id>"], "MatchOptions": ["EQUALS"] } },
+  "Metrics": ["UnblendedCost"]
+}

@@ -1,0 +1,6 @@
+[book]
+title = "asteroidea"
+src = "src"
+
+[build]
+create-missing = false

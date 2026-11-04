@@ -1,0 +1,27 @@
+{
+  "assets": [
+    {
+      "asset_id": "asset-0101",
+      "path": "sub-CS41/sub-CS41_ses-1_ecephys.nwb",
+      "subject": "sub-CS41",
+      "bids_session": "ses-1",
+      "datatype": "ecephys",
+      "format": "nwb",
+      "size_bytes": 2000000000,
+      "committed_at": "2026-10-01T12:00:00Z"
+    },
+    {
+      "asset_id": "asset-0102",
+      "path": "sub-CS41/sub-CS41_ses-1_events.tsv",
+      "subject": "sub-CS41",
+      "bids_session": "ses-1",
+      "datatype": "beh",
+      "format": "tsv",
+      "size_bytes": 4096,
+      "committed_at": "2026-10-01T12:01:00Z"
+    }
+  ],
+  "page": 0,
+  "more": false,
+  "query_ms": 91
+}

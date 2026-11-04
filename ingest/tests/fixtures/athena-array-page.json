@@ -1,0 +1,61 @@
+{
+ "ResultSet": {
+  "Rows": [
+   {
+    "Data": [
+     {
+      "VarCharValue": "path"
+     },
+     {
+      "VarCharValue": "shape"
+     },
+     {
+      "VarCharValue": "rate_hz"
+     }
+    ]
+   },
+   {
+    "Data": [
+     {
+      "VarCharValue": "/processing/ecephys/LFP_macro/ElectricalSeries"
+     },
+     {
+      "VarCharValue": "[732519, 40]"
+     },
+     {
+      "VarCharValue": "1000.0"
+     }
+    ]
+   },
+   {
+    "Data": [
+     {
+      "VarCharValue": "/processing/ecephys/LFP_micro/ElectricalSeries"
+     },
+     {
+      "VarCharValue": "[732343, 56]"
+     },
+     {
+      "VarCharValue": "1000.0"
+     }
+    ]
+   }
+  ],
+  "ResultSetMetadata": {
+   "ColumnInfo": [
+    {
+     "Name": "path",
+     "Type": "varchar"
+    },
+    {
+     "Name": "shape",
+     "Type": "array"
+    },
+    {
+     "Name": "rate_hz",
+     "Type": "double"
+    }
+   ]
+  }
+ }
+}

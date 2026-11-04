@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BudgetStopAllowOnlyReadAndDelete",
+      "Effect": "Deny",
+      "NotAction": [
+        "cloudformation:Describe*", "cloudformation:List*", "cloudformation:Get*", "cloudformation:DeleteStack",
+        "s3:Get*", "s3:List*", "s3:Delete*",
+        "lambda:Get*", "lambda:List*", "lambda:Delete*",
+        "ecr:Describe*", "ecr:List*", "ecr:Get*", "ecr:BatchGet*", "ecr:BatchDeleteImage", "ecr:Delete*",
+        "dynamodb:Describe*", "dynamodb:List*", "dynamodb:Get*", "dynamodb:BatchGetItem", "dynamodb:Query", "dynamodb:Scan", "dynamodb:Delete*",
+        "glue:Get*", "glue:BatchGet*", "glue:Delete*", "glue:BatchDelete*",
+        "athena:Get*", "athena:List*", "athena:BatchGet*", "athena:Delete*",
+        "apigateway:GET", "apigateway:DELETE",
+        "cognito-idp:Describe*", "cognito-idp:List*", "cognito-idp:Get*", "cognito-idp:AdminGetUser", "cognito-idp:Delete*", "cognito-idp:AdminDeleteUser",
+        "cognito-identity:Describe*", "cognito-identity:List*", "cognito-identity:Get*", "cognito-identity:Delete*",
+        "logs:Describe*", "logs:Get*", "logs:List*", "logs:FilterLogEvents", "logs:Delete*",
+        "cloudwatch:Describe*", "cloudwatch:Get*", "cloudwatch:List*", "cloudwatch:Delete*",
+        "iam:Get*", "iam:List*", "iam:Delete*", "iam:Detach*",
+        "kms:Describe*", "kms:List*", "kms:Get*",
+        "ssm:GetParameter*", "ssm:DescribeParameters", "ssm:DeleteParameter*",
+        "tag:Get*", "sts:*", "ce:Get*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnNotLike": { "aws:PrincipalArn": "arn:aws:iam::*:role/OrganizationAccountAccessRole" }
+      }
+    }
+  ]
+}

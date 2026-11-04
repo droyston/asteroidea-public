@@ -1,0 +1,18 @@
+{
+  "edges": [-1, -0.5, 0, 0.5, 1, 1.5, 2],
+  "units": [
+    {
+      "unit_index": 0,
+      "raster": {
+        "trial": [0, 0, 1, 1, 2, 3, 3, 3],
+        "t": [-0.7, 0.3, 0.1, 1.2, 0.6, -0.2, 0.4, 1.7]
+      },
+      "rate_hz": [2.5, 3.1, 14.2, 9.8, 4.4, 3.0]
+    }
+  ],
+  "n_trials": 4,
+  "align": "intervals:trials",
+  "source": "catalog",
+  "query_ms": 412,
+  "compute_ms": 87
+}

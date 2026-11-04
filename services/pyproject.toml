@@ -1,0 +1,15 @@
+[project]
+name = "asteroidea-services"
+version = "0.0.0"
+description = "Backend services for the asteroidea platform."
+requires-python = ">=3.14"
+license = "Apache-2.0"
+dependencies = [
+    "h5py==3.16.0",
+    "remfile==0.1.15",
+    "requests==2.34.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14"]
+build-backend = "uv_build"

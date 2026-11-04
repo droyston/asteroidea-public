@@ -1,0 +1,23 @@
+{
+  "cap_kb": 127.5,
+  "fonts_kb": 120,
+  "chunks": {
+    "research": 27.0,
+    "ImportRun": 4.5,
+    "synthesis": 15.0,
+    "results": 7.5,
+    "ResultsPlace": 9.0,
+    "viewer": 392.5,
+    "blosc": 250.0,
+    "lz4": 19.5,
+    "zstd": 295.0,
+    "Find": 12.0,
+    "home": 13.0,
+    "latest": 2.5,
+    "study": 8.0,
+    "session": 10.0,
+    "inspect": 15.0,
+    "participant": 21.0,
+    "signals": 30.0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "art-9",
+      "name": "tuning-curves.csv",
+      "size": 5120,
+      "content_type": "text/csv",
+      "snapshot_id": null,
+      "state": "COMMITTED",
+      "created_at": 1792000300,
+      "finalized_at": 1792000310,
+      "author_email": "grace@example.test"
+    }
+  ]
+}

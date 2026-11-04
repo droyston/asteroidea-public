@@ -1,0 +1,331 @@
+{
+ "method": "GET",
+ "url": "https://api.dandiarchive.org/api/dandisets/000576/versions/0.231010.1811/info/",
+ "responses": [
+  {
+   "status": 200,
+   "json": {
+    "version": "0.231010.1811",
+    "name": "Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation",
+    "asset_count": 27,
+    "active_uploads": 0,
+    "size": 2191651090,
+    "status": "Valid",
+    "created": "2023-10-10T18:11:47.912259Z",
+    "modified": "2023-10-11T16:24:40.585189Z",
+    "dandiset": {
+     "identifier": "000576",
+     "created": "2023-07-04T17:10:34.084138Z",
+     "modified": "2023-08-08T01:35:27.595838Z",
+     "contact_person": "Fedele, Tommaso",
+     "embargo_status": "OPEN",
+     "star_count": 2,
+     "is_starred": false
+    },
+    "release_notes": "",
+    "asset_validation_errors": [],
+    "version_validation_errors": [],
+    "metadata": {
+     "id": "DANDI:000576/0.231010.1811",
+     "doi": "10.48324/dandi.000576/0.231010.1811",
+     "url": "https://dandiarchive.org/dandiset/000576/0.231010.1811",
+     "name": "Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation",
+     "about": [],
+     "access": [
+      {
+       "status": "dandi:OpenAccess",
+       "schemaKey": "AccessRequirements"
+      }
+     ],
+     "license": [
+      "spdx:CC-BY-4.0"
+     ],
+     "version": "0.231010.1811",
+     "@context": "https://raw.githubusercontent.com/dandi/schema/master/releases/0.6.4/context.json",
+     "citation": "Fedele, Tommaso; Hilfiker, Peter ; Grunwald, Thomas ; Stieglitz, Lennart ; Jokeit, Hennric; Hohenheim, Jan; Sarnthein, Johannes  (2023) Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation (Version 0.231010.1811) [Data set]. DANDI archive. https://doi.org/10.48324/dandi.000576/0.231010.1811",
+     "keywords": [],
+     "protocol": [],
+     "schemaKey": "Dandiset",
+     "identifier": "DANDI:000576",
+     "repository": "https://dandiarchive.org",
+     "contributor": [
+      {
+       "name": "Fedele, Tommaso",
+       "email": "contact.two@example.invalid",
+       "roleName": [
+        "dcite:Author",
+        "dcite:ContactPerson"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0001-7574-8062",
+       "affiliation": [
+        {
+         "name": "National Research University Higher School of Economics, Moscow, Russian Federation",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/055f7t516"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Hilfiker, Peter ",
+       "roleName": [],
+       "schemaKey": "Person",
+       "identifier": "0000-0001-7729-4754",
+       "affiliation": [],
+       "includeInCitation": true
+      },
+      {
+       "name": "Grunwald, Thomas ",
+       "roleName": [],
+       "schemaKey": "Person",
+       "affiliation": [],
+       "includeInCitation": true
+      },
+      {
+       "name": "Stieglitz, Lennart ",
+       "roleName": [],
+       "schemaKey": "Person",
+       "identifier": "0000-0002-3744-5105",
+       "affiliation": [
+        {
+         "name": "Klinik f\u00fcr Neurochirurgie, Universit\u00e4tsSpital Z\u00fcrich und Universit\u00e4t Z\u00fcrich, Zurich, Switzerland",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/01462r250"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Jokeit, Hennric",
+       "roleName": [],
+       "schemaKey": "Person",
+       "identifier": "0000-0001-6969-9639",
+       "affiliation": [
+        {
+         "name": "Zentrum f\u00fcr Neurowissenschaften Z\u00fcrich, Switzerland",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/01462r250"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "url": "https://www.hohenheim.ch",
+       "name": "Hohenheim, Jan",
+       "email": "contact.seven@example.invalid",
+       "roleName": [
+        "dcite:ContactPerson",
+        "dcite:DataManager"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0001-9436-8348",
+       "affiliation": [
+        {
+         "name": "Institute of Neuroinformatics, University of Zurich & ETH Zurich",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/02crff812"
+        },
+        {
+         "name": "Institute of Neuroinformatics, University of Zurich & ETH Zurich",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/05a28rw58"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Sarnthein, Johannes ",
+       "email": "contact.six@example.invalid",
+       "roleName": [
+        "dcite:Author",
+        "dcite:ContactPerson"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0001-9141-381X",
+       "affiliation": [
+        {
+         "name": "Klinik f\u00fcr Neurochirurgie, Universit\u00e4tsSpital Z\u00fcrich und Universit\u00e4t Z\u00fcrich, Zurich, Switzerland",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/01462r250"
+        },
+        {
+         "name": "Zentrum f\u00fcr Neurowissenschaften Z\u00fcrich, Switzerland",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/01462r250"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "url": "http://www.snf.ch/en",
+       "name": " Swiss National Science Foundation",
+       "email": "projects.ls@snf.ch",
+       "roleName": [
+        "dcite:Funder"
+       ],
+       "schemaKey": "Organization",
+       "identifier": "https://ror.org/00yjd3n13",
+       "awardNumber": "204651",
+       "contactPoint": [],
+       "includeInCitation": false
+      },
+      {
+       "url": "https://www.kavlifoundation.org/",
+       "name": " The Kavli Foundation",
+       "email": "communications@kavlifoundation.org",
+       "roleName": [
+        "dcite:Sponsor"
+       ],
+       "schemaKey": "Organization",
+       "identifier": "https://ror.org/00kztt736",
+       "awardNumber": "2586",
+       "contactPoint": [],
+       "includeInCitation": false
+      }
+     ],
+     "dateCreated": "2023-07-04T17:10:34.084138+00:00",
+     "description": "We present an electrophysiological dataset collected from the amygdalae of nine subjects attending a visual dynamic stimulation of emotional aversive content. The subjects were patients affected by epilepsy who underwent preoperative invasive monitoring in the mesial temporal lobe. Subjects were presented with dynamic visual sequences of fearful faces (aversive condition), interleaved with sequences of neutral landscapes (neutral condition).\n\nWe provide simultaneous recordings of intracranial EEG (iEEG) and neuronal spike times and waveforms, and metadata related to the task, subjects, sessions and electrodes in the NIX standard. We technically validated this dataset and provide here the spike sorting quality metrics and the spectra of iEEG signals.\nThis dataset allows the investigation of amygdalar response to dynamic aversive stimuli at multiple spatial scales, from the macroscopic EEG to the neuronal firing in the human brain.",
+     "publishedBy": {
+      "id": "urn:uuid:6f2c125f-baf3-4f4b-a95c-8ffc88d10378",
+      "name": "DANDI publish",
+      "endDate": "2023-10-10T18:11:47.645341+00:00",
+      "schemaKey": "PublishActivity",
+      "startDate": "2023-10-10T18:11:47.645341+00:00",
+      "wasAssociatedWith": [
+       {
+        "id": "urn:uuid:59cc2f72-7f63-4fd3-8070-7d185c0cfe14",
+        "name": "DANDI API",
+        "version": "0.1.0",
+        "schemaKey": "Software",
+        "identifier": "RRID:SCR_017571"
+       }
+      ]
+     },
+     "studyTarget": [],
+     "assetsSummary": {
+      "species": [
+       {
+        "name": "Homo sapiens - Human",
+        "schemaKey": "SpeciesType",
+        "identifier": "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+       }
+      ],
+      "approach": [
+       {
+        "name": "electrophysiological approach",
+        "schemaKey": "ApproachType"
+       }
+      ],
+      "schemaKey": "AssetsSummary",
+      "dataStandard": [
+       {
+        "name": "Neurodata Without Borders (NWB)",
+        "schemaKey": "StandardsType",
+        "identifier": "RRID:SCR_015242"
+       }
+      ],
+      "numberOfBytes": 2191651090,
+      "numberOfFiles": 27,
+      "numberOfSubjects": 9,
+      "variableMeasured": [
+       "ProcessingModule",
+       "LFP",
+       "Units",
+       "ElectricalSeries",
+       "ElectrodeGroup"
+      ],
+      "measurementTechnique": [
+       {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+       },
+       {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+       },
+       {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+       },
+       {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+       },
+       {
+        "name": "spike sorting technique",
+        "schemaKey": "MeasurementTechniqueType"
+       }
+      ]
+     },
+     "datePublished": "2023-10-10T18:11:47.645341+00:00",
+     "schemaVersion": "0.6.4",
+     "ethicsApproval": [],
+     "wasGeneratedBy": [],
+     "relatedResource": [
+      {
+       "url": "https://doi.org/10.1016/j.neuroimage.2020.116705",
+       "name": "The relation between neuronal firing, local field potentials and hemodynamic activity in the human amygdala in response to aversive dynamic visual stimuli",
+       "relation": "dcite:IsSupplementTo",
+       "schemaKey": "Resource",
+       "identifier": "10.1016/j.neuroimage.2020.116705",
+       "repository": "NeuroImage"
+      },
+      {
+       "url": "https://doi.org/10.18112/openneuro.ds003374.v1.1.1",
+       "name": "Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation",
+       "relation": "dcite:IsVariantFormOf",
+       "schemaKey": "Resource",
+       "identifier": "10.18112/openneuro.ds003374.v1.1.1",
+       "repository": "OpenNeuro"
+      },
+      {
+       "url": "https://github.com/janhohenheim/usz-neuro-conversion",
+       "name": "USZ Neuro Conversion",
+       "relation": "dcite:IsCompiledBy",
+       "schemaKey": "Resource",
+       "identifier": "usz-neuro-conversion",
+       "repository": "GitHub"
+      },
+      {
+       "url": "https://gin.g-node.org/USZ_NCH/Human_Amygdala_MUA_sEEG_FearVideo",
+       "name": "Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation",
+       "relation": "dcite:IsVariantFormOf",
+       "schemaKey": "Resource",
+       "identifier": "Human_Amygdala_MUA_sEEG_FearVideo",
+       "repository": "G-Node"
+      },
+      {
+       "url": "https://doi.org/10.1038/s41597-020-00790-x",
+       "name": "Data descriptor",
+       "relation": "dcite:IsDescribedBy",
+       "schemaKey": "Resource",
+       "identifier": "doi.org/10.1038/s41597-020-00790-x",
+       "repository": "scientific data"
+      },
+      {
+       "url": "https://www.neurobs.com/ex_files/expt_view?id=283",
+       "name": "Presentation Files",
+       "relation": "dcite:IsSupplementedBy",
+       "schemaKey": "Resource",
+       "identifier": "Dynamic visual sequences of fearful faces",
+       "repository": "Neurobehavioral Systems"
+      },
+      {
+       "url": "https://github.com/janhohenheim/nwb-example",
+       "name": "Example Reading Code",
+       "relation": "dcite:IsSupplementedBy",
+       "schemaKey": "Resource",
+       "identifier": "nwb-example",
+       "repository": "GitHub"
+      }
+     ],
+     "manifestLocation": [
+      "https://dandiarchive.s3.amazonaws.com/dandisets/000576/0.231010.1811/assets.yaml"
+     ]
+    },
+    "contact_person": "Fedele, Tommaso"
+   }
+  }
+ ]
+}

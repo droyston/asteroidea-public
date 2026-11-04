@@ -1,0 +1,4 @@
+# Allowlist for scripts/suppression-gate.sh. One line per occurrence:
+#   path:KEY: reason
+# KEY is a ruff code (noqa), ty-ignore[rule], type-ignore[rule], biome-ignore[rule/path],
+# ts-ignore, ts-expect-error or ts-nocheck. An entry needs a recorded justification; PENDING entries are not yet justified.

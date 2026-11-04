@@ -1,0 +1,409 @@
+/* Kit components (Shell, Nav, Button, Notice) and the base element rules. Colours are tokens only.
+ */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-variant-numeric: var(--font-numeric);
+  font-size: var(--text-md);
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-2);
+}
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+}
+a {
+  color: var(--color-accent);
+}
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.shell-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-raised);
+}
+.shell-header h1 {
+  font-size: var(--text-lg);
+  margin: 0;
+}
+.shell-status {
+  flex: 1;
+  min-width: 0;
+}
+.shell-auth {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+.shell-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+.nav a {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  text-decoration: none;
+}
+.nav a:hover {
+  background: var(--color-surface-raised);
+}
+.theme-toggle {
+  margin-left: auto;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+}
+.theme-toggle + .shell-auth {
+  margin-left: 0;
+}
+.shell-header .nav {
+  padding: 0;
+  border-bottom: 0;
+}
+.shell-user {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}
+.crumbs {
+  padding: var(--space-2) var(--space-4) 0;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.nav a[aria-current="page"] {
+  font-weight: 600;
+  color: var(--color-accent);
+  box-shadow: inset 0 -2px 0 var(--color-accent);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.btn {
+  font: inherit;
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+.btn-quiet {
+  background: none;
+  border-color: transparent;
+  color: var(--color-accent);
+  padding-left: var(--space-1);
+  padding-right: var(--space-1);
+}
+
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  background: var(--color-info-surface);
+}
+.notice-error {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+  background: var(--color-danger-surface);
+}
+.notice-success {
+  color: var(--color-success);
+  border-color: var(--color-success);
+  background: var(--color-success-surface);
+}
+.notice-body {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Toast: bottom-right stack of short confirmations; full width less the gutter on a phone. */
+.toast-host {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: calc(100vw - 2 * var(--space-4));
+  pointer-events: none;
+}
+.toast-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-ink);
+  color: var(--color-surface);
+  font-size: var(--text-md);
+  pointer-events: auto;
+}
+.toast-error {
+  background: var(--color-danger);
+}
+.toast-close {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: var(--text-lg);
+  line-height: 1;
+  cursor: pointer;
+}
+.toast-close:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Tooltip: a short label above its control on hover and focus. */
+.tooltip-anchor {
+  position: relative;
+  display: inline-flex;
+}
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + var(--space-1));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+  background: var(--color-ink);
+  color: var(--color-surface);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.tooltip[hidden] {
+  display: none;
+}
+
+/* Dialog: a small modal on the native <dialog>; phone width keeps a 16px gutter. */
+.dialog {
+  width: min(32rem, calc(100vw - 2 * var(--space-4)));
+  max-width: none;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.dialog::backdrop {
+  background: transparent;
+  backdrop-filter: brightness(0.6);
+}
+.dialog-title {
+  font-size: var(--text-lg);
+  margin: 0 0 var(--space-3);
+}
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.note-text {
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* Table (CSS only until the Table component): one look for every data table. */
+.table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--text-md);
+}
+.table th,
+.table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+.table th {
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--color-surface-raised);
+}
+.table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.table .what {
+  white-space: nowrap;
+}
+
+/* Table block, paging and empty state (Table component). */
+.table-block {
+  min-width: 0;
+}
+.table-empty {
+  color: var(--color-muted);
+  margin: var(--space-2) 0;
+}
+.table-paging {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  margin: var(--space-2) 0 0;
+}
+.table-page {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+/* Tabs */
+.tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+}
+.tab {
+  font: inherit;
+  color: var(--color-muted);
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+}
+.tab[aria-selected="true"] {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+  font-weight: 600;
+}
+.tabpanel {
+  padding-top: var(--space-3);
+  min-width: 0;
+}
+
+/* KeyValue */
+.kv-list {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-md);
+}
+.kv-list > div {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-1) 0;
+}
+.kv-list dt {
+  min-width: 140px;
+  color: var(--color-muted);
+}
+.kv-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 720px) {
+  .kv-list > div {
+    flex-direction: column;
+    gap: 0;
+  }
+  .kv-list dt {
+    min-width: 0;
+  }
+}
+
+/* The "Copy code" button sits at the top right of a page head and adds no height. */
+.study-head,
+.pp-head,
+.sh-head,
+.home-main {
+  position: relative;
+}
+.copy-code-slot {
+  position: absolute;
+  top: var(--space-1);
+  right: 0;
+  z-index: 5;
+}
+.copy-code-slot .tooltip {
+  bottom: auto;
+  top: calc(100% + var(--space-1));
+  left: auto;
+  right: 0;
+  transform: none;
+}

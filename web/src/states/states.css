@@ -1,0 +1,132 @@
+/* States: one card shape for loading, refused, curator-only, error and empty. */
+.state-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 40rem;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-sizing: border-box;
+  margin: var(--space-4);
+  min-width: 0;
+}
+.state-eyebrow,
+.dialog-eyebrow {
+  margin: 0;
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.state-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+}
+.state-sentence,
+.state-server {
+  margin: 0;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+.state-server {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}
+.state-small {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.state-what {
+  margin: 0;
+  font-weight: 600;
+}
+.state-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+.state-actions a.btn {
+  text-decoration: none;
+}
+.state-link {
+  color: var(--color-text);
+}
+.state-foot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+.state-code,
+.state-detail {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  overflow-wrap: anywhere;
+}
+.state-fold summary {
+  cursor: pointer;
+}
+.state-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.state-skeleton span {
+  display: block;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--color-border-subtle);
+}
+.state-bar {
+  height: 4px;
+  background: var(--color-border-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.state-bar span {
+  display: block;
+  height: 100%;
+  background: var(--color-ink);
+  transition: width 0.2s linear;
+}
+.state-example {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.state-call {
+  margin: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-surface-raised);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.dialog-sentence {
+  margin: 0 0 var(--space-3);
+  line-height: 1.6;
+}
+.dialog-actions-start {
+  justify-content: flex-start;
+}
+.signed-out {
+  padding: var(--space-5) var(--space-4);
+}

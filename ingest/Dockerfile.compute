@@ -1,0 +1,43 @@
+# Compute Lambda image. Build context is the repo root; see
+# `make compute-image`. Same uv export pattern as `ingest/Dockerfile.extract`, with the
+# `compute` extra (pynwb, h5py, remfile, polars, numpy; no nibabel; hdmf brings pandas).
+# pyiceberg and pyarrow are left out: only commit.py and catalog_writer.py import
+# them, and the image was over IMAGE_MAX_BYTES with them.
+FROM ghcr.io/astral-sh/uv:0.13 AS uv
+
+FROM public.ecr.aws/lambda/python:3.14
+
+ENV UV_COMPILE_BYTECODE=1 \
+    UV_NO_INSTALLER_METADATA=1 \
+    UV_LINK_MODE=copy
+
+# Third-party dependencies only, from the lockfile (workspace members are not installed).
+RUN --mount=from=uv,source=/uv,target=/bin/uv \
+    --mount=type=cache,target=/root/.cache/uv \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    --mount=type=bind,source=services/pyproject.toml,target=services/pyproject.toml \
+    --mount=type=bind,source=ingest/pyproject.toml,target=ingest/pyproject.toml \
+    --mount=type=bind,source=infra/pyproject.toml,target=infra/pyproject.toml \
+    --mount=type=bind,source=sdk/pyproject.toml,target=sdk/pyproject.toml \
+    uv export --frozen --no-dev --no-emit-workspace --package asteroidea-ingest \
+        --extra compute --no-hashes --no-emit-package pyiceberg --no-emit-package pyarrow \
+        -o /tmp/requirements.txt && \
+    uv pip install --no-cache -r /tmp/requirements.txt --target "${LAMBDA_TASK_ROOT}"
+
+# Lambda's filesystem is read-only except its temp directory and HOME does not exist
+# there; pynwb creates a platformdirs cache directory at import and fails with
+# Errno 30 otherwise. `infra/tests/test_compute_image.py` reads this line.
+ENV XDG_CACHE_HOME=/tmp/.cache
+
+COPY ingest/src/asteroidea_ingest ${LAMBDA_TASK_ROOT}/asteroidea_ingest
+
+# The shared analysis module: the SDK wheel is not installed here. Exactly
+# these five files and the recipes directory go into a stub `asteroidea` package whose `__init__.py` is empty, so
+# no other SDK module is importable (pandas is present: hdmf, a pynwb dependency, requires it). The docker test compares
+# the sha256 of each with `sdk/src/asteroidea/`.
+RUN mkdir -p ${LAMBDA_TASK_ROOT}/asteroidea && : > ${LAMBDA_TASK_ROOT}/asteroidea/__init__.py
+COPY sdk/src/asteroidea/analysis.py sdk/src/asteroidea/_remote.py sdk/src/asteroidea/_blocks.py sdk/src/asteroidea/errors.py sdk/src/asteroidea/analysis_defaults.json ${LAMBDA_TASK_ROOT}/asteroidea/
+COPY sdk/src/asteroidea/recipes ${LAMBDA_TASK_ROOT}/asteroidea/recipes
+
+CMD ["asteroidea_ingest.compute_api.handler"]

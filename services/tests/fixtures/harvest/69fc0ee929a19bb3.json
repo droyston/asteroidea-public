@@ -1,0 +1,341 @@
+{
+ "method": "GET",
+ "url": "https://api.dandiarchive.org/api/dandisets/000016/versions/0.260915.2309/info/",
+ "responses": [
+  {
+   "status": 503,
+   "text": "Service Unavailable"
+  },
+  {
+   "status": 200,
+   "json": {
+    "version": "0.260915.2309",
+    "name": "Excitatory and inhibitory subnetworks are equally selective during decision-making and emerge simultaneously during learning",
+    "asset_count": 135,
+    "active_uploads": 0,
+    "size": 62572042499,
+    "status": "Valid",
+    "created": "2026-09-15T23:09:47.817785Z",
+    "modified": "2026-09-15T23:09:53.007903Z",
+    "dandiset": {
+     "identifier": "000016",
+     "created": "2020-03-19T19:10:05.697000Z",
+     "modified": "2020-12-05T18:04:23.533000Z",
+     "contact_person": "Churchland, Anne K.",
+     "embargo_status": "OPEN",
+     "star_count": 0,
+     "is_starred": false
+    },
+    "release_notes": "",
+    "asset_validation_errors": [],
+    "version_validation_errors": [],
+    "metadata": {
+     "id": "DANDI:000016/0.260915.2309",
+     "doi": "10.48324/dandi.000016/0.260915.2309",
+     "url": "https://dandiarchive.org/dandiset/000016/0.260915.2309",
+     "name": "Excitatory and inhibitory subnetworks are equally selective during decision-making and emerge simultaneously during learning",
+     "about": [
+      {
+       "name": "posterior parietal cortex",
+       "schemaKey": "Anatomy",
+       "identifier": "http://purl.obolibrary.org/obo/UBERON_0034889"
+      },
+      {
+       "name": "neocortex",
+       "schemaKey": "Anatomy",
+       "identifier": "http://purl.obolibrary.org/obo/UBERON_0001950"
+      }
+     ],
+     "access": [
+      {
+       "status": "dandi:OpenAccess",
+       "schemaKey": "AccessRequirements"
+      }
+     ],
+     "license": [
+      "spdx:CC-BY-4.0"
+     ],
+     "version": "0.260915.2309",
+     "@context": "https://raw.githubusercontent.com/dandi/schema/master/releases/0.6.0/context.json",
+     "citation": "Najafi, Farzaneh; Elsayed, Gamaleldin F.; Cao, Robin; Pnevmatikakis, Eftychios A.; Latham, Peter E.; Cunningham, John P.; Churchland, Anne K. (2026) Excitatory and inhibitory subnetworks are equally selective during decision-making and emerge simultaneously during learning (Version 0.260915.2309) [Data set]. DANDI Archive. https://doi.org/10.48324/dandi.000016/0.260915.2309",
+     "keywords": [
+      "decision-making",
+      "learning",
+      "calcium imaging",
+      "excitatory neurons",
+      "inhibitory neurons",
+      "posterior parietal cortex"
+     ],
+     "protocol": [],
+     "schemaKey": "Dandiset",
+     "identifier": "DANDI:000016",
+     "repository": "https://dandiarchive.org",
+     "contributor": [
+      {
+       "name": "Najafi, Farzaneh",
+       "roleName": [
+        "dcite:Author"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0001-6454-2448",
+       "affiliation": [
+        {
+         "name": "Cold Spring Harbor Laboratory",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/02qz8b764"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Elsayed, Gamaleldin F.",
+       "email": "contact.three@example.invalid",
+       "roleName": [
+        "dcite:Author"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0002-4676-4220",
+       "affiliation": [
+        {
+         "name": "Columbia University",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/00hj8s172"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Cao, Robin",
+       "roleName": [
+        "dcite:Author"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0002-4676-4220",
+       "affiliation": [
+        {
+         "name": "University College London",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/02jx3x895"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Pnevmatikakis, Eftychios A.",
+       "roleName": [
+        "dcite:Author"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0003-1509-6394",
+       "affiliation": [
+        {
+         "name": "Flatiron Institute",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/00sekdz59"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Latham, Peter E.",
+       "roleName": [
+        "dcite:Author"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0001-8713-9328",
+       "affiliation": [
+        {
+         "name": "University College London",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/02jx3x895"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Cunningham, John P.",
+       "roleName": [
+        "dcite:Author"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0001-9125-3027",
+       "affiliation": [
+        {
+         "name": "Columbia University",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/00hj8s172"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Churchland, Anne K.",
+       "email": "contact.three@example.invalid",
+       "roleName": [
+        "dcite:Author",
+        "dcite:ContactPerson"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0002-3205-3794",
+       "affiliation": [
+        {
+         "name": "Cold Spring Harbor Laboratory",
+         "schemaKey": "Affiliation",
+         "identifier": "https://ror.org/02qz8b764"
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "name": "Pew Charitable Trusts",
+       "roleName": [
+        "dcite:Funder"
+       ],
+       "schemaKey": "Organization",
+       "identifier": "https://ror.org/02xhk2825",
+       "includeInCitation": false
+      },
+      {
+       "name": "Simons Foundation",
+       "roleName": [
+        "dcite:Funder"
+       ],
+       "schemaKey": "Organization",
+       "identifier": "https://ror.org/01cmst727",
+       "includeInCitation": false
+      },
+      {
+       "name": "National Institutes of Health",
+       "roleName": [
+        "dcite:Funder"
+       ],
+       "schemaKey": "Organization",
+       "identifier": "https://ror.org/01cwqze88",
+       "includeInCitation": false
+      },
+      {
+       "name": "Esther A. and Joseph Klingenstein Fund",
+       "roleName": [
+        "dcite:Funder"
+       ],
+       "schemaKey": "Organization",
+       "identifier": "https://ror.org/01q222b25",
+       "includeInCitation": false
+      },
+      {
+       "name": "Gatsby Charitable Foundation",
+       "roleName": [
+        "dcite:Funder"
+       ],
+       "schemaKey": "Organization",
+       "identifier": "https://ror.org/0290hax27",
+       "includeInCitation": false
+      }
+     ],
+     "dateCreated": "2020-03-19T19:10:05.697000+00:00",
+     "description": "This package contains data, in NWB (Neurodata Without Borders) format, from the 4 mice included in \"Najafi, Farzaneh, Gamaleldin F. Elsayed, Robin Cao, Eftychios Pnevmatikakis, Peter E. Latham, John P. Cunningham, and Anne K. Churchland. \"Excitatory and inhibitory subnetworks are equally selective during decision-making and emerge simultaneously during learning.\" Neuron 105, no. 1 (2020): 165-179.\u201d Each NWB file represents the data and metadata associated with one recording session. In each NWB file, the metadata related to the session (mouse name, session date/time, lab/institution name, etc.) can be found under \"general\". Information related to ROI-segmentation such as ROI mask, ROI type (excitatory or inhibitory), poor or good quality, etc. can be found under \"modules/Image-Segmentation/pln-seg\". Trial information (e.g. start, end times, trial types, trial outcomes, etc.) can be found under \"trials\". Recorded trial-segmented neuronal responses aligned to different time event (e.g. stimulus start, animal choice, etc.) can be found under \"modules/ Trial-based-Segmentation\". A jupyter notebook presenting in detail how to work with NWB files is provided at https://github.com/ttngu207/najafi-2018-nwb/blob/master/notebooks/Najafi-2018_example.ipynb.",
+     "publishedBy": {
+      "id": "urn:uuid:257c6af0-2446-42a4-8b36-7e064785a11d",
+      "name": "DANDI publish",
+      "endDate": "2026-09-15T23:09:47.812282+00:00",
+      "schemaKey": "PublishActivity",
+      "startDate": "2026-09-15T23:09:47.812282+00:00",
+      "wasAssociatedWith": [
+       {
+        "id": "urn:uuid:89d531e7-11ac-47ac-a09d-446a859f8235",
+        "name": "DANDI API",
+        "version": "0.1.0",
+        "schemaKey": "Software",
+        "identifier": "RRID:SCR_017571"
+       }
+      ]
+     },
+     "studyTarget": [],
+     "assetsSummary": {
+      "species": [],
+      "approach": [
+       {
+        "name": "microscopy approach; cell population imaging",
+        "schemaKey": "ApproachType"
+       },
+       {
+        "name": "behavioral approach",
+        "schemaKey": "ApproachType"
+       }
+      ],
+      "schemaKey": "AssetsSummary",
+      "dataStandard": [
+       {
+        "name": "Neurodata Without Borders (NWB)",
+        "schemaKey": "StandardsType",
+        "identifier": "RRID:SCR_015242"
+       }
+      ],
+      "numberOfBytes": 62572042499,
+      "numberOfFiles": 135,
+      "numberOfSubjects": 4,
+      "variableMeasured": [
+       "BehavioralTimeSeries",
+       "PlaneSegmentation"
+      ],
+      "measurementTechnique": [
+       {
+        "name": "behavioral technique",
+        "schemaKey": "MeasurementTechniqueType"
+       }
+      ]
+     },
+     "datePublished": "2026-09-15T23:09:47.812282+00:00",
+     "schemaVersion": "0.6.0",
+     "ethicsApproval": [
+      {
+       "schemaKey": "EthicsApproval",
+       "identifier": "Institutional Animal Care and Use Committee of Cold Spring Harbor Laboratory",
+       "contactPoint": {
+        "url": "https://www.cshl.edu/about-us/institutional-animal-care-and-use-committee/",
+        "schemaKey": "ContactPoint"
+       }
+      }
+     ],
+     "wasGeneratedBy": [],
+     "relatedResource": [
+      {
+       "url": "http://repository.cshl.edu/id/eprint/37693/",
+       "name": "CSHL Repository: Excitatory and inhibitory subnetworks during decision-making and learning",
+       "relation": "dcite:IsDerivedFrom",
+       "schemaKey": "Resource",
+       "identifier": "doi:10.14224/1.37693",
+       "repository": "CSHL Labs",
+       "resourceType": "dcite:Dataset"
+      },
+      {
+       "url": "https://doi.org/10.1101/354340",
+       "name": "Excitatory and inhibitory subnetworks are equally selective during decision-making and emerge simultaneously during learning",
+       "relation": "dcite:IsDescribedBy",
+       "schemaKey": "Resource",
+       "identifier": "DOI:10.1101/354340"
+      },
+      {
+       "url": "https://doi.org/10.1016/j.neuron.2019.09.045",
+       "name": "Excitatory and Inhibitory Subnetworks Are Equally Selective during Decision-Making and Emerge Simultaneously during Learning",
+       "relation": "dcite:IsDescribedBy",
+       "schemaKey": "Resource",
+       "identifier": "DOI:10.1016/j.neuron.2019.09.045"
+      },
+      {
+       "url": "https://github.com/ttngu207/najafi-2018-nwb/blob/master/notebooks/Najafi-2018_example.ipynb",
+       "name": "Example Notebook: Working with Najafi 2018 NWB files",
+       "relation": "dcite:IsSupplementedBy",
+       "schemaKey": "Resource",
+       "resourceType": "dcite:ComputationalNotebook"
+      }
+     ],
+     "manifestLocation": [
+      "https://dandiarchive.s3.amazonaws.com/dandisets/000016/0.260915.2309/assets.yaml"
+     ]
+    },
+    "contact_person": "Churchland, Anne K."
+   }
+  }
+ ]
+}

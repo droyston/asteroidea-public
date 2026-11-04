@@ -1,0 +1,177 @@
+/* Design tokens. The only file under web/src that may hold a raw colour; kit.test.ts fails on
+   a hex or rgb()/hsl() value anywhere else. Light by default; dark through prefers-color-scheme or an explicit
+   data-theme on <html> (shell/theme.ts). The two dark blocks are identical (kit.test.ts checks it). */
+:root {
+  color-scheme: light dark;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f6f8fa;
+  --color-surface-selected: #ddf4ff;
+  --color-text: #1d2125;
+  --color-muted: #57606a;
+  --color-border: #d0d7de;
+  --color-border-subtle: #eaeef2;
+  --color-accent: #0969da;
+  --color-on-accent: #ffffff;
+  --color-danger: #a40e26;
+  --color-danger-surface: #ffebe9;
+  --color-success: #1a7f37;
+  --color-success-surface: #dafbe1;
+  --color-info-surface: #ddf4ff;
+  --color-cat-1: #0072b2;
+  --color-cat-2: #d55e00;
+  --color-cat-3: #00855f;
+  --color-cat-4: #b0488a;
+  --color-cat-5: #8a6d00;
+  --color-cat-6: #3f8fc6;
+  --color-ramp-1: #440154;
+  --color-ramp-2: #3b528b;
+  --color-ramp-3: #21918c;
+  --color-ramp-4: #5ec962;
+  --color-ramp-5: #fde725;
+  --color-ink: #1d2125;
+  --color-hairline: #d8dee4;
+  --color-div-1: #b2182b;
+  --color-div-2: #ef8a62;
+  --color-div-3: #fddbc7;
+  --color-div-4: #f0f0f0;
+  --color-div-5: #d1e5f0;
+  --color-div-6: #67a9cf;
+  --color-div-7: #2166ac;
+  --color-region-amygdala-l: #bc8200;
+  --color-region-amygdala-r: #1c95d9;
+  --color-region-hippocampus-l: #009e73;
+  --color-region-hippocampus-r: #c870a1;
+  --color-region-presma: #0072b2;
+  --color-region-vmpfc: #d55e00;
+  --color-region-acc: #882255;
+  --color-region-x1: #cc3333;
+  --color-region-x2: #a98a2a;
+  --color-region-x3: #7b9726;
+  --color-region-x4: #29a23d;
+  --color-region-x5: #279d93;
+  --color-region-x6: #3373cc;
+  --color-region-x7: #7333cc;
+  --color-region-x8: #cc33bf;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+
+  --radius: 6px;
+
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-numeric: tabular-nums;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-md: 14px;
+  --text-lg: 18px;
+
+  --focus-ring: 2px solid var(--color-accent);
+  --focus-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-surface: #0d1117;
+    --color-surface-raised: #161b22;
+    --color-surface-selected: #0c2d6b;
+    --color-text: #e6edf3;
+    --color-muted: #9198a1;
+    --color-border: #3d444d;
+    --color-border-subtle: #262c36;
+    --color-accent: #4493f8;
+    --color-on-accent: #0d1117;
+    --color-danger: #ff7b72;
+    --color-danger-surface: #3d1418;
+    --color-success: #56d364;
+    --color-success-surface: #0f2d1a;
+    --color-info-surface: #0c2d6b;
+    --color-cat-1: #56b4e9;
+    --color-cat-2: #ff8f3f;
+    --color-cat-3: #2fc99a;
+    --color-cat-4: #e08cc0;
+    --color-cat-5: #e1b82d;
+    --color-cat-6: #8cc4ee;
+    --color-ink: #e6edf3;
+    --color-hairline: #30363d;
+    --color-div-1: #e5534b;
+    --color-div-2: #b4443f;
+    --color-div-3: #5d2a2c;
+    --color-div-4: #2d333b;
+    --color-div-5: #24415f;
+    --color-div-6: #3c78b5;
+    --color-div-7: #58a6ff;
+    --color-region-amygdala-l: #e69f00;
+    --color-region-amygdala-r: #56b4e9;
+    --color-region-hippocampus-l: #009e73;
+    --color-region-hippocampus-r: #cc79a7;
+    --color-region-presma: #0072b2;
+    --color-region-vmpfc: #d55e00;
+    --color-region-acc: #bb2f75;
+    --color-region-x1: #cc3333;
+    --color-region-x2: #cca633;
+    --color-region-x3: #a6cc33;
+    --color-region-x4: #33cc4d;
+    --color-region-x5: #33ccbf;
+    --color-region-x6: #3373cc;
+    --color-region-x7: #8248d1;
+    --color-region-x8: #cc33bf;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-surface: #0d1117;
+  --color-surface-raised: #161b22;
+  --color-surface-selected: #0c2d6b;
+  --color-text: #e6edf3;
+  --color-muted: #9198a1;
+  --color-border: #3d444d;
+  --color-border-subtle: #262c36;
+  --color-accent: #4493f8;
+  --color-on-accent: #0d1117;
+  --color-danger: #ff7b72;
+  --color-danger-surface: #3d1418;
+  --color-success: #56d364;
+  --color-success-surface: #0f2d1a;
+  --color-info-surface: #0c2d6b;
+  --color-cat-1: #56b4e9;
+  --color-cat-2: #ff8f3f;
+  --color-cat-3: #2fc99a;
+  --color-cat-4: #e08cc0;
+  --color-cat-5: #e1b82d;
+  --color-cat-6: #8cc4ee;
+  --color-ink: #e6edf3;
+  --color-hairline: #30363d;
+  --color-div-1: #e5534b;
+  --color-div-2: #b4443f;
+  --color-div-3: #5d2a2c;
+  --color-div-4: #2d333b;
+  --color-div-5: #24415f;
+  --color-div-6: #3c78b5;
+  --color-div-7: #58a6ff;
+  --color-region-amygdala-l: #e69f00;
+  --color-region-amygdala-r: #56b4e9;
+  --color-region-hippocampus-l: #009e73;
+  --color-region-hippocampus-r: #cc79a7;
+  --color-region-presma: #0072b2;
+  --color-region-vmpfc: #d55e00;
+  --color-region-acc: #bb2f75;
+  --color-region-x1: #cc3333;
+  --color-region-x2: #cca633;
+  --color-region-x3: #a6cc33;
+  --color-region-x4: #33cc4d;
+  --color-region-x5: #33ccbf;
+  --color-region-x6: #3373cc;
+  --color-region-x7: #8248d1;
+  --color-region-x8: #cc33bf;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}

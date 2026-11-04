@@ -1,0 +1,2122 @@
+{
+  "name": "CATALOG_FIXTURE",
+  "recorded": "2026-10-27, frozen from the live catalog listing and a recorded rates body",
+  "live_dataset_count": 42,
+  "live_dataset_count_note": "The catalog summary says 44 rows (38 uploads); its verbatim listing has 42 (36 uploads). The fixture freezes the listing.",
+  "synthetic_datasets": ["synthetic-24p-ephys", "synthetic-24p-mri", "upload-other-researcher"],
+  "studies_source": "curation/studies/*.csv and curation/tiers/tiers.csv at the time of the freeze; studies whose datasets are not in the live catalog are left out",
+  "variants": {
+    "mine_two": [
+      {
+        "dataset": "upload-mine-a",
+        "title": "Synthetic upload",
+        "tier": "upload",
+        "ingest_method": "upload",
+        "mine": true,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": 1,
+        "subject_count": 1,
+        "total_bytes": 1048576,
+        "created_at": "2026-10-26 10:00:00.000",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "upload-mine-b",
+        "title": "Synthetic upload",
+        "tier": "upload",
+        "ingest_method": "upload",
+        "mine": true,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": 1,
+        "subject_count": 1,
+        "total_bytes": 1048576,
+        "created_at": "2026-10-26 11:00:00.000",
+        "subjects": [],
+        "regions": []
+      }
+    ]
+  },
+  "session": {
+    "study": "movie-watching",
+    "dataset": "dandi-000623",
+    "subject": "sub-CS62",
+    "session": "ses-2",
+    "asset_id": "asset-cs62-r2",
+    "event": "scene_cut",
+    "n_trials": 93,
+    "null_z_unit": 43
+  },
+  "studies": {
+    "studies": [
+      {
+        "study": "movie-watching",
+        "title": "Multimodal single-neuron, intracranial EEG, and fMRI brain responses during movie watching in human patients",
+        "authors": "Umit Keles; Julien Dubois; Kevin J. M. Le; J. Michael Tyszka; David A. Kahn; Chrystal M. Reed; Jeffrey M. Chung; Adam N. Mamelak; Ralph Adolphs; Ueli Rutishauser",
+        "lab": null,
+        "citation": "Keles, U., Dubois, J., Le, K.J.M., Tyszka, J.M., Kahn, D.A., Reed, C.M., Chung, J.M., Mamelak, A.N., Adolphs, R. and Rutishauser, U. Multimodal single-neuron, intracranial EEG, and fMRI brain responses during movie watching in human patients. Sci Data 11, 214 (2024).",
+        "doi": "10.1038/s41597-024-03029-1",
+        "datasets": [
+          {
+            "dataset": "dandi-000623",
+            "role": "ephys"
+          },
+          {
+            "dataset": "openneuro-ds004798",
+            "role": "fmri"
+          }
+        ]
+      },
+      {
+        "study": "spatial-working-memory",
+        "title": "Mouse hippocampal electrophysiology during spatial working memory and consummatory behavior",
+        "authors": "Yoshiyuki Omura",
+        "lab": null,
+        "citation": "Omura, Yoshiyuki (2026) Mouse hippocampal electrophysiology during spatial working memory and consummatory behavior (Version 0.260418.0538) [Data set]. DANDI Archive.",
+        "doi": "10.48324/dandi.001775/0.260418.0538",
+        "datasets": [
+          {
+            "dataset": "dandi-001775",
+            "role": "ephys"
+          }
+        ]
+      },
+      {
+        "study": "seeg-two-choice",
+        "title": "sEEG Forced Two-Choice Task",
+        "authors": "Alexander P. Rockhill; Alessandra Mantovani; Brittany Stedelin; Admed M. Raslan; Nicole C. Swann",
+        "lab": null,
+        "citation": null,
+        "doi": "10.18112/openneuro.ds004473.v1.0.2",
+        "datasets": [
+          {
+            "dataset": "openneuro-ds004473",
+            "role": "mri"
+          }
+        ]
+      },
+      {
+        "study": "amygdala-aversive-stimulation",
+        "title": "Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation",
+        "authors": "Tommaso Fedele; Peter Hilfiker; Thomas Grunwald; Lennart Stieglitz; Hennric Jokeit; Jan Hohenheim; Johannes Sarnthein",
+        "lab": null,
+        "citation": "Fedele, Tommaso; Hilfiker, Peter; Grunwald, Thomas; Stieglitz, Lennart; Jokeit, Hennric; Hohenheim, Jan; Sarnthein, Johannes (2023) Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation (Version 0.231010.1811) [Data set]. DANDI archive.",
+        "doi": "10.48324/dandi.000576/0.231010.1811",
+        "datasets": [
+          {
+            "dataset": "dandi-000576",
+            "role": "ephys"
+          }
+        ]
+      },
+      {
+        "study": "synthetic-24-participants",
+        "title": "Synthetic: 24 participants",
+        "authors": null,
+        "lab": null,
+        "citation": null,
+        "doi": null,
+        "datasets": [
+          {
+            "dataset": "synthetic-24p-ephys",
+            "role": "ephys"
+          },
+          {
+            "dataset": "synthetic-24p-mri",
+            "role": "mri"
+          }
+        ]
+      }
+    ],
+    "datasets": [
+      {
+        "dataset": "artifact-20261025205035-fb39",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-25 20:50:48.327",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "artifact-20261025205844-e354",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-25 20:58:50.190",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "artifact-bad-20261025205108-a612",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-25 20:51:12.623",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "artifact-bad-20261025205905-4afe",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-25 20:59:09.489",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-0b7e",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:51:55.062",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-15b2",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:51:43.473",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-1c0e",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:51:51.390",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-25aa",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:52:03.159",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-3df1",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:51:47.108",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-822e",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:51:36.356",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-91f0",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:51:59.373",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-a887",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:51:39.802",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-d85a",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:52:06.969",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185101-e65a",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:52:10.835",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-0e8b",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:29.257",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-15b7",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:21.223",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-1b68",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:05.081",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-1c97",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:37.616",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-2b98",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:09.108",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-3db2",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:17.276",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-66fa",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:33.237",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-b8f3",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:25.352",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-c614",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:41.580",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "conc-20261024185421-d4fc",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:55:13.270",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "dandi-000027",
+        "title": "Test dataset for testing dandi-cli.",
+        "tier": "sandbox",
+        "ingest_method": "import",
+        "mine": false,
+        "source_archive": "dandi",
+        "source_dataset": "000027",
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-26 12:19:53.029",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "dandi-000576",
+        "title": "Dataset of neurons and intracranial EEG from human amygdala during aversive dynamic visual stimulation",
+        "tier": "curated",
+        "ingest_method": "import",
+        "mine": false,
+        "source_archive": "dandi",
+        "source_dataset": "000576",
+        "source_version": "0.231010.1811",
+        "license": "CC-BY-4.0",
+        "doi": null,
+        "asset_count": 9,
+        "subject_count": 9,
+        "total_bytes": null,
+        "created_at": "2026-10-27 14:35:55.578",
+        "subjects": [
+          {
+            "subject": "sub-01",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-01"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-01",
+                    "n_units": 5
+                  }
+                ]
+              }
+            ],
+            "units": 5,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-02",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-02"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-02",
+                    "n_units": 5
+                  }
+                ]
+              }
+            ],
+            "units": 5,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-03",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-03"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-03",
+                    "n_units": 5
+                  }
+                ]
+              }
+            ],
+            "units": 5,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-04",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-04"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-04",
+                    "n_units": 5
+                  }
+                ]
+              }
+            ],
+            "units": 5,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-05",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-05"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-05",
+                    "n_units": 5
+                  }
+                ]
+              }
+            ],
+            "units": 5,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-06",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-06"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-06",
+                    "n_units": 5
+                  }
+                ]
+              }
+            ],
+            "units": 5,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-07",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-07"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-07",
+                    "n_units": 4
+                  }
+                ]
+              }
+            ],
+            "units": 4,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-08",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-08"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-08",
+                    "n_units": 4
+                  }
+                ]
+              }
+            ],
+            "units": 4,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-09",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "ieeg", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-000576-09"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-000576-09",
+                    "n_units": 4
+                  }
+                ]
+              }
+            ],
+            "units": 4,
+            "trials": null,
+            "lfp": []
+          }
+        ],
+        "regions": [
+          {
+            "region": "Amyg, Right Amygdala mAmyg, medial amygdala",
+            "units": 16,
+            "channels": 2
+          },
+          {
+            "region": "Amyg, Left Amygdala mAmyg, medial amygdala",
+            "units": 13,
+            "channels": 5
+          },
+          {
+            "region": "Amyg, Left Amygdala lAmyg, lateral amygdala",
+            "units": 12,
+            "channels": 2
+          },
+          {
+            "region": "Hipp, Right Hippocampus rHipp, rostral hippocampus",
+            "units": 1,
+            "channels": 3
+          },
+          {
+            "region": "unknown",
+            "units": 0,
+            "channels": 2
+          }
+        ]
+      },
+      {
+        "dataset": "dandi-000623",
+        "title": "Data for: Multimodal single-neuron, intracranial EEG, and fMRI brain responses during movie watching in human patients",
+        "tier": "curated",
+        "ingest_method": "import",
+        "mine": false,
+        "source_archive": "dandi",
+        "source_dataset": "000623",
+        "source_version": "0.240227.2023",
+        "license": "CC-BY-4.0",
+        "doi": null,
+        "asset_count": 5,
+        "subject_count": 2,
+        "total_bytes": null,
+        "created_at": "2026-10-24 17:50:20.193",
+        "subjects": [
+          {
+            "subject": "sub-CS41",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "lfp", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-cs41-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-cs41-1",
+                    "n_units": 20
+                  }
+                ]
+              },
+              {
+                "session": "ses-2",
+                "asset_ids": ["asset-cs41-2"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-cs41-2",
+                    "n_units": 18
+                  }
+                ]
+              }
+            ],
+            "units": 38,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-CS62",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "lfp", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-cs62-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-cs62-1",
+                    "n_units": 20
+                  }
+                ]
+              },
+              {
+                "session": "ses-2",
+                "asset_ids": ["asset-cs62-r2"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-cs62-r2",
+                    "n_units": 44
+                  }
+                ]
+              }
+            ],
+            "units": 64,
+            "trials": 93,
+            "lfp": []
+          }
+        ],
+        "regions": [
+          {
+            "region": "Right amygdala",
+            "units": 70,
+            "channels": 64
+          },
+          {
+            "region": "Right preSMA",
+            "units": 12,
+            "channels": 64
+          },
+          {
+            "region": "Right ACC",
+            "units": 10,
+            "channels": 64
+          },
+          {
+            "region": "Right vmPFC",
+            "units": 4,
+            "channels": 64
+          },
+          {
+            "region": "Left vmPFC",
+            "units": 4,
+            "channels": 32
+          },
+          {
+            "region": "Left amygdala",
+            "units": 2,
+            "channels": 32
+          },
+          {
+            "region": "Right hippocampus",
+            "units": 0,
+            "channels": 64
+          },
+          {
+            "region": "RSPE",
+            "units": 0,
+            "channels": 48
+          },
+          {
+            "region": "Left ACC",
+            "units": 0,
+            "channels": 32
+          },
+          {
+            "region": "Left preSMA",
+            "units": 0,
+            "channels": 32
+          },
+          {
+            "region": "Left hippocampus",
+            "units": 0,
+            "channels": 32
+          },
+          {
+            "region": "LSPE",
+            "units": 0,
+            "channels": 16
+          }
+        ]
+      },
+      {
+        "dataset": "dandi-001775",
+        "title": "Mouse hippocampal electrophysiology during spatial working memory and consummatory behavior",
+        "tier": "curated",
+        "ingest_method": "import",
+        "mine": false,
+        "source_archive": "dandi",
+        "source_dataset": "001775",
+        "source_version": "0.260418.0538",
+        "license": "CC-BY-4.0",
+        "doi": null,
+        "asset_count": 1,
+        "subject_count": 1,
+        "total_bytes": null,
+        "created_at": "2026-10-26 17:58:39.199",
+        "subjects": [
+          {
+            "subject": "sub-M1",
+            "species": "Mus musculus",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "lfp", "other:position"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-001775-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-001775-1",
+                    "n_units": 82
+                  }
+                ]
+              }
+            ],
+            "units": 82,
+            "trials": null,
+            "lfp": []
+          }
+        ],
+        "regions": [
+          {
+            "region": "right dHPC",
+            "units": 0,
+            "channels": 48
+          }
+        ]
+      },
+      {
+        "dataset": "lock-20261025203809-1e84",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-25 20:38:21.265",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "openneuro-ds004473",
+        "title": "sEEG Forced Two-Choice Task",
+        "tier": "curated",
+        "ingest_method": "import",
+        "mine": false,
+        "source_archive": "openneuro",
+        "source_dataset": "ds004473",
+        "source_version": "1.0.2",
+        "license": "CC0",
+        "doi": null,
+        "asset_count": 1,
+        "subject_count": 0,
+        "total_bytes": null,
+        "created_at": "2026-10-26 00:11:25.194",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "openneuro-ds004798",
+        "title": "fMRI data for: Multimodal single-neuron, intracranial EEG, and fMRI brain responses during movie watching in human patients",
+        "tier": "curated",
+        "ingest_method": "import",
+        "mine": false,
+        "source_archive": "openneuro",
+        "source_dataset": "ds004798",
+        "source_version": "1.0.5",
+        "license": "CC0",
+        "doi": null,
+        "asset_count": 57,
+        "subject_count": 15,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:17:00.541",
+        "subjects": [
+          {
+            "subject": "sub-p41cs",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["anat", "func", "task", "other:fmap"],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p62cs",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["anat", "func", "task", "other:fmap"],
+            "sessions": [
+              {
+                "session": "ses-mri",
+                "asset_ids": ["asset-p62cs-t1w"],
+                "nwb": []
+              }
+            ],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p01x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["anat", "func", "task", "other:fmap"],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p02x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["anat", "func", "task", "other:fmap"],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p03x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p04x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p05x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p06x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p07x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p08x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p09x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p10x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p11x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p12x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          },
+          {
+            "subject": "sub-p13x",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": [],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          }
+        ],
+        "regions": []
+      },
+      {
+        "dataset": "phase-20261024194636-cb58",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:46:41.396",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "reclaim-20261024185617-e03c",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:56:26.908",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sample-20261024184738-79bd",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:47:50.803",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sample-20261024184803-ac0c",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 18:48:07.731",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sample-20261024190728-3ae5",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:07:37.514",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sample-20261024190755-c63c",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:08:00.109",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sample-20261024191114-7324",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:11:20.845",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sample-20261024191132-5ed6",
+        "title": "",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:11:36.777",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sdk-live-b74626f2",
+        "title": "SDK live synthetic",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:47:50.019",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sdk-live-ef17c08d",
+        "title": "SDK live synthetic",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:37:27.400",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "sdk-live-f6dbae56",
+        "title": "SDK live synthetic",
+        "tier": "sandbox",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": null,
+        "subject_count": null,
+        "total_bytes": null,
+        "created_at": "2026-10-24 19:45:19.644",
+        "subjects": [],
+        "regions": []
+      },
+      {
+        "dataset": "synthetic-24p-ephys",
+        "title": "Synthetic: 24 participants",
+        "tier": "curated",
+        "ingest_method": "import",
+        "mine": false,
+        "source_archive": "dandi",
+        "source_dataset": "999901",
+        "source_version": "0.000000.0001",
+        "license": "CC-BY-4.0",
+        "doi": null,
+        "asset_count": 24,
+        "subject_count": 24,
+        "total_bytes": null,
+        "created_at": "2026-10-20 12:00:00.000",
+        "subjects": [
+          {
+            "subject": "sub-s01",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s01-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s01-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s02",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s02-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s02-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s03",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s03-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s03-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s04",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s04-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s04-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s05",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s05-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s05-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s06",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s06-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s06-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s07",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s07-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s07-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s08",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s08-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s08-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s09",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s09-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s09-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s10",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s10-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s10-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s11",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s11-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s11-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s12",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s12-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s12-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s13",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s13-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s13-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s14",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s14-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s14-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s15",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s15-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s15-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s16",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s16-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s16-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s17",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s17-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s17-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s18",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s18-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s18-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s19",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s19-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s19-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s20",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s20-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s20-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s21",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s21-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s21-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s22",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s22-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s22-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s23",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s23-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s23-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          },
+          {
+            "subject": "sub-s24",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["units", "task"],
+            "sessions": [
+              {
+                "session": "ses-1",
+                "asset_ids": ["asset-s24-1"],
+                "nwb": [
+                  {
+                    "asset_id": "asset-s24-1",
+                    "n_units": 10
+                  }
+                ]
+              }
+            ],
+            "units": 10,
+            "trials": 40,
+            "lfp": []
+          }
+        ],
+        "regions": [
+          {
+            "region": "Left hippocampus",
+            "units": 120,
+            "channels": 0
+          },
+          {
+            "region": "Right hippocampus",
+            "units": 120,
+            "channels": 0
+          }
+        ]
+      },
+      {
+        "dataset": "synthetic-24p-mri",
+        "title": "Synthetic: MRI for one of the 24",
+        "tier": "curated",
+        "ingest_method": "import",
+        "mine": false,
+        "source_archive": "openneuro",
+        "source_dataset": "ds999901",
+        "source_version": "1.0.0",
+        "license": "CC0",
+        "doi": null,
+        "asset_count": 1,
+        "subject_count": 1,
+        "total_bytes": null,
+        "created_at": "2026-10-20 12:00:00.000",
+        "subjects": [
+          {
+            "subject": "sub-s01",
+            "species": "Homo sapiens",
+            "sex": null,
+            "age": null,
+            "modalities": ["anat"],
+            "sessions": [],
+            "units": 0,
+            "trials": null,
+            "lfp": []
+          }
+        ],
+        "regions": []
+      },
+      {
+        "dataset": "upload-other-researcher",
+        "title": "Synthetic upload",
+        "tier": "upload",
+        "ingest_method": "upload",
+        "mine": false,
+        "source_archive": null,
+        "source_dataset": null,
+        "source_version": null,
+        "license": null,
+        "doi": null,
+        "asset_count": 1,
+        "subject_count": 1,
+        "total_bytes": 1048576,
+        "created_at": "2026-10-26 09:00:00.000",
+        "subjects": [],
+        "regions": []
+      }
+    ],
+    "query_ms": 1234
+  },
+  "links": {
+    "links": [
+      {
+        "dataset": "dandi-000623",
+        "subject": "sub-CS41",
+        "subject_key": "bmovie-patient-41",
+        "status": "pending",
+        "linked_by": null,
+        "linked_at": null,
+        "basis": null,
+        "note": "Patient 41 (Cedars-Sinai). DANDI 000623 relatedResource dcite:IsSupplementedBy https://openneuro.org/datasets/ds004798/ (corresponding fMRI data); Keles et al., Sci Data 11, 214 (2024), doi:10.1038/s41597-024-03029-1. To confirm: sub-CS41 and sub-p41cs are the same patient."
+      },
+      {
+        "dataset": "openneuro-ds004798",
+        "subject": "sub-p41cs",
+        "subject_key": "bmovie-patient-41",
+        "status": "pending",
+        "linked_by": null,
+        "linked_at": null,
+        "basis": null,
+        "note": "Patient 41 (Cedars-Sinai), fMRI of the same movie task; ds004798 dataset_description ReferencesAndLinks names dandiset 000623; Keles et al., Sci Data 11, 214 (2024), doi:10.1038/s41597-024-03029-1. participants.tsv lists group 'control' for every participant (boilerplate). To confirm."
+      },
+      {
+        "dataset": "dandi-000623",
+        "subject": "sub-CS62",
+        "subject_key": "bmovie-patient-62",
+        "status": "pending",
+        "linked_by": null,
+        "linked_at": null,
+        "basis": null,
+        "note": "Patient 62 (Cedars-Sinai). DANDI 000623 relatedResource dcite:IsSupplementedBy https://openneuro.org/datasets/ds004798/ (corresponding fMRI data); Keles et al., Sci Data 11, 214 (2024), doi:10.1038/s41597-024-03029-1. To confirm: sub-CS62 and sub-p62cs are the same patient."
+      },
+      {
+        "dataset": "openneuro-ds004798",
+        "subject": "sub-p62cs",
+        "subject_key": "bmovie-patient-62",
+        "status": "pending",
+        "linked_by": null,
+        "linked_at": null,
+        "basis": null,
+        "note": "Patient 62 (Cedars-Sinai), fMRI of the same movie task; ds004798 dataset_description ReferencesAndLinks names dandiset 000623; Keles et al., Sci Data 11, 214 (2024), doi:10.1038/s41597-024-03029-1. participants.tsv lists group 'control' for every participant (boilerplate). To confirm."
+      },
+      {
+        "dataset": "synthetic-24p-ephys",
+        "subject": "sub-s01",
+        "subject_key": "synthetic-s01",
+        "status": "confirmed",
+        "linked_by": "curator@example.test",
+        "linked_at": "2026-10-20T12:00:00Z",
+        "basis": "synthetic",
+        "note": "Synthetic confirmed link (awkward state F15)."
+      },
+      {
+        "dataset": "synthetic-24p-mri",
+        "subject": "sub-s01",
+        "subject_key": "synthetic-s01",
+        "status": "confirmed",
+        "linked_by": "curator@example.test",
+        "linked_at": "2026-10-20T12:00:00Z",
+        "basis": "synthetic",
+        "note": "Synthetic confirmed link (awkward state F15)."
+      }
+    ],
+    "query_ms": 321
+  }
+}

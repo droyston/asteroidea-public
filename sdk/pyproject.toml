@@ -1,0 +1,25 @@
+[project]
+name = "asteroidea"
+version = "0.1.0"
+description = "Python SDK for the asteroidea platform."
+requires-python = ">=3.14"
+license = "Apache-2.0"
+dependencies = [
+    "boto3==1.43.118",
+    "awscrt==0.38.0",  # CRC64NVME for the upload checksum (botocore's CRT path)
+    "pyiceberg[pyarrow,glue]==0.12.0",  # query(): scans with the researcher's credentials
+    "duckdb==1.5.6",  # sql(): views over iceberg_scan (2.0.0 is newer than the 7-day age rule allows)
+]
+
+[project.optional-dependencies]
+nifti = ["nibabel==5.4.2"]
+analysis = ["polars==2.0.0", "numpy==2.5.4"]
+nwb = ["pynwb==4.2.0", "h5py==3.16.0"]
+pynapple = ["pynapple==0.11.4"]
+
+[project.scripts]
+asteroidea-setup = "asteroidea._setup:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14"]
+build-backend = "uv_build"

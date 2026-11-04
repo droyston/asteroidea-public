@@ -1,0 +1,9 @@
+study,dataset,role
+movie-watching,dandi-000623,ephys
+movie-watching,openneuro-ds004798,fmri
+spatial-working-memory,dandi-001775,ephys
+seeg-two-choice,openneuro-ds004473,mri
+amygdala-aversive-stimulation,dandi-000576,ephys
+longitudinal-flair-swi,openneuro-ds004265,mri
+rtms-cortex,openneuro-ds001927,fmri
+single-pulse-tms-fmri,openneuro-ds005498,fmri

@@ -1,0 +1,2520 @@
+{
+ "Resources": {
+  "WebSiteBucket1E6F6F45": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Web/SiteBucket/Resource"
+   }
+  },
+  "WebSiteBucketPolicy833DA971": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "WebSiteBucket1E6F6F45"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "WebSiteBucket1E6F6F45",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "WebSiteBucket1E6F6F45",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "s3:GetObject",
+       "Condition": {
+        "StringEquals": {
+         "AWS:SourceArn": {
+          "Fn::Join": [
+           "",
+           [
+            "arn:",
+            {
+             "Ref": "AWS::Partition"
+            },
+            ":cloudfront::",
+            {
+             "Ref": "AWS::AccountId"
+            },
+            ":distribution/",
+            {
+             "Ref": "WebDistributionCF3E234B"
+            }
+           ]
+          ]
+         }
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "cloudfront.amazonaws.com"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "WebSiteBucket1E6F6F45",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Deny",
+       "Principal": {
+        "Service": "cloudfront.amazonaws.com"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "WebSiteBucket1E6F6F45",
+            "Arn"
+           ]
+          },
+          "/handout/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Web/SiteBucket/Policy/Resource"
+   }
+  },
+  "WebDistributionOrigin1S3OriginAccessControl4C02D402": {
+   "Type": "AWS::CloudFront::OriginAccessControl",
+   "Properties": {
+    "OriginAccessControlConfig": {
+     "Name": "DataStackWebDistributionOrigin1S3OriginAccessControl9A88971E",
+     "OriginAccessControlOriginType": "s3",
+     "SigningBehavior": "always",
+     "SigningProtocol": "sigv4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Web/Distribution/Origin1/S3OriginAccessControl/Resource"
+   }
+  },
+  "WebDistributionCF3E234B": {
+   "Type": "AWS::CloudFront::Distribution",
+   "Properties": {
+    "DistributionConfig": {
+     "CustomErrorResponses": [
+      {
+       "ErrorCode": 403,
+       "ResponseCode": 200,
+       "ResponsePagePath": "/index.html"
+      },
+      {
+       "ErrorCode": 404,
+       "ResponseCode": 200,
+       "ResponsePagePath": "/index.html"
+      }
+     ],
+     "DefaultCacheBehavior": {
+      "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+      "Compress": true,
+      "ResponseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+      "TargetOriginId": "DataStackWebDistributionOrigin1E5D0E6A8",
+      "ViewerProtocolPolicy": "redirect-to-https"
+     },
+     "DefaultRootObject": "index.html",
+     "Enabled": true,
+     "HttpVersion": "http2",
+     "IPV6Enabled": true,
+     "Origins": [
+      {
+       "DomainName": {
+        "Fn::GetAtt": [
+         "WebSiteBucket1E6F6F45",
+         "RegionalDomainName"
+        ]
+       },
+       "Id": "DataStackWebDistributionOrigin1E5D0E6A8",
+       "OriginAccessControlId": {
+        "Fn::GetAtt": [
+         "WebDistributionOrigin1S3OriginAccessControl4C02D402",
+         "Id"
+        ]
+       },
+       "OriginPath": "/site",
+       "S3OriginConfig": {
+        "OriginAccessIdentity": ""
+       }
+      }
+     ],
+     "PriceClass": "PriceClass_100"
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Web/Distribution/Resource"
+   }
+  },
+  "RawBucket0C3EE094": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "CorsConfiguration": {
+     "CorsRules": [
+      {
+       "AllowedHeaders": [
+        "Range"
+       ],
+       "AllowedMethods": [
+        "GET",
+        "HEAD"
+       ],
+       "AllowedOrigins": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "https://",
+           {
+            "Fn::GetAtt": [
+             "WebDistributionCF3E234B",
+             "DomainName"
+            ]
+           }
+          ]
+         ]
+        },
+        "http://localhost:5173"
+       ],
+       "ExposedHeaders": [
+        "Content-Range",
+        "Accept-Ranges",
+        "ETag",
+        "Content-Length"
+       ],
+       "MaxAge": 3000
+      }
+     ]
+    },
+    "LifecycleConfiguration": {
+     "Rules": [
+      {
+       "AbortIncompleteMultipartUpload": {
+        "DaysAfterInitiation": 1
+       },
+       "ExpirationInDays": 3,
+       "Id": "landing-expiry",
+       "NoncurrentVersionExpiration": {
+        "NoncurrentDays": 1
+       },
+       "Prefix": "landing/",
+       "Status": "Enabled"
+      }
+     ]
+    },
+    "ObjectLockConfiguration": {
+     "ObjectLockEnabled": "Enabled"
+    },
+    "ObjectLockEnabled": true,
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "VersioningConfiguration": {
+     "Status": "Enabled"
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/RawBucket/Resource"
+   }
+  },
+  "RawBucketPolicy61C50A52": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "RawBucket0C3EE094"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "RawBucket0C3EE094",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "RawBucket0C3EE094",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:PutObject*",
+        "s3:RestoreObject"
+       ],
+       "Condition": {
+        "ArnNotEquals": {
+         "aws:PrincipalArn": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":iam::000000000000:role/asteroidea-session-api-role"
+            ]
+           ]
+          },
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":iam::000000000000:role/asteroidea-commit-role"
+            ]
+           ]
+          },
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":iam::000000000000:role/asteroidea-import-role"
+            ]
+           ]
+          }
+         ]
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "RawBucket0C3EE094",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       },
+       "Sid": "DenyRawWritesExceptSessionApiAndCommit"
+      },
+      {
+       "Action": "s3:DeleteObject*",
+       "Condition": {
+        "ArnNotEquals": {
+         "aws:PrincipalArn": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":iam::000000000000:role/asteroidea-commit-role"
+            ]
+           ]
+          }
+         ]
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "RawBucket0C3EE094",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       },
+       "Sid": "DenyRawDeletesExceptCommit"
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/RawBucket/Policy/Resource"
+   }
+  },
+  "ArtifactsBucket2AAC5544": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "LifecycleConfiguration": {
+     "Rules": [
+      {
+       "AbortIncompleteMultipartUpload": {
+        "DaysAfterInitiation": 1
+       },
+       "Id": "abort-incomplete-multipart",
+       "Status": "Enabled"
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/ArtifactsBucket/Resource"
+   }
+  },
+  "ArtifactsBucketPolicy852CB646": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "ArtifactsBucket2AAC5544"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "ArtifactsBucket2AAC5544",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "ArtifactsBucket2AAC5544",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:PutObject*",
+        "s3:DeleteObject*"
+       ],
+       "Condition": {
+        "ArnNotEquals": {
+         "aws:PrincipalArn": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":iam::000000000000:role/asteroidea-platform-role"
+            ]
+           ]
+          }
+         ]
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "ArtifactsBucket2AAC5544",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       },
+       "Sid": "DenyArtifactAccessExceptPlatform"
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/ArtifactsBucket/Policy/Resource"
+   }
+  },
+  "DerivedBucket81C7992C": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "CorsConfiguration": {
+     "CorsRules": [
+      {
+       "AllowedMethods": [
+        "GET"
+       ],
+       "AllowedOrigins": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "https://",
+           {
+            "Fn::GetAtt": [
+             "WebDistributionCF3E234B",
+             "DomainName"
+            ]
+           }
+          ]
+         ]
+        },
+        "http://localhost:5173"
+       ],
+       "ExposedHeaders": [
+        "Content-Length",
+        "ETag"
+       ],
+       "MaxAge": 3000
+      }
+     ]
+    },
+    "LifecycleConfiguration": {
+     "Rules": [
+      {
+       "ExpirationInDays": 7,
+       "Id": "rows-expiry",
+       "Prefix": "rows/",
+       "Status": "Enabled"
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/DerivedBucket/Resource"
+   }
+  },
+  "DerivedBucketPolicy2C640C1B": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "DerivedBucket81C7992C"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "DerivedBucket81C7992C",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DerivedBucket81C7992C",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:PutObject*",
+        "s3:DeleteObject*"
+       ],
+       "Condition": {
+        "ArnNotEquals": {
+         "aws:PrincipalArn": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":iam::000000000000:role/asteroidea-lfp-build-role"
+            ]
+           ]
+          }
+         ]
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "DerivedBucket81C7992C",
+            "Arn"
+           ]
+          },
+          "/lfp/*"
+         ]
+        ]
+       },
+       "Sid": "DenyDerivedLfpWritesExceptItsWriter"
+      },
+      {
+       "Action": [
+        "s3:PutObject*",
+        "s3:DeleteObject*"
+       ],
+       "Condition": {
+        "ArnNotEquals": {
+         "aws:PrincipalArn": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":iam::000000000000:role/asteroidea-derive-role"
+            ]
+           ]
+          }
+         ]
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "DerivedBucket81C7992C",
+            "Arn"
+           ]
+          },
+          "/rows/*"
+         ]
+        ]
+       },
+       "Sid": "DenyDerivedRowsWritesExceptItsWriter"
+      },
+      {
+       "Action": [
+        "s3:PutObject*",
+        "s3:DeleteObject*"
+       ],
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "NotResource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DerivedBucket81C7992C",
+             "Arn"
+            ]
+           },
+           "/lfp/*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DerivedBucket81C7992C",
+             "Arn"
+            ]
+           },
+           "/rows/*"
+          ]
+         ]
+        }
+       ],
+       "Sid": "DenyDerivedWritesOutsideTheWriterPrefixes"
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/DerivedBucket/Policy/Resource"
+   }
+  },
+  "AthenaResultsBucket879938FA": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "LifecycleConfiguration": {
+     "Rules": [
+      {
+       "ExpirationInDays": 1,
+       "Id": "athena-expiry",
+       "Prefix": "athena/",
+       "Status": "Enabled"
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/AthenaResultsBucket/Resource"
+   }
+  },
+  "AthenaResultsBucketPolicyD63DEF63": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "AthenaResultsBucket879938FA"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "AthenaResultsBucket879938FA",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "AthenaResultsBucket879938FA",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/AthenaResultsBucket/Policy/Resource"
+   }
+  },
+  "WarehouseBucket0E783396": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/WarehouseBucket/Resource"
+   }
+  },
+  "WarehouseBucketPolicy998829DC": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "WarehouseBucket0E783396"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "WarehouseBucket0E783396",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "WarehouseBucket0E783396",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/WarehouseBucket/Policy/Resource"
+   }
+  },
+  "SessionsTable7C302024": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "session_id",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "owner_sub",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "created_at",
+      "AttributeType": "N"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "GlobalSecondaryIndexes": [
+     {
+      "IndexName": "by_owner",
+      "KeySchema": [
+       {
+        "AttributeName": "owner_sub",
+        "KeyType": "HASH"
+       },
+       {
+        "AttributeName": "created_at",
+        "KeyType": "RANGE"
+       }
+      ],
+      "Projection": {
+       "ProjectionType": "ALL"
+      }
+     }
+    ],
+    "KeySchema": [
+     {
+      "AttributeName": "session_id",
+      "KeyType": "HASH"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "TimeToLiveSpecification": {
+     "AttributeName": "expires_at",
+     "Enabled": true
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/SessionsTable/Resource"
+   }
+  },
+  "DatasetOwnersTable9D0BA8A1": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "dataset",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "KeySchema": [
+     {
+      "AttributeName": "dataset",
+      "KeyType": "HASH"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/DatasetOwnersTable/Resource"
+   }
+  },
+  "LabelsTableDD3C024F": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "asset_id",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "label_id",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "KeySchema": [
+     {
+      "AttributeName": "asset_id",
+      "KeyType": "HASH"
+     },
+     {
+      "AttributeName": "label_id",
+      "KeyType": "RANGE"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/LabelsTable/Resource"
+   }
+  },
+  "ImportRunsTable530F2D0D": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "run_id",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "caller_sub",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "created_at",
+      "AttributeType": "N"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "GlobalSecondaryIndexes": [
+     {
+      "IndexName": "by_caller",
+      "KeySchema": [
+       {
+        "AttributeName": "caller_sub",
+        "KeyType": "HASH"
+       },
+       {
+        "AttributeName": "created_at",
+        "KeyType": "RANGE"
+       }
+      ],
+      "Projection": {
+       "ProjectionType": "ALL"
+      }
+     }
+    ],
+    "KeySchema": [
+     {
+      "AttributeName": "run_id",
+      "KeyType": "HASH"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/ImportRunsTable/Resource"
+   }
+  },
+  "Database": {
+   "Type": "AWS::Glue::Database",
+   "Properties": {
+    "CatalogId": "000000000000",
+    "DatabaseInput": {
+     "Name": "asteroidea"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Database"
+   }
+  },
+  "Workgroup": {
+   "Type": "AWS::Athena::WorkGroup",
+   "Properties": {
+    "Name": "asteroidea",
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ],
+    "WorkGroupConfiguration": {
+     "EnforceWorkGroupConfiguration": true,
+     "PublishCloudWatchMetricsEnabled": true,
+     "ResultConfiguration": {
+      "EncryptionConfiguration": {
+       "EncryptionOption": "SSE_S3"
+      },
+      "OutputLocation": {
+       "Fn::Join": [
+        "",
+        [
+         "s3://",
+         {
+          "Ref": "AthenaResultsBucket879938FA"
+         },
+         "/athena/"
+        ]
+       ]
+      }
+     }
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Workgroup"
+   }
+  },
+  "IdentityUserPool96FE3B9B": {
+   "Type": "AWS::Cognito::UserPool",
+   "Properties": {
+    "AccountRecoverySetting": {
+     "RecoveryMechanisms": [
+      {
+       "Name": "verified_email",
+       "Priority": 1
+      }
+     ]
+    },
+    "AdminCreateUserConfig": {
+     "AllowAdminCreateUserOnly": true,
+     "InviteMessageTemplate": {
+      "EmailMessage": {
+       "Fn::Join": [
+        "",
+        [
+         "Your asteroidea account is ready. Sign in at https://",
+         {
+          "Fn::GetAtt": [
+           "WebDistributionCF3E234B",
+           "DomainName"
+          ]
+         },
+         "/ with the username {username} and the temporary password {####}. The temporary password is valid for 7 days. You will be asked to choose a new password the first time you sign in."
+        ]
+       ]
+      },
+      "EmailSubject": "Your asteroidea account"
+     }
+    },
+    "AutoVerifiedAttributes": [
+     "email"
+    ],
+    "EmailVerificationMessage": "The verification code to your new account is {####}",
+    "EmailVerificationSubject": "Verify your new account",
+    "Policies": {
+     "PasswordPolicy": {
+      "MinimumLength": 12,
+      "RequireLowercase": true,
+      "RequireNumbers": true,
+      "RequireSymbols": true,
+      "RequireUppercase": true,
+      "TemporaryPasswordValidityDays": 7
+     }
+    },
+    "SmsVerificationMessage": "The verification code to your new account is {####}",
+    "UserPoolTags": {
+     "managed-by": "cdk",
+     "project": "asteroidea"
+    },
+    "UserPoolTier": "ESSENTIALS",
+    "UsernameAttributes": [
+     "email"
+    ],
+    "VerificationMessageTemplate": {
+     "DefaultEmailOption": "CONFIRM_WITH_CODE",
+     "EmailMessage": "The verification code to your new account is {####}",
+     "EmailSubject": "Verify your new account",
+     "SmsMessage": "The verification code to your new account is {####}"
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/UserPool/Resource"
+   }
+  },
+  "IdentityUserPoolDomain56C2A4C9": {
+   "Type": "AWS::Cognito::UserPoolDomain",
+   "Properties": {
+    "Domain": "asteroidea-id-000000000000",
+    "ManagedLoginVersion": 2,
+    "UserPoolId": {
+     "Ref": "IdentityUserPool96FE3B9B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/UserPool/Domain/Resource"
+   }
+  },
+  "IdentityUserPoolSdkClient15A96560": {
+   "Type": "AWS::Cognito::UserPoolClient",
+   "Properties": {
+    "AccessTokenValidity": 60,
+    "AllowedOAuthFlows": [
+     "code"
+    ],
+    "AllowedOAuthFlowsUserPoolClient": true,
+    "AllowedOAuthScopes": [
+     "openid",
+     "email",
+     "profile"
+    ],
+    "CallbackURLs": [
+     "http://localhost:8765/callback"
+    ],
+    "ClientName": "sdk",
+    "EnableTokenRevocation": true,
+    "GenerateSecret": false,
+    "IdTokenValidity": 60,
+    "LogoutURLs": [
+     "http://localhost:8765/callback"
+    ],
+    "PreventUserExistenceErrors": "ENABLED",
+    "RefreshTokenValidity": 43200,
+    "SupportedIdentityProviders": [
+     "COGNITO"
+    ],
+    "TokenValidityUnits": {
+     "AccessToken": "minutes",
+     "IdToken": "minutes",
+     "RefreshToken": "minutes"
+    },
+    "UserPoolId": {
+     "Ref": "IdentityUserPool96FE3B9B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/UserPool/SdkClient/Resource"
+   }
+  },
+  "IdentityUserPoolWebClient274C53C4": {
+   "Type": "AWS::Cognito::UserPoolClient",
+   "Properties": {
+    "AccessTokenValidity": 60,
+    "AllowedOAuthFlows": [
+     "code"
+    ],
+    "AllowedOAuthFlowsUserPoolClient": true,
+    "AllowedOAuthScopes": [
+     "openid",
+     "email",
+     "profile"
+    ],
+    "CallbackURLs": [
+     "http://localhost:5173/auth/callback",
+     {
+      "Fn::Join": [
+       "",
+       [
+        "https://",
+        {
+         "Fn::GetAtt": [
+          "WebDistributionCF3E234B",
+          "DomainName"
+         ]
+        },
+        "/auth/callback"
+       ]
+      ]
+     }
+    ],
+    "ClientName": "web",
+    "EnableTokenRevocation": true,
+    "GenerateSecret": false,
+    "IdTokenValidity": 60,
+    "LogoutURLs": [
+     "http://localhost:5173/",
+     {
+      "Fn::Join": [
+       "",
+       [
+        "https://",
+        {
+         "Fn::GetAtt": [
+          "WebDistributionCF3E234B",
+          "DomainName"
+         ]
+        },
+        "/"
+       ]
+      ]
+     }
+    ],
+    "PreventUserExistenceErrors": "ENABLED",
+    "RefreshTokenValidity": 43200,
+    "SupportedIdentityProviders": [
+     "COGNITO"
+    ],
+    "TokenValidityUnits": {
+     "AccessToken": "minutes",
+     "IdToken": "minutes",
+     "RefreshToken": "minutes"
+    },
+    "UserPoolId": {
+     "Ref": "IdentityUserPool96FE3B9B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/UserPool/WebClient/Resource"
+   }
+  },
+  "IdentityUserPoolSandboxTestClientB74F66A5": {
+   "Type": "AWS::Cognito::UserPoolClient",
+   "Properties": {
+    "AllowedOAuthFlowsUserPoolClient": false,
+    "ClientName": "sandbox-test",
+    "ExplicitAuthFlows": [
+     "ALLOW_ADMIN_USER_PASSWORD_AUTH",
+     "ALLOW_REFRESH_TOKEN_AUTH"
+    ],
+    "GenerateSecret": false,
+    "PreventUserExistenceErrors": "ENABLED",
+    "SupportedIdentityProviders": [
+     "COGNITO"
+    ],
+    "UserPoolId": {
+     "Ref": "IdentityUserPool96FE3B9B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/UserPool/SandboxTestClient/Resource"
+   }
+  },
+  "IdentityBrandingsdk0ED99A6E": {
+   "Type": "AWS::Cognito::ManagedLoginBranding",
+   "Properties": {
+    "ClientId": {
+     "Ref": "IdentityUserPoolSdkClient15A96560"
+    },
+    "UseCognitoProvidedValues": true,
+    "UserPoolId": {
+     "Ref": "IdentityUserPool96FE3B9B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/Branding-sdk"
+   }
+  },
+  "IdentityBrandingwebBC6C8D91": {
+   "Type": "AWS::Cognito::ManagedLoginBranding",
+   "Properties": {
+    "ClientId": {
+     "Ref": "IdentityUserPoolWebClient274C53C4"
+    },
+    "UseCognitoProvidedValues": true,
+    "UserPoolId": {
+     "Ref": "IdentityUserPool96FE3B9B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/Branding-web"
+   }
+  },
+  "IdentityIdentityPool018C0298": {
+   "Type": "AWS::Cognito::IdentityPool",
+   "Properties": {
+    "AllowClassicFlow": false,
+    "AllowUnauthenticatedIdentities": false,
+    "CognitoIdentityProviders": [
+     {
+      "ClientId": {
+       "Ref": "IdentityUserPoolSdkClient15A96560"
+      },
+      "ProviderName": {
+       "Fn::GetAtt": [
+        "IdentityUserPool96FE3B9B",
+        "ProviderName"
+       ]
+      },
+      "ServerSideTokenCheck": true
+     },
+     {
+      "ClientId": {
+       "Ref": "IdentityUserPoolWebClient274C53C4"
+      },
+      "ProviderName": {
+       "Fn::GetAtt": [
+        "IdentityUserPool96FE3B9B",
+        "ProviderName"
+       ]
+      },
+      "ServerSideTokenCheck": true
+     },
+     {
+      "ClientId": {
+       "Ref": "IdentityUserPoolSandboxTestClientB74F66A5"
+      },
+      "ProviderName": {
+       "Fn::GetAtt": [
+        "IdentityUserPool96FE3B9B",
+        "ProviderName"
+       ]
+      },
+      "ServerSideTokenCheck": true
+     }
+    ],
+    "IdentityPoolTags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/IdentityPool"
+   }
+  },
+  "IdentityDefaultAuthRole8848C83B": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRoleWithWebIdentity",
+       "Condition": {
+        "StringEquals": {
+         "cognito-identity.amazonaws.com:aud": {
+          "Ref": "IdentityIdentityPool018C0298"
+         }
+        },
+        "ForAnyValue:StringLike": {
+         "cognito-identity.amazonaws.com:amr": "authenticated"
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Federated": "cognito-identity.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/DefaultAuthRole/Resource"
+   }
+  },
+  "IdentityResearcherRole5F136254": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRoleWithWebIdentity",
+       "Condition": {
+        "StringEquals": {
+         "cognito-identity.amazonaws.com:aud": {
+          "Ref": "IdentityIdentityPool018C0298"
+         }
+        },
+        "ForAnyValue:StringLike": {
+         "cognito-identity.amazonaws.com:amr": "authenticated"
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Federated": "cognito-identity.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "managed-by",
+      "Value": "cdk"
+     },
+     {
+      "Key": "project",
+      "Value": "asteroidea"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/ResearcherRole/Resource"
+   }
+  },
+  "IdentityResearcherRoleDefaultPolicy6A6BF626": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "RawBucket0C3EE094",
+            "Arn"
+           ]
+          },
+          "/raw/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:ListBucket",
+       "Condition": {
+        "StringLike": {
+         "s3:prefix": [
+          "raw/*"
+         ]
+        }
+       },
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "RawBucket0C3EE094",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "WarehouseBucket0E783396",
+            "Arn"
+           ]
+          },
+          "/iceberg/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "WarehouseBucket0E783396",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:GetTable",
+        "glue:GetTables"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:catalog"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:database/asteroidea"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/assets"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/datasets"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/subjects"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/subject_links"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/sessions"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/asset_headers"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/series"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/electrodes"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/units"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/intervals"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/unit_spikes"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":glue:us-east-1:000000000000:table/asteroidea/events"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "athena:StartQueryExecution",
+        "athena:GetQueryExecution",
+        "athena:GetQueryResults",
+        "athena:StopQueryExecution",
+        "athena:GetWorkGroup"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":athena:us-east-1:000000000000:workgroup/asteroidea"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "AthenaResultsBucket879938FA",
+            "Arn"
+           ]
+          },
+          "/athena/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "AthenaResultsBucket879938FA",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObject*",
+        "s3:DeleteObject*"
+       ],
+       "Effect": "Deny",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "RawBucket0C3EE094",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": "s3:*",
+       "Effect": "Deny",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "ArtifactsBucket2AAC5544",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "ArtifactsBucket2AAC5544",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "IdentityResearcherRoleDefaultPolicy6A6BF626",
+    "Roles": [
+     {
+      "Ref": "IdentityResearcherRole5F136254"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/ResearcherRole/DefaultPolicy/Resource"
+   }
+  },
+  "IdentityRoleAttachment632233EB": {
+   "Type": "AWS::Cognito::IdentityPoolRoleAttachment",
+   "Properties": {
+    "IdentityPoolId": {
+     "Ref": "IdentityIdentityPool018C0298"
+    },
+    "RoleMappings": {
+     "sdk": {
+      "AmbiguousRoleResolution": "Deny",
+      "IdentityProvider": {
+       "Fn::Join": [
+        "",
+        [
+         "cognito-idp.us-east-1.amazonaws.com/",
+         {
+          "Ref": "IdentityUserPool96FE3B9B"
+         },
+         ":",
+         {
+          "Ref": "IdentityUserPoolSdkClient15A96560"
+         }
+        ]
+       ]
+      },
+      "Type": "Token"
+     },
+     "web": {
+      "AmbiguousRoleResolution": "Deny",
+      "IdentityProvider": {
+       "Fn::Join": [
+        "",
+        [
+         "cognito-idp.us-east-1.amazonaws.com/",
+         {
+          "Ref": "IdentityUserPool96FE3B9B"
+         },
+         ":",
+         {
+          "Ref": "IdentityUserPoolWebClient274C53C4"
+         }
+        ]
+       ]
+      },
+      "Type": "Token"
+     },
+     "sandbox-test": {
+      "AmbiguousRoleResolution": "Deny",
+      "IdentityProvider": {
+       "Fn::Join": [
+        "",
+        [
+         "cognito-idp.us-east-1.amazonaws.com/",
+         {
+          "Ref": "IdentityUserPool96FE3B9B"
+         },
+         ":",
+         {
+          "Ref": "IdentityUserPoolSandboxTestClientB74F66A5"
+         }
+        ]
+       ]
+      },
+      "Type": "Token"
+     }
+    },
+    "Roles": {
+     "authenticated": {
+      "Fn::GetAtt": [
+       "IdentityDefaultAuthRole8848C83B",
+       "Arn"
+      ]
+     }
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/RoleAttachment"
+   }
+  },
+  "IdentityResearchersGroup86F8670B": {
+   "Type": "AWS::Cognito::UserPoolGroup",
+   "Properties": {
+    "GroupName": "researchers",
+    "Precedence": 10,
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "IdentityResearcherRole5F136254",
+      "Arn"
+     ]
+    },
+    "UserPoolId": {
+     "Ref": "IdentityUserPool96FE3B9B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/ResearchersGroup"
+   }
+  },
+  "IdentityCuratorsGroup224DE812": {
+   "Type": "AWS::Cognito::UserPoolGroup",
+   "Properties": {
+    "GroupName": "curators",
+    "Precedence": 20,
+    "UserPoolId": {
+     "Ref": "IdentityUserPool96FE3B9B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/Identity/CuratorsGroup"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/3VQy2rDMBD8ltwV1U0C7TUPKIWWhKSPY1lLirO1vBukFcEY/3uxkzSm0NPMzs4+mImePMx0NoJTHBtbjj3mutkJmFLBKX41caqbRTKlE7Xc04WdYcMeTX2Tz3WrjOdk94FJdLPCKAHzJMikdtN1wAJpboyLcckkgX03/488HG6VrQkqtrlu3iD3rjP0pFWFT053fhDIIToFcnAEnfTJoXwKnI7KcEEorJv36MKGzxd++ZWsuAKkYeuiXMulR0cyNNyUVyAonH3hAmkRgCxS0enP1pGg1Nerw3rL3s1FwByqP3v7t1uFUOmmc3W9Hm+5XxJv1dZFTsH0nnWSY5JWbWo5MN1N9f1MP46+I+I4JBKsnN6eUWU609no2G/5AI8Wuqj1/BR37PvY4w8Ub6PLIAIAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "DataStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "UserPoolId": {
+   "Value": {
+    "Ref": "IdentityUserPool96FE3B9B"
+   },
+   "Export": {
+    "Name": "asteroidea-UserPoolId"
+   }
+  },
+  "IdentityPoolId": {
+   "Value": {
+    "Ref": "IdentityIdentityPool018C0298"
+   },
+   "Export": {
+    "Name": "asteroidea-IdentityPoolId"
+   }
+  },
+  "ManagedLoginBaseUrl": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "IdentityUserPoolDomain56C2A4C9"
+      },
+      ".auth.us-east-1.amazoncognito.com"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": "asteroidea-ManagedLoginBaseUrl"
+   }
+  },
+  "ResearcherRoleArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "IdentityResearcherRole5F136254",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "asteroidea-ResearcherRoleArn"
+   }
+  },
+  "SdkClientId": {
+   "Value": {
+    "Ref": "IdentityUserPoolSdkClient15A96560"
+   },
+   "Export": {
+    "Name": "asteroidea-SdkClientId"
+   }
+  },
+  "WebClientId": {
+   "Value": {
+    "Ref": "IdentityUserPoolWebClient274C53C4"
+   },
+   "Export": {
+    "Name": "asteroidea-WebClientId"
+   }
+  },
+  "SandboxTestClientId": {
+   "Value": {
+    "Ref": "IdentityUserPoolSandboxTestClientB74F66A5"
+   },
+   "Export": {
+    "Name": "asteroidea-SandboxTestClientId"
+   }
+  },
+  "ExportsOutputFnGetAttAthenaResultsBucket879938FAArn609FA1B4": {
+   "Value": {
+    "Fn::GetAtt": [
+     "AthenaResultsBucket879938FA",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttAthenaResultsBucket879938FAArn609FA1B4"
+   }
+  },
+  "ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SessionsTable7C302024",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttSessionsTable7C302024Arn24FF8012"
+   }
+  },
+  "ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99": {
+   "Value": {
+    "Fn::GetAtt": [
+     "RawBucket0C3EE094",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttRawBucket0C3EE094ArnD2F95F99"
+   }
+  },
+  "ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9": {
+   "Value": {
+    "Fn::GetAtt": [
+     "WarehouseBucket0E783396",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttWarehouseBucket0E783396ArnD66BFFC9"
+   }
+  },
+  "ExportsOutputRefSessionsTable7C3020246E1CCFDD": {
+   "Value": {
+    "Ref": "SessionsTable7C302024"
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputRefSessionsTable7C3020246E1CCFDD"
+   }
+  },
+  "ExportsOutputRefRawBucket0C3EE094D6333DF9": {
+   "Value": {
+    "Ref": "RawBucket0C3EE094"
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputRefRawBucket0C3EE094D6333DF9"
+   }
+  },
+  "ExportsOutputFnGetAttDatasetOwnersTable9D0BA8A1Arn4A11628C": {
+   "Value": {
+    "Fn::GetAtt": [
+     "DatasetOwnersTable9D0BA8A1",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttDatasetOwnersTable9D0BA8A1Arn4A11628C"
+   }
+  },
+  "ExportsOutputRefDatasetOwnersTable9D0BA8A140B34BFC": {
+   "Value": {
+    "Ref": "DatasetOwnersTable9D0BA8A1"
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputRefDatasetOwnersTable9D0BA8A140B34BFC"
+   }
+  },
+  "ExportsOutputFnGetAttImportRunsTable530F2D0DArn6331C955": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ImportRunsTable530F2D0D",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttImportRunsTable530F2D0DArn6331C955"
+   }
+  },
+  "ExportsOutputRefImportRunsTable530F2D0DDC992A1E": {
+   "Value": {
+    "Ref": "ImportRunsTable530F2D0D"
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputRefImportRunsTable530F2D0DDC992A1E"
+   }
+  },
+  "ExportsOutputFnGetAttDerivedBucket81C7992CArnF73A8B22": {
+   "Value": {
+    "Fn::GetAtt": [
+     "DerivedBucket81C7992C",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttDerivedBucket81C7992CArnF73A8B22"
+   }
+  },
+  "ExportsOutputRefDerivedBucket81C7992C310D8D2B": {
+   "Value": {
+    "Ref": "DerivedBucket81C7992C"
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputRefDerivedBucket81C7992C310D8D2B"
+   }
+  },
+  "ExportsOutputFnGetAttWebSiteBucket1E6F6F45ArnD070D382": {
+   "Value": {
+    "Fn::GetAtt": [
+     "WebSiteBucket1E6F6F45",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttWebSiteBucket1E6F6F45ArnD070D382"
+   }
+  },
+  "ExportsOutputFnGetAttArtifactsBucket2AAC5544ArnD57FAE19": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ArtifactsBucket2AAC5544",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttArtifactsBucket2AAC5544ArnD57FAE19"
+   }
+  },
+  "ExportsOutputRefWebSiteBucket1E6F6F456AFA2EC7": {
+   "Value": {
+    "Ref": "WebSiteBucket1E6F6F45"
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputRefWebSiteBucket1E6F6F456AFA2EC7"
+   }
+  },
+  "ExportsOutputRefArtifactsBucket2AAC55442DB5E6C9": {
+   "Value": {
+    "Ref": "ArtifactsBucket2AAC5544"
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputRefArtifactsBucket2AAC55442DB5E6C9"
+   }
+  },
+  "ExportsOutputFnGetAttLabelsTableDD3C024FArnC6356963": {
+   "Value": {
+    "Fn::GetAtt": [
+     "LabelsTableDD3C024F",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputFnGetAttLabelsTableDD3C024FArnC6356963"
+   }
+  },
+  "ExportsOutputRefLabelsTableDD3C024F0B8B5135": {
+   "Value": {
+    "Ref": "LabelsTableDD3C024F"
+   },
+   "Export": {
+    "Name": "DataStack:ExportsOutputRefLabelsTableDD3C024F0B8B5135"
+   }
+  },
+  "WebUrl": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Fn::GetAtt": [
+        "WebDistributionCF3E234B",
+        "DomainName"
+       ]
+      }
+     ]
+    ]
+   },
+   "Export": {
+    "Name": "asteroidea-WebUrl"
+   }
+  },
+  "SiteBucketName": {
+   "Value": {
+    "Ref": "WebSiteBucket1E6F6F45"
+   }
+  },
+  "DistributionId": {
+   "Value": {
+    "Ref": "WebDistributionCF3E234B"
+   }
+  },
+  "ArtifactsBucketName": {
+   "Value": {
+    "Ref": "ArtifactsBucket2AAC5544"
+   }
+  },
+  "DerivedBucketName": {
+   "Value": {
+    "Ref": "DerivedBucket81C7992C"
+   }
+  },
+  "WarehouseBucketName": {
+   "Value": {
+    "Ref": "WarehouseBucket0E783396"
+   }
+  },
+  "AthenaResultsBucketName": {
+   "Value": {
+    "Ref": "AthenaResultsBucket879938FA"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

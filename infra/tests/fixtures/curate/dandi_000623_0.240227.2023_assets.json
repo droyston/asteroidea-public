@@ -1,0 +1,471 @@
+{
+ "count": 29,
+ "next": null,
+ "previous": null,
+ "results": [
+  {
+   "asset_id": "d8c2752c-1751-47cc-9648-ff23a609a1b4",
+   "path": "sub-CS42/sub-CS42_ses-P42CSR2_behavior+ecephys.nwb",
+   "size": 894307064,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "5008f183be1269548098d101333e8c6e-14",
+     "dandi:sha2-256": "0b14d3f58b765e7dc8dfb85b14d01e0e36f0dc61f5f3011d09b24b11211987b8"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/d8c2752c-1751-47cc-9648-ff23a609a1b4/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/9ed/696/9ed6964e-8b83-4f3a-8034-c640ca4b65a3"
+    ],
+    "contentSize": 894307064
+   }
+  },
+  {
+   "asset_id": "ffcb1836-587e-42f4-887b-50b02948b779",
+   "path": "sub-CS41/sub-CS41_ses-P41CSR2_behavior+ecephys.nwb",
+   "size": 803882951,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "54450c7303c5bd343a079c2262986a88-12",
+     "dandi:sha2-256": "0d2865ed760a344040ccc57050747896fb5b3e9860c331a3063a0c4199f2c38c"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/ffcb1836-587e-42f4-887b-50b02948b779/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/a44/8f0/a448f030-a77a-40f7-92e2-39866674e3b1"
+    ],
+    "contentSize": 803882951
+   }
+  },
+  {
+   "asset_id": "f9af8f8a-26e4-4543-968a-84983f4320c7",
+   "path": "sub-CS42/sub-CS42_ses-P42CSR1_behavior+ecephys.nwb",
+   "size": 913018422,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "286c2620fb973c2d191cd11afb9bcf68-14",
+     "dandi:sha2-256": "7f7086f18a355d3ac257e6a8faf2a8a96f5bf574edfc0dac08f0a8f56026bf53"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/f9af8f8a-26e4-4543-968a-84983f4320c7/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/2f8/75b/2f875bee-48bf-4f0d-9205-7fa72e9377cf"
+    ],
+    "contentSize": 913018422
+   }
+  },
+  {
+   "asset_id": "3051421d-1d07-49af-8934-bc7f66f3e332",
+   "path": "sub-CS41/sub-CS41_ses-P41CSR1_behavior+ecephys.nwb",
+   "size": 929320399,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "a306ee1ae88ec5d761dfafdaa3ea3a1e-14",
+     "dandi:sha2-256": "696388dea25292786e54ca6b3b26171268111f315e554d6a89fd13b1d7f39985"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/3051421d-1d07-49af-8934-bc7f66f3e332/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/b80/7ac/b807ac34-88fb-49b6-9baf-c82992b0308e"
+    ],
+    "contentSize": 929320399
+   }
+  },
+  {
+   "asset_id": "8f9d0249-a97b-40f5-b784-59cb811f9d8b",
+   "path": "sub-CS43/sub-CS43_ses-P43CSR1_behavior+ecephys.nwb",
+   "size": 1016236528,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "a10f536e621f31185a63cd4f104d1574-16",
+     "dandi:sha2-256": "c10b89e704caf71a55c7ad60427318ecbee83ce704b8ba223a95e35692c57fdc"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/8f9d0249-a97b-40f5-b784-59cb811f9d8b/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/60b/928/60b928f4-8a06-417c-b41e-8518aafd001e"
+    ],
+    "contentSize": 1016236528
+   }
+  },
+  {
+   "asset_id": "9b5ecbbb-02f0-42b5-a1f7-c0f04408554b",
+   "path": "sub-CS43/sub-CS43_ses-P43CSR2_behavior+ecephys.nwb",
+   "size": 834923452,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "acc766149e2977c05c80475a31f19f4d-13",
+     "dandi:sha2-256": "6e4ebb8bb088d93be2f7b95418338b9bed2c21f390983d899d991f974adb0f37"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/9b5ecbbb-02f0-42b5-a1f7-c0f04408554b/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/3da/32b/3da32bca-020a-44d6-b59d-cda08f4ee96c"
+    ],
+    "contentSize": 834923452
+   }
+  },
+  {
+   "asset_id": "be6373c8-6c7c-4ff3-9a01-33327ae7d3bf",
+   "path": "sub-CS47/sub-CS47_ses-P47CSR1_behavior+ecephys.nwb",
+   "size": 927817738,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "131651bd4b6cab21b83788f4ed85d232-14",
+     "dandi:sha2-256": "bebc189cc43b46ea7e0ccd13b8061ce1348456d1c4c5e56d02e997dad3e33347"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/be6373c8-6c7c-4ff3-9a01-33327ae7d3bf/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/4ec/d6f/4ecd6fa6-0f1a-4d3f-8c6a-5ce864e309b9"
+    ],
+    "contentSize": 927817738
+   }
+  },
+  {
+   "asset_id": "002e3f2c-70a2-4061-85bd-6d22131cd8a3",
+   "path": "sub-CS44/sub-CS44_ses-P44CSR1_behavior+ecephys.nwb",
+   "size": 994457952,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "ed9ad2d2380d271e1c36ef03be785965-15",
+     "dandi:sha2-256": "dd222b138c734d5a8de66bd8e382b3d5269defd5a4fef4ffad9829dcfa3bf8db"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/002e3f2c-70a2-4061-85bd-6d22131cd8a3/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/357/a09/357a09d7-c759-4a2f-a304-295d0a51e330"
+    ],
+    "contentSize": 994457952
+   }
+  },
+  {
+   "asset_id": "2b74008f-436f-499b-ac80-ef18c8aae874",
+   "path": "sub-CS47/sub-CS47_ses-P47CSR2_behavior+ecephys.nwb",
+   "size": 897685121,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "23a60dd547c0dba600d7d032229bc955-14",
+     "dandi:sha2-256": "0c6e21fa0b1e267f4aeb3c4a7486d27b2dda6e6b9fc9d607da32554723053c03"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/2b74008f-436f-499b-ac80-ef18c8aae874/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/d30/4a4/d304a48c-c634-4b15-afc0-9a8852b36615"
+    ],
+    "contentSize": 897685121
+   }
+  },
+  {
+   "asset_id": "6da4c74d-9308-4d01-8b8b-df801dc37f1d",
+   "path": "sub-CS48/sub-CS48_ses-P48CSR1_behavior+ecephys.nwb",
+   "size": 1013020690,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "61d005147e1456687edf76cadd11c709-16",
+     "dandi:sha2-256": "580bef6c0a46ecff6b4580d68f85de2fe70d20156d837594d2c4d3c62fbd1936"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/6da4c74d-9308-4d01-8b8b-df801dc37f1d/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/bd4/556/bd4556dd-5dcc-4048-bb67-acd7e543c777"
+    ],
+    "contentSize": 1013020690
+   }
+  },
+  {
+   "asset_id": "ccfeb63a-0aca-47dc-8af1-2849b3b6005d",
+   "path": "sub-CS48/sub-CS48_ses-P48CSR2_behavior+ecephys.nwb",
+   "size": 988293480,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "63d603e61e06e396cebb6dfba582f086-15",
+     "dandi:sha2-256": "e7cf7efa0679ac708d4d1ae87bb167f08d01286837e2c26b6131baac204a977d"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/ccfeb63a-0aca-47dc-8af1-2849b3b6005d/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/f55/b46/f55b46e9-d9c5-433e-9b3b-7f7dfaf1ff56"
+    ],
+    "contentSize": 988293480
+   }
+  },
+  {
+   "asset_id": "41a8980d-82d3-40ce-8b9a-9f81ddd1cf38",
+   "path": "sub-CS49/sub-CS49_ses-P49CSR2_behavior+ecephys.nwb",
+   "size": 946447895,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "73e97a8d75b62e74248aa5c297700a32-15",
+     "dandi:sha2-256": "bdac0e2f484e101104a137530b3ee20f398b4727ff1716f6b02b5a4c3504a546"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/41a8980d-82d3-40ce-8b9a-9f81ddd1cf38/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/c91/316/c9131677-3b1d-4df5-9b8f-d86aee626a97"
+    ],
+    "contentSize": 946447895
+   }
+  },
+  {
+   "asset_id": "f4452a85-83fe-4f9d-a37e-8f327dd7a982",
+   "path": "sub-CS51/sub-CS51_ses-P51CSR1_behavior+ecephys.nwb",
+   "size": 1244681559,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "8221eed0d8290cf7b893647a02e2adb1-19",
+     "dandi:sha2-256": "c89af9f9d01acbb89ae75fb6b86c5319946ea2959b9b6b8bc681b109ef63d904"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/f4452a85-83fe-4f9d-a37e-8f327dd7a982/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/b31/6e5/b316e5f5-0fd9-4108-a280-bfd24db684d8"
+    ],
+    "contentSize": 1244681559
+   }
+  },
+  {
+   "asset_id": "124a9770-a390-4ca6-81bc-64080b14297f",
+   "path": "sub-CS51/sub-CS51_ses-P51CSR2_behavior+ecephys.nwb",
+   "size": 1227348888,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "cb449c67298f9d6767feb6c85baefe56-19",
+     "dandi:sha2-256": "97e90b45ab4f42e57b037bfcd77551e129ba87e14427d90320eacc4d2e1986f4"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/124a9770-a390-4ca6-81bc-64080b14297f/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/ce7/2ce/ce72ce56-ba32-4d9e-a7b8-94b93cc49be8"
+    ],
+    "contentSize": 1227348888
+   }
+  },
+  {
+   "asset_id": "88863339-ef40-46a8-8b28-1071ee76915d",
+   "path": "sub-CS49/sub-CS49_ses-P49CSR1_behavior+ecephys.nwb",
+   "size": 1257984064,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "9b4885d811c0fc6d10ae447bb92aa8d4-19",
+     "dandi:sha2-256": "0e945e966d1cca7bee7441bee7bfbf2c7df3e3764a0fa03af0c7acba5bb49592"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/88863339-ef40-46a8-8b28-1071ee76915d/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/86c/4c9/86c4c92f-2940-465c-8b4e-d9bacd1aace8"
+    ],
+    "contentSize": 1257984064
+   }
+  },
+  {
+   "asset_id": "aad2908c-6dd9-4933-90ac-8fb7d74d2661",
+   "path": "sub-CS53/sub-CS53_ses-P53CSR2_behavior+ecephys.nwb",
+   "size": 882270191,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "79a732bd7b8d901559dd713da5bd339a-14",
+     "dandi:sha2-256": "b9a7815311d9eeea41be4967ec720bc84303832ba530f41093d8508d9a5f34bb"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/aad2908c-6dd9-4933-90ac-8fb7d74d2661/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/a5e/d4b/a5ed4b0d-ffe5-4d73-a001-e0a0c0358fc2"
+    ],
+    "contentSize": 882270191
+   }
+  },
+  {
+   "asset_id": "2551e0a4-c0c7-44b6-a159-dccbf556b8d9",
+   "path": "sub-CS53/sub-CS53_ses-P53CSR1_behavior+ecephys.nwb",
+   "size": 1033846161,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "9822393a239ddf35ef353f9a29466d5d-16",
+     "dandi:sha2-256": "b5059ffc956df8a6005aaaa675e4f4e2cf1d081af567cad7faa2354e84644898"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/2551e0a4-c0c7-44b6-a159-dccbf556b8d9/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/e49/59e/e4959eca-172c-45c7-a184-3bde2fb21be3"
+    ],
+    "contentSize": 1033846161
+   }
+  },
+  {
+   "asset_id": "f436895a-76af-4eff-a59f-2486e1793eb8",
+   "path": "sub-CS54/sub-CS54_ses-P54CSR1_behavior+ecephys.nwb",
+   "size": 1132988695,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "459965e7b7cb71101e10df6ee3f5a298-17",
+     "dandi:sha2-256": "49a91928481e72ed623b9b828f90adc87c08101318197525d618e9c5c887de54"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/f436895a-76af-4eff-a59f-2486e1793eb8/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/12c/1a2/12c1a2e7-ae3a-45f1-988b-e20dcf712ba9"
+    ],
+    "contentSize": 1132988695
+   }
+  },
+  {
+   "asset_id": "c8699e04-cf32-4bcd-808f-bf40dd12ebb0",
+   "path": "sub-CS55/sub-CS55_ses-P55CSR1_behavior+ecephys.nwb",
+   "size": 924729036,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "e8f09ff6c03f2d3c607e6b8e5c82d3aa-14",
+     "dandi:sha2-256": "e9768bf1a58322fabbd6aa577813c699ccd83018904cb2aa5e0a6e2ee84eca6c"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/c8699e04-cf32-4bcd-808f-bf40dd12ebb0/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/486/711/486711fb-7572-494e-aee4-fe4de3b4d409"
+    ],
+    "contentSize": 924729036
+   }
+  },
+  {
+   "asset_id": "35aeef17-7217-4ac6-b414-673c3f27dfff",
+   "path": "sub-CS54/sub-CS54_ses-P54CSR2_behavior+ecephys.nwb",
+   "size": 1127644867,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "31e927a94fe68d03b292be9c2e3b0062-17",
+     "dandi:sha2-256": "a5e893b12ae12b1868be517136f1785469b999247ad9f83453d7b5c282e25446"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/35aeef17-7217-4ac6-b414-673c3f27dfff/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/4b1/f94/4b1f942e-cb5b-4b02-982e-4943bf465be1"
+    ],
+    "contentSize": 1127644867
+   }
+  },
+  {
+   "asset_id": "a90b7d86-b765-4487-b02b-800b10dc0a35",
+   "path": "sub-CS55/sub-CS55_ses-P55CSR2_behavior+ecephys.nwb",
+   "size": 811170897,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "e08905d8519372bc055664491e75300f-13",
+     "dandi:sha2-256": "93b7c6115fb7aafec5a5303a8eef877e458a27bc2388362a9536f8d1050d7195"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/a90b7d86-b765-4487-b02b-800b10dc0a35/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/747/e4c/747e4c4a-f7f0-46ad-b111-5b37b7a8752d"
+    ],
+    "contentSize": 811170897
+   }
+  },
+  {
+   "asset_id": "ee5ecd54-5180-4961-a0af-e9fa9430d219",
+   "path": "sub-CS56/sub-CS56_ses-P56CSR1_behavior+ecephys.nwb",
+   "size": 1139766698,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "67bfff39ae4ba805eaed1b2c4d3f7231-17",
+     "dandi:sha2-256": "ab6e51faf199447f0525b061634650b505131159d5cfd004691886cf2f3e9177"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/ee5ecd54-5180-4961-a0af-e9fa9430d219/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/0fc/5c1/0fc5c1d3-8cc7-4bb5-a021-ee1ab04e00da"
+    ],
+    "contentSize": 1139766698
+   }
+  },
+  {
+   "asset_id": "00596f9b-e6cd-47d5-b5bf-bb6a85edbc4b",
+   "path": "sub-CS57/sub-CS57_ses-P57CSR1_behavior+ecephys.nwb",
+   "size": 910108268,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "4d0b6ad2ff4337a37a70bce8099b4c79-14",
+     "dandi:sha2-256": "c2acdfa20cdf78cc3b418d0541b1562a3e4c4eb025d65e2e512350db9d366415"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/00596f9b-e6cd-47d5-b5bf-bb6a85edbc4b/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/974/6e6/9746e645-e717-4226-80d3-9e86328eeb16"
+    ],
+    "contentSize": 910108268
+   }
+  },
+  {
+   "asset_id": "1f5ea62a-b866-457f-a5b8-acf459d42216",
+   "path": "sub-CS57/sub-CS57_ses-P57CSR2_behavior+ecephys.nwb",
+   "size": 935356986,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "5414aa8505a7975ef35ff3ee1d19d3da-14",
+     "dandi:sha2-256": "357d8cdfbf06c30178605923131bbbd0e5a1fce52507d9bd37f4aae522fdd9c2"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/1f5ea62a-b866-457f-a5b8-acf459d42216/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/e8b/fae/e8bfae28-d747-4d44-8324-5af593fdd9de"
+    ],
+    "contentSize": 935356986
+   }
+  },
+  {
+   "asset_id": "754de6ac-afad-4055-813c-e17227d4d585",
+   "path": "sub-CS56/sub-CS56_ses-P56CSR2_behavior+ecephys.nwb",
+   "size": 1187278887,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "0ae654fef8ad963f72b02d8f70f406fd-18",
+     "dandi:sha2-256": "4d0bb1006526e35f2fa9cdb56f36417471e553ef6311824b6b2b6eaf51218f32"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/754de6ac-afad-4055-813c-e17227d4d585/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/3ea/f28/3eaf28b9-b745-439b-a956-c1e3b6d137d5"
+    ],
+    "contentSize": 1187278887
+   }
+  },
+  {
+   "asset_id": "3337870b-72a7-4d6f-bbff-8956ee3ea4e0",
+   "path": "sub-CS58/sub-CS58_ses-P58CSR1_behavior+ecephys.nwb",
+   "size": 815928563,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "010178e2c84dcb083b192201798550a9-13",
+     "dandi:sha2-256": "eb25b4b187bcaf2f246942c54daf434fa82faecb6ccc8d9f8fb2be884945dc33"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/3337870b-72a7-4d6f-bbff-8956ee3ea4e0/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/edb/6c8/edb6c877-9e2f-41d9-84a4-d2996d7c942b"
+    ],
+    "contentSize": 815928563
+   }
+  },
+  {
+   "asset_id": "7e9fffc4-9720-4c1b-b282-93ab19e746d5",
+   "path": "sub-CS60/sub-CS60_ses-P60CSR1_behavior+ecephys.nwb",
+   "size": 913830001,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "faf409f16c3a33785846f4c860e76047-14",
+     "dandi:sha2-256": "c41a23cf67cdb94cc26cb65699b21efb7546ad95cf83f99a6ca0d635d28fc4ca"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/7e9fffc4-9720-4c1b-b282-93ab19e746d5/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/b9b/347/b9b347ef-523a-4662-ae1c-dff00248ad83"
+    ],
+    "contentSize": 913830001
+   }
+  },
+  {
+   "asset_id": "aea3c535-a69a-41a6-9ffc-ceea9c7e6bae",
+   "path": "sub-CS62/sub-CS62_ses-P62CSR1_behavior+ecephys.nwb",
+   "size": 548202540,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "4fe550bf8ce72d4249d75a6a0bc697c6-9",
+     "dandi:sha2-256": "92d118453b137283b18c62b6ba5271d910b4c0701a894a34b88c996ab711dd17"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/aea3c535-a69a-41a6-9ffc-ceea9c7e6bae/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/9a4/17c/9a417c24-83eb-4164-8edd-556391fd8e13"
+    ],
+    "contentSize": 548202540
+   }
+  },
+  {
+   "asset_id": "7887e844-7100-4384-975e-5ee38dbf153d",
+   "path": "sub-CS62/sub-CS62_ses-P62CSR2_behavior+ecephys.nwb",
+   "size": 492201332,
+   "metadata": {
+    "digest": {
+     "dandi:dandi-etag": "a9770841162c0d850c2e1f9544c4dab2-8",
+     "dandi:sha2-256": "59d5a05dd9aab5be88e8b7e3fda08ecbf42a91fcfac2dc8189d8089930e44cdf"
+    },
+    "contentUrl": [
+     "https://api.dandiarchive.org/api/assets/7887e844-7100-4384-975e-5ee38dbf153d/download/",
+     "https://dandiarchive.s3.amazonaws.com/blobs/c68/ff6/c68ff62e-5017-491e-93ec-5d3490734f7c"
+    ],
+    "contentSize": 492201332
+   }
+  }
+ ]
+}

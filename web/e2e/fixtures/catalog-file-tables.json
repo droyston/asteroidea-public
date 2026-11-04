@@ -1,0 +1,124 @@
+{
+  "units": {
+    "rows": [
+      {
+        "asset_id": "asset-0101",
+        "dataset": "dandi-000623",
+        "subject": "sub-CS41",
+        "bids_session": "ses-1",
+        "unit_index": 0,
+        "unit_id": "1",
+        "electrode_index": 0,
+        "location": "amygdala left",
+        "group_name": "micro",
+        "spike_count": 1204,
+        "first_spike_s": 0.8,
+        "last_spike_s": 120.5,
+        "mean_rate_hz": 5.2,
+        "columns_json": null
+      },
+      {
+        "asset_id": "asset-0101",
+        "dataset": "dandi-000623",
+        "subject": "sub-CS41",
+        "bids_session": "ses-1",
+        "unit_index": 1,
+        "unit_id": "2",
+        "electrode_index": 1,
+        "location": "hippocampus right",
+        "group_name": "micro",
+        "spike_count": 388,
+        "first_spike_s": 1.8,
+        "last_spike_s": 119.5,
+        "mean_rate_hz": 1.7,
+        "columns_json": null
+      },
+      {
+        "asset_id": "asset-0101",
+        "dataset": "dandi-000623",
+        "subject": "sub-CS41",
+        "bids_session": "ses-1",
+        "unit_index": 2,
+        "unit_id": "3",
+        "electrode_index": 0,
+        "location": "amygdala left",
+        "group_name": "micro",
+        "spike_count": 9020,
+        "first_spike_s": 2.8,
+        "last_spike_s": 118.5,
+        "mean_rate_hz": 38.9,
+        "columns_json": null
+      }
+    ],
+    "page": 0,
+    "more": false
+  },
+  "electrodes": {
+    "rows": [
+      {
+        "asset_id": "asset-0101",
+        "dataset": "dandi-000623",
+        "subject": "sub-CS41",
+        "bids_session": "ses-1",
+        "electrode_index": 0,
+        "electrode_id": 10,
+        "location": "amygdala left",
+        "group_name": "micro",
+        "x": null,
+        "y": null,
+        "z": null,
+        "columns_json": null
+      },
+      {
+        "asset_id": "asset-0101",
+        "dataset": "dandi-000623",
+        "subject": "sub-CS41",
+        "bids_session": "ses-1",
+        "electrode_index": 1,
+        "electrode_id": 11,
+        "location": "hippocampus right",
+        "group_name": "micro",
+        "x": null,
+        "y": null,
+        "z": null,
+        "columns_json": null
+      }
+    ],
+    "page": 0,
+    "more": false
+  },
+  "series": {
+    "rows": [
+      {
+        "asset_id": "asset-0101",
+        "dataset": "dandi-000623",
+        "subject": "sub-CS41",
+        "bids_session": "ses-1",
+        "path": "/acquisition/LFP",
+        "neurodata_type": "ElectricalSeries",
+        "shape": [1000000, 2],
+        "dtype": "float32",
+        "rate_hz": 1000.0,
+        "starting_time_s": 0.0,
+        "has_timestamps": false,
+        "unit": "volts"
+      },
+      {
+        "asset_id": "asset-0101",
+        "dataset": "dandi-000623",
+        "subject": "sub-CS41",
+        "bids_session": "ses-1",
+        "path": "/stimulus/movieframe_time",
+        "neurodata_type": "TimeSeries",
+        "shape": [4500],
+        "dtype": "float64",
+        "rate_hz": null,
+        "starting_time_s": null,
+        "has_timestamps": true,
+        "unit": "seconds"
+      }
+    ],
+    "page": 0,
+    "more": false
+  }
+}

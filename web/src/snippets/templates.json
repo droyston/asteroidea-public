@@ -1,0 +1,18 @@
+{
+  "home": {
+    "what": "the code that lists the studies",
+    "code": "import asteroidea\n\nasteroidea.sign_in()\n\nstudies = asteroidea.studies().to_pandas()\nstudies[[\"study\", \"dataset\", \"role\", \"tier\", \"title\"]]\n"
+  },
+  "study": {
+    "what": "the code that reads this study's participants and subject links",
+    "code": "import asteroidea\n\nasteroidea.sign_in()\n\nparticipants = asteroidea.participants(study={study}).to_pandas()\nlinks = asteroidea.links(study={study}).to_pandas()\nlinks\n"
+  },
+  "participant": {
+    "what": "the code that reads this participant's subject links",
+    "code": "import asteroidea\n\nasteroidea.sign_in()\n\nlinks = asteroidea.links(subject_key={subject_key}).to_pandas()\nlinks\n"
+  },
+  "session": {
+    "what": "the code that reads this session's stored summary and units",
+    "code": "import asteroidea\n\nasteroidea.sign_in()\n\nsummary = asteroidea.session_summary({dataset}, {subject}, {session})\nif summary is None:\n    msg = \"No stored summary for this session yet.\"\n    raise LookupError(msg)\nunits = summary.units.to_pandas()\nunits[[\"unit_index\", \"location\", \"spike_count\", \"mean_rate_hz\"]]\n"
+  }
+}

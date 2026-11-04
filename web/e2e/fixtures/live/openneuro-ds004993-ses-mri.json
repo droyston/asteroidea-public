@@ -1,0 +1,15 @@
+{
+  "data": {
+    "snapshot": {
+      "files": [
+        {
+          "id": "5160b23dc59de43d0324f864a1071d37145ce387",
+          "filename": "anat",
+          "size": 0,
+          "directory": true
+        }
+      ]
+    }
+  },
+  "extensions": { "openneuro": { "version": "5.10.1" } }
+}

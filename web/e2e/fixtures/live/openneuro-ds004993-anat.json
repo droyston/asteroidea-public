@@ -1,0 +1,15 @@
+{
+  "data": {
+    "snapshot": {
+      "files": [
+        {
+          "id": "SHA256E-s1301119--fdc4608ff0e88cbdd9efb6b033d341020479caa40dfa9e055f482b954b77a176.nii.gz",
+          "filename": "sub-W1_ses-mri_acq-B3_T1w.nii.gz",
+          "size": 1301119,
+          "directory": false
+        }
+      ]
+    }
+  },
+  "extensions": { "openneuro": { "version": "5.10.1" } }
+}

@@ -1,0 +1,191 @@
+{
+ "method": "GET",
+ "url": "https://api.dandiarchive.org/api/dandisets/000029/versions/0.231017.2004/info/",
+ "responses": [
+  {
+   "status": 200,
+   "json": {
+    "version": "0.231017.2004",
+    "name": "Test dataset for development purposes",
+    "asset_count": 9,
+    "active_uploads": 0,
+    "size": 39011902,
+    "status": "Valid",
+    "created": "2023-10-17T20:04:31.495070Z",
+    "modified": "2023-10-17T20:04:32.976864Z",
+    "dandiset": {
+     "identifier": "000029",
+     "created": "2020-07-31T16:44:32.094000Z",
+     "modified": "2025-11-21T20:15:56.105016Z",
+     "contact_person": "Last, First",
+     "embargo_status": "OPEN",
+     "star_count": 0,
+     "is_starred": false
+    },
+    "release_notes": "",
+    "asset_validation_errors": [],
+    "version_validation_errors": [],
+    "metadata": {
+     "id": "DANDI:000029/0.231017.2004",
+     "doi": "10.48324/dandi.000029/0.231017.2004",
+     "url": "https://dandiarchive.org/dandiset/000029/0.231017.2004",
+     "name": "Test dataset for development purposes",
+     "about": [],
+     "access": [
+      {
+       "status": "dandi:OpenAccess",
+       "contactPoint": {
+        "schemaKey": "ContactPoint"
+       }
+      }
+     ],
+     "license": [
+      "spdx:CC-BY-4.0"
+     ],
+     "version": "0.231017.2004",
+     "@context": "https://raw.githubusercontent.com/dandi/schema/master/releases/0.4.4/context.json",
+     "citation": "Last, First; Test Org (2023) Test dataset for development purposes (Version 0.231017.2004) [Data set]. DANDI archive. https://doi.org/10.48324/dandi.000029/0.231017.2004",
+     "keywords": [
+      "development"
+     ],
+     "protocol": [],
+     "schemaKey": "Dandiset",
+     "identifier": "DANDI:000029",
+     "repository": "https://dandiarchive.org",
+     "contributor": [
+      {
+       "name": "Last, First",
+       "roleName": [
+        "dcite:Author",
+        "dcite:ContactPerson"
+       ],
+       "schemaKey": "Person",
+       "identifier": "0000-0003-3456-2493",
+       "affiliation": [
+        {
+         "name": "An Institution",
+         "roleName": [],
+         "schemaKey": "Affiliation",
+         "contactPoint": [],
+         "includeInCitation": false
+        }
+       ],
+       "includeInCitation": true
+      },
+      {
+       "url": "https://dandiarchive.org",
+       "name": "Test Org",
+       "email": "contact.four@example.invalid",
+       "roleName": [
+        "dcite:Sponsor"
+       ],
+       "schemaKey": "Organization",
+       "identifier": "https://ror.org/000000000",
+       "contactPoint": [],
+       "includeInCitation": true
+      },
+      {
+       "name": "Smith, John",
+       "roleName": [],
+       "schemaKey": "Person",
+       "affiliation": [],
+       "includeInCitation": false
+      }
+     ],
+     "dateCreated": "2020-07-31T16:44:32.094000+00:00",
+     "description": "Should be ignored by regular mojgjhhj.  fjrtalddgdfgdfgs, and not relied upon being static or ever correct.\n\u0414\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u0432\u0432\u0435\u0434\u0435\u043d\u043e \u043d\u0430 \u0410\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u043e\u043c, \u043d\u043e \u043f\u043e\u0447\u0435\u043c\u0443 \u0431\u044b \u043d\u0430\u043c \u043d\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u0432\u0441\u044e \u044d\u0442\u0443 \u043a\u0443\u0445\u043d\u044e \n\u0394\u0419\u05e7\u0645\u0e57\u3042\nabcdefghi",
+     "publishedBy": {
+      "id": "urn:uuid:6de00629-f6fd-4851-a8fa-26b057be89bb",
+      "name": "DANDI publish",
+      "endDate": "2023-10-17T20:04:31.323464+00:00",
+      "schemaKey": "PublishActivity",
+      "startDate": "2023-10-17T20:04:31.323464+00:00",
+      "wasAssociatedWith": [
+       {
+        "id": "urn:uuid:3e7b7f60-a2b2-40ad-b414-a44396bda5df",
+        "name": "DANDI API",
+        "version": "0.1.0",
+        "schemaKey": "Software",
+        "identifier": "RRID:SCR_017571"
+       }
+      ]
+     },
+     "studyTarget": [],
+     "assetsSummary": {
+      "species": [
+       {
+        "name": "Macaca mulatta - Rhesus monkey",
+        "schemaKey": "SpeciesType",
+        "identifier": "http://purl.obolibrary.org/obo/NCBITaxon_9544"
+       },
+       {
+        "name": "Mus musculus - House mouse",
+        "schemaKey": "SpeciesType",
+        "identifier": "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+       },
+       {
+        "name": "Rattus norvegicus - Norway rat",
+        "schemaKey": "SpeciesType",
+        "identifier": "http://purl.obolibrary.org/obo/NCBITaxon_10116"
+       }
+      ],
+      "approach": [
+       {
+        "name": "electrophysiological approach",
+        "schemaKey": "ApproachType"
+       },
+       {
+        "name": "behavioral approach",
+        "schemaKey": "ApproachType"
+       }
+      ],
+      "schemaKey": "AssetsSummary",
+      "dataStandard": [
+       {
+        "name": "Neurodata Without Borders (NWB)",
+        "schemaKey": "StandardsType",
+        "identifier": "RRID:SCR_015242"
+       }
+      ],
+      "numberOfBytes": 39011902,
+      "numberOfFiles": 9,
+      "numberOfSubjects": 5,
+      "variableMeasured": [
+       "ProcessingModule",
+       "ElectrodeGroup",
+       "BehavioralEvents",
+       "Units"
+      ],
+      "measurementTechnique": [
+       {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+       },
+       {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+       },
+       {
+        "name": "spike sorting technique",
+        "schemaKey": "MeasurementTechniqueType"
+       },
+       {
+        "name": "behavioral technique",
+        "schemaKey": "MeasurementTechniqueType"
+       }
+      ]
+     },
+     "datePublished": "2023-10-17T20:04:31.323464+00:00",
+     "schemaVersion": "0.4.4",
+     "ethicsApproval": [],
+     "wasGeneratedBy": [],
+     "relatedResource": [],
+     "manifestLocation": [
+      "https://dandiarchive.s3.amazonaws.com/dandisets/000029/0.231017.2004/assets.yaml"
+     ]
+    },
+    "contact_person": "Last, First"
+   }
+  }
+ ]
+}

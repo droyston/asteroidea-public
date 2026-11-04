@@ -1,0 +1,3846 @@
+{
+  "status": "built",
+  "delivery": "inline",
+  "manifest": {
+    "schema": "asteroidea.session-summary/1.1",
+    "dataset": "dandi-000623",
+    "subject": "sub-CS62",
+    "session": "ses-2",
+    "digest": "0000000000000000000000000000000000000000000000000000000000000001",
+    "asset_id": "asset-cs62-r2",
+    "display": {
+      "version": "display-1",
+      "pre_s": 1.0,
+      "post_s": 2.0,
+      "bin_s": 0.05,
+      "z_baseline_s": [-1.0, 0.0]
+    },
+    "inputs": {
+      "recipe": "recipe-1",
+      "defaults": "defaults-1",
+      "code": "summary-2+000000000000",
+      "assets": [
+        {
+          "asset_id": "asset-cs62-r2",
+          "s3_version_id": "v1"
+        }
+      ]
+    },
+    "units": {
+      "total": 44,
+      "stored": 44
+    },
+    "units_table": {
+      "rows": 44,
+      "more": false
+    },
+    "parts": ["events.json", "units.json", "rates-scene_cut.json"],
+    "skipped": [],
+    "built_at": "2026-10-27T12:00:00+00:00",
+    "build_ms": 1234,
+    "athena_queries": 7,
+    "bytes": 88075
+  },
+  "parts": {
+    "events": {
+      "asset_id": "asset-cs62-r2",
+      "dataset": "dandi-000623",
+      "recipe": {
+        "version": "recipe-1",
+        "default": false,
+        "lfp_clock_offset_s": 10.0
+      },
+      "event_types": [
+        {
+          "name": "scene_cut",
+          "averaging": "average",
+          "events": [
+            {
+              "onset_s": 0.0,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 1.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 0
+              }
+            },
+            {
+              "onset_s": 4.734810074034613,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 1.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 1
+              }
+            },
+            {
+              "onset_s": 15.004634565790184,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 1.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 2
+              }
+            },
+            {
+              "onset_s": 16.73849997780053,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 1.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 3
+              }
+            },
+            {
+              "onset_s": 19.089227694727015,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 1.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 4
+              }
+            },
+            {
+              "onset_s": 21.740043117839377,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 1.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 5
+              }
+            },
+            {
+              "onset_s": 25.091070846363436,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 1.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 6
+              }
+            },
+            {
+              "onset_s": 27.091701672878116,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 2.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 7
+              }
+            },
+            {
+              "onset_s": 37.64495741704013,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 3.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 8
+              }
+            },
+            {
+              "onset_s": 46.16426655376563,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 4.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 9
+              }
+            },
+            {
+              "onset_s": 66.28714184474666,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 4.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 10
+              }
+            },
+            {
+              "onset_s": 66.80397462745896,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 11
+              }
+            },
+            {
+              "onset_s": 90.17784639552701,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 12
+              }
+            },
+            {
+              "onset_s": 92.7286333985976,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 13
+              }
+            },
+            {
+              "onset_s": 94.89596575574251,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 14
+              }
+            },
+            {
+              "onset_s": 99.33066433045315,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 15
+              }
+            },
+            {
+              "onset_s": 103.64865841326537,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 16
+              }
+            },
+            {
+              "onset_s": 108.30009377194801,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 17
+              }
+            },
+            {
+              "onset_s": 113.45169741939753,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 18
+              }
+            },
+            {
+              "onset_s": 115.01885336375562,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 19
+              }
+            },
+            {
+              "onset_s": 117.96976872941013,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 20
+              }
+            },
+            {
+              "onset_s": 120.00372008851264,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 21
+              }
+            },
+            {
+              "onset_s": 121.88763960759388,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 22
+              }
+            },
+            {
+              "onset_s": 126.53907508723205,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 23
+              }
+            },
+            {
+              "onset_s": 129.2065621931688,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 24
+              }
+            },
+            {
+              "onset_s": 137.57581649563508,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 25
+              }
+            },
+            {
+              "onset_s": 140.37668010912603,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 26
+              }
+            },
+            {
+              "onset_s": 143.3776048097061,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 27
+              }
+            },
+            {
+              "onset_s": 145.24484539596597,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 28
+              }
+            },
+            {
+              "onset_s": 147.89566701784497,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 29
+              }
+            },
+            {
+              "onset_s": 149.41282080556266,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 30
+              }
+            },
+            {
+              "onset_s": 150.77989246533252,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 31
+              }
+            },
+            {
+              "onset_s": 153.41404739959398,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 32
+              }
+            },
+            {
+              "onset_s": 153.93086497264449,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 33
+              }
+            },
+            {
+              "onset_s": 159.0991302319453,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 34
+              }
+            },
+            {
+              "onset_s": 161.16643143928377,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 35
+              }
+            },
+            {
+              "onset_s": 163.0836988951778,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 36
+              }
+            },
+            {
+              "onset_s": 167.2850011572009,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 37
+              }
+            },
+            {
+              "onset_s": 169.05219801364,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 38
+              }
+            },
+            {
+              "onset_s": 170.6860528451507,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 39
+              }
+            },
+            {
+              "onset_s": 171.853065592004,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 40
+              }
+            },
+            {
+              "onset_s": 173.48689468728844,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 5.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 41
+              }
+            },
+            {
+              "onset_s": 184.92378166900016,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 6.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 42
+              }
+            },
+            {
+              "onset_s": 211.61535223014653,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 6.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 43
+              }
+            },
+            {
+              "onset_s": 217.48382184747607,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 6.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 44
+              }
+            },
+            {
+              "onset_s": 254.245179951482,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 45
+              }
+            },
+            {
+              "onset_s": 256.1291031113942,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 46
+              }
+            },
+            {
+              "onset_s": 261.61411279340973,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 47
+              }
+            },
+            {
+              "onset_s": 264.8484596936614,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 48
+              }
+            },
+            {
+              "onset_s": 266.69901924277656,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 49
+              }
+            },
+            {
+              "onset_s": 269.2498006338137,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 50
+              }
+            },
+            {
+              "onset_s": 273.050984595262,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 51
+              }
+            },
+            {
+              "onset_s": 277.2856235000654,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 52
+              }
+            },
+            {
+              "onset_s": 281.2868625110714,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 53
+              }
+            },
+            {
+              "onset_s": 284.5712016267353,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 54
+              }
+            },
+            {
+              "onset_s": 288.77249608316924,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 55
+              }
+            },
+            {
+              "onset_s": 291.4566581780673,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 56
+              }
+            },
+            {
+              "onset_s": 307.89508032082813,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 7.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 57
+              }
+            },
+            {
+              "onset_s": 314.49711717828177,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 8.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 58
+              }
+            },
+            {
+              "onset_s": 328.5347761983867,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 9.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 59
+              }
+            },
+            {
+              "onset_s": 340.77189113310305,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 60
+              }
+            },
+            {
+              "onset_s": 346.20691401016666,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 61
+              }
+            },
+            {
+              "onset_s": 350.0080810342333,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 62
+              }
+            },
+            {
+              "onset_s": 357.8438361501321,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 63
+              }
+            },
+            {
+              "onset_s": 360.01116435142467,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 64
+              }
+            },
+            {
+              "onset_s": 362.5786276276922,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 65
+              }
+            },
+            {
+              "onset_s": 364.92935745761497,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 66
+              }
+            },
+            {
+              "onset_s": 367.7635046574287,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 67
+              }
+            },
+            {
+              "onset_s": 369.44741439720383,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 68
+              }
+            },
+            {
+              "onset_s": 371.64809132373193,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 69
+              }
+            },
+            {
+              "onset_s": 389.65364395681536,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 70
+              }
+            },
+            {
+              "onset_s": 407.8926200334681,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 71
+              }
+            },
+            {
+              "onset_s": 409.72651698067784,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 72
+              }
+            },
+            {
+              "onset_s": 419.04607678425964,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 73
+              }
+            },
+            {
+              "onset_s": 420.2464427468949,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 74
+              }
+            },
+            {
+              "onset_s": 424.36437032331014,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 75
+              }
+            },
+            {
+              "onset_s": 427.6487220591516,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 76
+              }
+            },
+            {
+              "onset_s": 428.7323845723877,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 77
+              }
+            },
+            {
+              "onset_s": 431.5332588647143,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 10.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 78
+              }
+            },
+            {
+              "onset_s": 433.48381266655633,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 11.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 79
+              }
+            },
+            {
+              "onset_s": 435.01765014778357,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 12.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 80
+              }
+            },
+            {
+              "onset_s": 437.53510109649505,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "change"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 81
+              }
+            },
+            {
+              "onset_s": 439.6190824404475,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 82
+              }
+            },
+            {
+              "onset_s": 442.28659655631054,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 83
+              }
+            },
+            {
+              "onset_s": 445.2541512650787,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 84
+              }
+            },
+            {
+              "onset_s": 450.0556447956478,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 85
+              }
+            },
+            {
+              "onset_s": 451.4060534190503,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 86
+              }
+            },
+            {
+              "onset_s": 453.05655418673996,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 87
+              }
+            },
+            {
+              "onset_s": 453.89016305387486,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 88
+              }
+            },
+            {
+              "onset_s": 456.45761957595823,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 89
+              }
+            },
+            {
+              "onset_s": 456.9744480100344,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 90
+              }
+            },
+            {
+              "onset_s": 459.3251720563276,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 91
+              }
+            },
+            {
+              "onset_s": 475.4468062723754,
+              "stop_s": null,
+              "attributes": {
+                "scene_id": 13.0,
+                "cut_kind": "continuity"
+              },
+              "source": {
+                "kind": "stimulus_file",
+                "ref": "stimuli/scenecut_info.csv",
+                "row": 92
+              }
+            }
+          ],
+          "missing_frames": [11800, 11801],
+          "n_events": 93
+        },
+        {
+          "name": "recognition_onset",
+          "averaging": "average",
+          "events": [
+            {
+              "onset_s": 490.456834,
+              "stop_s": 498.226706,
+              "attributes": {
+                "actual_response": 2.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 1
+              }
+            },
+            {
+              "onset_s": 499.308612,
+              "stop_s": 501.82508,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 2
+              }
+            },
+            {
+              "onset_s": 502.876736,
+              "stop_s": 508.828296,
+              "attributes": {
+                "actual_response": 4.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 3
+              }
+            },
+            {
+              "onset_s": 509.895577,
+              "stop_s": 514.752856,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 4
+              }
+            },
+            {
+              "onset_s": 515.796855,
+              "stop_s": 520.35251,
+              "attributes": {
+                "actual_response": 1.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 5
+              }
+            },
+            {
+              "onset_s": 521.398759,
+              "stop_s": 525.184102,
+              "attributes": {
+                "actual_response": 1.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 6
+              }
+            },
+            {
+              "onset_s": 526.233695,
+              "stop_s": 532.483193,
+              "attributes": {
+                "actual_response": 2.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 7
+              }
+            },
+            {
+              "onset_s": 533.536567,
+              "stop_s": 542.249907,
+              "attributes": {
+                "actual_response": 1.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 8
+              }
+            },
+            {
+              "onset_s": 543.306032,
+              "stop_s": 546.620062,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 9
+              }
+            },
+            {
+              "onset_s": 547.674124,
+              "stop_s": 552.873309,
+              "attributes": {
+                "actual_response": 4.0,
+                "response_correct": 0.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 10
+              }
+            },
+            {
+              "onset_s": 553.925871,
+              "stop_s": 557.298589,
+              "attributes": {
+                "actual_response": 1.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 11
+              }
+            },
+            {
+              "onset_s": 558.344245,
+              "stop_s": 564.526742,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 12
+              }
+            },
+            {
+              "onset_s": 565.580023,
+              "stop_s": 574.700019,
+              "attributes": {
+                "actual_response": 3.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 13
+              }
+            },
+            {
+              "onset_s": 575.749863,
+              "stop_s": 579.326861,
+              "attributes": {
+                "actual_response": 4.0,
+                "response_correct": 0.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 14
+              }
+            },
+            {
+              "onset_s": 580.384736,
+              "stop_s": 584.672484,
+              "attributes": {
+                "actual_response": 1.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 15
+              }
+            },
+            {
+              "onset_s": 585.720109,
+              "stop_s": 591.118325,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 16
+              }
+            },
+            {
+              "onset_s": 592.17195,
+              "stop_s": 598.05826,
+              "attributes": {
+                "actual_response": 5.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 17
+              }
+            },
+            {
+              "onset_s": 599.107228,
+              "stop_s": 601.937977,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 18
+              }
+            },
+            {
+              "onset_s": 603.009289,
+              "stop_s": 605.798382,
+              "attributes": {
+                "actual_response": 2.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 19
+              }
+            },
+            {
+              "onset_s": 606.843538,
+              "stop_s": 610.01463,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 20
+              }
+            },
+            {
+              "onset_s": 611.061098,
+              "stop_s": 620.373938,
+              "attributes": {
+                "actual_response": 3.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 21
+              }
+            },
+            {
+              "onset_s": 621.430844,
+              "stop_s": 625.766061,
+              "attributes": {
+                "actual_response": 1.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 22
+              }
+            },
+            {
+              "onset_s": 626.816717,
+              "stop_s": 632.876496,
+              "attributes": {
+                "actual_response": 4.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 23
+              }
+            },
+            {
+              "onset_s": 633.951839,
+              "stop_s": 637.385057,
+              "attributes": {
+                "actual_response": 1.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 24
+              }
+            },
+            {
+              "onset_s": 638.436431,
+              "stop_s": 647.063365,
+              "attributes": {
+                "actual_response": 3.0,
+                "response_correct": 0.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 25
+              }
+            },
+            {
+              "onset_s": 648.139459,
+              "stop_s": 655.801237,
+              "attributes": {
+                "actual_response": 3.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 26
+              }
+            },
+            {
+              "onset_s": 656.875611,
+              "stop_s": 659.944923,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 27
+              }
+            },
+            {
+              "onset_s": 661.01036,
+              "stop_s": 672.923636,
+              "attributes": {
+                "actual_response": 4.0,
+                "response_correct": 0.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 28
+              }
+            },
+            {
+              "onset_s": 673.998042,
+              "stop_s": 677.168322,
+              "attributes": {
+                "actual_response": 5.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 29
+              }
+            },
+            {
+              "onset_s": 678.232821,
+              "stop_s": 680.595539,
+              "attributes": {
+                "actual_response": 5.0,
+                "response_correct": 0.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 30
+              }
+            },
+            {
+              "onset_s": 681.668133,
+              "stop_s": 684.965881,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 31
+              }
+            },
+            {
+              "onset_s": 686.018475,
+              "stop_s": 688.34338,
+              "attributes": {
+                "actual_response": 5.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 32
+              }
+            },
+            {
+              "onset_s": 689.403505,
+              "stop_s": 693.030659,
+              "attributes": {
+                "actual_response": 1.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 33
+              }
+            },
+            {
+              "onset_s": 694.087721,
+              "stop_s": 695.733127,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 34
+              }
+            },
+            {
+              "onset_s": 696.788533,
+              "stop_s": 700.224219,
+              "attributes": {
+                "actual_response": 5.0,
+                "response_correct": 0.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 35
+              }
+            },
+            {
+              "onset_s": 701.291062,
+              "stop_s": 704.928967,
+              "attributes": {
+                "actual_response": 2.0,
+                "response_correct": 1.0,
+                "familiarity": "novel"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 36
+              }
+            },
+            {
+              "onset_s": 705.992092,
+              "stop_s": 709.456746,
+              "attributes": {
+                "actual_response": 5.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 37
+              }
+            },
+            {
+              "onset_s": 710.50959,
+              "stop_s": 712.817995,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 38
+              }
+            },
+            {
+              "onset_s": 713.877932,
+              "stop_s": 717.207462,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 39
+              }
+            },
+            {
+              "onset_s": 718.279087,
+              "stop_s": 721.280804,
+              "attributes": {
+                "actual_response": 6.0,
+                "response_correct": 1.0,
+                "familiarity": "familiar"
+              },
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 40
+              }
+            }
+          ],
+          "n_events": 40
+        },
+        {
+          "name": "movie_onset",
+          "averaging": "single",
+          "events": [
+            {
+              "onset_s": 0.0,
+              "stop_s": 478.83512,
+              "attributes": {},
+              "source": {
+                "kind": "interval",
+                "ref": "trials",
+                "row": 0
+              }
+            }
+          ],
+          "n_events": 1
+        }
+      ]
+    },
+    "units": {
+      "rows": [
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 0,
+          "unit_id": "1",
+          "electrode_index": 0,
+          "location": "Right vmPFC",
+          "group_name": "micro",
+          "spike_count": 1000,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.0,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 1,
+          "unit_id": "2",
+          "electrode_index": 1,
+          "location": "Right vmPFC",
+          "group_name": "micro",
+          "spike_count": 1001,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.1,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 2,
+          "unit_id": "3",
+          "electrode_index": 2,
+          "location": "Right ACC",
+          "group_name": "micro",
+          "spike_count": 1002,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.2,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 3,
+          "unit_id": "4",
+          "electrode_index": 3,
+          "location": "Right preSMA",
+          "group_name": "micro",
+          "spike_count": 1003,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.3,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 4,
+          "unit_id": "5",
+          "electrode_index": 4,
+          "location": "Right preSMA",
+          "group_name": "micro",
+          "spike_count": 1004,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.4,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 5,
+          "unit_id": "6",
+          "electrode_index": 5,
+          "location": "Right preSMA",
+          "group_name": "micro",
+          "spike_count": 1005,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.5,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 6,
+          "unit_id": "7",
+          "electrode_index": 6,
+          "location": "Right preSMA",
+          "group_name": "micro",
+          "spike_count": 1006,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.6,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 7,
+          "unit_id": "8",
+          "electrode_index": 7,
+          "location": "Right preSMA",
+          "group_name": "micro",
+          "spike_count": 1007,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.7,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 8,
+          "unit_id": "9",
+          "electrode_index": 0,
+          "location": "Right preSMA",
+          "group_name": "micro",
+          "spike_count": 1008,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.8,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 9,
+          "unit_id": "10",
+          "electrode_index": 1,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1009,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 1.9,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 10,
+          "unit_id": "11",
+          "electrode_index": 2,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1010,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.0,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 11,
+          "unit_id": "12",
+          "electrode_index": 3,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1011,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.1,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 12,
+          "unit_id": "13",
+          "electrode_index": 4,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1012,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.2,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 13,
+          "unit_id": "14",
+          "electrode_index": 5,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1013,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.3,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 14,
+          "unit_id": "15",
+          "electrode_index": 6,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1014,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.4,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 15,
+          "unit_id": "16",
+          "electrode_index": 7,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1015,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.5,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 16,
+          "unit_id": "17",
+          "electrode_index": 0,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1016,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.6,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 17,
+          "unit_id": "18",
+          "electrode_index": 1,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1017,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.7,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 18,
+          "unit_id": "19",
+          "electrode_index": 2,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1018,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.8,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 19,
+          "unit_id": "20",
+          "electrode_index": 3,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1019,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 2.9,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 20,
+          "unit_id": "21",
+          "electrode_index": 4,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1020,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.0,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 21,
+          "unit_id": "22",
+          "electrode_index": 5,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1021,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.1,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 22,
+          "unit_id": "23",
+          "electrode_index": 6,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1022,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.2,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 23,
+          "unit_id": "24",
+          "electrode_index": 7,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1023,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.3,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 24,
+          "unit_id": "25",
+          "electrode_index": 0,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1024,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.4,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 25,
+          "unit_id": "26",
+          "electrode_index": 1,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1025,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.5,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 26,
+          "unit_id": "27",
+          "electrode_index": 2,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1026,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.6,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 27,
+          "unit_id": "28",
+          "electrode_index": 3,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1027,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.7,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 28,
+          "unit_id": "29",
+          "electrode_index": 4,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1028,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.8,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 29,
+          "unit_id": "30",
+          "electrode_index": 5,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1029,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 3.9,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 30,
+          "unit_id": "31",
+          "electrode_index": 6,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1030,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.0,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 31,
+          "unit_id": "32",
+          "electrode_index": 7,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1031,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.1,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 32,
+          "unit_id": "33",
+          "electrode_index": 0,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1032,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.2,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 33,
+          "unit_id": "34",
+          "electrode_index": 1,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1033,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.3,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 34,
+          "unit_id": "35",
+          "electrode_index": 2,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1034,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.4,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 35,
+          "unit_id": "36",
+          "electrode_index": 3,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1035,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.5,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 36,
+          "unit_id": "37",
+          "electrode_index": 4,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1036,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.6,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 37,
+          "unit_id": "38",
+          "electrode_index": 5,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1037,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.7,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 38,
+          "unit_id": "39",
+          "electrode_index": 6,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1038,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.8,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 39,
+          "unit_id": "40",
+          "electrode_index": 7,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1039,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 4.9,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 40,
+          "unit_id": "41",
+          "electrode_index": 0,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1040,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 5.0,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 41,
+          "unit_id": "42",
+          "electrode_index": 1,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1041,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 5.1,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 42,
+          "unit_id": "43",
+          "electrode_index": 2,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1042,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 5.2,
+          "columns_json": null
+        },
+        {
+          "asset_id": "asset-cs62-r2",
+          "dataset": "dandi-000623",
+          "subject": "sub-CS62",
+          "bids_session": "ses-2",
+          "unit_index": 43,
+          "unit_id": "44",
+          "electrode_index": 3,
+          "location": "Right amygdala",
+          "group_name": "micro",
+          "spike_count": 1043,
+          "first_spike_s": 0.5,
+          "last_spike_s": 5400.0,
+          "mean_rate_hz": 5.3,
+          "columns_json": null
+        }
+      ],
+      "page": 0,
+      "more": false
+    },
+    "rates-scene_cut": {
+      "edges": [
+        -1.0, -0.95, -0.9, -0.85, -0.8, -0.75, -0.7, -0.65, -0.6, -0.55, -0.5, -0.45, -0.4, -0.35,
+        -0.3, -0.25, -0.2, -0.15, -0.1, -0.05, 0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4,
+        0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.15, 1.2,
+        1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2.0
+      ],
+      "units": [
+        {
+          "unit_index": 0,
+          "rate_hz": [
+            1.93548, 2.58065, 1.93548, 2.7957, 0.860215, 1.93548, 2.58065, 1.72043, 1.93548,
+            2.36559, 2.15054, 1.07527, 2.36559, 1.29032, 1.93548, 1.93548, 3.44086, 1.50538,
+            1.72043, 2.58065, 1.93548, 3.22581, 1.29032, 1.29032, 1.93548, 2.15054, 1.93548, 0.0,
+            2.58065, 1.93548, 1.72043, 2.15054, 2.58065, 2.15054, 1.50538, 1.29032, 1.93548,
+            1.50538, 2.36559, 1.93548, 2.7957, 1.93548, 1.72043, 3.01075, 3.01075, 0.860215,
+            3.22581, 3.01075, 1.29032, 1.50538, 1.72043, 2.15054, 2.36559, 1.72043, 2.58065,
+            3.22581, 1.29032, 1.07527, 1.72043, 3.01075
+          ],
+          "z": [
+            -0.158604, 0.898757, -0.158604, 1.25121, -1.92087, -0.158604, 0.898757, -0.511058,
+            -0.158604, 0.546303, 0.19385, -1.56842, 0.546303, -1.21597, -0.158604, -0.158604,
+            2.30857, -0.863512, -0.511058, 0.898757, -0.158604, 1.95612, -1.21597, -1.21597,
+            -0.158604, 0.19385, -0.158604, -3.33069, 0.898757, -0.158604, -0.511058, 0.19385,
+            0.898757, 0.19385, -0.863512, -1.21597, -0.158604, -0.863512, 0.546303, -0.158604,
+            1.25121, -0.158604, -0.511058, 1.60366, 1.60366, -1.92087, 1.95612, 1.60366, -1.21597,
+            -0.863512, -0.511058, 0.19385, 0.546303, -0.511058, 0.898757, 1.95612, -1.21597,
+            -1.56842, -0.511058, 1.60366
+          ]
+        },
+        {
+          "unit_index": 1,
+          "rate_hz": [
+            1.07527, 0.860215, 0.215054, 0.860215, 1.50538, 1.07527, 0.860215, 1.07527, 1.29032,
+            1.29032, 0.645161, 1.29032, 1.29032, 1.29032, 1.07527, 1.50538, 0.645161, 1.29032,
+            0.860215, 1.07527, 1.29032, 0.860215, 1.07527, 0.430108, 0.860215, 0.860215, 0.430108,
+            1.07527, 0.860215, 1.29032, 0.645161, 1.07527, 0.215054, 0.645161, 0.860215, 1.29032,
+            1.07527, 1.29032, 0.860215, 1.07527, 0.860215, 1.07527, 0.430108, 0.645161, 0.860215,
+            1.72043, 1.50538, 1.29032, 1.29032, 0.860215, 1.29032, 1.50538, 0.860215, 0.860215,
+            0.645161, 0.860215, 1.29032, 1.50538, 1.29032, 0.860215
+          ],
+          "z": [
+            0.06742, -0.60678, -2.62938, -0.60678, 1.41582, 0.06742, -0.60678, 0.06742, 0.74162,
+            0.74162, -1.28098, 0.74162, 0.74162, 0.74162, 0.06742, 1.41582, -1.28098, 0.74162,
+            -0.60678, 0.06742, 0.74162, -0.60678, 0.06742, -1.95518, -0.60678, -0.60678, -1.95518,
+            0.06742, -0.60678, 0.74162, -1.28098, 0.06742, -2.62938, -1.28098, -0.60678, 0.74162,
+            0.06742, 0.74162, -0.60678, 0.06742, -0.60678, 0.06742, -1.95518, -1.28098, -0.60678,
+            2.09002, 1.41582, 0.74162, 0.74162, -0.60678, 0.74162, 1.41582, -0.60678, -0.60678,
+            -1.28098, -0.60678, 0.74162, 1.41582, 0.74162, -0.60678
+          ]
+        },
+        {
+          "unit_index": 2,
+          "rate_hz": [
+            3.01075, 3.65591, 2.36559, 3.44086, 2.15054, 3.65591, 2.15054, 2.15054, 3.22581,
+            2.15054, 2.58065, 3.65591, 3.87097, 2.58065, 3.65591, 1.93548, 4.08602, 3.44086,
+            3.87097, 3.44086, 3.01075, 3.22581, 4.30108, 3.22581, 2.7957, 1.29032, 1.50538, 3.22581,
+            3.01075, 3.01075, 3.01075, 1.72043, 3.44086, 3.87097, 3.01075, 2.36559, 2.36559,
+            3.22581, 2.36559, 1.93548, 3.01075, 4.08602, 2.58065, 3.01075, 2.36559, 3.22581,
+            5.16129, 2.58065, 2.36559, 2.36559, 1.93548, 2.7957, 3.01075, 3.65591, 3.44086, 3.01075,
+            2.7957, 2.58065, 3.01075, 2.58065
+          ],
+          "z": [
+            -0.0599874, 0.839823, -0.959798, 0.539886, -1.25973, 0.839823, -1.25973, -1.25973,
+            0.239949, -1.25973, -0.659861, 0.839823, 1.13976, -0.659861, 0.839823, -1.55967, 1.4397,
+            0.539886, 1.13976, 0.539886, -0.0599874, 0.239949, 1.73963, 0.239949, -0.359924,
+            -2.45948, -2.15955, 0.239949, -0.0599874, -0.0599874, -0.0599874, -1.85961, 0.539886,
+            1.13976, -0.0599874, -0.959798, -0.959798, 0.239949, -0.959798, -1.55967, -0.0599874,
+            1.4397, -0.659861, -0.0599874, -0.959798, 0.239949, 2.93938, -0.659861, -0.959798,
+            -0.959798, -1.55967, -0.359924, -0.0599874, 0.839823, 0.539886, -0.0599874, -0.359924,
+            -0.659861, -0.0599874, -0.659861
+          ]
+        },
+        {
+          "unit_index": 3,
+          "rate_hz": [
+            0.860215, 1.72043, 0.430108, 1.72043, 0.860215, 1.29032, 1.07527, 0.860215, 3.87097,
+            0.860215, 1.93548, 0.645161, 1.29032, 0.860215, 1.29032, 0.215054, 0.430108, 1.29032,
+            2.15054, 1.29032, 0.645161, 0.215054, 1.72043, 0.645161, 1.50538, 1.50538, 1.72043,
+            0.860215, 1.50538, 1.29032, 1.72043, 1.07527, 1.72043, 0.860215, 0.430108, 1.72043,
+            1.72043, 0.215054, 1.07527, 0.860215, 2.15054, 1.93548, 1.07527, 1.07527, 0.860215,
+            1.07527, 0.645161, 0.430108, 0.860215, 1.07527, 1.50538, 1.50538, 1.07527, 1.50538,
+            1.72043, 1.07527, 0.645161, 1.07527, 0.860215, 1.29032
+          ],
+          "z": [
+            -0.483622, 0.591094, -1.02098, 0.591094, -0.483622, 0.0537358, -0.214943, -0.483622,
+            3.27788, -0.483622, 0.859773, -0.752301, 0.0537358, -0.483622, 0.0537358, -1.28966,
+            -1.02098, 0.0537358, 1.12845, 0.0537358, -0.752301, -1.28966, 0.591094, -0.752301,
+            0.322415, 0.322415, 0.591094, -0.483622, 0.322415, 0.0537358, 0.591094, -0.214943,
+            0.591094, -0.483622, -1.02098, 0.591094, 0.591094, -1.28966, -0.214943, -0.483622,
+            1.12845, 0.859773, -0.214943, -0.214943, -0.483622, -0.214943, -0.752301, -1.02098,
+            -0.483622, -0.214943, 0.322415, 0.322415, -0.214943, 0.322415, 0.591094, -0.214943,
+            -0.752301, -0.214943, -0.483622, 0.0537358
+          ]
+        },
+        {
+          "unit_index": 4,
+          "rate_hz": [
+            5.37634, 4.73118, 3.65591, 4.08602, 3.87097, 6.23656, 6.02151, 3.65591, 5.5914, 4.94624,
+            5.16129, 7.09677, 5.5914, 6.02151, 4.94624, 5.16129, 5.80645, 4.73118, 3.65591, 6.23656,
+            3.44086, 5.16129, 5.5914, 6.02151, 3.87097, 2.58065, 3.65591, 4.30108, 6.23656, 3.44086,
+            6.45161, 5.5914, 6.02151, 4.51613, 5.37634, 3.87097, 4.94624, 4.08602, 4.94624, 3.87097,
+            5.80645, 6.66667, 6.45161, 5.37634, 4.30108, 5.5914, 6.66667, 3.65591, 3.22581, 6.88172,
+            5.16129, 4.08602, 3.87097, 4.94624, 5.37634, 6.02151, 3.87097, 5.16129, 3.65591, 4.51613
+          ],
+          "z": [
+            0.251092, -0.403931, -1.49564, -1.05895, -1.2773, 1.12446, 0.906115, -1.49564, 0.469433,
+            -0.18559, 0.0327512, 1.99782, 0.469433, 0.906115, -0.18559, 0.0327512, 0.687774,
+            -0.403931, -1.49564, 1.12446, -1.71398, 0.0327512, 0.469433, 0.906115, -1.2773,
+            -2.58734, -1.49564, -0.840613, 1.12446, -1.71398, 1.3428, 0.469433, 0.906115, -0.622272,
+            0.251092, -1.2773, -0.18559, -1.05895, -0.18559, -1.2773, 0.687774, 1.56114, 1.3428,
+            0.251092, -0.840613, 0.469433, 1.56114, -1.49564, -1.93232, 1.77948, 0.0327512,
+            -1.05895, -1.2773, -0.18559, 0.251092, 0.906115, -1.2773, 0.0327512, -1.49564, -0.622272
+          ]
+        },
+        {
+          "unit_index": 5,
+          "rate_hz": [
+            1.50538, 2.36559, 1.50538, 1.72043, 1.93548, 2.15054, 1.72043, 2.36559, 1.72043,
+            2.36559, 2.15054, 2.15054, 1.93548, 2.15054, 1.50538, 0.645161, 1.29032, 3.44086,
+            1.72043, 2.58065, 2.36559, 1.72043, 1.07527, 1.93548, 1.72043, 1.50538, 1.72043,
+            2.36559, 1.93548, 4.08602, 0.430108, 2.58065, 2.58065, 2.15054, 2.15054, 2.15054,
+            1.93548, 3.01075, 1.72043, 3.01075, 1.29032, 1.72043, 1.72043, 2.36559, 2.15054,
+            2.58065, 1.72043, 1.72043, 1.29032, 1.72043, 1.07527, 1.72043, 2.58065, 1.07527,
+            2.58065, 1.29032, 2.15054, 2.58065, 1.72043, 1.07527
+          ],
+          "z": [
+            -0.769209, 0.731686, -0.769209, -0.393985, -0.0187612, 0.356463, -0.393985, 0.731686,
+            -0.393985, 0.731686, 0.356463, 0.356463, -0.0187612, 0.356463, -0.769209, -2.2701,
+            -1.14443, 2.60781, -0.393985, 1.10691, 0.731686, -0.393985, -1.51966, -0.0187612,
+            -0.393985, -0.769209, -0.393985, 0.731686, -0.0187612, 3.73348, -2.64533, 1.10691,
+            1.10691, 0.356463, 0.356463, 0.356463, -0.0187612, 1.85736, -0.393985, 1.85736,
+            -1.14443, -0.393985, -0.393985, 0.731686, 0.356463, 1.10691, -0.393985, -0.393985,
+            -1.14443, -0.393985, -1.51966, -0.393985, 1.10691, -1.51966, 1.10691, -1.14443,
+            0.356463, 1.10691, -0.393985, -1.51966
+          ]
+        },
+        {
+          "unit_index": 6,
+          "rate_hz": [
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.215054, 0.0, 0.0, 0.215054, 0.215054, 0.0, 0.0,
+            0.430108, 0.215054, 0.0, 0.430108, 0.215054, 0.0, 0.0, 0.215054, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.215054, 0.430108, 0.0, 0.0, 0.0, 0.215054, 0.215054, 0.0, 0.0, 0.430108,
+            0.215054, 0.215054, 0.215054, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.430108, 0.0, 0.0, 0.0, 0.0, 0.430108, 0.0, 0.0, 0.0
+          ],
+          "z": [
+            -0.655659, -0.655659, -0.655659, -0.655659, -0.655659, -0.655659, -0.655659, 0.801361,
+            -0.655659, -0.655659, 0.801361, 0.801361, -0.655659, -0.655659, 2.25838, 0.801361,
+            -0.655659, 2.25838, 0.801361, -0.655659, -0.655659, 0.801361, -0.655659, -0.655659,
+            -0.655659, -0.655659, -0.655659, -0.655659, 0.801361, 2.25838, -0.655659, -0.655659,
+            -0.655659, 0.801361, 0.801361, -0.655659, -0.655659, 2.25838, 0.801361, 0.801361,
+            0.801361, -0.655659, -0.655659, -0.655659, -0.655659, -0.655659, -0.655659, -0.655659,
+            -0.655659, -0.655659, -0.655659, 2.25838, -0.655659, -0.655659, -0.655659, -0.655659,
+            2.25838, -0.655659, -0.655659, -0.655659
+          ]
+        },
+        {
+          "unit_index": 7,
+          "rate_hz": [
+            0.645161, 1.50538, 0.860215, 1.93548, 0.860215, 0.215054, 0.215054, 1.07527, 0.645161,
+            1.50538, 1.50538, 2.36559, 1.07527, 1.50538, 0.860215, 0.645161, 0.215054, 0.0, 1.29032,
+            1.29032, 1.29032, 0.645161, 0.860215, 0.645161, 0.430108, 1.72043, 1.50538, 1.29032,
+            0.645161, 0.860215, 1.29032, 0.860215, 1.07527, 1.07527, 0.430108, 0.860215, 1.29032,
+            1.50538, 0.860215, 1.29032, 1.07527, 1.50538, 0.860215, 1.72043, 1.50538, 1.93548,
+            1.50538, 1.72043, 1.50538, 1.50538, 1.29032, 0.860215, 1.93548, 2.58065, 0.645161,
+            1.50538, 1.07527, 0.645161, 0.860215, 0.645161
+          ],
+          "z": [
+            -0.592905, 0.802166, -0.244137, 1.4997, -0.244137, -1.29044, -1.29044, 0.10463,
+            -0.592905, 0.802166, 0.802166, 2.19724, 0.10463, 0.802166, -0.244137, -0.592905,
+            -1.29044, -1.63921, 0.453398, 0.453398, 0.453398, -0.592905, -0.244137, -0.592905,
+            -0.941673, 1.15093, 0.802166, 0.453398, -0.592905, -0.244137, 0.453398, -0.244137,
+            0.10463, 0.10463, -0.941673, -0.244137, 0.453398, 0.802166, -0.244137, 0.453398,
+            0.10463, 0.802166, -0.244137, 1.15093, 0.802166, 1.4997, 0.802166, 1.15093, 0.802166,
+            0.802166, 0.453398, -0.244137, 1.4997, 2.546, -0.592905, 0.802166, 0.10463, -0.592905,
+            -0.244137, -0.592905
+          ]
+        },
+        {
+          "unit_index": 8,
+          "rate_hz": [
+            3.44086, 2.15054, 2.58065, 1.72043, 3.22581, 3.44086, 3.22581, 2.15054, 3.01075,
+            1.50538, 2.7957, 3.44086, 2.58065, 2.36559, 3.22581, 3.22581, 3.22581, 3.01075, 3.22581,
+            2.58065, 2.58065, 3.22581, 2.15054, 3.65591, 1.29032, 1.93548, 2.58065, 0.860215,
+            2.58065, 3.87097, 2.36559, 3.01075, 2.58065, 2.7957, 2.7957, 3.22581, 2.58065, 3.65591,
+            2.15054, 2.15054, 3.01075, 4.30108, 2.58065, 2.36559, 2.36559, 3.22581, 4.73118,
+            3.44086, 3.01075, 2.36559, 2.7957, 2.7957, 3.01075, 3.65591, 3.44086, 2.7957, 4.73118,
+            2.58065, 3.87097, 3.01075
+          ],
+          "z": [
+            1.09086, -1.12784, -0.388273, -1.86741, 0.721078, 1.09086, 0.721078, -1.12784, 0.351294,
+            -2.23719, -0.0184892, 1.09086, -0.388273, -0.758056, 0.721078, 0.721078, 0.721078,
+            0.351294, 0.721078, -0.388273, -0.388273, 0.721078, -1.12784, 1.46064, -2.60697,
+            -1.49762, -0.388273, -3.34654, -0.388273, 1.83043, -0.758056, 0.351294, -0.388273,
+            -0.0184892, -0.0184892, 0.721078, -0.388273, 1.46064, -1.12784, -1.12784, 0.351294,
+            2.57, -0.388273, -0.758056, -0.758056, 0.721078, 3.30956, 1.09086, 0.351294, -0.758056,
+            -0.0184892, -0.0184892, 0.351294, 1.46064, 1.09086, -0.0184892, 3.30956, -0.388273,
+            1.83043, 0.351294
+          ]
+        },
+        {
+          "unit_index": 9,
+          "rate_hz": [
+            0.215054, 0.430108, 1.07527, 0.645161, 0.645161, 0.430108, 1.07527, 0.215054, 0.430108,
+            0.215054, 0.645161, 0.860215, 0.430108, 0.430108, 0.430108, 0.215054, 0.645161, 0.0,
+            0.215054, 0.430108, 0.645161, 0.430108, 0.860215, 0.860215, 0.215054, 0.645161, 1.29032,
+            0.430108, 0.430108, 0.645161, 1.07527, 0.645161, 1.07527, 1.07527, 0.860215, 0.860215,
+            0.860215, 0.430108, 0.430108, 0.645161, 1.29032, 0.860215, 0.430108, 0.215054, 0.645161,
+            0.430108, 0.645161, 0.860215, 0.430108, 0.430108, 0.0, 0.215054, 0.860215, 0.215054,
+            0.430108, 1.07527, 0.215054, 0.860215, 0.645161, 0.645161
+          ],
+          "z": [
+            -0.937886, -0.187577, 2.06335, 0.562731, 0.562731, -0.187577, 2.06335, -0.937886,
+            -0.187577, -0.937886, 0.562731, 1.31304, -0.187577, -0.187577, -0.187577, -0.937886,
+            0.562731, -1.68819, -0.937886, -0.187577, 0.562731, -0.187577, 1.31304, 1.31304,
+            -0.937886, 0.562731, 2.81366, -0.187577, -0.187577, 0.562731, 2.06335, 0.562731,
+            2.06335, 2.06335, 1.31304, 1.31304, 1.31304, -0.187577, -0.187577, 0.562731, 2.81366,
+            1.31304, -0.187577, -0.937886, 0.562731, -0.187577, 0.562731, 1.31304, -0.187577,
+            -0.187577, -1.68819, -0.937886, 1.31304, -0.937886, -0.187577, 2.06335, -0.937886,
+            1.31304, 0.562731, 0.562731
+          ]
+        },
+        {
+          "unit_index": 10,
+          "rate_hz": [
+            2.7957, 3.01075, 3.22581, 1.72043, 1.72043, 1.93548, 2.7957, 1.50538, 2.7957, 2.36559,
+            2.58065, 2.15054, 2.36559, 3.44086, 2.7957, 3.44086, 0.860215, 3.87097, 2.58065,
+            2.58065, 1.93548, 1.72043, 3.65591, 3.44086, 1.72043, 3.01075, 2.58065, 2.36559,
+            1.93548, 1.93548, 3.01075, 2.36559, 1.72043, 2.36559, 2.58065, 1.50538, 2.7957, 2.15054,
+            1.50538, 2.15054, 1.93548, 2.7957, 3.22581, 1.29032, 1.93548, 2.58065, 2.58065, 2.36559,
+            1.29032, 2.36559, 1.93548, 1.29032, 1.29032, 2.7957, 2.58065, 3.22581, 2.36559, 3.22581,
+            3.44086, 1.72043
+          ],
+          "z": [
+            0.367555, 0.661599, 0.955643, -1.10267, -1.10267, -0.808621, 0.367555, -1.39671,
+            0.367555, -0.220533, 0.073511, -0.514577, -0.220533, 1.24969, 0.367555, 1.24969,
+            -2.27884, 1.83778, 0.073511, 0.073511, -0.808621, -1.10267, 1.54373, 1.24969, -1.10267,
+            0.661599, 0.073511, -0.220533, -0.808621, -0.808621, 0.661599, -0.220533, -1.10267,
+            -0.220533, 0.073511, -1.39671, 0.367555, -0.514577, -1.39671, -0.514577, -0.808621,
+            0.367555, 0.955643, -1.69075, -0.808621, 0.073511, 0.073511, -0.220533, -1.69075,
+            -0.220533, -0.808621, -1.69075, -1.69075, 0.367555, 0.073511, 0.955643, -0.220533,
+            0.955643, 1.24969, -1.10267
+          ]
+        },
+        {
+          "unit_index": 11,
+          "rate_hz": [
+            2.58065, 1.72043, 1.72043, 2.36559, 1.72043, 1.50538, 3.01075, 2.15054, 1.29032,
+            1.50538, 2.58065, 1.93548, 1.72043, 2.15054, 1.29032, 2.15054, 1.50538, 3.44086,
+            2.58065, 1.50538, 2.15054, 2.36559, 2.58065, 2.15054, 1.93548, 2.7957, 0.860215,
+            1.72043, 2.7957, 1.93548, 2.58065, 1.93548, 2.15054, 2.7957, 1.72043, 2.15054, 2.58065,
+            2.36559, 2.15054, 2.7957, 0.860215, 2.36559, 2.58065, 1.29032, 1.93548, 1.50538,
+            2.15054, 1.50538, 2.7957, 1.07527, 1.72043, 2.15054, 2.15054, 2.15054, 2.15054, 2.7957,
+            2.36559, 0.645161, 1.72043, 2.36559
+          ],
+          "z": [
+            0.948388, -0.51067, -0.51067, 0.583623, -0.51067, -0.875435, 1.67792, 0.218859, -1.2402,
+            -0.875435, 0.948388, -0.145906, -0.51067, 0.218859, -1.2402, 0.218859, -0.875435,
+            2.40745, 0.948388, -0.875435, 0.218859, 0.583623, 0.948388, 0.218859, -0.145906,
+            1.31315, -1.96973, -0.51067, 1.31315, -0.145906, 0.948388, -0.145906, 0.218859, 1.31315,
+            -0.51067, 0.218859, 0.948388, 0.583623, 0.218859, 1.31315, -1.96973, 0.583623, 0.948388,
+            -1.2402, -0.145906, -0.875435, 0.218859, -0.875435, 1.31315, -1.60496, -0.51067,
+            0.218859, 0.218859, 0.218859, 0.218859, 1.31315, 0.583623, -2.33449, -0.51067, 0.583623
+          ]
+        },
+        {
+          "unit_index": 12,
+          "rate_hz": [
+            0.430108, 0.215054, 0.645161, 0.215054, 0.860215, 0.430108, 0.215054, 0.0, 0.0,
+            0.430108, 0.430108, 0.0, 0.860215, 0.215054, 0.860215, 0.645161, 0.215054, 0.430108,
+            0.0, 0.0, 0.215054, 0.0, 0.645161, 0.430108, 0.0, 1.07527, 0.0, 0.215054, 0.430108, 0.0,
+            0.645161, 0.430108, 0.215054, 0.430108, 0.215054, 0.645161, 0.430108, 0.430108,
+            0.645161, 0.215054, 0.215054, 0.430108, 0.215054, 0.0, 1.29032, 0.645161, 0.215054,
+            0.430108, 0.0, 0.215054, 0.0, 0.430108, 0.215054, 0.0, 0.645161, 0.430108, 0.0,
+            0.215054, 0.0, 0.645161
+          ],
+          "z": [
+            0.252349, -0.468648, 0.973345, -0.468648, 1.69434, 0.252349, -0.468648, -1.18964,
+            -1.18964, 0.252349, 0.252349, -1.18964, 1.69434, -0.468648, 1.69434, 0.973345,
+            -0.468648, 0.252349, -1.18964, -1.18964, -0.468648, -1.18964, 0.973345, 0.252349,
+            -1.18964, 2.41534, -1.18964, -0.468648, 0.252349, -1.18964, 0.973345, 0.252349,
+            -0.468648, 0.252349, -0.468648, 0.973345, 0.252349, 0.252349, 0.973345, -0.468648,
+            -0.468648, 0.252349, -0.468648, -1.18964, 3.13633, 0.973345, -0.468648, 0.252349,
+            -1.18964, -0.468648, -1.18964, 0.252349, -0.468648, -1.18964, 0.973345, 0.252349,
+            -1.18964, -0.468648, -1.18964, 0.973345
+          ]
+        },
+        {
+          "unit_index": 13,
+          "rate_hz": [
+            4.30108, 4.30108, 5.80645, 6.02151, 3.65591, 5.5914, 4.73118, 4.08602, 4.08602, 5.16129,
+            2.58065, 4.30108, 4.51613, 5.37634, 5.80645, 6.66667, 4.94624, 3.44086, 4.08602,
+            5.16129, 3.01075, 1.93548, 5.5914, 5.5914, 3.87097, 6.88172, 3.65591, 3.87097, 1.93548,
+            4.51613, 5.5914, 4.51613, 4.30108, 4.30108, 3.01075, 3.65591, 4.73118, 4.73118, 4.94624,
+            3.44086, 4.73118, 3.65591, 3.65591, 4.30108, 3.44086, 3.01075, 6.23656, 6.02151,
+            5.16129, 6.45161, 4.94624, 5.37634, 3.01075, 5.80645, 4.08602, 4.51613, 4.94624,
+            4.94624, 4.30108, 5.37634
+          ],
+          "z": [
+            -0.434804, -0.434804, 1.08701, 1.30441, -1.08701, 0.869608, -8.97877e-16, -0.652206,
+            -0.652206, 0.434804, -2.17402, -0.434804, -0.217402, 0.652206, 1.08701, 1.95662,
+            0.217402, -1.30441, -0.652206, 0.434804, -1.73922, -2.82623, 0.869608, 0.869608,
+            -0.869608, 2.17402, -1.08701, -0.869608, -2.82623, -0.217402, 0.869608, -0.217402,
+            -0.434804, -0.434804, -1.73922, -1.08701, -8.97877e-16, -8.97877e-16, 0.217402,
+            -1.30441, -8.97877e-16, -1.08701, -1.08701, -0.434804, -1.30441, -1.73922, 1.52181,
+            1.30441, 0.434804, 1.73922, 0.217402, 0.652206, -1.73922, 1.08701, -0.652206, -0.217402,
+            0.217402, 0.217402, -0.434804, 0.652206
+          ]
+        },
+        {
+          "unit_index": 14,
+          "rate_hz": [
+            1.29032, 1.29032, 1.29032, 0.860215, 0.645161, 0.645161, 1.29032, 0.430108, 1.50538,
+            0.860215, 0.860215, 0.430108, 0.860215, 0.645161, 1.72043, 1.07527, 0.860215, 0.0,
+            1.29032, 1.29032, 1.07527, 1.29032, 0.860215, 0.215054, 1.72043, 1.29032, 1.29032,
+            1.07527, 0.430108, 0.860215, 0.645161, 0.860215, 0.860215, 1.07527, 0.860215, 1.29032,
+            1.50538, 0.215054, 0.215054, 1.29032, 1.50538, 1.29032, 0.860215, 1.07527, 0.430108,
+            1.50538, 0.215054, 1.29032, 0.860215, 0.860215, 1.29032, 1.07527, 1.07527, 0.860215,
+            0.645161, 1.07527, 1.93548, 0.860215, 1.50538, 1.07527
+          ],
+          "z": [
+            0.791035, 0.791035, 0.791035, -0.229655, -0.740001, -0.740001, 0.791035, -1.25035,
+            1.30138, -0.229655, -0.229655, -1.25035, -0.229655, -0.740001, 1.81173, 0.28069,
+            -0.229655, -2.27104, 0.791035, 0.791035, 0.28069, 0.791035, -0.229655, -1.76069,
+            1.81173, 0.791035, 0.791035, 0.28069, -1.25035, -0.229655, -0.740001, -0.229655,
+            -0.229655, 0.28069, -0.229655, 0.791035, 1.30138, -1.76069, -1.76069, 0.791035, 1.30138,
+            0.791035, -0.229655, 0.28069, -1.25035, 1.30138, -1.76069, 0.791035, -0.229655,
+            -0.229655, 0.791035, 0.28069, 0.28069, -0.229655, -0.740001, 0.28069, 2.32207,
+            -0.229655, 1.30138, 0.28069
+          ]
+        },
+        {
+          "unit_index": 15,
+          "rate_hz": [
+            2.15054, 1.50538, 2.15054, 3.01075, 1.72043, 1.72043, 2.15054, 2.36559, 2.58065,
+            1.29032, 4.08602, 2.36559, 3.01075, 2.58065, 2.58065, 3.01075, 3.44086, 2.15054,
+            2.58065, 1.72043, 3.44086, 1.50538, 1.93548, 0.430108, 1.93548, 1.93548, 2.15054,
+            1.93548, 2.36559, 3.44086, 2.7957, 1.72043, 2.36559, 2.15054, 2.7957, 1.50538, 1.29032,
+            2.36559, 1.07527, 1.07527, 2.36559, 2.36559, 1.07527, 2.7957, 1.93548, 2.58065, 1.50538,
+            1.93548, 1.93548, 1.93548, 3.01075, 1.72043, 1.72043, 2.36559, 2.58065, 2.58065,
+            0.860215, 1.72043, 2.15054, 1.72043
+          ],
+          "z": [
+            -0.378281, -1.32398, -0.378281, 0.882655, -1.00875, -1.00875, -0.378281, -0.0630468,
+            0.252187, -1.63922, 2.45882, -0.0630468, 0.882655, 0.252187, 0.252187, 0.882655,
+            1.51312, -0.378281, 0.252187, -1.00875, 1.51312, -1.32398, -0.693514, -2.90015,
+            -0.693514, -0.693514, -0.378281, -0.693514, -0.0630468, 1.51312, 0.567421, -1.00875,
+            -0.0630468, -0.378281, 0.567421, -1.32398, -1.63922, -0.0630468, -1.95445, -1.95445,
+            -0.0630468, -0.0630468, -1.95445, 0.567421, -0.693514, 0.252187, -1.32398, -0.693514,
+            -0.693514, -0.693514, 0.882655, -1.00875, -1.00875, -0.0630468, 0.252187, 0.252187,
+            -2.26968, -1.00875, -0.378281, -1.00875
+          ]
+        },
+        {
+          "unit_index": 16,
+          "rate_hz": [
+            0.215054, 1.29032, 0.645161, 1.72043, 1.72043, 0.860215, 0.645161, 1.07527, 1.50538,
+            0.0, 0.430108, 1.29032, 0.645161, 0.0, 0.645161, 1.72043, 0.860215, 1.29032, 1.50538,
+            0.215054, 0.645161, 0.215054, 1.29032, 1.07527, 1.07527, 0.645161, 0.215054, 1.29032,
+            0.645161, 0.215054, 0.430108, 0.645161, 1.07527, 0.645161, 0.0, 0.645161, 1.07527,
+            0.430108, 1.07527, 0.430108, 0.645161, 0.860215, 1.29032, 0.645161, 0.860215, 0.645161,
+            0.430108, 1.29032, 1.50538, 1.07527, 0.215054, 0.645161, 0.860215, 0.860215, 1.72043,
+            0.215054, 0.215054, 0.430108, 0.645161, 1.29032
+          ],
+          "z": [
+            -1.21588, 0.654704, -0.467646, 1.40294, 1.40294, -0.0935291, -0.467646, 0.280587,
+            1.02882, -1.59, -0.841762, 0.654704, -0.467646, -1.59, -0.467646, 1.40294, -0.0935291,
+            0.654704, 1.02882, -1.21588, -0.467646, -1.21588, 0.654704, 0.280587, 0.280587,
+            -0.467646, -1.21588, 0.654704, -0.467646, -1.21588, -0.841762, -0.467646, 0.280587,
+            -0.467646, -1.59, -0.467646, 0.280587, -0.841762, 0.280587, -0.841762, -0.467646,
+            -0.0935291, 0.654704, -0.467646, -0.0935291, -0.467646, -0.841762, 0.654704, 1.02882,
+            0.280587, -1.21588, -0.467646, -0.0935291, -0.0935291, 1.40294, -1.21588, -1.21588,
+            -0.841762, -0.467646, 0.654704
+          ]
+        },
+        {
+          "unit_index": 17,
+          "rate_hz": [
+            0.215054, 0.0, 0.860215, 0.215054, 0.430108, 1.29032, 0.645161, 0.430108, 0.430108,
+            1.07527, 0.860215, 0.430108, 0.215054, 0.0, 0.860215, 0.430108, 0.0, 0.215054, 0.430108,
+            0.215054, 0.0, 0.860215, 0.645161, 0.0, 0.0, 1.07527, 0.215054, 0.0, 0.0, 0.215054,
+            0.860215, 0.645161, 0.430108, 0.430108, 0.215054, 0.860215, 0.430108, 0.645161, 0.0,
+            0.430108, 0.645161, 0.645161, 0.430108, 0.215054, 0.430108, 0.430108, 0.215054,
+            0.430108, 0.645161, 0.430108, 0.215054, 0.645161, 0.645161, 0.215054, 0.645161,
+            0.430108, 0.430108, 0.430108, 0.645161, 0.215054
+          ],
+          "z": [
+            -0.678699, -1.26887, 1.09182, -0.678699, -0.088526, 2.27217, 0.501647, -0.088526,
+            -0.088526, 1.68199, 1.09182, -0.088526, -0.678699, -1.26887, 1.09182, -0.088526,
+            -1.26887, -0.678699, -0.088526, -0.678699, -1.26887, 1.09182, 0.501647, -1.26887,
+            -1.26887, 1.68199, -0.678699, -1.26887, -1.26887, -0.678699, 1.09182, 0.501647,
+            -0.088526, -0.088526, -0.678699, 1.09182, -0.088526, 0.501647, -1.26887, -0.088526,
+            0.501647, 0.501647, -0.088526, -0.678699, -0.088526, -0.088526, -0.678699, -0.088526,
+            0.501647, -0.088526, -0.678699, 0.501647, 0.501647, -0.678699, 0.501647, -0.088526,
+            -0.088526, -0.088526, 0.501647, -0.678699
+          ]
+        },
+        {
+          "unit_index": 18,
+          "rate_hz": [
+            9.03226, 9.67742, 7.95699, 10.3226, 9.03226, 7.74194, 7.95699, 8.3871, 9.67742, 8.8172,
+            9.46237, 7.52688, 9.67742, 8.8172, 8.8172, 7.74194, 9.67742, 8.17204, 8.8172, 7.95699,
+            8.8172, 8.17204, 9.46237, 7.31183, 8.17204, 7.74194, 7.09677, 9.03226, 8.17204, 8.17204,
+            11.3978, 8.60215, 8.3871, 7.95699, 7.09677, 6.02151, 8.8172, 8.3871, 8.60215, 6.45161,
+            9.03226, 6.66667, 9.03226, 10.1075, 9.24731, 8.17204, 7.31183, 9.67742, 10.1075,
+            8.17204, 9.24731, 8.3871, 9.24731, 9.24731, 10.9677, 12.043, 8.17204, 9.24731, 5.80645,
+            7.95699
+          ],
+          "z": [
+            0.331746, 1.12794, -0.995239, 1.92413, 0.331746, -1.26064, -0.995239, -0.464445,
+            1.12794, 0.0663493, 0.86254, -1.52603, 1.12794, 0.0663493, 0.0663493, -1.26064, 1.12794,
+            -0.729842, 0.0663493, -0.995239, 0.0663493, -0.729842, 0.86254, -1.79143, -0.729842,
+            -1.26064, -2.05683, 0.331746, -0.729842, -0.729842, 3.25111, -0.199048, -0.464445,
+            -0.995239, -2.05683, -3.38381, 0.0663493, -0.464445, -0.199048, -2.85302, 0.331746,
+            -2.58762, 0.331746, 1.65873, 0.597143, -0.729842, -1.79143, 1.12794, 1.65873, -0.729842,
+            0.597143, -0.464445, 0.597143, 0.597143, 2.72032, 4.0473, -0.729842, 0.597143, -3.64921,
+            -0.995239
+          ]
+        },
+        {
+          "unit_index": 19,
+          "rate_hz": [
+            0.215054, 0.0, 0.430108, 0.0, 0.0, 0.215054, 0.0, 0.0, 0.215054, 0.215054, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.215054, 0.215054, 0.0, 0.0, 0.215054, 0.430108, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.215054, 0.0, 0.0, 0.215054, 0.215054, 0.430108, 0.215054, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.215054, 0.0, 0.0, 0.215054, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.215054, 0.0, 0.215054, 0.215054, 0.0, 0.0, 0.215054
+          ],
+          "z": [
+            1.00294, -0.668625, 2.6745, -0.668625, -0.668625, 1.00294, -0.668625, -0.668625,
+            1.00294, 1.00294, -0.668625, -0.668625, -0.668625, -0.668625, -0.668625, -0.668625,
+            1.00294, 1.00294, -0.668625, -0.668625, 1.00294, 2.6745, -0.668625, -0.668625,
+            -0.668625, -0.668625, -0.668625, 1.00294, -0.668625, -0.668625, 1.00294, 1.00294,
+            2.6745, 1.00294, -0.668625, -0.668625, -0.668625, -0.668625, -0.668625, -0.668625,
+            1.00294, -0.668625, -0.668625, 1.00294, -0.668625, -0.668625, -0.668625, -0.668625,
+            -0.668625, -0.668625, -0.668625, -0.668625, -0.668625, 1.00294, -0.668625, 1.00294,
+            1.00294, -0.668625, -0.668625, 1.00294
+          ]
+        },
+        {
+          "unit_index": 20,
+          "rate_hz": [
+            0.0, 0.0, 0.215054, 0.215054, 0.430108, 0.0, 0.0, 0.0, 0.0, 0.0, 0.215054, 0.215054,
+            0.430108, 0.0, 0.0, 0.645161, 0.215054, 0.645161, 0.215054, 0.0, 0.645161, 0.0, 0.0,
+            0.215054, 0.215054, 0.0, 0.0, 0.215054, 0.0, 0.215054, 0.0, 0.0, 0.430108, 0.0,
+            0.215054, 0.0, 0.215054, 0.215054, 0.215054, 0.430108, 0.0, 0.430108, 0.215054,
+            0.215054, 0.430108, 0.430108, 0.0, 0.430108, 0.0, 0.430108, 0.215054, 0.0, 0.0,
+            0.215054, 0.0, 0.0, 0.0, 0.215054, 0.430108, 0.0
+          ],
+          "z": [
+            -0.795822, -0.795822, 0.198956, 0.198956, 1.19373, -0.795822, -0.795822, -0.795822,
+            -0.795822, -0.795822, 0.198956, 0.198956, 1.19373, -0.795822, -0.795822, 2.18851,
+            0.198956, 2.18851, 0.198956, -0.795822, 2.18851, -0.795822, -0.795822, 0.198956,
+            0.198956, -0.795822, -0.795822, 0.198956, -0.795822, 0.198956, -0.795822, -0.795822,
+            1.19373, -0.795822, 0.198956, -0.795822, 0.198956, 0.198956, 0.198956, 1.19373,
+            -0.795822, 1.19373, 0.198956, 0.198956, 1.19373, 1.19373, -0.795822, 1.19373, -0.795822,
+            1.19373, 0.198956, -0.795822, -0.795822, 0.198956, -0.795822, -0.795822, -0.795822,
+            0.198956, 1.19373, -0.795822
+          ]
+        },
+        {
+          "unit_index": 21,
+          "rate_hz": [
+            0.860215, 1.50538, 1.29032, 1.72043, 1.50538, 1.93548, 1.72043, 0.860215, 1.29032,
+            1.50538, 1.72043, 0.645161, 1.07527, 1.07527, 1.50538, 1.72043, 1.72043, 0.430108,
+            0.860215, 0.860215, 0.860215, 1.29032, 0.645161, 1.29032, 1.07527, 1.29032, 0.0,
+            0.860215, 1.07527, 1.50538, 0.430108, 1.50538, 2.36559, 1.07527, 2.36559, 1.72043,
+            1.50538, 0.645161, 1.72043, 1.50538, 1.50538, 1.07527, 2.15054, 1.50538, 1.07527,
+            1.50538, 0.860215, 1.50538, 1.72043, 1.50538, 1.29032, 1.50538, 1.07527, 0.645161,
+            1.50538, 2.15054, 1.07527, 1.07527, 0.860215, 0.645161
+          ],
+          "z": [
+            -1.0, 0.5, 0.0, 1.0, 0.5, 1.5, 1.0, -1.0, 0.0, 0.5, 1.0, -1.5, -0.5, -0.5, 0.5, 1.0,
+            1.0, -2.0, -1.0, -1.0, -1.0, 0.0, -1.5, 0.0, -0.5, 0.0, -3.0, -1.0, -0.5, 0.5, -2.0,
+            0.5, 2.5, -0.5, 2.5, 1.0, 0.5, -1.5, 1.0, 0.5, 0.5, -0.5, 2.0, 0.5, -0.5, 0.5, -1.0,
+            0.5, 1.0, 0.5, 0.0, 0.5, -0.5, -1.5, 0.5, 2.0, -0.5, -0.5, -1.0, -1.5
+          ]
+        },
+        {
+          "unit_index": 22,
+          "rate_hz": [
+            10.9677, 9.67742, 10.3226, 8.8172, 9.24731, 9.24731, 11.1828, 9.67742, 14.1935, 10.3226,
+            9.46237, 13.1183, 8.3871, 9.03226, 9.46237, 9.46237, 11.1828, 10.9677, 9.46237, 7.74194,
+            9.46237, 13.5484, 8.17204, 10.3226, 9.89247, 12.4731, 10.5376, 7.95699, 13.1183,
+            9.89247, 9.03226, 8.17204, 11.3978, 12.9032, 8.60215, 10.1075, 11.6129, 13.3333,
+            8.17204, 10.5376, 12.043, 10.5376, 13.1183, 12.4731, 12.6882, 13.3333, 9.46237, 10.3226,
+            10.3226, 10.3226, 11.6129, 9.89247, 11.1828, 11.6129, 9.67742, 11.3978, 11.3978,
+            8.17204, 8.60215, 10.3226
+          ],
+          "z": [
+            0.568892, -0.273911, 0.147491, -0.83578, -0.554845, -0.554845, 0.709359, -0.273911,
+            2.6759, 0.147491, -0.414378, 1.97356, -1.11671, -0.695313, -0.414378, -0.414378,
+            0.709359, 0.568892, -0.414378, -1.53812, -0.414378, 2.2545, -1.25718, 0.147491,
+            -0.133444, 1.55216, 0.287958, -1.39765, 1.97356, -0.133444, -0.695313, -1.25718,
+            0.849827, 1.8331, -0.976247, 0.00702336, 0.990294, 2.11403, -1.25718, 0.287958, 1.27123,
+            0.287958, 1.97356, 1.55216, 1.69263, 2.11403, -0.414378, 0.147491, 0.147491, 0.147491,
+            0.990294, -0.133444, 0.709359, 0.990294, -0.273911, 0.849827, 0.849827, -1.25718,
+            -0.976247, 0.147491
+          ]
+        },
+        {
+          "unit_index": 23,
+          "rate_hz": [
+            3.22581, 3.87097, 5.16129, 2.7957, 3.87097, 4.94624, 4.08602, 3.65591, 3.44086, 4.30108,
+            3.22581, 3.22581, 3.65591, 2.36559, 4.73118, 3.87097, 6.02151, 4.73118, 2.58065,
+            3.44086, 3.01075, 4.94624, 3.22581, 3.01075, 2.15054, 2.58065, 4.30108, 3.65591,
+            3.44086, 3.87097, 2.7957, 2.7957, 3.22581, 5.5914, 2.58065, 2.7957, 3.87097, 3.44086,
+            3.44086, 3.22581, 4.08602, 2.7957, 3.65591, 4.94624, 3.22581, 3.01075, 2.7957, 4.30108,
+            2.58065, 4.94624, 3.01075, 6.23656, 3.22581, 4.73118, 3.44086, 4.30108, 2.7957, 3.44086,
+            3.87097, 3.44086
+          ],
+          "z": [
+            -0.692342, 0.0117346, 1.41989, -1.16173, 0.0117346, 1.1852, 0.246427, -0.222958,
+            -0.45765, 0.481119, -0.692342, -0.692342, -0.222958, -1.63111, 0.950504, 0.0117346,
+            2.35866, 0.950504, -1.39642, -0.45765, -0.927034, 1.1852, -0.692342, -0.927034, -1.8658,
+            -1.39642, 0.481119, -0.222958, -0.45765, 0.0117346, -1.16173, -1.16173, -0.692342,
+            1.88927, -1.39642, -1.16173, 0.0117346, -0.45765, -0.45765, -0.692342, 0.246427,
+            -1.16173, -0.222958, 1.1852, -0.692342, -0.927034, -1.16173, 0.481119, -1.39642, 1.1852,
+            -0.927034, 2.59335, -0.692342, 0.950504, -0.45765, 0.481119, -1.16173, -0.45765,
+            0.0117346, -0.45765
+          ]
+        },
+        {
+          "unit_index": 24,
+          "rate_hz": [
+            6.23656, 4.30108, 5.37634, 5.80645, 5.16129, 4.73118, 4.51613, 4.73118, 5.5914, 4.30108,
+            3.44086, 4.51613, 4.08602, 4.94624, 5.16129, 4.30108, 3.65591, 6.23656, 5.37634,
+            3.65591, 5.16129, 3.65591, 2.58065, 4.51613, 4.94624, 3.22581, 2.7957, 3.44086, 4.73118,
+            5.5914, 4.30108, 2.58065, 3.22581, 3.65591, 4.30108, 3.87097, 4.73118, 4.08602, 3.65591,
+            3.01075, 3.44086, 4.30108, 4.08602, 3.87097, 4.30108, 4.30108, 4.08602, 4.30108,
+            3.65591, 4.94624, 5.37634, 4.94624, 7.74194, 3.87097, 6.45161, 6.23656, 4.73118,
+            3.87097, 5.37634, 4.73118
+          ],
+          "z": [
+            1.7558, -0.620471, 0.69968, 1.22774, 0.43565, -0.0924106, -0.356441, -0.0924106,
+            0.96371, -0.620471, -1.67659, -0.356441, -0.884501, 0.17162, 0.43565, -0.620471,
+            -1.41256, 1.7558, 0.69968, -1.41256, 0.43565, -1.41256, -2.73271, -0.356441, 0.17162,
+            -1.94062, -2.46868, -1.67659, -0.0924106, 0.96371, -0.620471, -2.73271, -1.94062,
+            -1.41256, -0.620471, -1.14853, -0.0924106, -0.884501, -1.41256, -2.20465, -1.67659,
+            -0.620471, -0.884501, -1.14853, -0.620471, -0.620471, -0.884501, -0.620471, -1.41256,
+            0.17162, 0.69968, 0.17162, 3.60401, -1.14853, 2.01983, 1.7558, -0.0924106, -1.14853,
+            0.69968, -0.0924106
+          ]
+        },
+        {
+          "unit_index": 25,
+          "rate_hz": [
+            0.215054, 0.860215, 0.860215, 0.430108, 1.07527, 0.430108, 0.215054, 0.430108, 0.430108,
+            1.50538, 0.645161, 0.430108, 0.645161, 0.645161, 0.860215, 0.0, 0.430108, 0.860215,
+            0.215054, 1.29032, 0.860215, 0.430108, 0.430108, 0.645161, 1.07527, 0.430108, 0.215054,
+            0.0, 0.430108, 0.430108, 0.215054, 0.430108, 0.860215, 0.645161, 0.430108, 0.860215,
+            0.430108, 0.645161, 0.860215, 0.430108, 0.430108, 0.215054, 0.0, 0.215054, 0.645161,
+            0.215054, 0.430108, 0.645161, 0.430108, 0.430108, 0.215054, 0.860215, 0.645161, 0.0,
+            0.860215, 1.72043, 0.430108, 0.860215, 0.645161, 0.0
+          ],
+          "z": [
+            -1.07098, 0.620039, 0.620039, -0.507305, 1.18371, -0.507305, -1.07098, -0.507305,
+            -0.507305, 2.31105, 0.0563672, -0.507305, 0.0563672, 0.0563672, 0.620039, -1.63465,
+            -0.507305, 0.620039, -1.07098, 1.74738, 0.620039, -0.507305, -0.507305, 0.0563672,
+            1.18371, -0.507305, -1.07098, -1.63465, -0.507305, -0.507305, -1.07098, -0.507305,
+            0.620039, 0.0563672, -0.507305, 0.620039, -0.507305, 0.0563672, 0.620039, -0.507305,
+            -0.507305, -1.07098, -1.63465, -1.07098, 0.0563672, -1.07098, -0.507305, 0.0563672,
+            -0.507305, -0.507305, -1.07098, 0.620039, 0.0563672, -1.63465, 0.620039, 2.87473,
+            -0.507305, 0.620039, 0.0563672, -1.63465
+          ]
+        },
+        {
+          "unit_index": 26,
+          "rate_hz": [
+            0.430108, 0.0, 0.0, 0.430108, 0.0, 0.0, 0.0, 0.430108, 0.215054, 0.215054, 0.0,
+            0.215054, 0.215054, 0.0, 0.215054, 0.0, 0.0, 0.430108, 0.0, 0.0, 0.215054, 0.0,
+            0.430108, 0.0, 0.215054, 0.0, 0.860215, 0.0, 0.215054, 0.645161, 0.215054, 0.215054,
+            0.0, 0.0, 0.215054, 0.0, 0.0, 0.215054, 0.215054, 0.215054, 0.0, 0.645161, 0.215054,
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.215054, 0.0, 0.215054, 0.215054, 0.0, 0.430108, 0.860215,
+            0.215054, 0.215054, 0.0, 0.645161, 0.215054
+          ],
+          "z": [
+            1.66107, -0.799776, -0.799776, 1.66107, -0.799776, -0.799776, -0.799776, 1.66107,
+            0.430649, 0.430649, -0.799776, 0.430649, 0.430649, -0.799776, 0.430649, -0.799776,
+            -0.799776, 1.66107, -0.799776, -0.799776, 0.430649, -0.799776, 1.66107, -0.799776,
+            0.430649, -0.799776, 4.12192, -0.799776, 0.430649, 2.8915, 0.430649, 0.430649,
+            -0.799776, -0.799776, 0.430649, -0.799776, -0.799776, 0.430649, 0.430649, 0.430649,
+            -0.799776, 2.8915, 0.430649, -0.799776, -0.799776, -0.799776, -0.799776, -0.799776,
+            0.430649, -0.799776, 0.430649, 0.430649, -0.799776, 1.66107, 4.12192, 0.430649,
+            0.430649, -0.799776, 2.8915, 0.430649
+          ]
+        },
+        {
+          "unit_index": 27,
+          "rate_hz": [
+            0.0, 0.0, 0.430108, 0.215054, 0.215054, 0.0, 0.0, 0.215054, 0.215054, 0.430108,
+            0.430108, 0.215054, 0.645161, 0.215054, 0.860215, 0.215054, 0.0, 0.430108, 0.645161,
+            0.215054, 0.0, 0.645161, 0.645161, 0.215054, 0.0, 0.430108, 0.430108, 0.215054,
+            0.215054, 0.215054, 0.0, 0.430108, 0.430108, 0.0, 0.430108, 0.860215, 0.0, 0.0,
+            0.430108, 0.430108, 0.430108, 0.0, 0.860215, 0.430108, 0.0, 0.215054, 0.430108,
+            0.215054, 0.645161, 0.430108, 0.860215, 0.645161, 0.0, 0.215054, 0.430108, 0.860215,
+            0.645161, 0.645161, 0.645161, 0.645161
+          ],
+          "z": [
+            -1.15189, -1.15189, 0.620251, -0.265822, -0.265822, -1.15189, -1.15189, -0.265822,
+            -0.265822, 0.620251, 0.620251, -0.265822, 1.50632, -0.265822, 2.39239, -0.265822,
+            -1.15189, 0.620251, 1.50632, -0.265822, -1.15189, 1.50632, 1.50632, -0.265822, -1.15189,
+            0.620251, 0.620251, -0.265822, -0.265822, -0.265822, -1.15189, 0.620251, 0.620251,
+            -1.15189, 0.620251, 2.39239, -1.15189, -1.15189, 0.620251, 0.620251, 0.620251, -1.15189,
+            2.39239, 0.620251, -1.15189, -0.265822, 0.620251, -0.265822, 1.50632, 0.620251, 2.39239,
+            1.50632, -1.15189, -0.265822, 0.620251, 2.39239, 1.50632, 1.50632, 1.50632, 1.50632
+          ]
+        },
+        {
+          "unit_index": 28,
+          "rate_hz": [
+            2.15054, 2.58065, 2.7957, 1.29032, 2.36559, 1.93548, 2.15054, 2.58065, 1.93548, 2.15054,
+            2.15054, 1.50538, 1.50538, 2.15054, 1.93548, 2.36559, 2.36559, 1.93548, 1.50538,
+            2.58065, 2.36559, 2.7957, 1.93548, 1.50538, 3.44086, 2.15054, 1.72043, 1.93548, 1.29032,
+            1.07527, 1.50538, 3.44086, 2.58065, 2.58065, 1.93548, 3.01075, 1.29032, 1.72043,
+            3.22581, 1.50538, 2.58065, 4.30108, 2.7957, 0.860215, 3.44086, 1.50538, 1.72043,
+            1.07527, 3.44086, 3.01075, 1.72043, 2.7957, 1.93548, 1.29032, 2.15054, 2.36559, 2.36559,
+            2.36559, 1.72043, 1.93548
+          ],
+          "z": [
+            0.13048, 1.17432, 1.69624, -1.9572, 0.652401, -0.391441, 0.13048, 1.17432, -0.391441,
+            0.13048, 0.13048, -1.43528, -1.43528, 0.13048, -0.391441, 0.652401, 0.652401, -0.391441,
+            -1.43528, 1.17432, 0.652401, 1.69624, -0.391441, -1.43528, 3.26201, 0.13048, -0.913362,
+            -0.391441, -1.9572, -2.47912, -1.43528, 3.26201, 1.17432, 1.17432, -0.391441, 2.21816,
+            -1.9572, -0.913362, 2.74008, -1.43528, 1.17432, 5.34969, 1.69624, -3.00105, 3.26201,
+            -1.43528, -0.913362, -2.47912, 3.26201, 2.21816, -0.913362, 1.69624, -0.391441, -1.9572,
+            0.13048, 0.652401, 0.652401, 0.652401, -0.913362, -0.391441
+          ]
+        },
+        {
+          "unit_index": 29,
+          "rate_hz": [
+            8.8172, 9.67742, 9.46237, 6.88172, 7.52688, 8.3871, 8.60215, 9.67742, 7.09677, 6.02151,
+            7.95699, 7.52688, 9.24731, 9.24731, 9.46237, 8.8172, 8.17204, 8.60215, 8.8172, 9.46237,
+            9.89247, 9.89247, 6.88172, 9.03226, 10.5376, 10.9677, 8.17204, 9.67742, 11.6129,
+            7.95699, 9.24731, 5.80645, 7.52688, 10.3226, 8.60215, 7.74194, 10.1075, 9.67742,
+            7.09677, 7.74194, 7.52688, 9.46237, 10.9677, 7.31183, 7.09677, 8.60215, 8.60215,
+            8.60215, 10.1075, 9.89247, 8.8172, 8.3871, 10.9677, 6.88172, 9.67742, 8.17204, 7.09677,
+            10.1075, 8.8172, 8.17204
+          ],
+          "z": [
+            0.335238, 1.17333, 0.963809, -1.55048, -0.921904, -0.0838095, 0.125714, 1.17333,
+            -1.34095, -2.38857, -0.502857, -0.921904, 0.754285, 0.754285, 0.963809, 0.335238,
+            -0.293333, 0.125714, 0.335238, 0.963809, 1.38286, 1.38286, -1.55048, 0.544762, 2.01143,
+            2.43048, -0.293333, 1.17333, 3.05905, -0.502857, 0.754285, -2.59809, -0.921904, 1.8019,
+            0.125714, -0.712381, 1.59238, 1.17333, -1.34095, -0.712381, -0.921904, 0.963809,
+            2.43048, -1.13143, -1.34095, 0.125714, 0.125714, 0.125714, 1.59238, 1.38286, 0.335238,
+            -0.0838095, 2.43048, -1.55048, 1.17333, -0.293333, -1.34095, 1.59238, 0.335238,
+            -0.293333
+          ]
+        },
+        {
+          "unit_index": 30,
+          "rate_hz": [
+            2.58065, 1.72043, 3.01075, 2.58065, 1.72043, 1.29032, 2.7957, 1.50538, 1.72043, 1.29032,
+            0.860215, 2.36559, 3.01075, 1.72043, 1.29032, 1.93548, 2.15054, 1.93548, 2.36559,
+            2.58065, 1.29032, 1.93548, 0.645161, 1.72043, 2.58065, 2.58065, 1.07527, 1.93548,
+            1.93548, 1.72043, 1.07527, 1.50538, 1.07527, 1.07527, 1.07527, 2.58065, 3.01075,
+            2.36559, 1.29032, 1.07527, 2.58065, 3.44086, 1.93548, 1.29032, 1.72043, 1.72043,
+            2.15054, 1.72043, 1.50538, 2.15054, 2.15054, 2.58065, 1.72043, 1.93548, 1.93548,
+            2.58065, 1.07527, 1.50538, 2.36559, 1.72043
+          ],
+          "z": [
+            0.899342, -0.484261, 1.59114, 0.899342, -0.484261, -1.17606, 1.24524, -0.830162,
+            -0.484261, -1.17606, -1.86786, 0.553441, 1.59114, -0.484261, -1.17606, -0.13836,
+            0.20754, -0.13836, 0.553441, 0.899342, -1.17606, -0.13836, -2.21377, -0.484261,
+            0.899342, 0.899342, -1.52196, -0.13836, -0.13836, -0.484261, -1.52196, -0.830162,
+            -1.52196, -1.52196, -1.52196, 0.899342, 1.59114, 0.553441, -1.17606, -1.52196, 0.899342,
+            2.28295, -0.13836, -1.17606, -0.484261, -0.484261, 0.20754, -0.484261, -0.830162,
+            0.20754, 0.20754, 0.899342, -0.484261, -0.13836, -0.13836, 0.899342, -1.52196,
+            -0.830162, 0.553441, -0.484261
+          ]
+        },
+        {
+          "unit_index": 31,
+          "rate_hz": [
+            7.74194, 7.09677, 6.02151, 8.17204, 7.74194, 9.46237, 6.66667, 7.31183, 9.24731,
+            9.46237, 6.88172, 9.46237, 8.8172, 6.66667, 9.03226, 6.88172, 9.24731, 10.1075, 10.3226,
+            7.95699, 10.3226, 6.02151, 7.09677, 6.66667, 6.23656, 5.80645, 10.3226, 8.60215,
+            7.52688, 6.66667, 7.09677, 6.23656, 8.60215, 7.31183, 9.67742, 7.95699, 11.828, 6.45161,
+            7.95699, 6.45161, 7.52688, 10.3226, 6.45161, 6.88172, 7.31183, 6.66667, 7.52688, 8.8172,
+            8.8172, 7.95699, 9.89247, 6.88172, 9.67742, 7.74194, 9.03226, 8.60215, 7.74194, 6.88172,
+            6.66667, 8.17204
+          ],
+          "z": [
+            -0.366881, -0.867174, -1.701, -0.0333528, -0.366881, 0.967232, -1.2007, -0.70041,
+            0.800468, 0.967232, -1.03394, 0.967232, 0.46694, -1.2007, 0.633704, -1.03394, 0.800468,
+            1.46753, 1.63429, -0.200117, 1.63429, -1.701, -0.867174, -1.2007, -1.53423, -1.86776,
+            1.63429, 0.300176, -0.533645, -1.2007, -0.867174, -1.53423, 0.300176, -0.70041, 1.134,
+            -0.200117, 2.80164, -1.36747, -0.200117, -1.36747, -0.533645, 1.63429, -1.36747,
+            -1.03394, -0.70041, -1.2007, -0.533645, 0.46694, 0.46694, -0.200117, 1.30076, -1.03394,
+            1.134, -0.366881, 0.633704, 0.300176, -0.366881, -1.03394, -1.2007, -0.0333528
+          ]
+        },
+        {
+          "unit_index": 32,
+          "rate_hz": [
+            3.01075, 2.7957, 2.58065, 3.01075, 1.72043, 1.93548, 3.87097, 2.15054, 2.36559, 4.08602,
+            3.01075, 2.7957, 3.44086, 3.65591, 2.7957, 2.15054, 2.15054, 2.7957, 3.44086, 2.36559,
+            2.58065, 3.01075, 2.15054, 4.73118, 3.44086, 3.01075, 3.01075, 3.65591, 3.01075,
+            3.22581, 2.7957, 1.93548, 3.22581, 3.22581, 3.01075, 3.44086, 2.36559, 2.58065, 2.58065,
+            2.7957, 2.7957, 2.15054, 2.36559, 3.87097, 2.15054, 3.44086, 2.36559, 2.7957, 3.44086,
+            3.01075, 1.72043, 4.30108, 3.22581, 3.22581, 2.15054, 3.01075, 2.58065, 2.36559, 2.7957,
+            2.58065
+          ],
+          "z": [
+            0.313071, -0.0164774, -0.346026, 0.313071, -1.66422, -1.33467, 1.63127, -1.00512,
+            -0.675575, 1.96082, 0.313071, -0.0164774, 0.972169, 1.30172, -0.0164774, -1.00512,
+            -1.00512, -0.0164774, 0.972169, -0.675575, -0.346026, 0.313071, -1.00512, 2.94946,
+            0.972169, 0.313071, 0.313071, 1.30172, 0.313071, 0.64262, -0.0164774, -1.33467, 0.64262,
+            0.64262, 0.313071, 0.972169, -0.675575, -0.346026, -0.346026, -0.0164774, -0.0164774,
+            -1.00512, -0.675575, 1.63127, -1.00512, 0.972169, -0.675575, -0.0164774, 0.972169,
+            0.313071, -1.66422, 2.29036, 0.64262, 0.64262, -1.00512, 0.313071, -0.346026, -0.675575,
+            -0.0164774, -0.346026
+          ]
+        },
+        {
+          "unit_index": 33,
+          "rate_hz": [
+            0.215054, 0.645161, 0.430108, 0.430108, 0.0, 0.215054, 0.215054, 0.0, 0.430108,
+            0.215054, 0.860215, 0.645161, 0.215054, 0.860215, 0.215054, 0.430108, 0.0, 0.645161,
+            0.645161, 0.430108, 0.645161, 0.645161, 0.645161, 0.215054, 0.215054, 0.430108,
+            0.430108, 0.430108, 0.0, 0.0, 0.0, 0.215054, 0.430108, 0.0, 0.645161, 0.0, 0.0,
+            0.430108, 0.0, 0.215054, 0.215054, 0.215054, 0.215054, 0.430108, 0.430108, 0.645161,
+            0.215054, 0.430108, 0.430108, 0.0, 0.215054, 0.430108, 0.430108, 0.645161, 0.215054,
+            0.860215, 0.0, 0.215054, 0.430108, 0.215054
+          ],
+          "z": [
+            -0.64532, 0.967981, 0.16133, 0.16133, -1.45197, -0.64532, -0.64532, -1.45197, 0.16133,
+            -0.64532, 1.77463, 0.967981, -0.64532, 1.77463, -0.64532, 0.16133, -1.45197, 0.967981,
+            0.967981, 0.16133, 0.967981, 0.967981, 0.967981, -0.64532, -0.64532, 0.16133, 0.16133,
+            0.16133, -1.45197, -1.45197, -1.45197, -0.64532, 0.16133, -1.45197, 0.967981, -1.45197,
+            -1.45197, 0.16133, -1.45197, -0.64532, -0.64532, -0.64532, -0.64532, 0.16133, 0.16133,
+            0.967981, -0.64532, 0.16133, 0.16133, -1.45197, -0.64532, 0.16133, 0.16133, 0.967981,
+            -0.64532, 1.77463, -1.45197, -0.64532, 0.16133, -0.64532
+          ]
+        },
+        {
+          "unit_index": 34,
+          "rate_hz": [
+            0.645161, 0.645161, 1.50538, 1.93548, 0.860215, 0.645161, 0.645161, 0.860215, 1.29032,
+            1.07527, 1.29032, 0.430108, 1.72043, 2.15054, 1.29032, 0.430108, 1.29032, 0.0, 1.07527,
+            0.860215, 0.860215, 0.430108, 1.29032, 1.29032, 0.860215, 1.72043, 1.29032, 0.860215,
+            1.07527, 2.36559, 0.430108, 0.860215, 0.215054, 0.430108, 0.860215, 0.215054, 1.50538,
+            0.860215, 0.645161, 2.58065, 0.860215, 0.645161, 1.07527, 0.430108, 1.29032, 0.215054,
+            1.72043, 1.72043, 1.50538, 1.07527, 0.860215, 1.72043, 0.860215, 0.645161, 1.72043,
+            0.860215, 1.07527, 1.07527, 1.93548, 1.50538
+          ],
+          "z": [
+            -0.71864, -0.71864, 0.878337, 1.67683, -0.319395, -0.71864, -0.71864, -0.319395,
+            0.479093, 0.0798489, 0.479093, -1.11788, 1.27758, 2.07607, 0.479093, -1.11788, 0.479093,
+            -1.91637, 0.0798489, -0.319395, -0.319395, -1.11788, 0.479093, 0.479093, -0.319395,
+            1.27758, 0.479093, -0.319395, 0.0798489, 2.47531, -1.11788, -0.319395, -1.51713,
+            -1.11788, -0.319395, -1.51713, 0.878337, -0.319395, -0.71864, 2.87456, -0.319395,
+            -0.71864, 0.0798489, -1.11788, 0.479093, -1.51713, 1.27758, 1.27758, 0.878337,
+            0.0798489, -0.319395, 1.27758, -0.319395, -0.71864, 1.27758, -0.319395, 0.0798489,
+            0.0798489, 1.67683, 0.878337
+          ]
+        },
+        {
+          "unit_index": 35,
+          "rate_hz": [
+            0.645161, 0.215054, 0.215054, 0.430108, 0.430108, 0.0, 0.215054, 0.215054, 0.0,
+            0.215054, 0.0, 0.215054, 0.215054, 0.0, 0.215054, 0.0, 0.215054, 0.215054, 0.430108,
+            0.0, 0.430108, 0.430108, 0.215054, 0.215054, 0.860215, 0.430108, 0.215054, 0.215054,
+            0.0, 0.0, 0.860215, 0.0, 0.0, 0.215054, 0.430108, 0.215054, 0.215054, 0.215054,
+            0.645161, 0.0, 0.215054, 0.430108, 0.215054, 0.215054, 0.430108, 0.645161, 0.215054,
+            0.430108, 0.0, 0.0, 0.215054, 0.215054, 0.0, 0.430108, 0.645161, 0.215054, 0.430108,
+            0.215054, 0.430108, 0.0
+          ],
+          "z": [
+            2.48311, 0.0605636, 0.0605636, 1.27184, 1.27184, -1.15071, 0.0605636, 0.0605636,
+            -1.15071, 0.0605636, -1.15071, 0.0605636, 0.0605636, -1.15071, 0.0605636, -1.15071,
+            0.0605636, 0.0605636, 1.27184, -1.15071, 1.27184, 1.27184, 0.0605636, 0.0605636,
+            3.69438, 1.27184, 0.0605636, 0.0605636, -1.15071, -1.15071, 3.69438, -1.15071, -1.15071,
+            0.0605636, 1.27184, 0.0605636, 0.0605636, 0.0605636, 2.48311, -1.15071, 0.0605636,
+            1.27184, 0.0605636, 0.0605636, 1.27184, 2.48311, 0.0605636, 1.27184, -1.15071, -1.15071,
+            0.0605636, 0.0605636, -1.15071, 1.27184, 2.48311, 0.0605636, 1.27184, 0.0605636,
+            1.27184, -1.15071
+          ]
+        },
+        {
+          "unit_index": 36,
+          "rate_hz": [
+            0.215054, 0.0, 0.645161, 0.0, 0.0, 0.215054, 0.0, 0.645161, 0.430108, 0.430108,
+            0.860215, 0.215054, 0.0, 0.0, 0.215054, 1.07527, 0.215054, 0.0, 0.0, 0.215054, 0.215054,
+            0.215054, 0.215054, 0.215054, 0.430108, 0.645161, 0.0, 0.430108, 0.430108, 0.215054,
+            0.215054, 0.430108, 0.0, 0.430108, 0.215054, 0.430108, 0.215054, 0.645161, 0.215054,
+            0.0, 0.215054, 0.860215, 0.215054, 0.430108, 0.430108, 0.430108, 0.430108, 0.0,
+            0.215054, 0.430108, 0.430108, 1.07527, 0.645161, 0.0, 0.215054, 0.0, 0.0, 0.0, 0.645161,
+            0.215054
+          ],
+          "z": [
+            -0.168651, -0.843254, 1.18056, -0.843254, -0.843254, -0.168651, -0.843254, 1.18056,
+            0.505953, 0.505953, 1.85516, -0.168651, -0.843254, -0.843254, -0.168651, 2.52976,
+            -0.168651, -0.843254, -0.843254, -0.168651, -0.168651, -0.168651, -0.168651, -0.168651,
+            0.505953, 1.18056, -0.843254, 0.505953, 0.505953, -0.168651, -0.168651, 0.505953,
+            -0.843254, 0.505953, -0.168651, 0.505953, -0.168651, 1.18056, -0.168651, -0.843254,
+            -0.168651, 1.85516, -0.168651, 0.505953, 0.505953, 0.505953, 0.505953, -0.843254,
+            -0.168651, 0.505953, 0.505953, 2.52976, 1.18056, -0.843254, -0.168651, -0.843254,
+            -0.843254, -0.843254, 1.18056, -0.168651
+          ]
+        },
+        {
+          "unit_index": 37,
+          "rate_hz": [
+            1.07527, 1.72043, 0.860215, 0.860215, 0.860215, 0.430108, 0.860215, 0.860215, 0.645161,
+            0.430108, 0.860215, 1.50538, 1.72043, 0.430108, 1.07527, 1.07527, 0.215054, 0.645161,
+            1.93548, 0.215054, 0.430108, 1.07527, 0.430108, 1.07527, 0.860215, 0.430108, 0.645161,
+            0.860215, 0.645161, 0.430108, 1.50538, 1.07527, 0.860215, 0.645161, 1.93548, 0.645161,
+            0.860215, 0.860215, 0.645161, 0.645161, 0.645161, 0.645161, 0.645161, 0.860215,
+            0.645161, 1.72043, 0.860215, 1.07527, 1.07527, 1.07527, 0.860215, 0.645161, 1.07527,
+            0.430108, 0.215054, 1.72043, 1.50538, 0.645161, 1.50538, 0.215054
+          ],
+          "z": [
+            0.327327, 1.63663, -0.109109, -0.109109, -0.109109, -0.981981, -0.109109, -0.109109,
+            -0.545545, -0.981981, -0.109109, 1.2002, 1.63663, -0.981981, 0.327327, 0.327327,
+            -1.41842, -0.545545, 2.07307, -1.41842, -0.981981, 0.327327, -0.981981, 0.327327,
+            -0.109109, -0.981981, -0.545545, -0.109109, -0.545545, -0.981981, 1.2002, 0.327327,
+            -0.109109, -0.545545, 2.07307, -0.545545, -0.109109, -0.109109, -0.545545, -0.545545,
+            -0.545545, -0.545545, -0.545545, -0.109109, -0.545545, 1.63663, -0.109109, 0.327327,
+            0.327327, 0.327327, -0.109109, -0.545545, 0.327327, -0.981981, -1.41842, 1.63663,
+            1.2002, -0.545545, 1.2002, -1.41842
+          ]
+        },
+        {
+          "unit_index": 38,
+          "rate_hz": [
+            0.430108, 0.645161, 0.645161, 1.93548, 1.29032, 0.215054, 1.50538, 1.72043, 0.860215,
+            0.860215, 1.29032, 1.72043, 0.215054, 1.29032, 1.50538, 1.07527, 1.50538, 0.645161,
+            1.50538, 0.860215, 0.430108, 0.645161, 0.215054, 1.07527, 0.645161, 1.50538, 0.860215,
+            0.430108, 0.430108, 1.50538, 0.430108, 0.430108, 1.07527, 0.645161, 1.93548, 0.860215,
+            1.07527, 0.645161, 0.430108, 1.93548, 1.29032, 0.860215, 0.860215, 1.29032, 0.215054,
+            1.50538, 0.430108, 0.645161, 1.07527, 0.430108, 0.430108, 0.215054, 0.860215, 1.07527,
+            0.645161, 0.860215, 1.50538, 1.07527, 0.645161, 0.430108
+          ],
+          "z": [
+            -1.27369, -0.856085, -0.856085, 1.64953, 0.396722, -1.69129, 0.814325, 1.23193,
+            -0.438483, -0.438483, 0.396722, 1.23193, -1.69129, 0.396722, 0.814325, -0.0208801,
+            0.814325, -0.856085, 0.814325, -0.438483, -1.27369, -0.856085, -1.69129, -0.0208801,
+            -0.856085, 0.814325, -0.438483, -1.27369, -1.27369, 0.814325, -1.27369, -1.27369,
+            -0.0208801, -0.856085, 1.64953, -0.438483, -0.0208801, -0.856085, -1.27369, 1.64953,
+            0.396722, -0.438483, -0.438483, 0.396722, -1.69129, 0.814325, -1.27369, -0.856085,
+            -0.0208801, -1.27369, -1.27369, -1.69129, -0.438483, -0.0208801, -0.856085, -0.438483,
+            0.814325, -0.0208801, -0.856085, -1.27369
+          ]
+        },
+        {
+          "unit_index": 39,
+          "rate_hz": [
+            0.430108, 1.50538, 0.860215, 0.430108, 1.50538, 1.29032, 0.645161, 1.07527, 0.215054,
+            0.860215, 1.07527, 1.72043, 0.645161, 0.430108, 0.215054, 1.07527, 0.860215, 1.29032,
+            1.29032, 1.29032, 1.07527, 0.215054, 0.645161, 0.430108, 1.07527, 1.72043, 0.0, 1.50538,
+            0.860215, 0.645161, 1.07527, 0.860215, 1.29032, 0.215054, 1.72043, 0.645161, 0.645161,
+            0.860215, 1.72043, 1.72043, 0.860215, 0.860215, 1.29032, 0.430108, 0.860215, 0.215054,
+            0.645161, 0.645161, 1.72043, 0.860215, 0.860215, 0.860215, 0.645161, 1.29032, 1.07527,
+            0.860215, 0.645161, 1.07527, 0.860215, 0.645161
+          ],
+          "z": [
+            -1.12742, 1.27135, -0.167914, -1.12742, 1.27135, 0.791593, -0.647667, 0.31184, -1.60717,
+            -0.167914, 0.31184, 1.7511, -0.647667, -1.12742, -1.60717, 0.31184, -0.167914, 0.791593,
+            0.791593, 0.791593, 0.31184, -1.60717, -0.647667, -1.12742, 0.31184, 1.7511, -2.08693,
+            1.27135, -0.167914, -0.647667, 0.31184, -0.167914, 0.791593, -1.60717, 1.7511,
+            -0.647667, -0.647667, -0.167914, 1.7511, 1.7511, -0.167914, -0.167914, 0.791593,
+            -1.12742, -0.167914, -1.60717, -0.647667, -0.647667, 1.7511, -0.167914, -0.167914,
+            -0.167914, -0.647667, 0.791593, 0.31184, -0.167914, -0.647667, 0.31184, -0.167914,
+            -0.647667
+          ]
+        },
+        {
+          "unit_index": 40,
+          "rate_hz": [
+            0.645161, 0.645161, 0.430108, 0.215054, 0.430108, 0.430108, 0.215054, 0.860215,
+            0.430108, 0.430108, 0.645161, 0.860215, 0.645161, 1.07527, 0.860215, 1.29032, 1.07527,
+            0.215054, 1.07527, 1.93548, 0.215054, 0.430108, 0.215054, 0.860215, 0.860215, 0.430108,
+            1.29032, 0.430108, 0.430108, 0.860215, 0.860215, 0.430108, 0.430108, 0.430108, 0.215054,
+            0.430108, 0.645161, 0.860215, 0.645161, 0.215054, 0.430108, 0.860215, 0.215054,
+            0.860215, 0.645161, 0.430108, 0.215054, 0.645161, 0.430108, 0.215054, 0.215054, 1.07527,
+            1.07527, 0.645161, 0.215054, 0.645161, 0.430108, 1.29032, 0.215054, 0.0
+          ],
+          "z": [
+            -0.176694, -0.176694, -0.681533, -1.18637, -0.681533, -0.681533, -1.18637, 0.328145,
+            -0.681533, -0.681533, -0.176694, 0.328145, -0.176694, 0.832985, 0.328145, 1.33782,
+            0.832985, -1.18637, 0.832985, 2.85234, -1.18637, -0.681533, -1.18637, 0.328145,
+            0.328145, -0.681533, 1.33782, -0.681533, -0.681533, 0.328145, 0.328145, -0.681533,
+            -0.681533, -0.681533, -1.18637, -0.681533, -0.176694, 0.328145, -0.176694, -1.18637,
+            -0.681533, 0.328145, -1.18637, 0.328145, -0.176694, -0.681533, -1.18637, -0.176694,
+            -0.681533, -1.18637, -1.18637, 0.832985, 0.832985, -0.176694, -1.18637, -0.176694,
+            -0.681533, 1.33782, -1.18637, -1.69121
+          ]
+        },
+        {
+          "unit_index": 41,
+          "rate_hz": [
+            10.7527, 12.043, 10.9677, 7.95699, 10.5376, 9.46237, 10.1075, 10.3226, 10.7527, 7.09677,
+            12.2581, 7.95699, 12.2581, 8.17204, 9.46237, 12.4731, 9.46237, 6.45161, 7.52688,
+            9.89247, 12.4731, 10.5376, 7.31183, 12.043, 9.03226, 9.46237, 10.7527, 9.89247, 10.5376,
+            11.3978, 8.3871, 10.7527, 10.1075, 9.46237, 10.7527, 8.17204, 7.31183, 12.043, 12.4731,
+            11.1828, 8.3871, 9.67742, 9.46237, 8.60215, 9.24731, 11.6129, 12.4731, 12.6882, 9.89247,
+            10.1075, 8.8172, 9.46237, 11.6129, 12.4731, 8.3871, 9.67742, 13.7634, 11.3978, 8.17204,
+            11.828
+          ],
+          "z": [
+            0.530492, 1.24576, 0.649704, -1.01926, 0.411281, -0.184778, 0.172857, 0.292069,
+            0.530492, -1.49611, 1.36498, -1.01926, 1.36498, -0.900049, -0.184778, 1.48419,
+            -0.184778, -1.85374, -1.25768, 0.0536453, 1.48419, 0.411281, -1.3769, 1.24576,
+            -0.423202, -0.184778, 0.530492, 0.0536453, 0.411281, 0.888128, -0.780837, 0.530492,
+            0.172857, -0.184778, 0.530492, -0.900049, -1.3769, 1.24576, 1.48419, 0.768916,
+            -0.780837, -0.0655665, -0.184778, -0.661625, -0.30399, 1.00734, 1.48419, 1.6034,
+            0.0536453, 0.172857, -0.542414, -0.184778, 1.00734, 1.48419, -0.780837, -0.0655665,
+            2.19946, 0.888128, -0.900049, 1.12655
+          ]
+        },
+        {
+          "unit_index": 42,
+          "rate_hz": [
+            0.430108, 0.645161, 1.29032, 0.0, 0.430108, 0.430108, 0.430108, 0.0, 0.430108, 0.430108,
+            0.860215, 0.215054, 0.860215, 0.430108, 0.645161, 0.0, 0.0, 0.430108, 0.215054,
+            0.645161, 0.860215, 0.430108, 0.645161, 0.430108, 1.07527, 0.215054, 0.0, 0.215054,
+            0.645161, 0.0, 1.07527, 0.215054, 0.430108, 0.215054, 0.215054, 0.430108, 1.07527, 0.0,
+            0.645161, 0.430108, 0.430108, 0.215054, 0.215054, 0.215054, 0.645161, 0.430108,
+            0.215054, 1.07527, 0.430108, 0.430108, 0.860215, 0.215054, 0.0, 0.0, 0.215054, 0.215054,
+            0.215054, 0.215054, 0.215054, 0.215054
+          ],
+          "z": [
+            -0.0325074, 0.61764, 2.56808, -1.3328, -0.0325074, -0.0325074, -0.0325074, -1.3328,
+            -0.0325074, -0.0325074, 1.26779, -0.682655, 1.26779, -0.0325074, 0.61764, -1.3328,
+            -1.3328, -0.0325074, -0.682655, 0.61764, 1.26779, -0.0325074, 0.61764, -0.0325074,
+            1.91794, -0.682655, -1.3328, -0.682655, 0.61764, -1.3328, 1.91794, -0.682655,
+            -0.0325074, -0.682655, -0.682655, -0.0325074, 1.91794, -1.3328, 0.61764, -0.0325074,
+            -0.0325074, -0.682655, -0.682655, -0.682655, 0.61764, -0.0325074, -0.682655, 1.91794,
+            -0.0325074, -0.0325074, 1.26779, -0.682655, -1.3328, -1.3328, -0.682655, -0.682655,
+            -0.682655, -0.682655, -0.682655, -0.682655
+          ]
+        },
+        {
+          "unit_index": 43,
+          "rate_hz": [
+            4.94624, 5.16129, 4.08602, 7.31183, 5.16129, 3.44086, 4.51613, 7.52688, 4.51613,
+            4.73118, 4.51613, 6.45161, 5.16129, 3.65591, 3.44086, 6.02151, 5.5914, 4.08602, 4.73118,
+            6.66667, 4.30108, 5.5914, 5.5914, 5.80645, 6.88172, 4.51613, 2.58065, 7.09677, 5.5914,
+            6.88172, 4.73118, 4.08602, 4.73118, 4.51613, 6.88172, 3.44086, 5.37634, 4.30108,
+            4.73118, 2.7957, 5.16129, 5.37634, 4.51613, 3.87097, 4.73118, 6.45161, 2.15054, 5.16129,
+            5.5914, 5.16129, 4.73118, 3.65591, 4.94624, 4.73118, 7.31183, 5.37634, 4.30108, 3.87097,
+            5.37634, 6.66667
+          ],
+          "z": null
+        }
+      ],
+      "n_trials": 93,
+      "align": "event:scene_cut",
+      "source": "catalog",
+      "missing_frames": [],
+      "label": "exploratory screen",
+      "defaults": {
+        "version": "defaults-1",
+        "block": "dandi-000623",
+        "source": "Keles et al. 2024, Sci Data 11:214; release code at commit 8c35290b",
+        "baseline": "none",
+        "bin_s": 0.05,
+        "pre_s": 1.0,
+        "post_s": 2.0,
+        "response_window_s": [0.0, 1.0]
+      },
+      "responsive": [
+        {
+          "unit_index": 0,
+          "location": "Right vmPFC",
+          "p": 0.44577711144427784,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 1,
+          "location": "Right vmPFC",
+          "p": 0.36431784107946025,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 2,
+          "location": "Right ACC",
+          "p": 0.5637181409295352,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 3,
+          "location": "Right preSMA",
+          "p": 0.6231884057971014,
+          "q": 0.9140096618357488,
+          "screened": false
+        },
+        {
+          "unit_index": 4,
+          "location": "Right preSMA",
+          "p": 0.30134932533733133,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 5,
+          "location": "Right preSMA",
+          "p": 0.5487256371814093,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 6,
+          "location": "Right preSMA",
+          "p": 1.0,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 7,
+          "location": "Right preSMA",
+          "p": 1.0,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 8,
+          "location": "Right preSMA",
+          "p": 0.46526736631684157,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 9,
+          "location": "Right amygdala",
+          "p": 0.05547226386806597,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 10,
+          "location": "Right amygdala",
+          "p": 0.4687656171914043,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 11,
+          "location": "Right amygdala",
+          "p": 0.5182408795602199,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 12,
+          "location": "Right amygdala",
+          "p": 1.0,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 13,
+          "location": "Right amygdala",
+          "p": 0.14392803598200898,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 14,
+          "location": "Right amygdala",
+          "p": 1.0,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 15,
+          "location": "Right amygdala",
+          "p": 0.06146926536731634,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 16,
+          "location": "Right amygdala",
+          "p": 0.14342828585707146,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 17,
+          "location": "Right amygdala",
+          "p": 0.5337331334332833,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 18,
+          "location": "Right amygdala",
+          "p": 0.15942028985507245,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 19,
+          "location": "Right amygdala",
+          "p": 1.0,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 20,
+          "location": "Right amygdala",
+          "p": 1.0,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 21,
+          "location": "Right amygdala",
+          "p": 0.8010994502748626,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 22,
+          "location": "Right amygdala",
+          "p": 0.4482758620689655,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 23,
+          "location": "Right amygdala",
+          "p": 0.09395302348825588,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 24,
+          "location": "Right amygdala",
+          "p": 0.07896051974012994,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 25,
+          "location": "Right amygdala",
+          "p": 0.487256371814093,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 26,
+          "location": "Right amygdala",
+          "p": 0.5337331334332833,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 27,
+          "location": "Right amygdala",
+          "p": 0.881559220389805,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 28,
+          "location": "Right amygdala",
+          "p": 0.8360819590204898,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 29,
+          "location": "Right amygdala",
+          "p": 0.25687156421789104,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 30,
+          "location": "Right amygdala",
+          "p": 0.09145427286356822,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 31,
+          "location": "Right amygdala",
+          "p": 0.2988505747126437,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 32,
+          "location": "Right amygdala",
+          "p": 0.5242378810594702,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 33,
+          "location": "Right amygdala",
+          "p": 0.26486756621689156,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 34,
+          "location": "Right amygdala",
+          "p": 1.0,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 35,
+          "location": "Right amygdala",
+          "p": 0.25537231384307846,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 36,
+          "location": "Right amygdala",
+          "p": 0.9190404797601199,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 37,
+          "location": "Right amygdala",
+          "p": 0.5637181409295352,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 38,
+          "location": "Right amygdala",
+          "p": 0.10294852573713144,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 39,
+          "location": "Right amygdala",
+          "p": 1.0,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 40,
+          "location": "Right amygdala",
+          "p": 0.16891554222888555,
+          "q": 0.7432283858070965,
+          "screened": false
+        },
+        {
+          "unit_index": 41,
+          "location": "Right amygdala",
+          "p": 0.31434282858570717,
+          "q": 0.8552964896861914,
+          "screened": false
+        },
+        {
+          "unit_index": 42,
+          "location": "Right amygdala",
+          "p": 0.9060469765117442,
+          "q": 1.0,
+          "screened": false
+        },
+        {
+          "unit_index": 43,
+          "location": "Right amygdala",
+          "p": 0.8650674662668666,
+          "q": 1.0,
+          "screened": false
+        }
+      ],
+      "query_ms": 6499,
+      "compute_ms": 91
+    }
+  }
+}

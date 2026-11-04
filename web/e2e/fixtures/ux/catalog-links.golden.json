@@ -1,0 +1,45 @@
+{
+  "links": [
+    {
+      "dataset": "dandi-000623",
+      "subject": "CS41",
+      "subject_key": "bmovie-CS41",
+      "status": "pending",
+      "linked_by": null,
+      "linked_at": null,
+      "basis": null,
+      "note": null
+    },
+    {
+      "dataset": "dandi-000623",
+      "subject": "CS62",
+      "subject_key": "bmovie-CS62",
+      "status": "pending",
+      "linked_by": null,
+      "linked_at": null,
+      "basis": null,
+      "note": "age differs"
+    },
+    {
+      "dataset": "openneuro-ds004798",
+      "subject": "CS41",
+      "subject_key": "bmovie-CS41",
+      "status": "pending",
+      "linked_by": null,
+      "linked_at": null,
+      "basis": null,
+      "note": null
+    },
+    {
+      "dataset": "openneuro-ds004798",
+      "subject": "CS62",
+      "subject_key": "bmovie-CS62",
+      "status": "pending",
+      "linked_by": null,
+      "linked_at": null,
+      "basis": null,
+      "note": null
+    }
+  ],
+  "query_ms": 0
+}

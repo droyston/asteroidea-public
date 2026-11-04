@@ -1,0 +1,21 @@
+{
+  "asset": {
+    "asset_id": "asset-0001",
+    "dataset": "dandi-000623",
+    "s3_key": "raw/dandi-000623/sub-a/sub-a_ses-1_ecephys.nwb",
+    "subject": "sub-a",
+    "format": "nwb",
+    "size_bytes": 2000000000
+  },
+  "headers": [
+    {
+      "asset_id": "asset-0001",
+      "format": "nwb",
+      "extractor_version": "1",
+      "nwb_version": "2.7.0",
+      "session_description": "Spike sorted units during movie watching",
+      "n_units": 412,
+      "n_electrodes": 128
+    }
+  ]
+}

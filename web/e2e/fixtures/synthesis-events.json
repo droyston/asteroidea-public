@@ -1,0 +1,1812 @@
+{
+  "asset_id": "asset-0201",
+  "dataset": "dandi-000623",
+  "recipe": {
+    "version": "recipe-1",
+    "default": false,
+    "lfp_clock_offset_s": 10.0
+  },
+  "event_types": [
+    {
+      "name": "scene_cut",
+      "averaging": "average",
+      "events": [
+        {
+          "onset_s": 0.0,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 1.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 0
+          }
+        },
+        {
+          "onset_s": 4.734810074034613,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 1.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 1
+          }
+        },
+        {
+          "onset_s": 15.004634565790184,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 1.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 2
+          }
+        },
+        {
+          "onset_s": 16.73849997780053,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 1.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 3
+          }
+        },
+        {
+          "onset_s": 19.089227694727015,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 1.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 4
+          }
+        },
+        {
+          "onset_s": 21.740043117839377,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 1.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 5
+          }
+        },
+        {
+          "onset_s": 25.091070846363436,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 1.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 6
+          }
+        },
+        {
+          "onset_s": 27.091701672878116,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 2.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 7
+          }
+        },
+        {
+          "onset_s": 37.64495741704013,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 3.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 8
+          }
+        },
+        {
+          "onset_s": 46.16426655376563,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 4.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 9
+          }
+        },
+        {
+          "onset_s": 66.28714184474666,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 4.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 10
+          }
+        },
+        {
+          "onset_s": 66.80397462745896,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 11
+          }
+        },
+        {
+          "onset_s": 90.17784639552701,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 12
+          }
+        },
+        {
+          "onset_s": 92.7286333985976,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 13
+          }
+        },
+        {
+          "onset_s": 94.89596575574251,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 14
+          }
+        },
+        {
+          "onset_s": 99.33066433045315,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 15
+          }
+        },
+        {
+          "onset_s": 103.64865841326537,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 16
+          }
+        },
+        {
+          "onset_s": 108.30009377194801,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 17
+          }
+        },
+        {
+          "onset_s": 113.45169741939753,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 18
+          }
+        },
+        {
+          "onset_s": 115.01885336375562,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 19
+          }
+        },
+        {
+          "onset_s": 117.96976872941013,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 20
+          }
+        },
+        {
+          "onset_s": 120.00372008851264,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 21
+          }
+        },
+        {
+          "onset_s": 121.88763960759388,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 22
+          }
+        },
+        {
+          "onset_s": 126.53907508723205,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 23
+          }
+        },
+        {
+          "onset_s": 129.2065621931688,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 24
+          }
+        },
+        {
+          "onset_s": 137.57581649563508,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 25
+          }
+        },
+        {
+          "onset_s": 140.37668010912603,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 26
+          }
+        },
+        {
+          "onset_s": 143.3776048097061,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 27
+          }
+        },
+        {
+          "onset_s": 145.24484539596597,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 28
+          }
+        },
+        {
+          "onset_s": 147.89566701784497,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 29
+          }
+        },
+        {
+          "onset_s": 149.41282080556266,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 30
+          }
+        },
+        {
+          "onset_s": 150.77989246533252,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 31
+          }
+        },
+        {
+          "onset_s": 153.41404739959398,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 32
+          }
+        },
+        {
+          "onset_s": 153.93086497264449,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 33
+          }
+        },
+        {
+          "onset_s": 159.0991302319453,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 34
+          }
+        },
+        {
+          "onset_s": 161.16643143928377,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 35
+          }
+        },
+        {
+          "onset_s": 163.0836988951778,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 36
+          }
+        },
+        {
+          "onset_s": 167.2850011572009,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 37
+          }
+        },
+        {
+          "onset_s": 169.05219801364,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 38
+          }
+        },
+        {
+          "onset_s": 170.6860528451507,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 39
+          }
+        },
+        {
+          "onset_s": 171.853065592004,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 40
+          }
+        },
+        {
+          "onset_s": 173.48689468728844,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 5.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 41
+          }
+        },
+        {
+          "onset_s": 184.92378166900016,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 6.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 42
+          }
+        },
+        {
+          "onset_s": 211.61535223014653,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 6.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 43
+          }
+        },
+        {
+          "onset_s": 217.48382184747607,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 6.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 44
+          }
+        },
+        {
+          "onset_s": 254.245179951482,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 45
+          }
+        },
+        {
+          "onset_s": 256.1291031113942,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 46
+          }
+        },
+        {
+          "onset_s": 261.61411279340973,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 47
+          }
+        },
+        {
+          "onset_s": 264.8484596936614,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 48
+          }
+        },
+        {
+          "onset_s": 266.69901924277656,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 49
+          }
+        },
+        {
+          "onset_s": 269.2498006338137,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 50
+          }
+        },
+        {
+          "onset_s": 273.050984595262,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 51
+          }
+        },
+        {
+          "onset_s": 277.2856235000654,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 52
+          }
+        },
+        {
+          "onset_s": 281.2868625110714,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 53
+          }
+        },
+        {
+          "onset_s": 284.5712016267353,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 54
+          }
+        },
+        {
+          "onset_s": 288.77249608316924,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 55
+          }
+        },
+        {
+          "onset_s": 291.4566581780673,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 56
+          }
+        },
+        {
+          "onset_s": 307.89508032082813,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 7.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 57
+          }
+        },
+        {
+          "onset_s": 314.49711717828177,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 8.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 58
+          }
+        },
+        {
+          "onset_s": 328.5347761983867,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 9.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 59
+          }
+        },
+        {
+          "onset_s": 340.77189113310305,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 60
+          }
+        },
+        {
+          "onset_s": 346.20691401016666,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 61
+          }
+        },
+        {
+          "onset_s": 350.0080810342333,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 62
+          }
+        },
+        {
+          "onset_s": 357.8438361501321,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 63
+          }
+        },
+        {
+          "onset_s": 360.01116435142467,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 64
+          }
+        },
+        {
+          "onset_s": 362.5786276276922,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 65
+          }
+        },
+        {
+          "onset_s": 364.92935745761497,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 66
+          }
+        },
+        {
+          "onset_s": 367.7635046574287,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 67
+          }
+        },
+        {
+          "onset_s": 369.44741439720383,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 68
+          }
+        },
+        {
+          "onset_s": 371.64809132373193,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 69
+          }
+        },
+        {
+          "onset_s": 389.65364395681536,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 70
+          }
+        },
+        {
+          "onset_s": 407.8926200334681,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 71
+          }
+        },
+        {
+          "onset_s": 409.72651698067784,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 72
+          }
+        },
+        {
+          "onset_s": 419.04607678425964,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 73
+          }
+        },
+        {
+          "onset_s": 420.2464427468949,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 74
+          }
+        },
+        {
+          "onset_s": 424.36437032331014,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 75
+          }
+        },
+        {
+          "onset_s": 427.6487220591516,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 76
+          }
+        },
+        {
+          "onset_s": 428.7323845723877,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 77
+          }
+        },
+        {
+          "onset_s": 431.5332588647143,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 10.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 78
+          }
+        },
+        {
+          "onset_s": 433.48381266655633,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 11.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 79
+          }
+        },
+        {
+          "onset_s": 435.01765014778357,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 12.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 80
+          }
+        },
+        {
+          "onset_s": 437.53510109649505,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "change"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 81
+          }
+        },
+        {
+          "onset_s": 439.6190824404475,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 82
+          }
+        },
+        {
+          "onset_s": 442.28659655631054,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 83
+          }
+        },
+        {
+          "onset_s": 445.2541512650787,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 84
+          }
+        },
+        {
+          "onset_s": 450.0556447956478,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 85
+          }
+        },
+        {
+          "onset_s": 451.4060534190503,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 86
+          }
+        },
+        {
+          "onset_s": 453.05655418673996,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 87
+          }
+        },
+        {
+          "onset_s": 453.89016305387486,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 88
+          }
+        },
+        {
+          "onset_s": 456.45761957595823,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 89
+          }
+        },
+        {
+          "onset_s": 456.9744480100344,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 90
+          }
+        },
+        {
+          "onset_s": 459.3251720563276,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 91
+          }
+        },
+        {
+          "onset_s": 475.4468062723754,
+          "stop_s": null,
+          "attributes": {
+            "scene_id": 13.0,
+            "cut_kind": "continuity"
+          },
+          "source": {
+            "kind": "stimulus_file",
+            "ref": "stimuli/scenecut_info.csv",
+            "row": 92
+          }
+        }
+      ],
+      "missing_frames": [11800, 11801],
+      "n_events": 93
+    },
+    {
+      "name": "recognition_onset",
+      "averaging": "average",
+      "events": [
+        {
+          "onset_s": 490.456834,
+          "stop_s": 498.226706,
+          "attributes": {
+            "actual_response": 2.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 1
+          }
+        },
+        {
+          "onset_s": 499.308612,
+          "stop_s": 501.82508,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 2
+          }
+        },
+        {
+          "onset_s": 502.876736,
+          "stop_s": 508.828296,
+          "attributes": {
+            "actual_response": 4.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 3
+          }
+        },
+        {
+          "onset_s": 509.895577,
+          "stop_s": 514.752856,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 4
+          }
+        },
+        {
+          "onset_s": 515.796855,
+          "stop_s": 520.35251,
+          "attributes": {
+            "actual_response": 1.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 5
+          }
+        },
+        {
+          "onset_s": 521.398759,
+          "stop_s": 525.184102,
+          "attributes": {
+            "actual_response": 1.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 6
+          }
+        },
+        {
+          "onset_s": 526.233695,
+          "stop_s": 532.483193,
+          "attributes": {
+            "actual_response": 2.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 7
+          }
+        },
+        {
+          "onset_s": 533.536567,
+          "stop_s": 542.249907,
+          "attributes": {
+            "actual_response": 1.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 8
+          }
+        },
+        {
+          "onset_s": 543.306032,
+          "stop_s": 546.620062,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 9
+          }
+        },
+        {
+          "onset_s": 547.674124,
+          "stop_s": 552.873309,
+          "attributes": {
+            "actual_response": 4.0,
+            "response_correct": 0.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 10
+          }
+        },
+        {
+          "onset_s": 553.925871,
+          "stop_s": 557.298589,
+          "attributes": {
+            "actual_response": 1.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 11
+          }
+        },
+        {
+          "onset_s": 558.344245,
+          "stop_s": 564.526742,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 12
+          }
+        },
+        {
+          "onset_s": 565.580023,
+          "stop_s": 574.700019,
+          "attributes": {
+            "actual_response": 3.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 13
+          }
+        },
+        {
+          "onset_s": 575.749863,
+          "stop_s": 579.326861,
+          "attributes": {
+            "actual_response": 4.0,
+            "response_correct": 0.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 14
+          }
+        },
+        {
+          "onset_s": 580.384736,
+          "stop_s": 584.672484,
+          "attributes": {
+            "actual_response": 1.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 15
+          }
+        },
+        {
+          "onset_s": 585.720109,
+          "stop_s": 591.118325,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 16
+          }
+        },
+        {
+          "onset_s": 592.17195,
+          "stop_s": 598.05826,
+          "attributes": {
+            "actual_response": 5.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 17
+          }
+        },
+        {
+          "onset_s": 599.107228,
+          "stop_s": 601.937977,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 18
+          }
+        },
+        {
+          "onset_s": 603.009289,
+          "stop_s": 605.798382,
+          "attributes": {
+            "actual_response": 2.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 19
+          }
+        },
+        {
+          "onset_s": 606.843538,
+          "stop_s": 610.01463,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 20
+          }
+        },
+        {
+          "onset_s": 611.061098,
+          "stop_s": 620.373938,
+          "attributes": {
+            "actual_response": 3.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 21
+          }
+        },
+        {
+          "onset_s": 621.430844,
+          "stop_s": 625.766061,
+          "attributes": {
+            "actual_response": 1.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 22
+          }
+        },
+        {
+          "onset_s": 626.816717,
+          "stop_s": 632.876496,
+          "attributes": {
+            "actual_response": 4.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 23
+          }
+        },
+        {
+          "onset_s": 633.951839,
+          "stop_s": 637.385057,
+          "attributes": {
+            "actual_response": 1.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 24
+          }
+        },
+        {
+          "onset_s": 638.436431,
+          "stop_s": 647.063365,
+          "attributes": {
+            "actual_response": 3.0,
+            "response_correct": 0.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 25
+          }
+        },
+        {
+          "onset_s": 648.139459,
+          "stop_s": 655.801237,
+          "attributes": {
+            "actual_response": 3.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 26
+          }
+        },
+        {
+          "onset_s": 656.875611,
+          "stop_s": 659.944923,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 27
+          }
+        },
+        {
+          "onset_s": 661.01036,
+          "stop_s": 672.923636,
+          "attributes": {
+            "actual_response": 4.0,
+            "response_correct": 0.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 28
+          }
+        },
+        {
+          "onset_s": 673.998042,
+          "stop_s": 677.168322,
+          "attributes": {
+            "actual_response": 5.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 29
+          }
+        },
+        {
+          "onset_s": 678.232821,
+          "stop_s": 680.595539,
+          "attributes": {
+            "actual_response": 5.0,
+            "response_correct": 0.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 30
+          }
+        },
+        {
+          "onset_s": 681.668133,
+          "stop_s": 684.965881,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 31
+          }
+        },
+        {
+          "onset_s": 686.018475,
+          "stop_s": 688.34338,
+          "attributes": {
+            "actual_response": 5.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 32
+          }
+        },
+        {
+          "onset_s": 689.403505,
+          "stop_s": 693.030659,
+          "attributes": {
+            "actual_response": 1.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 33
+          }
+        },
+        {
+          "onset_s": 694.087721,
+          "stop_s": 695.733127,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 34
+          }
+        },
+        {
+          "onset_s": 696.788533,
+          "stop_s": 700.224219,
+          "attributes": {
+            "actual_response": 5.0,
+            "response_correct": 0.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 35
+          }
+        },
+        {
+          "onset_s": 701.291062,
+          "stop_s": 704.928967,
+          "attributes": {
+            "actual_response": 2.0,
+            "response_correct": 1.0,
+            "familiarity": "novel"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 36
+          }
+        },
+        {
+          "onset_s": 705.992092,
+          "stop_s": 709.456746,
+          "attributes": {
+            "actual_response": 5.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 37
+          }
+        },
+        {
+          "onset_s": 710.50959,
+          "stop_s": 712.817995,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 38
+          }
+        },
+        {
+          "onset_s": 713.877932,
+          "stop_s": 717.207462,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 39
+          }
+        },
+        {
+          "onset_s": 718.279087,
+          "stop_s": 721.280804,
+          "attributes": {
+            "actual_response": 6.0,
+            "response_correct": 1.0,
+            "familiarity": "familiar"
+          },
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 40
+          }
+        }
+      ],
+      "n_events": 40
+    },
+    {
+      "name": "movie_onset",
+      "averaging": "single",
+      "events": [
+        {
+          "onset_s": 0.0,
+          "stop_s": 478.83512,
+          "attributes": {},
+          "source": {
+            "kind": "interval",
+            "ref": "trials",
+            "row": 0
+          }
+        }
+      ],
+      "n_events": 1
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+# Virtual uv workspace root: no project of its own, only members and the dev tools.
+[tool.uv]
+required-version = ">=0.13.5,<0.14"
+
+[tool.uv.workspace]
+members = ["infra", "services", "ingest", "sdk"]
+
+[tool.uv.sources]
+asteroidea-infra = { workspace = true }
+asteroidea-services = { workspace = true }
+asteroidea-ingest = { workspace = true }
+asteroidea = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "ruff==0.17.2",
+    "ty==0.0.91",
+    "pytest==9.1.1",
+    "prek==0.5.7",
+    "pyiceberg[pyarrow,glue,sql-sqlite]==0.12.0",  # iceberg_check, catalog-init (live); sqlite: test catalog
+    "boto3>=1.40",
+    "duckdb==1.5.6",  # infra/auth_check.py (live only)
+    "polars==2.0.0",
+    "pynapple==0.11.4",  # sdk tests: the [pynapple] extra; 2026-08-20
+    "matplotlib==3.11.2",  # exemplar notebook, ty resolves it; 2026-09-11
+    "ipython==9.17.1",  # notebook display(), ty resolves it; 2026-09-01
+    "nibabel==5.4.2",  # sdk tests: the [nifti] extra
+    "scipy==1.18.1",  # showcase notebook, ty resolves it; 2026-08-21
+    "nilearn==0.14.1",  # showcase notebook, ty resolves it; 2026-09-04
+    "pynwb==4.2.0",  # extractor and open_nwb tests; 2026-09-02
+]
+
+[tool.ruff]
+target-version = "py314"
+src = ["infra/src", "services/src", "ingest/src", "sdk/src"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812",
+    "ISC001",
+    "D203",
+    "D213",
+    "CPY001",  # root LICENSE covers the repo
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S105", "S106", "ANN", "D1", "PLR2004", "INP001"]
+"*/tests/*" = ["S101", "S105", "S106", "ANN", "D1", "PLR2004", "INP001"]
+# `make acceptance` must run child commands (make, uv, the venv's python, node).
+# S603/S607 flag every subprocess call; this module passes argument lists with shell=False.
+"infra/src/asteroidea_infra/runner.py" = ["S603", "S607"]
+# `asteroidea-setup` runs uv and the venv's Python. S603 flags every subprocess call;
+# this module passes fixed argument lists with shell=False and a timeout (uv from PATH).
+"sdk/src/asteroidea/_setup.py" = ["S603"]
+
+
+[tool.ty.rules]
+all = "error"
+
+[tool.ty.analysis]
+strict-equality-semantics = true
+strict-generic-narrowing = true
+
+# PyIceberg ships untyped expression classes (pydantic-style constructors) and untyped
+# pyarrow results; the writer is the one module that touches them.
+[[tool.ty.overrides]]
+include = ["ingest/src/asteroidea_ingest/catalog_writer.py"]
+
+[tool.ty.overrides.rules]
+missing-argument = "ignore"
+too-many-positional-arguments = "ignore"
+unsound-return-statement = "ignore"
+
+# aws-cdk-lib 2.274's IFunction protocol declares `grant_invoke(identity)` while the
+# concrete Function declares `grantee`; every Function fails the protocol check
+# when handed to HttpLambdaIntegration (api.py), and FederatedPrincipal fails the
+# IPrincipal protocol for `assumed_by` (identity.py). Scoped to those two modules.
+[[tool.ty.overrides]]
+include = [
+    "infra/src/asteroidea_infra/api.py",
+    "infra/src/asteroidea_infra/identity.py",  # FederatedPrincipal as assumed_by
+]
+
+[tool.ty.overrides.rules]
+invalid-argument-type = "ignore"
+
+[tool.pytest.ini_options]
+addopts = ["--strict-markers", "--strict-config", "--import-mode=importlib"]
+testpaths = ["tests", "infra/tests", "services/tests", "ingest/tests", "sdk/tests"]
+xfail_strict = true
+markers = [
+    "synth: builds a CDK app; needs node (run by make check-full)",
+    "docker: runs a built local image; needs the docker daemon (run by make extract-image)",
+]
+filterwarnings = ["error"]

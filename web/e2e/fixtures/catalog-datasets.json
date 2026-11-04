@@ -1,0 +1,31 @@
+{
+  "datasets": [
+    {
+      "dataset": "dandi-000623",
+      "title": "Brain movie recordings",
+      "license": "CC-BY-4.0",
+      "doi": null,
+      "source_archive": "dandi",
+      "source_dataset": "000623",
+      "source_version": "0.230625.0237",
+      "ingest_method": "import",
+      "asset_count": 3,
+      "subject_count": 2,
+      "total_bytes": 3500000000
+    },
+    {
+      "dataset": "openneuro-ds004798",
+      "title": "A BIDS fMRI study",
+      "license": "CC0",
+      "doi": null,
+      "source_archive": "openneuro",
+      "source_dataset": "ds004798",
+      "source_version": "1.0.0",
+      "ingest_method": "import",
+      "asset_count": 1,
+      "subject_count": 1,
+      "total_bytes": 120000000
+    }
+  ],
+  "query_ms": 812
+}

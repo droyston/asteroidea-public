@@ -1,0 +1,250 @@
+{
+  "count": 27,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "asset_id": "20257c14-af6a-4f3a-86c4-0b9bfc120714",
+      "blob": "42bfd1ab-89a3-4137-bd8a-9bed66f5292d",
+      "zarr": null,
+      "path": "sub-03/sub-03_ses-20150304T164400_ecephys.nwb",
+      "size": 14105034,
+      "created": "2023-07-07T12:33:46.791386Z",
+      "modified": "2023-10-10T18:11:47.942156Z"
+    },
+    {
+      "asset_id": "20f45cda-1732-4692-a18f-51f3ea3e1d1e",
+      "blob": "e85041a5-3196-4fc0-bca8-ee329fac6213",
+      "zarr": null,
+      "path": "sub-05/sub-05_ses-20121207T173500_ecephys.nwb",
+      "size": 14062778,
+      "created": "2023-07-07T12:33:47.670234Z",
+      "modified": "2023-10-10T18:11:47.962496Z"
+    },
+    {
+      "asset_id": "0a326e91-9f9a-47ee-a2c1-7d6d0e6f42fa",
+      "blob": "03c4312a-052f-43ef-8e53-7d066c676257",
+      "zarr": null,
+      "path": "sub-02/sub-02_ses-20160302T164800_ecephys.nwb",
+      "size": 21113775,
+      "created": "2023-07-07T12:33:56.820796Z",
+      "modified": "2023-10-10T18:11:47.971503Z"
+    },
+    {
+      "asset_id": "2ed0e1a0-2f6b-470b-afdd-e7970321d6cb",
+      "blob": "8593e7df-0f6e-4599-96f5-f76a8d9f2498",
+      "zarr": null,
+      "path": "sub-04/sub-04_ses-20120829T175200_ecephys.nwb",
+      "size": 14243738,
+      "created": "2023-07-07T12:33:57.485657Z",
+      "modified": "2023-10-10T18:11:47.981184Z"
+    },
+    {
+      "asset_id": "57485b5a-e259-4759-a17a-4bef1e7f3886",
+      "blob": "b1507274-5e2a-4f9a-8e40-177807b039ee",
+      "zarr": null,
+      "path": "sub-01/sub-01_ses-20140828T132700_ecephys.nwb",
+      "size": 20876593,
+      "created": "2023-07-07T12:34:19.127210Z",
+      "modified": "2023-10-10T18:11:47.991494Z"
+    },
+    {
+      "asset_id": "ee5c75be-07ba-440c-924f-62d823095767",
+      "blob": "e3a90de1-842a-4586-9322-5c2893094786",
+      "zarr": null,
+      "path": "sub-08/sub-08_ses-20161217T120200_ecephys.nwb",
+      "size": 14061953,
+      "created": "2023-07-07T12:34:31.825027Z",
+      "modified": "2023-10-10T18:11:47.953927Z"
+    },
+    {
+      "asset_id": "8732f158-d071-4d7f-8eec-a08d595fd134",
+      "blob": "caee8f64-ebeb-439d-a3f4-e3380699b49f",
+      "zarr": null,
+      "path": "sub-06/sub-06_ses-20131209T113600_ecephys.nwb",
+      "size": 20790986,
+      "created": "2023-07-07T12:34:50.965738Z",
+      "modified": "2023-10-10T18:11:48.013479Z"
+    },
+    {
+      "asset_id": "9be30d6f-0c99-47d3-b003-891e0a5d3200",
+      "blob": "26bf861e-1291-4ee4-9db2-713b054bae81",
+      "zarr": null,
+      "path": "sub-07/sub-07_ses-20160212T171400_ecephys.nwb",
+      "size": 21032650,
+      "created": "2023-07-07T12:34:54.972335Z",
+      "modified": "2023-10-10T18:11:48.023208Z"
+    },
+    {
+      "asset_id": "5823d988-965d-46e1-9998-4011d506688e",
+      "blob": "35db438f-0fc0-4ef7-8049-dd445efd0d83",
+      "zarr": null,
+      "path": "sub-09/sub-09_ses-20170311T170500_ecephys.nwb",
+      "size": 20788090,
+      "created": "2023-07-07T12:34:55.107315Z",
+      "modified": "2023-10-10T18:11:48.003859Z"
+    },
+    {
+      "asset_id": "94ba06fc-c870-4698-9c31-f403ee733887",
+      "blob": "79adf6db-2a22-4ad2-9938-c301ddfda7d9",
+      "zarr": null,
+      "path": "sub-01/sub-01_ses-20140828T132700_ecephys+image.nwb",
+      "size": 20876721,
+      "created": "2023-10-10T18:09:05.287519Z",
+      "modified": "2023-10-10T18:11:48.033801Z"
+    },
+    {
+      "asset_id": "5c6287ca-827f-4e11-98ef-5c6051059a46",
+      "blob": "cd246fe1-f01e-4a7c-8f05-d74f7c6aab84",
+      "zarr": null,
+      "path": "sub-03/sub-03_ses-20150304T164400_ecephys+image.nwb",
+      "size": 14105218,
+      "created": "2023-10-10T18:09:09.221373Z",
+      "modified": "2023-10-10T18:11:48.043670Z"
+    },
+    {
+      "asset_id": "2b344e7d-3b30-45d4-b4ee-601e6421494a",
+      "blob": "fd33d92c-37f7-4170-af40-fc8ae83b3ff9",
+      "zarr": null,
+      "path": "sub-02/sub-02_ses-20160302T164800_ecephys+image.nwb",
+      "size": 21113951,
+      "created": "2023-10-10T18:09:17.931604Z",
+      "modified": "2023-10-10T18:11:48.053309Z"
+    },
+    {
+      "asset_id": "c7d10205-9cc1-4dd3-9901-8069e03beef7",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-04/sub-04_ses-20120829T175200_ecephys+image/fe217a3c-380b-4480-9e79-9383df92ee3c_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:19.620638Z",
+      "modified": "2023-10-10T18:11:48.072535Z"
+    },
+    {
+      "asset_id": "6ba1206b-2942-4364-b1e6-274b8aa956b8",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-05/sub-05_ses-20121207T173500_ecephys+image/75fe4cca-e26c-4fa2-ac68-bd4b422e37c7_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:21.248378Z",
+      "modified": "2023-10-10T18:11:48.112219Z"
+    },
+    {
+      "asset_id": "bb94f38e-9e9e-4f79-9867-6626b4048e35",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-03/sub-03_ses-20150304T164400_ecephys+image/5f6936b7-752f-416f-b5bb-5f8649c7c4bc_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:21.587317Z",
+      "modified": "2023-10-10T18:11:48.122698Z"
+    },
+    {
+      "asset_id": "25ccdb07-3c6f-45b8-a5bd-d36016827aa2",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-02/sub-02_ses-20160302T164800_ecephys+image/b2670e2b-931b-4252-bdec-5518f284f7c4_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:22.838819Z",
+      "modified": "2023-10-10T18:11:48.131705Z"
+    },
+    {
+      "asset_id": "3758f8e9-7790-4503-a0a0-a18b45669771",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-01/sub-01_ses-20140828T132700_ecephys+image/b154b52f-1818-4b7a-9e77-28fbbeef4b70_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:22.921829Z",
+      "modified": "2023-10-10T18:11:48.141655Z"
+    },
+    {
+      "asset_id": "651e9d6e-ba97-42d6-81ac-292fd6a8d4f0",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-06/sub-06_ses-20131209T113600_ecephys+image/2a349116-0412-4eac-bb6c-cdea8fe69b00_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:23.945495Z",
+      "modified": "2023-10-10T18:11:48.150163Z"
+    },
+    {
+      "asset_id": "7b568d90-45dd-4fb5-b59d-7de2242d3c58",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-07/sub-07_ses-20160212T171400_ecephys+image/c1913d6e-8080-4684-b485-6e584920a2c0_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:25.608368Z",
+      "modified": "2023-10-10T18:11:48.158504Z"
+    },
+    {
+      "asset_id": "52db3ee1-981a-4042-a280-fb768277d2e3",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-08/sub-08_ses-20161217T120200_ecephys+image/089d7e42-af9a-4c22-9279-2d310e8b8097_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:27.220235Z",
+      "modified": "2023-10-10T18:11:48.084390Z"
+    },
+    {
+      "asset_id": "7653f2aa-9bde-4d48-a7d8-05831f47a226",
+      "blob": "4f49602c-2130-45f6-b169-e792dd40a341",
+      "zarr": null,
+      "path": "sub-06/sub-06_ses-20131209T113600_ecephys+image.nwb",
+      "size": 20795210,
+      "created": "2023-10-10T18:09:28.316579Z",
+      "modified": "2023-10-10T18:11:48.166843Z"
+    },
+    {
+      "asset_id": "a33fefd8-5e02-4084-bc29-ca77a76feafc",
+      "blob": "92f10f74-f0f5-4781-a45b-0a2372fdd409",
+      "zarr": null,
+      "path": "sub-07/sub-07_ses-20160212T171400_ecephys+image.nwb",
+      "size": 21043122,
+      "created": "2023-10-10T18:09:28.989712Z",
+      "modified": "2023-10-10T18:11:48.175470Z"
+    },
+    {
+      "asset_id": "98f0ed4b-87fb-48bd-b7ac-303407a55c0d",
+      "blob": "fafc71e5-c6c1-4f06-b428-d9bfa1fda386",
+      "zarr": null,
+      "path": "sub-09/sub-09_ses-20170311T170500_ecephys+image/8e874057-2aa1-40ac-b253-7fee23903462_external_file_0.avi",
+      "size": 207720448,
+      "created": "2023-10-10T18:09:29.969476Z",
+      "modified": "2023-10-10T18:11:48.092910Z"
+    },
+    {
+      "asset_id": "f1b3e78b-adfb-414c-96ea-7a3cea89a6cb",
+      "blob": "30bb68f7-965f-472a-93b9-63e9d8a8ba79",
+      "zarr": null,
+      "path": "sub-08/sub-08_ses-20161217T120200_ecephys+image.nwb",
+      "size": 14062137,
+      "created": "2023-10-10T18:09:31.310332Z",
+      "modified": "2023-10-10T18:11:48.183803Z"
+    },
+    {
+      "asset_id": "f29a4eba-4926-496e-9bd3-548dd82454ab",
+      "blob": "0017e76e-7264-481f-b307-b0ff5f5b3c71",
+      "zarr": null,
+      "path": "sub-04/sub-04_ses-20120829T175200_ecephys+image.nwb",
+      "size": 14243922,
+      "created": "2023-10-10T18:09:32.021961Z",
+      "modified": "2023-10-10T18:11:48.192067Z"
+    },
+    {
+      "asset_id": "c9a94e1b-59ef-4b0d-a4ad-b135fa406f86",
+      "blob": "4187b5a5-b124-4f8e-b96e-f2a83cbb5543",
+      "zarr": null,
+      "path": "sub-09/sub-09_ses-20170311T170500_ecephys+image.nwb",
+      "size": 20788218,
+      "created": "2023-10-10T18:09:33.655496Z",
+      "modified": "2023-10-10T18:11:48.102150Z"
+    },
+    {
+      "asset_id": "fd982f92-3ed2-4e71-8792-06b161dfb928",
+      "blob": "a325f456-90a3-497d-a143-f958c53b9739",
+      "zarr": null,
+      "path": "sub-05/sub-05_ses-20121207T173500_ecephys+image.nwb",
+      "size": 14062962,
+      "created": "2023-10-10T18:09:36.234344Z",
+      "modified": "2023-10-10T18:11:48.201038Z"
+    }
+  ]
+}

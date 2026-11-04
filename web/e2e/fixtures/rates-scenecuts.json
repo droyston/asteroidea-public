@@ -1,0 +1,29 @@
+{
+  "edges": [-1, -0.5, 0, 0.5, 1, 1.5, 2],
+  "units": [
+    {
+      "unit_index": 0,
+      "raster": {
+        "trial": [0, 1, 1, 2],
+        "t": [-0.4, 0.2, 0.9, 0.1]
+      },
+      "rate_hz": [1.5, 2.25, 11.75, 6.5, 3.0, 2.0],
+      "z": [-0.4, -0.1, 3.2, 1.6, 0.2, -0.3]
+    },
+    {
+      "unit_index": 1,
+      "raster": {
+        "trial": [0, 2],
+        "t": [0.3, 1.1]
+      },
+      "rate_hz": [0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
+      "z": null
+    }
+  ],
+  "n_trials": 3,
+  "align": "frames:asset-0900:shot_start_fr:/stimulus/movieframe_time",
+  "source": "file",
+  "missing_frames": [93, 94],
+  "query_ms": 530,
+  "compute_ms": 4120
+}

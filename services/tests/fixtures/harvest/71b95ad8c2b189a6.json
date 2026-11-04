@@ -1,0 +1,2329 @@
+{
+ "method": "POST",
+ "url": "https://openneuro.org/crn/graphql",
+ "request": {
+  "json": {
+   "query": "query($after:String){datasets(first:50, after:$after){pageInfo{count hasNextPage endCursor} edges{cursor node{id metadata{species modalities affirmedDefaced} latestSnapshot{tag hexsha created description{Name License DatasetDOI} summary{modalities secondaryModalities subjects size totalFiles}}}}}}",
+   "variables": {
+    "after": "eyJvZmZzZXQiOjEwMH0="
+   }
+  }
+ },
+ "responses": [
+  {
+   "status": 200,
+   "json": {
+    "data": {
+     "datasets": {
+      "pageInfo": {
+       "count": 127,
+       "hasNextPage": false,
+       "endCursor": "eyJvZmZzZXQiOjEyN30="
+      },
+      "edges": [
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDB9",
+        "node": {
+         "id": "ds008830",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "3b29b886664c164b9002cb23fcc9f146095a53e6",
+          "created": "2026-09-17T08:07:23.000Z",
+          "description": {
+           "Name": "Distributed range adaptation in human parietal encoding of numbers",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008830.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "06",
+            "07",
+            "14",
+            "20",
+            "15",
+            "31",
+            "39",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "08",
+            "09",
+            "10",
+            "12",
+            "13",
+            "16",
+            "40",
+            "38",
+            "37",
+            "41",
+            "19",
+            "18",
+            "17",
+            "30",
+            "21",
+            "35",
+            "26",
+            "29",
+            "25",
+            "32",
+            "36",
+            "34",
+            "33",
+            "28",
+            "27",
+            "24",
+            "22"
+           ],
+           "size": 20893171486,
+           "totalFiles": 3445
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDF9",
+        "node": {
+         "id": "ds008834",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.3",
+          "hexsha": "2304c00aa843c08ea748524f19090ab96d8f9935",
+          "created": "2026-09-23T19:01:58.000Z",
+          "description": {
+           "Name": "PKUEEG",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008834.v1.0.3"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "10",
+            "03",
+            "04",
+            "01",
+            "02",
+            "05",
+            "07",
+            "08",
+            "09",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "06"
+           ],
+           "size": 125460634930,
+           "totalFiles": 584
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDJ9",
+        "node": {
+         "id": "ds008836",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": false
+         },
+         "latestSnapshot": {
+          "tag": "1.0.2",
+          "hexsha": "1c22ca799a2ce7e98b600a7f74b9ec22d6a7e477",
+          "created": "2026-10-20T23:27:01.000Z",
+          "description": {
+           "Name": "Heartbeat-evoked responses and self-reported meditative depth in Vipassana practitioners",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008836.v1.0.2"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "004",
+            "032",
+            "003",
+            "010",
+            "023",
+            "024",
+            "033",
+            "007",
+            "001",
+            "002",
+            "006",
+            "008",
+            "013",
+            "015",
+            "039",
+            "005",
+            "038",
+            "009",
+            "011",
+            "030",
+            "031",
+            "037",
+            "028",
+            "027",
+            "022",
+            "021",
+            "019",
+            "017",
+            "014",
+            "034",
+            "029",
+            "016",
+            "036",
+            "035",
+            "026",
+            "025",
+            "012",
+            "020",
+            "018"
+           ],
+           "size": 72666119222,
+           "totalFiles": 442
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDN9",
+        "node": {
+         "id": "ds008837",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "v1.1.2",
+          "hexsha": "ad8d1139c1efefe29f43416637db8e8c852245cd",
+          "created": "2026-09-23T21:41:14.000Z",
+          "description": {
+           "Name": "Neural and physiological dynamics before and after unpredictable collision events in virtual reality",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008837.vv1.1.2"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "011",
+            "003",
+            "016",
+            "018",
+            "014",
+            "015",
+            "007",
+            "001",
+            "005",
+            "004",
+            "010",
+            "006",
+            "002",
+            "013",
+            "008",
+            "017",
+            "009",
+            "012"
+           ],
+           "size": 1308595525,
+           "totalFiles": 158
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDR9",
+        "node": {
+         "id": "ds008847",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.1.0",
+          "hexsha": "b6713cf5769e7e0822d241d9e1eb2b24aba7ce82",
+          "created": "2026-09-19T14:42:40.000Z",
+          "description": {
+           "Name": "OUD resting-state network segregation",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008847.v1.1.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "A827861",
+            "A923656",
+            "A639731",
+            "A244169",
+            "A797008",
+            "A650110",
+            "A523941",
+            "A595199",
+            "A698344",
+            "A764716",
+            "A562200",
+            "A565348",
+            "A572329",
+            "A575511",
+            "A590931",
+            "A652523",
+            "A696763",
+            "A738819",
+            "A877928",
+            "A625156",
+            "A583852",
+            "A599238",
+            "A609562",
+            "A667841",
+            "A914678",
+            "A602968",
+            "A626540",
+            "A725726",
+            "A792655",
+            "A594674",
+            "A696684",
+            "A719721",
+            "A542862",
+            "A563354",
+            "A580410",
+            "A665966",
+            "A713194",
+            "A731673",
+            "A779075",
+            "A848400",
+            "A798891",
+            "A538580",
+            "A588774",
+            "A596257",
+            "A619322",
+            "A665429",
+            "A666599",
+            "A696804",
+            "A728637",
+            "A770911",
+            "A827588",
+            "A837459",
+            "A850662",
+            "A864892",
+            "A880278",
+            "A246689",
+            "A579306",
+            "A631209",
+            "A846272",
+            "A612352",
+            "A639602",
+            "A664433",
+            "A695802",
+            "A764019",
+            "A775064",
+            "A820431",
+            "A831233",
+            "A887353",
+            "A725103",
+            "A748671",
+            "A249706",
+            "A599483",
+            "A616080",
+            "A892363",
+            "A552371",
+            "A576586",
+            "A602911",
+            "A649570",
+            "A676269",
+            "A710477",
+            "A756791",
+            "A775940",
+            "A822065",
+            "A833567",
+            "A840650",
+            "A889769",
+            "A931413",
+            "A590937",
+            "A667382",
+            "A802239",
+            "A854818",
+            "A231144",
+            "A563858",
+            "A612140",
+            "A672370",
+            "A699631",
+            "A710836",
+            "A764191",
+            "A789785",
+            "A830852",
+            "A847447",
+            "A245519",
+            "A546948",
+            "A547723",
+            "A558944",
+            "A578260",
+            "A584118",
+            "A591482",
+            "A632238",
+            "A651712",
+            "A654203",
+            "A666127",
+            "A685389",
+            "A707538",
+            "A744546",
+            "A789135",
+            "A823239",
+            "A817134",
+            "A836092",
+            "A844520",
+            "A871447",
+            "A867737",
+            "A875612",
+            "A883345",
+            "A889637",
+            "A891315",
+            "A922640",
+            "A381561",
+            "A229345",
+            "A350575",
+            "A457772",
+            "A426346",
+            "A345906",
+            "A331209",
+            "A327574",
+            "A157160",
+            "A436475",
+            "A128873",
+            "A123115",
+            "A501560",
+            "A450460",
+            "A390861",
+            "A405376",
+            "A123878",
+            "A442147",
+            "A491276",
+            "A422640",
+            "A215146",
+            "A193952",
+            "A168355",
+            "A146319",
+            "A124599",
+            "A109951",
+            "A287443",
+            "A483134",
+            "A458436",
+            "A445473",
+            "A429598",
+            "A390565",
+            "A378206",
+            "A357799",
+            "A352386",
+            "A348061",
+            "A341161",
+            "A203450",
+            "A175050",
+            "A161620",
+            "A136662",
+            "A121476",
+            "A107646",
+            "A298970",
+            "A315928",
+            "A512240",
+            "A422172",
+            "A521719",
+            "A516672",
+            "A502669",
+            "A470673",
+            "A463680",
+            "A433031",
+            "A375574",
+            "A372050",
+            "A358838",
+            "A355132",
+            "A329504",
+            "A320243",
+            "A224433",
+            "A208205",
+            "A192358",
+            "A130493",
+            "A100162",
+            "A196051",
+            "A487422",
+            "A465553",
+            "A456858",
+            "A433144",
+            "A403230",
+            "A402775",
+            "A361036",
+            "A354235",
+            "A352595",
+            "A329827",
+            "A321866",
+            "A204624",
+            "A197910",
+            "A161803",
+            "A124621",
+            "A120645",
+            "A108464",
+            "A286904",
+            "A502611",
+            "A486857",
+            "A222150",
+            "A213330",
+            "A210711",
+            "A197021",
+            "A191373",
+            "A177697",
+            "A122520",
+            "A939433",
+            "A523608",
+            "A518587",
+            "A511045",
+            "A501364",
+            "A480733",
+            "A459373",
+            "A374144",
+            "A364654",
+            "A358923",
+            "A331863",
+            "A215346",
+            "A149743",
+            "A131530",
+            "A318698",
+            "A317208",
+            "A300982",
+            "A940356",
+            "A942812",
+            "A319653",
+            "A279557",
+            "A270306",
+            "A306507",
+            "A270479",
+            "A281026",
+            "A261894",
+            "A268235",
+            "A937094",
+            "A939063",
+            "A295001",
+            "A262815",
+            "A931554",
+            "A317405",
+            "A531353",
+            "A276815",
+            "A534609",
+            "A947633",
+            "A985756",
+            "A982096",
+            "A206460",
+            "A968733",
+            "A986741",
+            "A987676",
+            "A961706",
+            "A970816",
+            "A985457",
+            "A100143",
+            "A253296",
+            "A984199",
+            "A969033",
+            "A977014",
+            "A234129",
+            "A962477",
+            "A995160",
+            "A524183",
+            "A257693",
+            "A254472",
+            "A958079",
+            "A980651"
+           ],
+           "size": 3307565072,
+           "totalFiles": 283
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDV9",
+        "node": {
+         "id": "ds008849",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "698d5dbb57940efbfad936a7444f19f5fa79e7ac",
+          "created": "2026-10-20T07:34:50.000Z",
+          "description": {
+           "Name": "The human hippocampus supports auditory coding and multisensory integration",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008849.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "mm12",
+            "mm04",
+            "mm08",
+            "mm01",
+            "mm02",
+            "mm13",
+            "mm16",
+            "mm18",
+            "mm20",
+            "mm26",
+            "mm19",
+            "mm29",
+            "mm03",
+            "mm05",
+            "mm06",
+            "mm10",
+            "mm09",
+            "mm11",
+            "mm07",
+            "mm14",
+            "mm15",
+            "mm17",
+            "mm21",
+            "mm22",
+            "mm23",
+            "mm24",
+            "mm25",
+            "mm27",
+            "mm28",
+            "mm32",
+            "mm30",
+            "mm31"
+           ],
+           "size": 171558063276,
+           "totalFiles": 1126
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDZ9",
+        "node": {
+         "id": "ds008851",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "a4a3f457c51e5eccf2eda40a806c5a59d42232c8",
+          "created": "2026-09-21T08:54:21.000Z",
+          "description": {
+           "Name": "EEG Data for Emotion Recognition: Alcohol Cue-Reactivity Dataset (Alcohol Dependence vs Healthy Controls)",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008851.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "12",
+            "22",
+            "34",
+            "02",
+            "09",
+            "24",
+            "05",
+            "32",
+            "04",
+            "11",
+            "21",
+            "25",
+            "37",
+            "60",
+            "07",
+            "01",
+            "23",
+            "28",
+            "19",
+            "27",
+            "16",
+            "36",
+            "41",
+            "17",
+            "20",
+            "26",
+            "18",
+            "08",
+            "10",
+            "30",
+            "45",
+            "39",
+            "57",
+            "54",
+            "52",
+            "53",
+            "38",
+            "46",
+            "42",
+            "56",
+            "51",
+            "50",
+            "15",
+            "59",
+            "31",
+            "14",
+            "43",
+            "29",
+            "47",
+            "48",
+            "06",
+            "33",
+            "35",
+            "13",
+            "03",
+            "49",
+            "40",
+            "58",
+            "44",
+            "55"
+           ],
+           "size": 244831650,
+           "totalFiles": 548
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDd9",
+        "node": {
+         "id": "ds008858",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.2",
+          "hexsha": "2e8a093d507eaae969dfe203ddeed8bbc78311cb",
+          "created": "2026-09-25T14:12:27.000Z",
+          "description": {
+           "Name": "EEG Based MI-BCI Mouse Cursor Control Dataset",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008858.v1.0.2"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "06",
+            "17",
+            "04",
+            "16",
+            "15",
+            "10",
+            "18",
+            "14",
+            "05",
+            "02",
+            "09",
+            "01",
+            "08",
+            "03",
+            "07",
+            "11",
+            "12",
+            "13"
+           ],
+           "size": 152296764,
+           "totalFiles": 116
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDh9",
+        "node": {
+         "id": "ds008859",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.2",
+          "hexsha": "18ad6dcff886e3a081ba2f4b57086d916a7d64c1",
+          "created": "2026-09-25T14:17:16.000Z",
+          "description": {
+           "Name": "EEG MI-BCI Multidirectional Mouse Cursor Dataset - OpenBCI recordings",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008859.v1.0.2"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "07",
+            "02",
+            "05",
+            "01",
+            "04",
+            "06",
+            "03"
+           ],
+           "size": 24273908,
+           "totalFiles": 50
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MDl9",
+        "node": {
+         "id": "ds008861",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "meg",
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "4e67353ad1965c5adb52587a747b14f441b68315",
+          "created": "2026-09-25T07:40:22.000Z",
+          "description": {
+           "Name": "MEG+EEG and Structural MRI Dataset: Attended and Ignored Speech-Like Sounds",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008861.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "meg",
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "G025",
+            "G029",
+            "G032",
+            "G004",
+            "G011",
+            "G012",
+            "G021",
+            "G030",
+            "G006",
+            "G008",
+            "G013",
+            "G027",
+            "G016",
+            "G031",
+            "G023",
+            "G026",
+            "G033",
+            "G002",
+            "G009",
+            "G015",
+            "G024",
+            "G014",
+            "G005",
+            "G010",
+            "G003",
+            "G020",
+            "G017",
+            "G022",
+            "G028",
+            "G018"
+           ],
+           "size": 78134107521,
+           "totalFiles": 466
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTB9",
+        "node": {
+         "id": "ds008867",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "af597129aec791a6f290013db2caeffbd0d08c44",
+          "created": "2026-09-24T01:59:28.000Z",
+          "description": {
+           "Name": "EEG and hedonic responses to sonic-seasoning soundscapes",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008867.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "22",
+            "11",
+            "13",
+            "12",
+            "29",
+            "26",
+            "27",
+            "25",
+            "03",
+            "09",
+            "17",
+            "23",
+            "01",
+            "06",
+            "18",
+            "28",
+            "07",
+            "08",
+            "14",
+            "05",
+            "15",
+            "10",
+            "16",
+            "02",
+            "04",
+            "19",
+            "20",
+            "24",
+            "21",
+            "30"
+           ],
+           "size": 51884392,
+           "totalFiles": 127
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTF9",
+        "node": {
+         "id": "ds008870",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "71af78913c6195a9e6d7108456dc199b290d8bfa",
+          "created": "2026-09-25T07:48:18.000Z",
+          "description": {
+           "Name": "Is Geometry the Language of Mathematics or is Space the Language of Both? (fMRI study)",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008870.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "02",
+            "03",
+            "01"
+           ],
+           "size": 13054329816,
+           "totalFiles": 253
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTJ9",
+        "node": {
+         "id": "ds008875",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "020f1c04b765f9f61f1218f4f5ea97d24f81b209",
+          "created": "2026-09-26T01:04:23.000Z",
+          "description": {
+           "Name": "Resting-state EEG in Parkinson's disease and controls",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008875.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "Control1171",
+            "Control1431",
+            "DBS107",
+            "Control1391",
+            "Control1491",
+            "DBS111",
+            "PD047",
+            "PD008",
+            "DBS118",
+            "PD010",
+            "PD042",
+            "PD1051",
+            "Control1441",
+            "DBS108",
+            "PD013",
+            "PD030",
+            "PD054",
+            "PD020",
+            "PD053",
+            "PD022",
+            "Control1451",
+            "Control1461",
+            "DBS110",
+            "DBS115",
+            "PD041",
+            "PD1021",
+            "DBS119",
+            "PD007",
+            "Control1131",
+            "Control1141",
+            "PD027",
+            "PD1101",
+            "CT005",
+            "PD036",
+            "Control1251",
+            "PD026",
+            "Control1221",
+            "Control1351",
+            "Control1121",
+            "Control1361",
+            "DBS117",
+            "PD017",
+            "Control1111",
+            "PD004",
+            "PD057",
+            "DBS120",
+            "Control1301",
+            "PD055",
+            "Control1371",
+            "PD006",
+            "PD051",
+            "Control1051",
+            "PD045",
+            "DBS116",
+            "Control1381",
+            "Control1341",
+            "Control1281",
+            "DBS112",
+            "DBS105",
+            "PD1001",
+            "Control1151",
+            "PD018",
+            "PD001",
+            "PD1031",
+            "PD1081",
+            "Control1471",
+            "Control1311",
+            "Control1271",
+            "PD052",
+            "PD043",
+            "DBS106",
+            "Control1401",
+            "Control1101",
+            "PD037",
+            "DBS104",
+            "Control1411",
+            "Control1041",
+            "CT029",
+            "CT030",
+            "Control1031",
+            "CT009",
+            "CT023",
+            "CT006",
+            "CT014",
+            "CT016",
+            "CT017",
+            "CT025",
+            "Control1061",
+            "CT012",
+            "Control1021",
+            "CT001",
+            "CT003",
+            "CT013",
+            "CT015",
+            "CT022",
+            "Control1001",
+            "PD1121",
+            "PD1141",
+            "Control1011",
+            "PD1161",
+            "PD1301",
+            "PD1111",
+            "PD1151",
+            "PD1171",
+            "PD1201",
+            "PD1331",
+            "PD1361",
+            "PD1371",
+            "PD1401",
+            "PD1861",
+            "PD1871",
+            "PD1771",
+            "PD1971",
+            "PD1831",
+            "PD1761",
+            "PD1991",
+            "PD1701",
+            "PD1451",
+            "PD1951",
+            "PD1841",
+            "PD1801",
+            "PD1741",
+            "PD1711",
+            "PD1591",
+            "PD1561",
+            "PD1541",
+            "PD1511",
+            "PD1441",
+            "PD1931",
+            "PD1921",
+            "PD1901",
+            "PD1721",
+            "PD1691",
+            "PD1671",
+            "CT031",
+            "Control1191",
+            "CT027",
+            "PD011",
+            "Control1181",
+            "PD003",
+            "PD015",
+            "PD016",
+            "PD023",
+            "PD1011",
+            "Control1261",
+            "Control1481",
+            "DBS102",
+            "PD021",
+            "PD035",
+            "PD048",
+            "CT004",
+            "Control1241",
+            "Control1291",
+            "Control1161",
+            "Control1201",
+            "PD044",
+            "Control1231",
+            "PD038",
+            "PD028",
+            "PD029",
+            "PD031",
+            "PD033",
+            "PD039",
+            "PD1061",
+            "PD046",
+            "PD1261",
+            "PD050",
+            "PD040",
+            "PD032",
+            "PD1581",
+            "PD1321",
+            "PD1291",
+            "PD056",
+            "PD1131",
+            "PD1911",
+            "PD1781",
+            "PD1351",
+            "PD1071",
+            "PD012",
+            "PD1521",
+            "PD1491",
+            "PD1811",
+            "PD1091",
+            "PD002",
+            "DBS114",
+            "PD1651",
+            "PD1611",
+            "PD1421",
+            "PD1231",
+            "PD1961",
+            "PD1041",
+            "PD014",
+            "PD1891",
+            "PD024",
+            "Control1331",
+            "DBS103",
+            "PD009",
+            "Control1211",
+            "Control1321",
+            "Control1421",
+            "DBS113",
+            "PD005",
+            "PD019",
+            "PD025",
+            "PD034",
+            "CT019",
+            "CT002",
+            "CT010",
+            "CT011",
+            "CT021",
+            "PD1281",
+            "PD1981",
+            "PD1221",
+            "PD1661",
+            "PD1471",
+            "PD1311",
+            "PD1881",
+            "PD1791",
+            "PD1751",
+            "PD1681",
+            "PD1641",
+            "PD1631",
+            "PD1501",
+            "PD1431",
+            "PD1391",
+            "PD1211",
+            "PD1851",
+            "PD1821",
+            "PD1621",
+            "PD1601",
+            "PD1551",
+            "PD1531",
+            "PD1481",
+            "PD1461",
+            "PD1941",
+            "PD1251",
+            "PD1571",
+            "CT007",
+            "CT026",
+            "PD1191",
+            "PD1241",
+            "CT008",
+            "CT028",
+            "Control1071",
+            "Control1081",
+            "Control1091",
+            "PD1341",
+            "PD1181",
+            "PD1271",
+            "PD1411",
+            "PD1731",
+            "PD1381"
+           ],
+           "size": 10033996826,
+           "totalFiles": 1265
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTN9",
+        "node": {
+         "id": "ds008878",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "e56d1351eb553cfec558c24b842c2c58e209cc86",
+          "created": "2026-09-29T06:58:27.000Z",
+          "description": {
+           "Name": "Chinese compound word priming EEG local review snapshot",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008878.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "exp2p31",
+            "exp3p08",
+            "exp3p16",
+            "exp1p27",
+            "exp2p36",
+            "exp2p30",
+            "exp3p29",
+            "exp2p38",
+            "exp1p11",
+            "exp2p09",
+            "exp1p20",
+            "exp1p17",
+            "exp1p28",
+            "exp3p03",
+            "exp1p08",
+            "exp1p16",
+            "exp1p18",
+            "exp2p27",
+            "exp3p13",
+            "exp3p15",
+            "exp1p29",
+            "exp2p08",
+            "exp3p18",
+            "exp1p02",
+            "exp3p24",
+            "exp1p26",
+            "exp2p07",
+            "exp2p10",
+            "exp2p22",
+            "exp2p26",
+            "exp1p14",
+            "exp2p03",
+            "exp2p06",
+            "exp2p11",
+            "exp2p14",
+            "exp2p15",
+            "exp2p16",
+            "exp2p17",
+            "exp2p18",
+            "exp2p19",
+            "exp2p21",
+            "exp2p24",
+            "exp1p30",
+            "exp2p01",
+            "exp3p02",
+            "exp3p04",
+            "exp3p06",
+            "exp2p13",
+            "exp2p20",
+            "exp2p28",
+            "exp2p29",
+            "exp2p32",
+            "exp2p33",
+            "exp2p34",
+            "exp2p37",
+            "exp3p01",
+            "exp3p05",
+            "exp3p10",
+            "exp3p11",
+            "exp3p12",
+            "exp3p17",
+            "exp3p23",
+            "exp3p26",
+            "exp3p14",
+            "exp2p23",
+            "exp1p09",
+            "exp1p06",
+            "exp1p04",
+            "exp3p25",
+            "exp1p07",
+            "exp3p19",
+            "exp3p20",
+            "exp3p21",
+            "exp3p27",
+            "exp3p28",
+            "exp1p01",
+            "exp1p03",
+            "exp2p04",
+            "exp1p10",
+            "exp3p07",
+            "exp3p30",
+            "exp2p05",
+            "exp1p25",
+            "exp1p24",
+            "exp1p21",
+            "exp1p19",
+            "exp1p15",
+            "exp1p13",
+            "exp1p12",
+            "exp1p05",
+            "exp3p22",
+            "exp3p09",
+            "exp1p22",
+            "exp1p23",
+            "exp2p02",
+            "exp2p12",
+            "exp2p25",
+            "exp2p35"
+           ],
+           "size": 14386564413,
+           "totalFiles": 700
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTR9",
+        "node": {
+         "id": "ds008892",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg",
+           "nirs"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "42a4f71f4be971f271185603df598578bf21c509",
+          "created": "2026-10-21T02:09:39.000Z",
+          "description": {
+           "Name": "CuBiAAD: A cue-masked bimodal auditory attention dataset based on EEG and fNIRS",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008892.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg",
+            "nirs"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "14",
+            "06",
+            "08",
+            "09",
+            "04",
+            "03",
+            "12",
+            "13",
+            "11",
+            "10",
+            "02",
+            "36",
+            "16",
+            "23",
+            "19",
+            "29",
+            "05",
+            "15",
+            "27",
+            "25",
+            "24",
+            "22",
+            "17",
+            "30",
+            "28",
+            "26",
+            "21",
+            "20",
+            "35",
+            "01",
+            "07",
+            "18",
+            "38",
+            "33",
+            "39",
+            "32",
+            "31",
+            "34",
+            "40",
+            "37"
+           ],
+           "size": 1894374664,
+           "totalFiles": 2237
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTV9",
+        "node": {
+         "id": "ds008893",
+         "metadata": {
+          "species": "Human",
+          "modalities": [],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "6126be09093f4ea218bf8735bf16032302775315",
+          "created": "2026-09-30T14:56:21.000Z",
+          "description": {
+           "Name": "ptbp",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008893.v1.0.1"
+          },
+          "summary": {
+           "modalities": [],
+           "secondaryModalities": [],
+           "subjects": [
+            "001"
+           ],
+           "size": 25194402828,
+           "totalFiles": 99
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTZ9",
+        "node": {
+         "id": "ds008894",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "meg",
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "e7bcfeb68418814872131b7d315c3a30829ff0cd",
+          "created": "2026-10-02T19:44:11.000Z",
+          "description": {
+           "Name": "Attentional bias to death-related stimuli: Modeling cortical dynamics underlying suicide risk",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008894.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "meg",
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "113",
+            "228",
+            "323",
+            "339",
+            "341",
+            "322",
+            "422",
+            "238",
+            "321",
+            "344",
+            "434",
+            "237",
+            "239",
+            "520",
+            "111",
+            "112",
+            "226",
+            "240",
+            "319",
+            "452",
+            "511",
+            "460",
+            "455",
+            "509",
+            "457",
+            "459",
+            "458",
+            "454",
+            "453",
+            "324",
+            "451",
+            "432",
+            "429",
+            "428",
+            "427",
+            "342",
+            "332",
+            "325",
+            "456",
+            "426",
+            "423",
+            "337",
+            "340"
+           ],
+           "size": 53920651484,
+           "totalFiles": 267
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTd9",
+        "node": {
+         "id": "ds008896",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "7911b58c2fe29530cc43d148009521ec7a3c78f4",
+          "created": "2026-10-02T20:19:20.000Z",
+          "description": {
+           "Name": "Preprocessed EEG data in CLN3 disease and NIH healthy volunteers",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008896.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "HV26",
+            "HV49",
+            "HV54",
+            "HV40",
+            "HV48",
+            "HV41",
+            "HV58",
+            "CLN313",
+            "CLN315",
+            "CLN329",
+            "CLN330",
+            "HV02",
+            "HV29",
+            "HV47",
+            "HV15",
+            "HV21",
+            "HV43",
+            "HV27",
+            "HV46",
+            "HV55",
+            "CLN303",
+            "CLN319",
+            "HV50",
+            "HV57",
+            "HV51",
+            "HV59",
+            "CLN321",
+            "HV17",
+            "HV18",
+            "CLN320",
+            "HV03",
+            "HV28",
+            "HV36",
+            "CLN304",
+            "HV60",
+            "HV23",
+            "HV53",
+            "CLN307",
+            "CLN309",
+            "CLN316",
+            "HV13",
+            "HV19",
+            "CLN306",
+            "CLN323",
+            "HV65",
+            "CLN314",
+            "HV04",
+            "CLN325",
+            "CLN326",
+            "CLN331",
+            "HV63",
+            "CLN317",
+            "HV22",
+            "CLN310",
+            "CLN312",
+            "CLN328",
+            "HV07",
+            "HV11",
+            "HV34",
+            "CLN318",
+            "CLN324",
+            "CLN327",
+            "CLN332",
+            "HV01",
+            "HV06",
+            "HV12",
+            "HV61",
+            "HV10",
+            "CLN311",
+            "HV44",
+            "HV05",
+            "HV38",
+            "HV62",
+            "HV14",
+            "HV30",
+            "HV39",
+            "HV33",
+            "HV32",
+            "HV45",
+            "HV09",
+            "CLN322",
+            "HV66",
+            "HV37",
+            "HV56",
+            "HV24",
+            "CLN308",
+            "CLN305",
+            "HV64",
+            "HV42",
+            "HV35",
+            "HV31",
+            "CLN301",
+            "HV52",
+            "CLN302",
+            "HV20"
+           ],
+           "size": 387721664,
+           "totalFiles": 386
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTh9",
+        "node": {
+         "id": "ds008898",
+         "metadata": {
+          "species": "",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.1",
+          "hexsha": "349102f0c371fbc05759cbd67d8fcaba5543e26f",
+          "created": "2026-10-05T01:42:34.000Z",
+          "description": {
+           "Name": "sample dataset for odor- and speech-evoked fMRI experiment at 7 Tesla",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008898.v1.0.1"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional"
+           ],
+           "subjects": [
+            "01"
+           ],
+           "size": 1516995536,
+           "totalFiles": 13
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MTl9",
+        "node": {
+         "id": "ds008919",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "bbee703b85f7bf8935e88ac0747746fb66381a63",
+          "created": "2026-10-13T14:50:57.000Z",
+          "description": {
+           "Name": "TPIL_CLBP_no_treatment_longitudinal",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008919.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_diffusion",
+            "mri_structural",
+            "mri_functional"
+           ],
+           "subjects": [
+            "022",
+            "002",
+            "006",
+            "013",
+            "014",
+            "025",
+            "004",
+            "012",
+            "019",
+            "029",
+            "038",
+            "036",
+            "030",
+            "024",
+            "040",
+            "027",
+            "034",
+            "017",
+            "035",
+            "021",
+            "016",
+            "049",
+            "010",
+            "007",
+            "008",
+            "015",
+            "064",
+            "055",
+            "056",
+            "023",
+            "031",
+            "037",
+            "047",
+            "041",
+            "046",
+            "053",
+            "039",
+            "048",
+            "050",
+            "042",
+            "051",
+            "063",
+            "052",
+            "054",
+            "059",
+            "062",
+            "061",
+            "065",
+            "058",
+            "057",
+            "060",
+            "032"
+           ],
+           "size": 29162606762,
+           "totalFiles": 1793
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MjB9",
+        "node": {
+         "id": "ds008940",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "eeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "92c77796322d32a61a5048a9a2511959f13c17a5",
+          "created": "2026-10-12T23:03:11.000Z",
+          "description": {
+           "Name": "Dietary identity and the neural categorization of food images: an open EEG dataset with Food-pics stimuli",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008940.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "eeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "07",
+            "19",
+            "35",
+            "61",
+            "38",
+            "66",
+            "17",
+            "27",
+            "45",
+            "09",
+            "74",
+            "37",
+            "20",
+            "23",
+            "36",
+            "10",
+            "57",
+            "64",
+            "65",
+            "47",
+            "40",
+            "39",
+            "34",
+            "30",
+            "29",
+            "01",
+            "73",
+            "75",
+            "71",
+            "69",
+            "67",
+            "63",
+            "62",
+            "55",
+            "46",
+            "42",
+            "77",
+            "52",
+            "49",
+            "44",
+            "43",
+            "31",
+            "22",
+            "25",
+            "13",
+            "15",
+            "50",
+            "70",
+            "26",
+            "76",
+            "56",
+            "60",
+            "06",
+            "14",
+            "28",
+            "32",
+            "03",
+            "12",
+            "41",
+            "48",
+            "51",
+            "18",
+            "21",
+            "05",
+            "04",
+            "02",
+            "72",
+            "59",
+            "33",
+            "08",
+            "68",
+            "24",
+            "16",
+            "11",
+            "58",
+            "53",
+            "54"
+           ],
+           "size": 241313355,
+           "totalFiles": 470
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MjF9",
+        "node": {
+         "id": "ds008941",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "c664e6e8f93655ba333b5942d7f0d21cdeab2da4",
+          "created": "2026-10-15T07:56:36.000Z",
+          "description": {
+           "Name": "In-group neural alignment serves as a biomarker of social identity",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008941.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "rel16",
+            "sec10",
+            "rel14",
+            "sec20",
+            "rel20",
+            "rel18",
+            "sec09",
+            "rel19",
+            "rel02",
+            "sec06",
+            "rel05",
+            "sec14",
+            "rel21",
+            "rel04",
+            "rel11",
+            "rel09",
+            "rel12",
+            "rel13",
+            "rel15",
+            "rel01",
+            "rel06",
+            "rel07",
+            "rel10",
+            "rel17",
+            "sec01",
+            "sec07",
+            "sec12",
+            "sec19",
+            "sec16",
+            "sec02",
+            "sec17",
+            "sec08",
+            "sec04",
+            "sec15",
+            "sec13",
+            "sec11",
+            "sec03",
+            "sec05",
+            "rel08",
+            "sec18",
+            "rel03",
+            "sec21"
+           ],
+           "size": 28858158626,
+           "totalFiles": 344
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MjJ9",
+        "node": {
+         "id": "ds008942",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "cdad808854c752b9fcd352cd05836cf5d6bc67c6",
+          "created": "2026-10-21T20:53:02.000Z",
+          "description": {
+           "Name": "Distinct spatial organization of human hippocampal perfusion and microvascular pulsatility across age",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008942.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "04",
+            "56",
+            "61",
+            "55",
+            "02",
+            "67",
+            "15",
+            "08",
+            "52",
+            "05",
+            "69",
+            "59",
+            "13",
+            "51",
+            "03",
+            "62",
+            "54",
+            "06",
+            "07",
+            "12",
+            "14",
+            "53",
+            "09",
+            "10",
+            "11",
+            "65",
+            "66",
+            "68",
+            "99",
+            "64",
+            "60",
+            "16",
+            "58",
+            "57",
+            "63"
+           ],
+           "size": 33110807993,
+           "totalFiles": 206
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MjN9",
+        "node": {
+         "id": "ds008948",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "8f2ea9ff207e867441b8331e698504a2ccd0d123",
+          "created": "2026-10-16T01:10:12.000Z",
+          "description": {
+           "Name": "Grid-like coding of affective space",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008948.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_functional",
+            "mri_structural"
+           ],
+           "subjects": [
+            "0019",
+            "0006",
+            "0011",
+            "0001",
+            "0002",
+            "0003",
+            "0004",
+            "0007",
+            "0008",
+            "0009",
+            "0010",
+            "0012",
+            "0013",
+            "0014",
+            "0015",
+            "0016",
+            "0017",
+            "0018",
+            "0021"
+           ],
+           "size": 36277238052,
+           "totalFiles": 598
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MjR9",
+        "node": {
+         "id": "ds008959",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "ieeg"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "032e829a872db36b4e9b47d0dd68f764ebdb6e1d",
+          "created": "2026-10-19T09:04:12.000Z",
+          "description": {
+           "Name": "MetaMosquito",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008959.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "ieeg"
+           ],
+           "secondaryModalities": [],
+           "subjects": [
+            "03",
+            "12",
+            "10",
+            "04",
+            "08",
+            "06",
+            "11",
+            "01"
+           ],
+           "size": 305492,
+           "totalFiles": 45
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MjV9",
+        "node": {
+         "id": "ds008970",
+         "metadata": {
+          "species": "Human",
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": true
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "c68b55f1a2a731abc51c939d19a0ba2963ab7241",
+          "created": "2026-10-23T06:36:25.000Z",
+          "description": {
+           "Name": "UMR-5T human MRI",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008970.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural",
+            "mri_diffusion",
+            "mri_functional"
+           ],
+           "subjects": [
+            "05",
+            "04",
+            "06",
+            "02",
+            "07",
+            "03",
+            "08",
+            "01"
+           ],
+           "size": 13556236610,
+           "totalFiles": 127
+          }
+         }
+        }
+       },
+       {
+        "cursor": "eyJvZmZzZXQiOjE5MjZ9",
+        "node": {
+         "id": "ds008973",
+         "metadata": {
+          "species": null,
+          "modalities": [
+           "mri"
+          ],
+          "affirmedDefaced": false
+         },
+         "latestSnapshot": {
+          "tag": "1.0.0",
+          "hexsha": "dbd430ab7ac1c1c872ed8c0055dd39cc588607d6",
+          "created": "2026-10-23T09:16:04.000Z",
+          "description": {
+           "Name": "MR-EyeTrack: gaze-resolved 3D T1w MRI of the eye with simultaneous eye tracking",
+           "License": "CC0",
+           "DatasetDOI": "doi:10.18112/openneuro.ds008973.v1.0.0"
+          },
+          "summary": {
+           "modalities": [
+            "mri"
+           ],
+           "secondaryModalities": [
+            "mri_structural"
+           ],
+           "subjects": [
+            "009",
+            "011",
+            "013",
+            "001",
+            "002",
+            "003",
+            "008",
+            "010",
+            "007",
+            "004",
+            "012",
+            "006",
+            "005",
+            "014",
+            "015"
+           ],
+           "size": 1624989996,
+           "totalFiles": 91
+          }
+         }
+        }
+       }
+      ]
+     }
+    },
+    "extensions": {
+     "openneuro": {
+      "version": "5.10.1"
+     }
+    }
+   }
+  }
+ ]
+}

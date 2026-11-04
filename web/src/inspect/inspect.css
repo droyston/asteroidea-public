@@ -1,0 +1,223 @@
+/* Flexible inspection. Colours from kit/tokens.css only; the region colour arrives as
+   --in-region on each strip and ranked row, and inline on each scatter dot.
+ */
+.in-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-rows: auto auto 1fr;
+  gap: var(--space-2) var(--space-5);
+  padding: var(--space-2) var(--space-4);
+}
+.in-head {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-4);
+}
+.in-head h2 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+}
+.in-head .meta {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+.in-muted {
+  color: var(--color-muted);
+}
+.in-controls {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-hairline);
+  font-size: var(--text-sm);
+}
+.in-seg,
+.in-window {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.in-seg legend,
+.in-window legend {
+  float: left;
+  padding: 0;
+  margin-right: var(--space-1);
+  color: var(--color-muted);
+}
+.in-range {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+}
+.in-range input {
+  width: 100%;
+  height: 12px;
+  margin: 0;
+}
+.in-window output {
+  margin-left: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+.in-note {
+  margin: 0 0 0 auto;
+  padding: 2px var(--space-2);
+  border: 1px dashed var(--color-muted);
+  border-radius: var(--radius);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+.in-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.in-plotbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+.in-select {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.in-select span {
+  color: var(--color-muted);
+}
+.in-count {
+  margin-left: auto;
+}
+.in-scatter {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+}
+.in-tick line {
+  stroke: var(--color-hairline);
+}
+.in-tick text,
+.in-tick-x {
+  fill: var(--color-muted);
+  font-size: 10px;
+}
+.in-axis-label {
+  fill: var(--color-muted);
+  font-size: 11px;
+}
+.in-scatter circle {
+  stroke: var(--color-surface);
+  stroke-width: 1;
+}
+.in-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  font-weight: 400;
+}
+.in-strips {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.in-strips svg {
+  display: block;
+  width: 100%;
+}
+.in-strip-label {
+  fill: var(--color-text);
+  font-size: 11px;
+}
+.in-strip-axis {
+  stroke: var(--color-border-subtle);
+}
+.in-strip-zero {
+  stroke: var(--color-text);
+}
+.in-strips circle {
+  fill: var(--in-region);
+}
+.in-rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  border-left: 1px solid var(--color-hairline);
+  padding-left: var(--space-3);
+}
+.in-rank-head {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+.in-ranked {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.in-ranked li {
+  display: grid;
+  grid-template-columns: 26px 96px minmax(0, 1fr) 36px;
+  gap: var(--space-1);
+  align-items: center;
+  padding: 3px 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-size: var(--text-xs);
+}
+.in-rank-unit {
+  color: var(--color-muted);
+  font-variant-numeric: var(--font-numeric);
+}
+.in-rank-region {
+  border-left: 3px solid var(--in-region);
+  padding-left: var(--space-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.in-rank-bar {
+  height: 8px;
+  background: var(--color-border-subtle);
+}
+.in-rank-bar i {
+  display: block;
+  height: 100%;
+}
+.in-up {
+  background: var(--color-div-1);
+}
+.in-down {
+  background: var(--color-div-7);
+}
+.in-rank-value {
+  text-align: right;
+  font-variant-numeric: var(--font-numeric);
+}
+@media (max-width: 760px) {
+  .in-page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .in-rail {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
