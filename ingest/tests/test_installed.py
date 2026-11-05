@@ -9,7 +9,8 @@ MEMBER = Path(__file__).resolve().parents[1]
 
 
 def test_distribution_resolves() -> None:
-    assert distribution("asteroidea-ingest").version == "0.0.0"
+    version = (MEMBER.parent / "VERSION").read_text(encoding="utf-8").strip()
+    assert distribution("asteroidea-ingest").version == version
 
 
 def test_imported_from_member_src() -> None:

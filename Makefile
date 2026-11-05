@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help doctor tools install format lint typecheck test docs check help-check harvest peek serve kill clean rebuild \
+.PHONY: help doctor tools install format lint typecheck test docs check help-check version-sync harvest peek serve kill clean rebuild \
   web-install web web-kill web-check web-e2e gate-docs gate-suppressions gate-doctor gate-deploy-docker gate-live live \
   synth diff check-full deploy destroy-services catalog-init reclaim import crosswalk studies tiers summaries notes notes-done live-iceberg-check commit-image extract-image compute-image resource-budget researcher researcher-add curator sdk-config sdk-wheel web-publish live-first-hour live-analysis notebook notebook-kill live-notebook live-hosted-setup live-research-app live-route-timing live-web-smoke live-ux-playtest
 
@@ -351,6 +351,11 @@ help-check: ## Fail when a target lacks help text
 	  if diff $$a.names $$b; then echo "help-check: every target documented"; rc=0; \
 	  else echo "help-check: targets on '>' lines lack help text"; rc=1; fi; \
 	  rm -f $$a $$a.names $$b; exit $$rc
+
+version-sync: ## Write VERSION into every package manifest, then regenerate uv.lock and web/package-lock.json
+	uv run --frozen python -m asteroidea_infra.version_sync
+	uv lock
+	npm install --package-lock-only --ignore-scripts --no-audit --no-fund --prefix web
 
 harvest: ## Harvest DANDI and OpenNeuro into web/public/index.json (network)
 	@mkdir -p web/public

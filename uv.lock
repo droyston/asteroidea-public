@@ -45,7 +45,7 @@ wheels = [
 
 [[package]]
 name = "asteroidea"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "sdk" }
 dependencies = [
     { name = "awscrt" },
@@ -87,7 +87,7 @@ provides-extras = ["nifti", "analysis", "nwb", "pynapple"]
 
 [[package]]
 name = "asteroidea-infra"
-version = "0.0.0"
+version = "0.2.0"
 source = { editable = "infra" }
 dependencies = [
     { name = "aws-cdk-lib" },
@@ -104,7 +104,7 @@ requires-dist = [
 
 [[package]]
 name = "asteroidea-ingest"
-version = "0.0.0"
+version = "0.2.0"
 source = { editable = "ingest" }
 dependencies = [
     { name = "boto3" },
@@ -144,7 +144,7 @@ provides-extras = ["extract", "compute"]
 
 [[package]]
 name = "asteroidea-services"
-version = "0.0.0"
+version = "0.2.0"
 source = { editable = "services" }
 dependencies = [
     { name = "h5py" },

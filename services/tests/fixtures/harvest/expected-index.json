@@ -3,7 +3,7 @@
   "harvested_at": "2026-10-23T12:00:00Z",
   "harvester": {
     "package": "asteroidea-services",
-    "version": "0.0.0"
+    "version": "0.2.0"
   },
   "sources": {
     "dandi": {

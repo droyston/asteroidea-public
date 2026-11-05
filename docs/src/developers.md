@@ -123,6 +123,24 @@ Other targets: `make harvest` builds the DANDI and OpenNeuro index (network, abo
 and `make notebook-kill` stops it;
 `make web` starts the Vite dev server on `WEB_PORT` (default 5173) and `make web-kill` stops it.
 
+## Version and releases
+
+The project has one version, in the root `VERSION` file. It follows Semantic Versioning in its 0.x
+form: while the major number is 0, a minor bump (0.1.0 to 0.2.0) marks new features or a breaking
+change, and a patch bump (0.2.0 to 0.2.1) marks fixes only. Every Python package, the web app and
+the harvester's User-Agent carry the same number.
+
+To bump it:
+
+1. Edit `VERSION` (one line, `X.Y.Z`).
+2. Run `make version-sync`. It writes the number into each `pyproject.toml` and `web/package.json`,
+   then regenerates `uv.lock` and `web/package-lock.json` (it needs the package index, like
+   `uv lock`). A test fails while any of them disagrees with `VERSION`.
+3. Open a pull request with the result.
+
+Each release is a git tag `vX.Y.Z` on the release commit, with a GitHub Release that carries its
+notes.
+
 ## Layout
 
 | Path | What it holds |

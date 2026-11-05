@@ -18,6 +18,9 @@ if TYPE_CHECKING:
     from boto3 import Session
 
 REPO = Path(__file__).resolve().parents[2]
+# The SDK wheel publish expects carries the project version from the root VERSION file.
+VERSION = (REPO / "VERSION").read_text(encoding="utf-8").strip()
+WHEEL = f"asteroidea-{VERSION}-py3-none-any.whl"
 BUCKET = "site-bucket"
 SCHEMA_TS = (REPO / "web" / "src" / "index" / "schema.ts").read_text()
 INDEX_SCHEMA = next(
@@ -113,7 +116,7 @@ def tree(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
         (dist / rel).write_text(body)
     wheels = tmp_path / "dist"
     wheels.mkdir()
-    (wheels / "asteroidea-0.1.0-py3-none-any.whl").write_bytes(b"wheel-bytes")
+    (wheels / WHEEL).write_bytes(b"wheel-bytes")
     nb = tmp_path / "exemplar.ipynb"
     nb.write_text("{}")
     public = tmp_path / "web" / "public"
@@ -162,7 +165,7 @@ def test_content_types_and_cache_control() -> None:
         assert s3.objects[key]["ContentType"] == ctype, key
         assert s3.objects[key]["CacheControl"] == cache, key
     assert publish.IMMUTABLE == "public, max-age=31536000, immutable"
-    wheel = s3.objects["handout/asteroidea-0.1.0-py3-none-any.whl"]
+    wheel = s3.objects[f"handout/{WHEEL}"]
     assert wheel["ContentType"] == "application/zip"
     assert s3.objects["handout/exemplar.ipynb"]["ContentType"] == "application/json"
 
@@ -172,9 +175,9 @@ def test_wheel_is_also_served_publicly_from_site_sdk() -> None:
     s3 = FakeS3()
     code, _ = run(s3, FakeCloudFront())
     assert code == 0
-    public = s3.objects["site/sdk/asteroidea-0.1.0-py3-none-any.whl"]
+    public = s3.objects[f"site/sdk/{WHEEL}"]
     assert public["ContentType"] == "application/zip"
-    handout = s3.objects["handout/asteroidea-0.1.0-py3-none-any.whl"]
+    handout = s3.objects[f"handout/{WHEEL}"]
     assert public["Body"] == handout["Body"]
 
 
@@ -197,7 +200,7 @@ def test_manifest_has_sha256_and_pins_from_the_single_source() -> None:
     manifest = json.loads(body["Body"])
     assert manifest == {
         "wheel": {
-            "filename": "asteroidea-0.1.0-py3-none-any.whl",
+            "filename": WHEEL,
             "sha256": hashlib.sha256(b"wheel-bytes").hexdigest(),
         },
         "notebook": {"filename": "exemplar.ipynb"},

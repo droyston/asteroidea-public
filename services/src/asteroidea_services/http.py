@@ -3,7 +3,9 @@
 The live transport speaks https only through ``http.client`` and follows no redirect.
 ``retrying`` wraps any transport with the retry policy. ``recording`` and
 ``replaying`` save and
-serve request/response pairs for tests and fixture generation.
+serve request/response pairs for tests and fixture generation. The User-Agent
+carries the installed ``asteroidea-services`` version, which ``make version-sync``
+keeps equal to the root ``VERSION`` file.
 """
 
 import hashlib
@@ -13,6 +15,7 @@ import time
 from collections.abc import Callable
 from dataclasses import dataclass
 from http import HTTPStatus
+from importlib.metadata import version
 from typing import TYPE_CHECKING
 from urllib.parse import urlsplit
 
@@ -25,7 +28,7 @@ BACKOFF_SECONDS = (1.0, 2.0, 4.0)
 _RETRY_STATUSES = frozenset({429, *range(500, 600)})
 _OK_STATUS_LIMIT = 300
 _PROJECT_URL = "https://github.com/droyston/asteroidea-public"
-_USER_AGENT = f"asteroidea-services/0.0.0 (+{_PROJECT_URL})"
+_USER_AGENT = f"asteroidea-services/{version('asteroidea-services')} (+{_PROJECT_URL})"
 
 
 @dataclass(frozen=True)

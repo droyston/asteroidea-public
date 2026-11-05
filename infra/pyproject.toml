@@ -1,6 +1,6 @@
 [project]
 name = "asteroidea-infra"
-version = "0.0.0"
+version = "0.2.0"
 description = "Infrastructure (CDK app) for the asteroidea platform."
 requires-python = ">=3.14"
 license = "Apache-2.0"
